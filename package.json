@@ -7,8 +7,9 @@
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "node server/index.js",
     "dev:client": "cd client && npm run dev",
-    "build": "cd client && npm run build",
-    "install:all": "npm install && cd client && npm install"
+    "build": "npm run install:all && cd client && npm run build",
+    "install:all": "npm install && cd client && npm install",
+    "vercel-build": "npm run install:all && cd client && npm run build"
   },
   "keywords": [
     "biodiversity",
