@@ -1,0 +1,33 @@
+{
+  "name": "biodiversity-portal",
+  "version": "1.0.0",
+  "description": "Biodiversity Portal - GIS Dashboard for Pakistan Biodiversity Data",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node server/index.js",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "install:all": "npm install && cd client && npm install"
+  },
+  "keywords": [
+    "biodiversity",
+    "gis",
+    "dashboard",
+    "shapefile"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@turf/turf": "^7.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "glob": "^10.3.10",
+    "proj4": "^2.20.1",
+    "reproject": "^1.2.7",
+    "shapefile": "^0.6.6"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
