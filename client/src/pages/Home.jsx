@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
 import { 
   FaDatabase, 
   FaBullseye, 
@@ -11,8 +12,50 @@ import {
   FaDownload 
 } from 'react-icons/fa'
 
+// Custom hook for scroll animations
+function useScrollAnimation(options = {}) {
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          // Optionally disconnect after first animation
+          if (options.once !== false) {
+            observer.disconnect()
+          }
+        } else if (options.once === false) {
+          setIsVisible(false)
+        }
+      },
+      {
+        threshold: options.threshold || 0.1,
+        rootMargin: options.rootMargin || '0px 0px -50px 0px'
+      }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [options.threshold, options.rootMargin, options.once])
+
+  return [ref, isVisible]
+}
+
 export default function Home() {
   const navigate = useNavigate()
+  
+  // Animation refs for each section
+  const [dataHubRef, dataHubVisible] = useScrollAnimation()
+  const [whatWhyWhoRef, whatWhyWhoVisible] = useScrollAnimation()
+  const [featuresRef, featuresVisible] = useScrollAnimation()
+  const [datasetsRef, datasetsVisible] = useScrollAnimation()
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -88,7 +131,9 @@ export default function Home() {
       </section>
 
       {/* National Data Hub Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section ref={dataHubRef} className={`py-12 sm:py-16 lg:py-20 bg-white transition-all duration-1000 ease-out ${
+        dataHubVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">
             A National Data Hub for Environmental Stewardship
@@ -100,11 +145,13 @@ export default function Home() {
       </section>
 
       {/* What/Why/Who Section */}
-      <section className="py-12 sm:py-16 bg-gray-50">
+      <section ref={whatWhyWhoRef} className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* What This Portal Does */}
-            <div className="bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-700 ease-out ${
+              whatWhyWhoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`} style={{ transitionDelay: whatWhyWhoVisible ? '0ms' : '0ms' }}>
               <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-lg mb-4 mx-auto">
                 <FaDatabase className="text-3xl text-green-600" />
               </div>
@@ -115,7 +162,9 @@ export default function Home() {
             </div>
 
             {/* Why It Matters */}
-            <div className="bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-700 ease-out ${
+              whatWhyWhoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`} style={{ transitionDelay: whatWhyWhoVisible ? '150ms' : '0ms' }}>
               <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-lg mb-4 mx-auto">
                 <FaBullseye className="text-3xl text-blue-600" />
               </div>
@@ -126,7 +175,9 @@ export default function Home() {
             </div>
 
             {/* Who It Serves */}
-            <div className="bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-700 ease-out ${
+              whatWhyWhoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`} style={{ transitionDelay: whatWhyWhoVisible ? '300ms' : '0ms' }}>
               <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-lg mb-4 mx-auto">
                 <FaUsers className="text-3xl text-green-600" />
               </div>
@@ -140,9 +191,11 @@ export default function Home() {
       </section>
 
       {/* Platform Features & Capabilities */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section ref={featuresRef} className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ease-out ${
+            featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">
               Platform Features & Capabilities
             </h2>
@@ -160,7 +213,13 @@ export default function Home() {
               { icon: FaShieldAlt, title: 'Protected Areas & Corridors', desc: 'Map and explore the national conservation network.' },
               { icon: FaDownload, title: 'Data Download Center', desc: 'Freely access datasets with comprehensive metadata.' }
             ].map((feature, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-green-300 hover:shadow-lg transition-all">
+              <div 
+                key={idx} 
+                className={`bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-green-300 hover:shadow-lg transition-all duration-700 ease-out ${
+                  featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: featuresVisible ? `${idx * 100}ms` : '0ms' }}
+              >
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
                     <feature.icon className="text-2xl text-green-600" />
@@ -175,9 +234,11 @@ export default function Home() {
       </section>
 
       {/* Explore Datasets & Key Statistics */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <section ref={datasetsRef} className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ease-out ${
+            datasetsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">
               Explore Datasets & Key Statistics
             </h2>
@@ -209,7 +270,10 @@ export default function Home() {
             ].map((dataset, idx) => (
               <div 
                 key={idx} 
-                className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer group"
+                className={`relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 ease-out transform hover:scale-105 cursor-pointer group ${
+                  datasetsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: datasetsVisible ? `${idx * 150}ms` : '0ms' }}
                 onClick={() => navigate('/dashboard')}
               >
                 <div className="relative h-64 sm:h-80">
