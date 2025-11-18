@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { FaLeaf, FaBars, FaSearch, FaBell, FaUserCircle, FaTimes } from 'react-icons/fa'
 
 export default function Header() {
+  const location = useLocation()
   const [currentDate, setCurrentDate] = useState('')
   const [currentTime, setCurrentTime] = useState('')
   const [undpLogoError, setUndpLogoError] = useState(false)
   const [ministryLogoError, setMinistryLogoError] = useState(false)
-  const [activePage, setActivePage] = useState('Dashboard')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  const activePage = location.pathname === '/' || location.pathname === '/home' ? 'Home' : 
+                     location.pathname === '/dashboard' ? 'Dashboard' : 
+                     location.pathname
 
   useEffect(() => {
     const updateDateTime = () => {
@@ -59,12 +64,8 @@ export default function Header() {
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
-            <a 
-              href="#" 
-              onClick={(e) => {
-                e.preventDefault()
-                setActivePage('Home')
-              }}
+            <Link 
+              to="/"
               className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                 activePage === 'Home'
                   ? 'text-green-600 font-semibold bg-green-50 border-2 border-green-600'
@@ -72,13 +73,9 @@ export default function Header() {
               }`}
             >
               Home
-            </a>
-            <a 
-              href="#" 
-              onClick={(e) => {
-                e.preventDefault()
-                setActivePage('Dashboard')
-              }}
+            </Link>
+            <Link 
+              to="/dashboard"
               className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                 activePage === 'Dashboard'
                   ? 'text-green-600 font-semibold bg-green-50 border-2 border-green-600'
@@ -86,7 +83,7 @@ export default function Header() {
               }`}
             >
               Dashboard
-            </a>
+            </Link>
             <a 
               href="#" 
               onClick={(e) => {
@@ -231,13 +228,9 @@ export default function Header() {
 
         {/* Drawer Navigation */}
         <nav className="flex flex-col p-4 space-y-2 overflow-y-auto flex-1">
-          <a 
-            href="#" 
-            onClick={(e) => {
-              e.preventDefault()
-              setActivePage('Home')
-              setMobileMenuOpen(false)
-            }}
+          <Link 
+            to="/"
+            onClick={() => setMobileMenuOpen(false)}
             className={`px-4 py-3 rounded-lg transition-all ${
               activePage === 'Home'
                 ? 'text-green-600 font-semibold bg-green-50 border-2 border-green-600'
@@ -245,14 +238,10 @@ export default function Header() {
             }`}
           >
             Home
-          </a>
-          <a 
-            href="#" 
-            onClick={(e) => {
-              e.preventDefault()
-              setActivePage('Dashboard')
-              setMobileMenuOpen(false)
-            }}
+          </Link>
+          <Link 
+            to="/dashboard"
+            onClick={() => setMobileMenuOpen(false)}
             className={`px-4 py-3 rounded-lg transition-all ${
               activePage === 'Dashboard'
                 ? 'text-green-600 font-semibold bg-green-50 border-2 border-green-600'
@@ -260,7 +249,7 @@ export default function Header() {
             }`}
           >
             Dashboard
-          </a>
+          </Link>
           <a 
             href="#" 
             onClick={(e) => {
