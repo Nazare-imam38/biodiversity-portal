@@ -29,25 +29,39 @@ export default function Home() {
             {/* Left: Main Image */}
             <div className="lg:col-span-1 flex flex-col items-center lg:items-start">
               <div className="relative mb-4">
-                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gray-200">
                   <img 
                     src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=400&fit=crop" 
                     alt="Waterbuck" 
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback image if main image fails
+                      e.target.src = 'https://images.unsplash.com/photo-1519003722824-194d4455a60e?w=400&h=400&fit=crop'
+                    }}
                   />
                 </div>
                 {/* Biodiversity Collage */}
                 <div className="absolute -right-8 top-8 hidden lg:flex flex-col space-y-2">
                   {[
-                    'https://images.unsplash.com/photo-1519003722824-194d4455a60e?w=100',
-                    'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=100',
-                    'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=100',
-                    'https://images.unsplash.com/photo-1601042879365-fe391e9f1a89?w=100',
-                    'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=100',
-                    'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=100'
-                  ].map((url, idx) => (
-                    <div key={idx} className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-lg">
-                      <img src={url} alt={`Biodiversity ${idx + 1}`} className="w-full h-full object-cover" />
+                    { url: 'https://images.unsplash.com/photo-1519003722824-194d4455a60e?w=200&h=200&fit=crop&auto=format', alt: 'Iguana' },
+                    { url: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=200&h=200&fit=crop&auto=format', alt: 'Puffin' },
+                    { url: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=200&h=200&fit=crop&auto=format', alt: 'Fox' },
+                    { url: 'https://images.unsplash.com/photo-1601042879365-fe391e9f1a89?w=200&h=200&fit=crop&auto=format', alt: 'Turtles' },
+                    { url: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=200&h=200&fit=crop&auto=format', alt: 'Pangolin' },
+                    { url: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=200&h=200&fit=crop&auto=format', alt: 'Seedling' }
+                  ].map((item, idx) => (
+                    <div key={idx} className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-lg bg-gray-200">
+                      <img 
+                        src={item.url} 
+                        alt={item.alt} 
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        onError={(e) => {
+                          // Fallback to a solid color if image fails to load
+                          e.target.style.display = 'none'
+                          e.target.parentElement.style.backgroundColor = ['#22c55e', '#3b82f6', '#8b5cf6', '#f59e0b', '#06b6d4', '#10b981'][idx] || '#22c55e'
+                        }}
+                      />
                     </div>
                   ))}
                 </div>
