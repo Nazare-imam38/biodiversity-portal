@@ -653,19 +653,14 @@ app.get('/api/health', (req, res) => {
 });
 
 // Serve frontend static files (in production)
+// IMPORTANT: This must be after API routes but before catch-all
 const clientDistPath = join(__dirname, '../client/dist');
 if (existsSync(clientDistPath)) {
-  // Serve static assets
-  app.use(express.static(clientDistPath));
-  
-  // Catch-all handler: send back React's index.html file for SPA routing
-  app.get('*', (req, res) => {
-    // Don't serve index.html for API routes
-    if (req.path.startsWith('/api')) {
-      return res.status(404).json({ error: 'API endpoint not found' });
-    }
-    res.sendFile(join(clientDistPath, 'index.html'));
-  });
+  // Serve static assets (CSS, JS, images, etc.)
+  app.use(express.static(clientDistPath, {
+    maxAge: '1d', // Cache static assets for 1 day
+    etag: true
+  }));
   
   console.log('📦 Frontend build found - serving from:', clientDistPath);
 } else {
@@ -673,26 +668,57 @@ if (existsSync(clientDistPath)) {
   console.log('   API-only mode - frontend must be built separately');
 }
 
-// Load Pakistan boundary on startup
-loadPakistanBoundary().then(() => {
+// Catch-all handler: send back React's index.html file for SPA routing
+// This MUST be last, after all API routes and static file serving
+app.get('*', (req, res, next) => {
+  // Skip API routes - they should have been handled above
+  if (req.path.startsWith('/api')) {
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
+  
+  // Only serve index.html if dist folder exists
+  if (existsSync(clientDistPath)) {
+    const indexPath = join(clientDistPath, 'index.html');
+    if (existsSync(indexPath)) {
+      return res.sendFile(indexPath);
+    }
+  }
+  
+  // If no frontend build, return 404
+  res.status(404).json({ error: 'Frontend not built. Please run: npm run build' });
+});
+
+// Load Pakistan boundary on startup with timeout
+const BOUNDARY_LOAD_TIMEOUT = 10000; // 10 seconds
+
+Promise.race([
+  loadPakistanBoundary(),
+  new Promise((_, reject) => 
+    setTimeout(() => reject(new Error('Boundary loading timeout')), BOUNDARY_LOAD_TIMEOUT)
+  )
+]).then(() => {
   startServer();
 }).catch((error) => {
-  console.error('Error loading Pakistan boundary:', error);
-  console.error('Stack:', error.stack);
+  console.error('Error loading Pakistan boundary:', error.message);
+  if (error.stack) {
+    console.error('Stack:', error.stack);
+  }
   // Start server anyway with default bounds
   startServer(true);
 });
 
 function startServer(usingDefaultBounds = false) {
   try {
-  app.listen(PORT, () => {
-    console.log(`🚀 Biodiversity Portal API server running on http://localhost:${PORT}`);
-    console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
+    // Bind to 0.0.0.0 to allow external connections (required for Render)
+    const HOST = process.env.HOST || '0.0.0.0';
+    app.listen(PORT, HOST, () => {
+      console.log(`🚀 Biodiversity Portal API server running on http://${HOST}:${PORT}`);
+      console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
       if (usingDefaultBounds) {
-    console.log('⚠️  Using default Pakistan bounds');
+        console.log('⚠️  Using default Pakistan bounds');
       }
       console.log('✅ Server is ready to accept requests');
-});
+    });
   } catch (error) {
     console.error('❌ Failed to start server:', error);
     console.error('Stack:', error.stack);

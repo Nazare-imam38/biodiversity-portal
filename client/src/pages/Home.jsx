@@ -18,9 +18,14 @@ function useScrollAnimation(options = {}) {
   const ref = useRef(null)
 
   useEffect(() => {
+    // Safety check: ensure ref and DOM are ready
+    if (!ref.current || typeof window === 'undefined' || !window.IntersectionObserver) {
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry && entry.isIntersecting) {
           setIsVisible(true)
           // Optionally disconnect after first animation
           if (options.once !== false) {
@@ -36,12 +41,22 @@ function useScrollAnimation(options = {}) {
       }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    // Double-check ref is still valid before observing
+    const element = ref.current
+    if (element && element.nodeType === Node.ELEMENT_NODE) {
+      try {
+        observer.observe(element)
+      } catch (error) {
+        console.warn('IntersectionObserver error:', error)
+      }
     }
 
     return () => {
-      observer.disconnect()
+      try {
+        observer.disconnect()
+      } catch (error) {
+        // Ignore disconnect errors
+      }
     }
   }, [options.threshold, options.rootMargin, options.once])
 
