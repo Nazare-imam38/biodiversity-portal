@@ -21,6 +21,7 @@ function Dashboard() {
     }
     return true
   })
+  const [selectedRegion, setSelectedRegion] = useState('Gilgit Baltistan') // Default to Gilgit Baltistan to show stats
 
   useEffect(() => {
     const checkMobile = () => {
@@ -120,7 +121,36 @@ function Dashboard() {
 
   return (
     <div className="min-h-screen w-full max-w-full flex flex-col bg-gray-50 overflow-x-hidden">
-      <StatisticsCards layerData={layerData} activeLayers={activeLayers} />
+      {/* Region Toggle Button */}
+      <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-center">
+        <div className="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
+          <button
+            onClick={() => setSelectedRegion('National')}
+            className={`px-4 py-2 rounded-md font-medium text-sm transition-all duration-200 ${
+              selectedRegion === 'National'
+                ? 'bg-white text-green-600 shadow-sm'
+                : 'text-gray-600 hover:text-gray-800'
+            }`}
+          >
+            National
+          </button>
+          <button
+            onClick={() => setSelectedRegion('Gilgit Baltistan')}
+            className={`px-4 py-2 rounded-md font-medium text-sm transition-all duration-200 ${
+              selectedRegion === 'Gilgit Baltistan'
+                ? 'bg-white text-green-600 shadow-sm'
+                : 'text-gray-600 hover:text-gray-800'
+            }`}
+          >
+            Gilgit Baltistan
+          </button>
+        </div>
+      </div>
+      
+      {/* Statistics Cards - Only show when Gilgit Baltistan is selected */}
+      {selectedRegion === 'Gilgit Baltistan' && (
+        <StatisticsCards layerData={layerData} activeLayers={activeLayers} />
+      )}
       <FeaturedLayers 
         layers={layers}
         activeLayers={activeLayers}
