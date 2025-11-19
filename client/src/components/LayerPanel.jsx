@@ -73,10 +73,11 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
         } lg:translate-y-0 lg:translate-x-0 fixed lg:static inset-x-0 lg:inset-x-auto bottom-0 lg:bottom-auto left-0 lg:left-auto w-full lg:w-80 xl:w-96 bg-white shadow-2xl lg:shadow-lg z-40 transition-transform duration-300 ease-in-out overflow-hidden lg:overflow-visible border-t lg:border-t-0 lg:border-r border-gray-200 flex flex-col rounded-t-3xl lg:rounded-none`}
         style={{ 
           // Mobile: bottom sheet with max height
-          // Desktop: full height to show all layers
-          maxHeight: !isMobile ? 'calc(100vh - 140px)' : (isOpen ? '85vh' : '0'),
-          height: !isMobile ? 'calc(100vh - 140px)' : (isOpen ? '85vh' : '0'),
-          top: !isMobile ? '140px' : 'auto'
+          // Desktop: maximize height to show all 9 layers without scrolling
+          maxHeight: !isMobile ? '100%' : (isOpen ? '85vh' : '0'),
+          height: !isMobile ? 'calc(100vh - 70px)' : (isOpen ? '85vh' : '0'),
+          top: !isMobile ? '70px' : 'auto',
+          minHeight: !isMobile ? 'calc(100vh - 70px)' : 'auto'
         }}
       >
         {/* Mobile: Drag handle */}
@@ -84,9 +85,9 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
           <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
         </div>
 
-        <div className="p-4 sm:p-5 flex-1 overflow-y-auto lg:overflow-y-visible lg:overflow-x-hidden">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-800">Data Layers</h2>
+        <div className="p-2.5 sm:p-3 flex-1 overflow-y-auto lg:overflow-y-visible lg:overflow-x-hidden">
+          <div className="flex items-center justify-between mb-2.5">
+            <h2 className="text-base sm:text-lg font-semibold text-gray-800">Data Layers</h2>
             <div className="flex items-center space-x-2">
               {activeLayers.size > 0 && (
                 <button
@@ -107,7 +108,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
             </div>
           </div>
 
-          <div className="space-y-2.5 lg:space-y-3">
+          <div className="space-y-1.5 lg:space-y-2">
             {layers && layers.length > 0 ? (
               layers.map((layer) => {
                 const IconComponent = layerIcons[layer.id] || FaLeaf
@@ -145,7 +146,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
 function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
   return (
     <div
-      className={`p-4 sm:p-5 rounded-lg border transition-all cursor-pointer ${
+      className={`p-2.5 sm:p-3 rounded-lg border transition-all cursor-pointer ${
         isActive
           ? 'border-green-500 bg-green-50 shadow-sm'
           : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
@@ -155,15 +156,15 @@ function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
         onToggle(e)
       }}
     >
-      <div className="flex items-start justify-between gap-4 w-full">
-        <div className="flex items-start space-x-3 sm:space-x-4 flex-1 min-w-0 pr-2">
-          <div className={`p-2.5 sm:p-3 rounded-lg flex-shrink-0 ${isActive ? 'bg-green-100' : 'bg-gray-100'}`}>
-            <Icon className={`text-lg sm:text-xl ${isActive ? 'text-green-600' : 'text-gray-600'}`} />
+      <div className="flex items-start justify-between gap-3 w-full">
+        <div className="flex items-start space-x-2.5 flex-1 min-w-0 pr-2">
+          <div className={`p-1.5 sm:p-2 rounded-lg flex-shrink-0 ${isActive ? 'bg-green-100' : 'bg-gray-100'}`}>
+            <Icon className={`text-sm sm:text-base ${isActive ? 'text-green-600' : 'text-gray-600'}`} />
           </div>
           <div className="flex-1 min-w-0 pr-2">
-            <h3 className="font-medium text-base sm:text-lg text-gray-800 leading-snug whitespace-normal">{layer.name}</h3>
+            <h3 className="font-medium text-sm text-gray-800 leading-tight whitespace-normal">{layer.name}</h3>
             {layer.description && (
-              <p className="text-sm sm:text-base text-gray-500 leading-relaxed mt-1.5 sm:mt-2 whitespace-normal line-clamp-2">{layer.description}</p>
+              <p className="text-xs text-gray-500 leading-tight mt-0.5 whitespace-normal line-clamp-1">{layer.description}</p>
             )}
           </div>
         </div>

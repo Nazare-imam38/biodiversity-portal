@@ -258,7 +258,7 @@ export default function MapView({ layers, activeLayers }) {
   const activeLayersList = layers.filter(l => activeLayers.has(l.id))
 
   return (
-    <div className="relative w-full" style={{ height: 'calc(100vh - 280px)', width: '100%', minHeight: '400px' }}>
+    <div className="relative w-full" style={{ height: '100%', width: '100%', minHeight: '400px' }}>
       <MapContainer
         center={mapCenter}
         zoom={mapZoom}
