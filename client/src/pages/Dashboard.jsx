@@ -67,8 +67,9 @@ function Dashboard() {
 
   const fetchLayers = async () => {
     try {
-      console.log('Fetching layers from http://localhost:3001/api/layers')
-      const response = await fetch('http://localhost:3001/api/layers')
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+      console.log(`Fetching layers from ${apiUrl}/api/layers`)
+      const response = await fetch(`${apiUrl}/api/layers`)
       if (!response.ok) {
         throw new Error(`Failed to fetch layers: ${response.status} ${response.statusText}`)
       }
