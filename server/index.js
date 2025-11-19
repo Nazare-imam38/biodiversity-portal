@@ -601,6 +601,47 @@ app.get('/api/layers/:layerId', async (req, res) => {
         if (!geoJSON.type) {
           throw new Error('Invalid GeoJSON: missing type property');
         }
+        
+        // Special handling for sindh-forest: filter to Sindh bounds only
+        if (layerId === 'sindh-forest' && geoJSON.features) {
+          console.log(`Filtering sindh-forest layer to Sindh province bounds...`);
+          const sindhBounds = {
+            minLat: 23.0,
+            maxLat: 28.5,
+            minLng: 66.0,
+            maxLng: 71.5
+          };
+          
+          const originalCount = geoJSON.features.length;
+          geoJSON.features = geoJSON.features.filter(feature => {
+            if (!feature.geometry || !feature.geometry.coordinates) {
+              return false;
+            }
+            
+            // Check if at least one coordinate is within Sindh bounds
+            const checkInBounds = (coords) => {
+              if (!Array.isArray(coords)) return false;
+              if (coords.length === 2 && typeof coords[0] === 'number' && typeof coords[1] === 'number') {
+                const [lng, lat] = coords;
+                return lng >= sindhBounds.minLng && lng <= sindhBounds.maxLng &&
+                       lat >= sindhBounds.minLat && lat <= sindhBounds.maxLat;
+              }
+              // Recursively check nested arrays
+              return coords.some(c => checkInBounds(c));
+            };
+            
+            return checkInBounds(feature.geometry.coordinates);
+          });
+          
+          const filteredCount = geoJSON.features.length;
+          console.log(`Filtered sindh-forest: ${originalCount} -> ${filteredCount} features within Sindh bounds`);
+          
+          if (filteredCount === 0) {
+            console.warn('⚠️  WARNING: No features in sindh-forest layer are within Sindh bounds!');
+            console.warn('   The GeoJSON coordinates may be incorrect or in wrong projection.');
+            console.warn('   Please check the source data and coordinate system.');
+          }
+        }
       } catch (parseError) {
         console.error(`Error parsing GeoJSON file ${geojsonPath}:`, parseError);
         return res.status(500).json({ 
