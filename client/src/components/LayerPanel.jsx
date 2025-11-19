@@ -64,7 +64,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
         className={`${
           // Mobile: bottom sheet from bottom
           isOpen ? 'translate-y-0' : 'translate-y-full'
-        } lg:translate-y-0 lg:translate-x-0 fixed lg:static inset-x-0 lg:inset-x-auto bottom-0 lg:bottom-auto left-0 lg:left-auto w-full lg:w-80 xl:w-96 bg-white shadow-2xl lg:shadow-lg z-40 transition-transform duration-300 ease-in-out overflow-hidden lg:overflow-visible border-t lg:border-t-0 lg:border-r border-gray-200 flex flex-col rounded-t-3xl lg:rounded-none`}
+        } lg:translate-y-0 lg:translate-x-0 fixed lg:static inset-x-0 lg:inset-x-auto bottom-0 lg:bottom-auto left-0 lg:left-auto w-full lg:w-80 xl:w-96 bg-white shadow-2xl lg:shadow-lg z-[100] transition-transform duration-300 ease-in-out overflow-hidden lg:overflow-visible border-t lg:border-t-0 lg:border-r border-gray-200 flex flex-col rounded-t-3xl lg:rounded-none`}
         style={{ 
           // Mobile: bottom sheet with max height
           // Desktop: maximize height to show all 9 layers without scrolling
@@ -128,9 +128,9 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
       {/* Overlay for mobile bottom sheet */}
       {isOpen && isMobile && (
         <div
-          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30 transition-opacity duration-300"
+          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-[90] transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
-          style={{ top: '0', left: '0' }}
+          style={{ top: '0', left: '0', pointerEvents: 'auto' }}
         />
       )}
     </>

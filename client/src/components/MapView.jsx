@@ -106,7 +106,7 @@ function MapResizer() {
   return null
 }
 
-export default function MapView({ layers, activeLayers, isLayerPanelOpen = false, isMobile = false }) {
+export default function MapView({ layers, activeLayers }) {
   const geoJsonRefs = useRef({})
   const [layerData, setLayerData] = useState({})
   const [loading, setLoading] = useState(new Set())
@@ -402,44 +402,37 @@ export default function MapView({ layers, activeLayers, isLayerPanelOpen = false
         })}
       </MapContainer>
 
-      {/* Base Map Switcher Button - Hide on mobile when layer panel is open */}
-      {!(isMobile && isLayerPanelOpen) && (
-        <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-[1000] bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
-          <div className="flex">
-            <button
-              onClick={() => setBaseMap('osm')}
-              className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm font-medium transition-all flex items-center space-x-1 sm:space-x-2 ${
-                baseMap === 'osm'
-                  ? 'bg-green-600 text-white shadow-inner'
-                  : 'bg-white text-gray-700 hover:bg-gray-50'
-              }`}
-            >
-              <FaMap className={baseMap === 'osm' ? 'text-white text-sm sm:text-base' : 'text-gray-600 text-sm sm:text-base'} />
-              <span className="hidden sm:inline">Map</span>
-            </button>
-            <div className="w-px bg-gray-200"></div>
-            <button
-              onClick={() => setBaseMap('satellite')}
-              className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm font-medium transition-all flex items-center space-x-1 sm:space-x-2 ${
-                baseMap === 'satellite'
-                  ? 'bg-green-600 text-white shadow-inner'
-                  : 'bg-white text-gray-700 hover:bg-gray-50'
-              }`}
-            >
-              <FaSatellite className={baseMap === 'satellite' ? 'text-white text-sm sm:text-base' : 'text-gray-600 text-sm sm:text-base'} />
-              <span className="hidden sm:inline">Satellite</span>
-            </button>
-          </div>
+      {/* Base Map Switcher Button - Fixed on map, above bottom sheet */}
+      <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-[1100] bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden" style={{ pointerEvents: 'auto' }}>
+        <div className="flex">
+          <button
+            onClick={() => setBaseMap('osm')}
+            className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm font-medium transition-all flex items-center space-x-1 sm:space-x-2 ${
+              baseMap === 'osm'
+                ? 'bg-green-600 text-white shadow-inner'
+                : 'bg-white text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <FaMap className={baseMap === 'osm' ? 'text-white text-sm sm:text-base' : 'text-gray-600 text-sm sm:text-base'} />
+            <span className="hidden sm:inline">Map</span>
+          </button>
+          <div className="w-px bg-gray-200"></div>
+          <button
+            onClick={() => setBaseMap('satellite')}
+            className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm font-medium transition-all flex items-center space-x-1 sm:space-x-2 ${
+              baseMap === 'satellite'
+                ? 'bg-green-600 text-white shadow-inner'
+                : 'bg-white text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <FaSatellite className={baseMap === 'satellite' ? 'text-white text-sm sm:text-base' : 'text-gray-600 text-sm sm:text-base'} />
+            <span className="hidden sm:inline">Satellite</span>
+          </button>
         </div>
-      )}
+      </div>
 
-      {/* Dynamic Legend - Adjust position on mobile when layer panel is open */}
-      <Legend 
-        layers={activeLayersList} 
-        activeLayers={activeLayers}
-        isLayerPanelOpen={isLayerPanelOpen}
-        isMobile={isMobile}
-      />
+      {/* Dynamic Legend */}
+      <Legend layers={activeLayersList} activeLayers={activeLayers} />
     </div>
   )
 }
