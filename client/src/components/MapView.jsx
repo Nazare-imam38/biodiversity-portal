@@ -106,7 +106,69 @@ function MapResizer() {
   return null
 }
 
-export default function MapView({ layers, activeLayers }) {
+// Component to handle region-based zooming
+function RegionZoomController({ selectedRegion, layerData, activeLayers }) {
+  const map = useMap()
+  const hasZoomedRef = useRef(false)
+  
+  useEffect(() => {
+    if (selectedRegion === 'Gilgit Baltistan') {
+      // Check if gb-district or gb-provincial layer is active and loaded
+      const hasGbLayer = activeLayers.has('gb-district') || activeLayers.has('gb-provincial')
+      const gbLayerData = layerData['gb-district'] || layerData['gb-provincial']
+      
+      if (hasGbLayer && gbLayerData && gbLayerData.features && gbLayerData.features.length > 0) {
+        // Calculate bounds from GeoJSON features
+        const bounds = L.latLngBounds([])
+        
+        gbLayerData.features.forEach(feature => {
+          if (feature.geometry && feature.geometry.coordinates) {
+            const extractCoords = (coords) => {
+              if (Array.isArray(coords[0])) {
+                coords.forEach(c => extractCoords(c))
+              } else if (coords.length === 2 && typeof coords[0] === 'number') {
+                // [lng, lat] format
+                bounds.extend([coords[1], coords[0]])
+              }
+            }
+            extractCoords(feature.geometry.coordinates)
+          }
+        })
+        
+        if (bounds.isValid() && !hasZoomedRef.current) {
+          // Add some padding around the bounds
+          map.fitBounds(bounds, { 
+            padding: [50, 50],
+            maxZoom: 9,
+            animate: true,
+            duration: 0.8
+          })
+          console.log('Zoomed to Gilgit Baltistan bounds')
+          hasZoomedRef.current = true
+        }
+      }
+    } else if (selectedRegion === 'National') {
+      // Zoom back to Pakistan view
+      if (hasZoomedRef.current) {
+        map.setView(PAKISTAN_CENTER, PAKISTAN_ZOOM, { 
+          animate: true,
+          duration: 0.8
+        })
+        console.log('Zoomed to National view')
+        hasZoomedRef.current = false
+      }
+    }
+  }, [selectedRegion, layerData, map, activeLayers])
+  
+  // Reset zoom flag when region changes
+  useEffect(() => {
+    hasZoomedRef.current = false
+  }, [selectedRegion])
+  
+  return null
+}
+
+export default function MapView({ layers, activeLayers, selectedRegion = 'National' }) {
   const geoJsonRefs = useRef({})
   const [layerData, setLayerData] = useState({})
   const [loading, setLoading] = useState(new Set())
@@ -329,6 +391,7 @@ export default function MapView({ layers, activeLayers }) {
         <BaseMapSwitcher baseMap={baseMap} onBaseMapChange={setBaseMap} />
         <MapBoundsController />
         <MapResizer />
+        <RegionZoomController selectedRegion={selectedRegion} layerData={layerData} activeLayers={activeLayers} />
         
         {Array.from(activeLayers).map((layerId) => {
           const layer = layers.find(l => l.id === layerId)

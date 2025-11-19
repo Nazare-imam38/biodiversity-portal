@@ -221,6 +221,7 @@ function Dashboard() {
           <MapView 
             layers={layers}
             activeLayers={activeLayers}
+            selectedRegion={selectedRegion}
           />
         </div>
       </div>
