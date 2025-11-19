@@ -29,7 +29,7 @@ const layerIcons = {
   'gb-district': FaMapMarkedAlt,
 }
 
-export default function Legend({ layers, activeLayers }) {
+export default function Legend({ layers, activeLayers, isLayerPanelOpen = false, isMobile = false }) {
   const [isExpanded, setIsExpanded] = useState(true)
   
   // Filter out base reference layers (like provinces) from legend
@@ -41,8 +41,11 @@ export default function Legend({ layers, activeLayers }) {
     return null
   }
 
+  // Adjust bottom position on mobile when layer panel is open
+  const bottomPosition = isMobile && isLayerPanelOpen ? 'bottom-[85vh]' : 'bottom-2 sm:bottom-4'
+
   return (
-    <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1000] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]">
+    <div className={`absolute ${bottomPosition} left-2 sm:left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1000] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]`}>
       <div className="flex items-center justify-between p-2 sm:p-3 border-b border-gray-200">
         <h3 className="font-semibold text-gray-800 text-xs sm:text-sm">Legend</h3>
         <button

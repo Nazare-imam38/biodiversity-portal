@@ -204,8 +204,8 @@ function Dashboard() {
           minHeight: '400px',
           maxHeight: isMobile ? 'calc(100vh - 280px)' : 'none'
         }}>
-          {/* Mobile toggle button - Fixed to map container */}
-          {isMobile && (
+          {/* Mobile toggle button - Hide when layer panel is open */}
+          {isMobile && !isLayerPanelOpen && (
             <button
               onClick={() => setIsLayerPanelOpen(!isLayerPanelOpen)}
               className="lg:hidden absolute bottom-6 right-6 z-50 bg-green-600 text-white p-4 rounded-full shadow-2xl hover:bg-green-700 transition-all transform hover:scale-110 active:scale-95"
@@ -214,12 +214,14 @@ function Dashboard() {
                 boxShadow: '0 10px 25px rgba(34, 197, 94, 0.4)'
               }}
             >
-              {isLayerPanelOpen ? <FaTimes className="text-white text-xl" /> : <FaBars className="text-white text-xl" />}
+              <FaBars className="text-white text-xl" />
             </button>
           )}
           <MapView 
             layers={layers}
             activeLayers={activeLayers}
+            isLayerPanelOpen={isLayerPanelOpen}
+            isMobile={isMobile}
           />
         </div>
       </div>
