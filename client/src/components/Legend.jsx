@@ -1,6 +1,37 @@
-import { FaMapMarkerAlt } from 'react-icons/fa'
+import { useState } from 'react'
+import { 
+  FaLeaf, 
+  FaTree, 
+  FaMountain, 
+  FaSun, 
+  FaShieldAlt, 
+  FaSeedling, 
+  FaLink, 
+  FaWater,
+  FaMapMarkedAlt,
+  FaMapMarkerAlt,
+  FaGlobe,
+  FaChevronDown,
+  FaChevronUp
+} from 'react-icons/fa'
+
+const layerIcons = {
+  'pakistan-provinces': FaMapMarkerAlt,
+  'agroecological-zones': FaLeaf,
+  'ecoregions': FaSeedling,
+  'kbas': FaMapMarkedAlt,
+  'protected-areas': FaShieldAlt,
+  'protected-areas-pol': FaShieldAlt,
+  'protected-forest': FaTree,
+  'ramsar-sites': FaWater,
+  'sindh-forest': FaTree,
+  'gb-provincial': FaGlobe,
+  'gb-district': FaMapMarkedAlt,
+}
 
 export default function Legend({ layers, activeLayers }) {
+  const [isExpanded, setIsExpanded] = useState(true)
+  
   // Filter out base reference layers (like provinces) from legend
   const activeLayersList = layers.filter(layer => 
     activeLayers.has(layer.id) && layer.id !== 'pakistan-provinces'
@@ -11,30 +42,48 @@ export default function Legend({ layers, activeLayers }) {
   }
 
   return (
-    <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1000] p-2 sm:p-3 md:p-4 min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]">
-      <h3 className="font-semibold text-gray-800 mb-2 sm:mb-3 text-xs sm:text-sm border-b border-gray-200 pb-1.5 sm:pb-2">Legend</h3>
-      <div className="space-y-2 sm:space-y-2.5 max-h-[300px] sm:max-h-[400px] overflow-y-auto">
-        {activeLayersList.map((layer) => (
-          <div key={layer.id} className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm">
-            <div className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0">
-              {layer.type === 'point' ? (
-                <div 
-                  className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border-2 border-white shadow-sm"
-                  style={{ backgroundColor: layer.color }}
-                />
-              ) : (
-                <div
-                  className="w-4 h-4 sm:w-5 sm:h-5 border-2 rounded"
-                  style={{ 
-                    borderColor: layer.color,
-                    backgroundColor: `${layer.color}55`
-                  }}
-                />
-              )}
-            </div>
-            <span className="text-gray-700 text-xs leading-tight truncate">{layer.name}</span>
-          </div>
-        ))}
+    <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1000] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]">
+      <div className="flex items-center justify-between p-2 sm:p-3 border-b border-gray-200">
+        <h3 className="font-semibold text-gray-800 text-xs sm:text-sm">Legend</h3>
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="p-1 text-gray-600 hover:text-green-600 hover:bg-green-100 rounded-lg transition-all"
+          aria-label={isExpanded ? 'Collapse' : 'Expand'}
+          title={isExpanded ? 'Collapse' : 'Expand'}
+        >
+          {isExpanded ? (
+            <FaChevronDown className="text-xs sm:text-sm" />
+          ) : (
+            <FaChevronUp className="text-xs sm:text-sm" />
+          )}
+        </button>
+      </div>
+      <div 
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isExpanded ? 'opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="p-2 sm:p-3 space-y-2 sm:space-y-2.5">
+          {activeLayersList.map((layer) => {
+            const IconComponent = layerIcons[layer.id] || FaLeaf
+            return (
+              <div key={layer.id} className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm">
+                <div className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0">
+                  <div 
+                    className="p-1 sm:p-1.5 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: `${layer.color}20` }}
+                  >
+                    <IconComponent 
+                      className="text-xs sm:text-sm" 
+                      style={{ color: layer.color }}
+                    />
+                  </div>
+                </div>
+                <span className="text-gray-700 text-xs leading-tight truncate">{layer.name}</span>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

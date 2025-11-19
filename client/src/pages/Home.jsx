@@ -112,35 +112,44 @@ export default function Home() {
                   />
                 </div>
                 
-                {/* Vertical Stack of Smaller Circles (Right Side) */}
+                {/* Cascading Chain of Smaller Circles (Right Side) */}
                 <div className="absolute left-full top-0 ml-4 lg:ml-8 hidden lg:flex flex-col -space-y-3">
-                  {heroImages.map((item, idx) => (
-                    <div 
-                      key={idx} 
-                      className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg bg-gray-200 transition-all duration-300 ${
-                        idx === currentImageIndex 
-                          ? 'border-green-400 scale-110 ring-4 ring-green-400 ring-opacity-50' 
-                          : 'border-white'
-                      }`}
-                      style={{ 
-                        borderWidth: idx === currentImageIndex ? '3px' : '2px',
-                        zIndex: heroImages.length - idx
-                      }}
-                    >
-                      <img 
-                        src={item.url} 
-                        alt={item.alt} 
-                        className="w-full h-full object-cover object-center"
-                        style={{ objectPosition: 'center center' }}
-                        loading="lazy"
-                        onError={(e) => {
-                          // Fallback to a solid color if image fails to load
-                          e.target.style.display = 'none'
-                          e.target.parentElement.style.backgroundColor = ['#22c55e', '#3b82f6', '#8b5cf6', '#f59e0b', '#06b6d4', '#10b981'][idx] || '#22c55e'
+                  {heroImages.map((item, idx) => {
+                    // Create cascading chain pattern: 
+                    // 1st: aligned left (0), 2nd: slightly right (16px), 3rd: more right (32px),
+                    // 4th: tilting back left (24px), 5th: more left (8px), 6th: aligned with first (0px)
+                    const horizontalOffsets = [0, 16, 32, 24, 8, 0] // pixels to shift right from base position
+                    const offset = horizontalOffsets[idx] || 0
+                    
+                    return (
+                      <div 
+                        key={idx} 
+                        className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg bg-gray-200 transition-all duration-300 ${
+                          idx === currentImageIndex 
+                            ? 'border-green-400 ring-4 ring-green-400 ring-opacity-50' 
+                            : 'border-white'
+                        }`}
+                        style={{ 
+                          borderWidth: idx === currentImageIndex ? '3px' : '2px',
+                          zIndex: heroImages.length - idx,
+                          transform: `translateX(${offset}px) ${idx === currentImageIndex ? 'scale(1.1)' : 'scale(1)'}`
                         }}
-                      />
-                    </div>
-                  ))}
+                      >
+                        <img 
+                          src={item.url} 
+                          alt={item.alt} 
+                          className="w-full h-full object-cover object-center"
+                          style={{ objectPosition: 'center center' }}
+                          loading="lazy"
+                          onError={(e) => {
+                            // Fallback to a solid color if image fails to load
+                            e.target.style.display = 'none'
+                            e.target.parentElement.style.backgroundColor = ['#22c55e', '#3b82f6', '#8b5cf6', '#f59e0b', '#06b6d4', '#10b981'][idx] || '#22c55e'
+                          }}
+                        />
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>

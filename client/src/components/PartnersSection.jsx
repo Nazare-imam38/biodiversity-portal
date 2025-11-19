@@ -18,11 +18,11 @@ export default function PartnersSection() {
             />
           </div>
           
-          {/* FAO Logo - Center */}
+          {/* GEF Logo - Center */}
           <div className="flex items-center justify-center" style={{ width: '140px', height: '80px' }}>
             <img 
-              src="/Assets/FAO.png" 
-              alt="Food and Agriculture Organization" 
+              src="/Assets/gef.png" 
+              alt="Global Environment Facility" 
               className="w-full h-full object-contain"
               onError={(e) => {
                 e.target.style.display = 'none'

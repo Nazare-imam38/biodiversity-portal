@@ -36,6 +36,35 @@ function Dashboard() {
     fetchLayers()
   }, [])
 
+  // Automatically toggle gb-district layer based on region selection
+  useEffect(() => {
+    if (layers.length === 0) return // Wait for layers to load
+    
+    setActiveLayers(prev => {
+      const newSet = new Set(prev)
+      
+      if (selectedRegion === 'Gilgit Baltistan') {
+        // Add gb-district layer when Gilgit Baltistan is selected
+        if (!newSet.has('gb-district')) {
+          console.log('Auto-activating gb-district layer for Gilgit Baltistan')
+          newSet.add('gb-district')
+        }
+        // Keep pakistan-provinces active for overlay
+        if (!newSet.has('pakistan-provinces')) {
+          newSet.add('pakistan-provinces')
+        }
+      } else {
+        // Remove gb-district layer when National is selected
+        if (newSet.has('gb-district')) {
+          console.log('Auto-deactivating gb-district layer for National')
+          newSet.delete('gb-district')
+        }
+      }
+      
+      return newSet
+    })
+  }, [selectedRegion, layers])
+
   const fetchLayers = async () => {
     try {
       console.log('Fetching layers from http://localhost:3001/api/layers')

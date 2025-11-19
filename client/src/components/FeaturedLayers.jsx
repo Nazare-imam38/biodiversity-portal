@@ -28,7 +28,7 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
     <div className="bg-gradient-to-r from-green-50 via-blue-50 to-green-50 border-b border-gray-200 px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-sm">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 sm:mb-3 gap-2">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 flex-1 justify-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="p-1.5 text-gray-600 hover:text-green-600 hover:bg-green-100 rounded-lg transition-all"
@@ -41,7 +41,7 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
                 <FaChevronDown className="text-sm sm:text-base" />
               )}
             </button>
-            <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wider">Quick Access - Featured Layers</h3>
+            <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wider text-center">Quick Access - Featured Layers</h3>
           </div>
           <div className="flex items-center space-x-2">
             {hasActiveFeaturedLayers && (

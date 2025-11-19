@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import shapefile from 'shapefile';
 import * as turf from '@turf/turf';
 
@@ -91,6 +91,20 @@ const layerConfig = {
     color: '#06b6d4',
     type: 'point',
     description: 'Ramsar Wetland Sites'
+  },
+  'gb-provincial': {
+    name: 'Gilgit Baltistan Provincial',
+    geojson: 'geojson/gb-provincial.geojson',
+    color: '#8b5cf6',
+    type: 'polygon',
+    description: 'Gilgit Baltistan Provincial Boundaries'
+  },
+  'gb-district': {
+    name: 'Gilgit Baltistan District',
+    geojson: 'geojson/gb-district.geojson',
+    color: '#6366f1',
+    type: 'polygon',
+    description: 'Gilgit Baltistan District Boundaries'
   }
 };
 
@@ -517,15 +531,27 @@ async function convertShapefileToGeoJSON(shapefilePath) {
 app.get('/api/layers', (req, res) => {
   try {
     const layers = Object.keys(layerConfig).map(key => {
-      const { style, ...layerWithoutStyle } = layerConfig[key];
-      return {
-        id: key,
-        ...layerWithoutStyle
-      };
+      try {
+        const layer = layerConfig[key];
+        const { style, ...layerWithoutStyle } = layer;
+        return {
+          id: key,
+          ...layerWithoutStyle
+        };
+      } catch (layerError) {
+        console.error(`Error processing layer ${key}:`, layerError);
+        // Return a minimal layer object even if there's an error
+        return {
+          id: key,
+          name: layerConfig[key]?.name || key,
+          error: 'Layer configuration error'
+        };
+      }
     });
     res.json(layers);
   } catch (error) {
     console.error('Error in /api/layers:', error);
+    console.error('Stack trace:', error.stack);
     res.status(500).json({ error: 'Failed to get layers', details: error.message });
   }
 });
@@ -555,8 +581,35 @@ app.get('/api/layers/:layerId', async (req, res) => {
     if (layer.geojson) {
       const geojsonPath = join(__dirname, '..', layer.geojson);
       console.log(`Loading GeoJSON from: ${geojsonPath}`);
-      const geojsonData = readFileSync(geojsonPath, 'utf8');
-      geoJSON = JSON.parse(geojsonData);
+      
+      // Check if file exists
+      if (!existsSync(geojsonPath)) {
+        console.error(`GeoJSON file not found: ${geojsonPath}`);
+        return res.status(404).json({ 
+          error: `GeoJSON file not found for layer ${layerId}`, 
+          path: geojsonPath 
+        });
+      }
+      
+      try {
+        const geojsonData = readFileSync(geojsonPath, 'utf8');
+        geoJSON = JSON.parse(geojsonData);
+        
+        // Validate it's a valid GeoJSON
+        if (!geoJSON || typeof geoJSON !== 'object') {
+          throw new Error('Invalid GeoJSON format: not an object');
+        }
+        if (!geoJSON.type) {
+          throw new Error('Invalid GeoJSON: missing type property');
+        }
+      } catch (parseError) {
+        console.error(`Error parsing GeoJSON file ${geojsonPath}:`, parseError);
+        return res.status(500).json({ 
+          error: `Failed to parse GeoJSON file for layer ${layerId}`, 
+          details: parseError.message,
+          path: geojsonPath
+        });
+      }
     } else if (layer.path) {
       // Fallback to shapefile conversion for boundary layer
       const shapefilePath = join(__dirname, '..', layer.path);
