@@ -57,6 +57,27 @@ export default function Home() {
   const [featuresRef, featuresVisible] = useScrollAnimation()
   const [datasetsRef, datasetsVisible] = useScrollAnimation()
 
+  // Hero section images for rotation
+  const heroImages = [
+    { url: 'https://images.unsplash.com/photo-1519003722824-194d4455a60e?w=400&h=400&fit=crop&auto=format', alt: 'Iguana' },
+    { url: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=400&fit=crop&auto=format', alt: 'Puffin' },
+    { url: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&h=400&fit=crop&auto=format', alt: 'Deer' },
+    { url: 'https://images.unsplash.com/photo-1601042879365-fe391e9f1a89?w=400&h=400&fit=crop&auto=format', alt: 'Frogs' },
+    { url: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop&auto=format', alt: 'Fish' },
+    { url: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400&h=400&fit=crop&auto=format', alt: 'Seedling' }
+  ]
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Rotate images every 2 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length)
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [heroImages.length])
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -68,32 +89,41 @@ export default function Home() {
         }}></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-            {/* Left: Main Image */}
-            <div className="lg:col-span-1 flex flex-col items-center lg:items-start">
-              <div className="relative mb-4">
-                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gray-200">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left: Main Image with Animation */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative">
+                {/* Large Animated Circle */}
+                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gray-200 relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=400&fit=crop" 
-                    alt="Waterbuck" 
-                    className="w-full h-full object-cover"
+                    key={currentImageIndex}
+                    src={heroImages[currentImageIndex].url} 
+                    alt={heroImages[currentImageIndex].alt} 
+                    className="w-full h-full object-cover animate-fadeIn"
+                    style={{ animation: 'fadeIn 0.8s ease-in-out' }}
                     onError={(e) => {
-                      // Fallback image if main image fails
-                      e.target.src = 'https://images.unsplash.com/photo-1519003722824-194d4455a60e?w=400&h=400&fit=crop'
+                      // Fallback to next image if current fails
+                      const nextIndex = (currentImageIndex + 1) % heroImages.length
+                      e.target.src = heroImages[nextIndex].url
                     }}
                   />
                 </div>
-                {/* Biodiversity Collage */}
-                <div className="absolute -right-8 top-8 hidden lg:flex flex-col space-y-2">
-                  {[
-                    { url: 'https://images.unsplash.com/photo-1519003722824-194d4455a60e?w=200&h=200&fit=crop&auto=format', alt: 'Iguana' },
-                    { url: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=200&h=200&fit=crop&auto=format', alt: 'Puffin' },
-                    { url: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=200&h=200&fit=crop&auto=format', alt: 'Fox' },
-                    { url: 'https://images.unsplash.com/photo-1601042879365-fe391e9f1a89?w=200&h=200&fit=crop&auto=format', alt: 'Turtles' },
-                    { url: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=200&h=200&fit=crop&auto=format', alt: 'Pangolin' },
-                    { url: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=200&h=200&fit=crop&auto=format', alt: 'Seedling' }
-                  ].map((item, idx) => (
-                    <div key={idx} className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-lg bg-gray-200">
+                
+                {/* Vertical Stack of Smaller Circles (Right Side) */}
+                <div className="absolute left-full top-0 ml-4 lg:ml-8 hidden lg:flex flex-col -space-y-3">
+                  {heroImages.map((item, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg bg-gray-200 transition-all duration-300 ${
+                        idx === currentImageIndex 
+                          ? 'border-green-400 scale-110 ring-4 ring-green-400 ring-opacity-50' 
+                          : 'border-white'
+                      }`}
+                      style={{ 
+                        borderWidth: idx === currentImageIndex ? '3px' : '2px',
+                        zIndex: heroImages.length - idx
+                      }}
+                    >
                       <img 
                         src={item.url} 
                         alt={item.alt} 
@@ -112,7 +142,7 @@ export default function Home() {
             </div>
 
             {/* Right: Title and Description */}
-            <div className="lg:col-span-2 text-center lg:text-left">
+            <div className="text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 Pakistan's Integrated Biodiversity Information Platform
               </h1>

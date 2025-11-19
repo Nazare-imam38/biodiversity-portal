@@ -2,7 +2,7 @@ import { FaHome, FaMap, FaDatabase, FaBook, FaFileAlt, FaShieldAlt, FaCreativeCo
 
 export default function Footer() {
   return (
-    <footer className="bg-green-600 text-white mt-auto">
+    <footer className="bg-green-900 text-white mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Column 1: Government of Pakistan */}
@@ -15,19 +15,6 @@ export default function Footer() {
             <p className="text-xs text-white opacity-80 mb-3 sm:mb-4 italic">
               In collaboration with UNDP Pakistan and Ministry of Climate Change & Environmental Coordination
             </p>
-            {/* Logos */}
-            <div className="flex items-center space-x-3 sm:space-x-4 mt-3 sm:mt-4">
-              <img 
-                src="/Assets/mocc.png" 
-                alt="Ministry of Climate Change & Environmental Coordination" 
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
-              />
-              <img 
-                src="/Assets/undp.png" 
-                alt="UNDP Pakistan" 
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
-              />
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}

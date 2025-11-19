@@ -109,14 +109,14 @@ function Dashboard() {
         onToggleLayer={toggleLayer}
         onClearAll={clearFeaturedLayers}
       />
-      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-280px)] flex-1">
+      <div className="flex flex-col lg:flex-row flex-1" style={{ minHeight: 'calc(100vh - 280px)' }}>
         <LayerPanel 
           layers={layers}
           activeLayers={activeLayers}
           onToggleLayer={toggleLayer}
           onClearAll={clearAllLayers}
         />
-        <div className="flex-1 relative min-w-0 w-full h-full">
+        <div className="flex-1 relative min-w-0 w-full" style={{ height: 'calc(100vh - 280px)' }}>
           <MapView 
             layers={layers}
             activeLayers={activeLayers}

@@ -142,6 +142,30 @@ export default function Header() {
             >
               Contact
             </a>
+            {/* Collaboration Logos */}
+            <div className="flex items-center space-x-2 ml-2 lg:ml-4 pl-2 lg:pl-4 border-l border-gray-300">
+              {!ministryLogoError ? (
+                <img 
+                  src="/Assets/mocc.png" 
+                  alt="Ministry of Climate Change & Environmental Coordination" 
+                  className="h-8 w-8 lg:h-10 lg:w-10 object-contain"
+                  onError={() => setMinistryLogoError(true)}
+                />
+              ) : (
+                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gray-200 rounded-full"></div>
+              )}
+              {!undpLogoError ? (
+                <img 
+                  src="/Assets/undp.png" 
+                  alt="UNDP Pakistan" 
+                  className="h-8 lg:h-10 w-auto object-contain"
+                  style={{ maxWidth: '100px' }}
+                  onError={() => setUndpLogoError(true)}
+                />
+              ) : (
+                <span className="text-xs lg:text-sm font-semibold text-gray-600">UNDP</span>
+              )}
+            </div>
           </nav>
         </div>
 
@@ -149,31 +173,8 @@ export default function Header() {
 
       {/* Collaboration Banner */}
       <div className="bg-green-600 text-white px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm">
-        <div className="text-center mb-2 sm:mb-3 text-xs sm:text-sm px-2">
+        <div className="text-center text-xs sm:text-sm px-2">
           In collaboration with UNDP Pakistan and Ministry of Climate Change & Environmental Coordination
-        </div>
-        <div className="flex items-center justify-center space-x-3 sm:space-x-6">
-          {!undpLogoError ? (
-            <img 
-              src="/undp.png" 
-              alt="UNDP Logo" 
-              className="h-12 sm:h-16 object-contain"
-              style={{ maxWidth: '150px' }}
-              onError={() => setUndpLogoError(true)}
-            />
-          ) : (
-            <span className="text-xs sm:text-sm font-semibold">UNDP</span>
-          )}
-          {!ministryLogoError ? (
-            <img 
-              src="/mocc.png" 
-              alt="Ministry of Climate Change & Environmental Coordination Logo" 
-              className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
-              onError={() => setMinistryLogoError(true)}
-            />
-          ) : (
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full"></div>
-          )}
         </div>
       </div>
 
@@ -314,31 +315,8 @@ export default function Header() {
 
         {/* Collaboration Section in Drawer */}
         <div className="bg-green-600 text-white p-4 border-t border-green-700 flex-shrink-0">
-          <div className="text-center mb-3 text-xs px-2">
+          <div className="text-center text-xs px-2">
             In collaboration with UNDP Pakistan and Ministry of Climate Change & Environmental Coordination
-          </div>
-          <div className="flex items-center justify-center space-x-4">
-            {!undpLogoError ? (
-              <img 
-                src="/undp.png" 
-                alt="UNDP Logo" 
-                className="h-12 object-contain"
-                style={{ maxWidth: '120px' }}
-                onError={() => setUndpLogoError(true)}
-              />
-            ) : (
-              <span className="text-xs font-semibold">UNDP</span>
-            )}
-            {!ministryLogoError ? (
-              <img 
-                src="/mocc.png" 
-                alt="Ministry of Climate Change & Environmental Coordination Logo" 
-                className="h-12 w-12 object-contain"
-                onError={() => setMinistryLogoError(true)}
-              />
-            ) : (
-              <div className="w-12 h-12 bg-white rounded-full"></div>
-            )}
           </div>
         </div>
       </div>
