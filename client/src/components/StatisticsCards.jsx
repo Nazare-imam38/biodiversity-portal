@@ -1,4 +1,4 @@
-import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaArrowDown } from 'react-icons/fa'
+import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf } from 'react-icons/fa'
 
 export default function StatisticsCards({ layerData, activeLayers }) {
   // Calculate statistics from active layers
@@ -16,9 +16,17 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     { 
       label: 'Total Provincial Area', 
       value: stats.totalProvincialArea, 
-      color: 'bg-green-500',
+      color: 'bg-blue-500',
       icon: FaGlobe,
-      iconColor: 'text-green-600'
+      iconColor: 'text-blue-600'
+    },
+    { 
+      label: '', 
+      value: '56%',
+      subtitle: 'Current protected coverage',
+      color: 'bg-yellow-500',
+      icon: FaShieldAlt,
+      iconColor: 'text-yellow-600'
     },
     { 
       label: '', 
@@ -37,25 +45,20 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       iconColor: 'text-purple-600'
     },
     { 
-      label: 'Protected Areas', 
-      value: stats.protectedAreas, 
-      color: 'bg-yellow-500',
-      icon: FaShieldAlt,
-      iconColor: 'text-yellow-600'
-    },
-    { 
-      label: 'Species at Risk', 
-      value: stats.speciesAtRisk, 
+      label: '', 
+      value: '94%',
+      subtitle: 'Protected Areas Coverage of (KBAs)',
       color: 'bg-red-500',
       icon: FaExclamationTriangle,
       iconColor: 'text-red-600'
     },
     { 
-      label: 'Deforestation Rate', 
-      value: stats.deforestationRate, 
-      color: 'bg-orange-500',
-      icon: FaArrowDown,
-      iconColor: 'text-orange-600'
+      label: '', 
+      value: '830709 Mg/Km2',
+      subtitle: 'Carbon Storage',
+      color: 'bg-green-600',
+      icon: FaLeaf,
+      iconColor: 'text-green-700'
     }
   ]
 
