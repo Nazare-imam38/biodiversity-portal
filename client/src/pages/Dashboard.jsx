@@ -116,7 +116,7 @@ function Dashboard() {
           onToggleLayer={toggleLayer}
           onClearAll={clearAllLayers}
         />
-        <div className="flex-1 relative min-w-0 w-full" style={{ height: 'calc(100vh - 70px)' }}>
+        <div className="flex-1 relative min-w-0 w-full" style={{ height: 'calc(100vh - 50px)' }}>
           <MapView 
             layers={layers}
             activeLayers={activeLayers}
