@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { 
   FaLeaf, 
   FaTree, 
@@ -26,15 +26,19 @@ const layerIcons = {
   'ramsar-sites': FaWater,
 }
 
-export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClearAll }) {
+export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClearAll, showMobileButton = true, isOpen: externalIsOpen, setIsOpen: externalSetIsOpen }) {
   const [isMobile, setIsMobile] = useState(false)
   // Desktop: open by default, Mobile: closed by default
-  const [isOpen, setIsOpen] = useState(() => {
+  const [internalIsOpen, setInternalIsOpen] = useState(() => {
     if (typeof window !== 'undefined') {
       return window.innerWidth >= 1024
     }
     return true
   })
+  
+  // Use external state if provided, otherwise use internal state
+  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen
+  const setIsOpen = externalSetIsOpen || setInternalIsOpen
 
   useEffect(() => {
     const checkMobile = () => {
@@ -53,17 +57,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
 
   return (
     <>
-      {/* Mobile toggle button - Fixed position */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed bottom-6 right-6 z-50 bg-green-600 text-white p-4 rounded-full shadow-2xl hover:bg-green-700 transition-all transform hover:scale-110 active:scale-95"
-        aria-label="Toggle layers panel"
-        style={{ 
-          boxShadow: '0 10px 25px rgba(34, 197, 94, 0.4)'
-        }}
-      >
-        {isOpen ? <FaTimes className="text-white text-xl" /> : <FaBars className="text-white text-xl" />}
-      </button>
+      {/* Mobile toggle button is now rendered in Dashboard inside map container */}
 
       {/* Desktop Sidebar / Mobile Bottom Sheet */}
       <div
@@ -132,7 +126,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
       </div>
 
       {/* Overlay for mobile bottom sheet */}
-      {isOpen && (
+      {isOpen && isMobile && (
         <div
           className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30 transition-opacity duration-300"
           onClick={() => setIsOpen(false)}

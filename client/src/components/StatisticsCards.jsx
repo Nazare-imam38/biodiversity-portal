@@ -1,10 +1,11 @@
-import { FaTree, FaMapMarkerAlt, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaArrowDown } from 'react-icons/fa'
+import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaArrowDown } from 'react-icons/fa'
 
 export default function StatisticsCards({ layerData, activeLayers }) {
   // Calculate statistics from active layers
   const stats = {
-    forestCover: '4.8%',
-    biodiversityHotspots: activeLayers.size > 0 ? activeLayers.size * 6 : 36,
+    totalProvincialArea: '729,71 Sq Km',
+    forestArea: '329,721 Hectare',
+    totalProvincialAreaHectares: '729,710,0 Hectares',
     restorationAreas: '1.2M ha',
     protectedAreas: '14.1%',
     speciesAtRisk: 177,
@@ -13,22 +14,24 @@ export default function StatisticsCards({ layerData, activeLayers }) {
 
   const cards = [
     { 
-      label: 'Forest Cover', 
-      value: stats.forestCover, 
+      label: 'Total Provincial Area', 
+      value: stats.totalProvincialArea, 
+      color: 'bg-green-500',
+      icon: FaGlobe,
+      iconColor: 'text-green-600'
+    },
+    { 
+      label: '', 
+      value: `Forest Area ${stats.forestArea}`,
+      subtitle: `Total Provincial Area ${stats.totalProvincialAreaHectares}`,
       color: 'bg-green-500',
       icon: FaTree,
       iconColor: 'text-green-600'
     },
     { 
-      label: 'Biodiversity Hotspots', 
-      value: stats.biodiversityHotspots, 
-      color: 'bg-blue-500',
-      icon: FaMapMarkerAlt,
-      iconColor: 'text-blue-600'
-    },
-    { 
-      label: 'Restoration Areas', 
-      value: stats.restorationAreas, 
+      label: '', 
+      value: 'Degraded Ecosystems',
+      subtitle: 'Enhancement 2299 Hectare\nDeforestation 485 Hectare',
       color: 'bg-purple-500',
       icon: FaSeedling,
       iconColor: 'text-purple-600'
@@ -68,8 +71,13 @@ export default function StatisticsCards({ layerData, activeLayers }) {
             <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${card.color} rounded-lg mb-2 sm:mb-3 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg`}>
               <IconComponent className={`text-base sm:text-lg md:text-xl ${card.iconColor} opacity-90 transition-all duration-300`} />
             </div>
-            <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 truncate">{card.value}</div>
-            <div className="text-xs text-gray-600 transition-colors duration-300 line-clamp-2">{card.label}</div>
+            <div className="text-sm sm:text-base md:text-lg font-bold text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight">{card.value}</div>
+            {card.subtitle && (
+              <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.subtitle}</div>
+            )}
+            {card.label && (
+              <div className="text-xs text-gray-600 transition-colors duration-300 line-clamp-2">{card.label}</div>
+            )}
           </div>
         )
       })}

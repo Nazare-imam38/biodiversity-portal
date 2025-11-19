@@ -62,6 +62,50 @@ function MapBoundsController() {
   return null
 }
 
+// Component to handle map resize on mobile
+function MapResizer() {
+  const map = useMap()
+  
+  useEffect(() => {
+    // Trigger resize after a short delay to ensure container is rendered
+    // This is critical for mobile devices
+    const timeoutId = setTimeout(() => {
+      map.invalidateSize()
+    }, 100)
+    
+    // Also resize after a longer delay to catch any layout shifts
+    const timeoutId2 = setTimeout(() => {
+      map.invalidateSize()
+    }, 500)
+    
+    // Also resize on window resize and orientation change
+    const handleResize = () => {
+      setTimeout(() => {
+        map.invalidateSize()
+      }, 100)
+    }
+    
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('orientationchange', handleResize)
+    
+    // Force resize when map is ready
+    map.whenReady(() => {
+      setTimeout(() => {
+        map.invalidateSize()
+      }, 200)
+    })
+    
+    return () => {
+      clearTimeout(timeoutId)
+      clearTimeout(timeoutId2)
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('orientationchange', handleResize)
+    }
+  }, [map])
+  
+  return null
+}
+
 export default function MapView({ layers, activeLayers }) {
   const geoJsonRefs = useRef({})
   const [layerData, setLayerData] = useState({})
@@ -258,11 +302,11 @@ export default function MapView({ layers, activeLayers }) {
   const activeLayersList = layers.filter(l => activeLayers.has(l.id))
 
   return (
-    <div className="relative w-full" style={{ height: '100%', width: '100%', minHeight: '400px' }}>
+    <div className="relative w-full" style={{ height: '100%', width: '100%', minHeight: '400px', position: 'relative' }}>
       <MapContainer
         center={mapCenter}
         zoom={mapZoom}
-        style={{ height: '100%', width: '100%' }}
+        style={{ height: '100%', width: '100%', position: 'relative' }}
         zoomControl={true}
         maxZoom={18}
         minZoom={4}
@@ -281,6 +325,7 @@ export default function MapView({ layers, activeLayers }) {
         
         <BaseMapSwitcher baseMap={baseMap} onBaseMapChange={setBaseMap} />
         <MapBoundsController />
+        <MapResizer />
         
         {Array.from(activeLayers).map((layerId) => {
           const layer = layers.find(l => l.id === layerId)

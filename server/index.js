@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { readFileSync } from 'fs';
 import shapefile from 'shapefile';
 import * as turf from '@turf/turf';
 
@@ -514,14 +515,19 @@ async function convertShapefileToGeoJSON(shapefilePath) {
 
 // Get list of available layers
 app.get('/api/layers', (req, res) => {
-  const layers = Object.keys(layerConfig).map(key => {
-    const { style, ...layerWithoutStyle } = layerConfig[key];
-    return {
-      id: key,
-      ...layerWithoutStyle
-    };
-  });
-  res.json(layers);
+  try {
+    const layers = Object.keys(layerConfig).map(key => {
+      const { style, ...layerWithoutStyle } = layerConfig[key];
+      return {
+        id: key,
+        ...layerWithoutStyle
+      };
+    });
+    res.json(layers);
+  } catch (error) {
+    console.error('Error in /api/layers:', error);
+    res.status(500).json({ error: 'Failed to get layers', details: error.message });
+  }
 });
 
 // Get GeoJSON for a specific layer
@@ -549,7 +555,6 @@ app.get('/api/layers/:layerId', async (req, res) => {
     if (layer.geojson) {
       const geojsonPath = join(__dirname, '..', layer.geojson);
       console.log(`Loading GeoJSON from: ${geojsonPath}`);
-      const { readFileSync } = await import('fs');
       const geojsonData = readFileSync(geojsonPath, 'utf8');
       geoJSON = JSON.parse(geojsonData);
     } else if (layer.path) {
@@ -597,17 +602,28 @@ app.get('/api/health', (req, res) => {
 
 // Load Pakistan boundary on startup
 loadPakistanBoundary().then(() => {
-  app.listen(PORT, () => {
-    console.log(`🚀 Biodiversity Portal API server running on http://localhost:${PORT}`);
-    console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
-  });
+  startServer();
 }).catch((error) => {
   console.error('Error loading Pakistan boundary:', error);
+  console.error('Stack:', error.stack);
   // Start server anyway with default bounds
-  app.listen(PORT, () => {
-    console.log(`🚀 Biodiversity Portal API server running on http://localhost:${PORT}`);
-    console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
-    console.log('⚠️  Using default Pakistan bounds');
-  });
+  startServer(true);
 });
+
+function startServer(usingDefaultBounds = false) {
+  try {
+    app.listen(PORT, () => {
+      console.log(`🚀 Biodiversity Portal API server running on http://localhost:${PORT}`);
+      console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
+      if (usingDefaultBounds) {
+        console.log('⚠️  Using default Pakistan bounds');
+      }
+      console.log('✅ Server is ready to accept requests');
+    });
+  } catch (error) {
+    console.error('❌ Failed to start server:', error);
+    console.error('Stack:', error.stack);
+    process.exit(1);
+  }
+}
 

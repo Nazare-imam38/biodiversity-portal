@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import MapView from '../components/MapView'
 import LayerPanel from '../components/LayerPanel'
 import LoadingSpinner from '../components/LoadingSpinner'
@@ -13,6 +14,22 @@ function Dashboard() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [layerData, setLayerData] = useState({})
+  const [isMobile, setIsMobile] = useState(false)
+  const [isLayerPanelOpen, setIsLayerPanelOpen] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth >= 1024
+    }
+    return true
+  })
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     fetchLayers()
@@ -110,14 +127,34 @@ function Dashboard() {
         onToggleLayer={toggleLayer}
         onClearAll={clearFeaturedLayers}
       />
-      <div className="flex flex-col lg:flex-row flex-1" style={{ minHeight: 'calc(100vh - 280px)' }}>
+      <div className="flex flex-col lg:flex-row flex-1" style={{ minHeight: isMobile ? 'auto' : 'calc(100vh - 280px)' }}>
         <LayerPanel 
           layers={layers}
           activeLayers={activeLayers}
           onToggleLayer={toggleLayer}
           onClearAll={clearAllLayers}
+          showMobileButton={false}
+          isOpen={isLayerPanelOpen}
+          setIsOpen={setIsLayerPanelOpen}
         />
-        <div className="flex-1 relative min-w-0 w-full" style={{ height: 'calc(100vh - 50px)' }}>
+        <div className="flex-1 relative min-w-0 w-full" style={{ 
+          height: isMobile ? 'calc(100vh - 280px)' : 'calc(100vh - 50px)',
+          minHeight: '400px',
+          maxHeight: isMobile ? 'calc(100vh - 280px)' : 'none'
+        }}>
+          {/* Mobile toggle button - Fixed to map container */}
+          {isMobile && (
+            <button
+              onClick={() => setIsLayerPanelOpen(!isLayerPanelOpen)}
+              className="lg:hidden absolute bottom-6 right-6 z-50 bg-green-600 text-white p-4 rounded-full shadow-2xl hover:bg-green-700 transition-all transform hover:scale-110 active:scale-95"
+              aria-label="Toggle layers panel"
+              style={{ 
+                boxShadow: '0 10px 25px rgba(34, 197, 94, 0.4)'
+              }}
+            >
+              {isLayerPanelOpen ? <FaTimes className="text-white text-xl" /> : <FaBars className="text-white text-xl" />}
+            </button>
+          )}
           <MapView 
             layers={layers}
             activeLayers={activeLayers}
@@ -126,7 +163,7 @@ function Dashboard() {
       </div>
       
       {/* Partners Section with spacing */}
-      <div className="mt-4 sm:mt-6">
+      <div className={isMobile ? "mt-2" : "mt-4 sm:mt-6"}>
         <PartnersSection />
       </div>
       
