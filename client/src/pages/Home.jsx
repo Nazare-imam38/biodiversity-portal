@@ -122,32 +122,32 @@ export default function Home() {
                     const offset = horizontalOffsets[idx] || 0
                     
                     return (
-                      <div 
-                        key={idx} 
-                        className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg bg-gray-200 transition-all duration-300 ${
-                          idx === currentImageIndex 
+                    <div 
+                      key={idx} 
+                      className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shadow-lg bg-gray-200 transition-all duration-300 ${
+                        idx === currentImageIndex 
                             ? 'border-green-400 ring-4 ring-green-400 ring-opacity-50' 
-                            : 'border-white'
-                        }`}
-                        style={{ 
-                          borderWidth: idx === currentImageIndex ? '3px' : '2px',
+                          : 'border-white'
+                      }`}
+                      style={{ 
+                        borderWidth: idx === currentImageIndex ? '3px' : '2px',
                           zIndex: heroImages.length - idx,
                           transform: `translateX(${offset}px) ${idx === currentImageIndex ? 'scale(1.1)' : 'scale(1)'}`
+                      }}
+                    >
+                      <img 
+                        src={item.url} 
+                        alt={item.alt} 
+                        className="w-full h-full object-cover object-center"
+                        style={{ objectPosition: 'center center' }}
+                        loading="lazy"
+                        onError={(e) => {
+                          // Fallback to a solid color if image fails to load
+                          e.target.style.display = 'none'
+                          e.target.parentElement.style.backgroundColor = ['#22c55e', '#3b82f6', '#8b5cf6', '#f59e0b', '#06b6d4', '#10b981'][idx] || '#22c55e'
                         }}
-                      >
-                        <img 
-                          src={item.url} 
-                          alt={item.alt} 
-                          className="w-full h-full object-cover object-center"
-                          style={{ objectPosition: 'center center' }}
-                          loading="lazy"
-                          onError={(e) => {
-                            // Fallback to a solid color if image fails to load
-                            e.target.style.display = 'none'
-                            e.target.parentElement.style.backgroundColor = ['#22c55e', '#3b82f6', '#8b5cf6', '#f59e0b', '#06b6d4', '#10b981'][idx] || '#22c55e'
-                          }}
-                        />
-                      </div>
+                      />
+                    </div>
                     )
                   })}
                 </div>

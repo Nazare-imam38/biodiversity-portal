@@ -146,8 +146,10 @@ export default function MapView({ layers, activeLayers }) {
           })
           
           try {
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001'
-            const response = await fetch(`${apiUrl}/api/layers/${layerId}`)
+            // Use relative URL when served from same domain, otherwise use env var or localhost
+            const apiUrl = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' ? '' : 'http://localhost:3001')
+            const apiEndpoint = apiUrl ? `${apiUrl}/api/layers/${layerId}` : `/api/layers/${layerId}`
+            const response = await fetch(apiEndpoint)
             if (!response.ok) {
               const errorData = await response.json().catch(() => ({}))
               throw new Error(errorData.error || `Failed to load ${layerId}: ${response.status}`)

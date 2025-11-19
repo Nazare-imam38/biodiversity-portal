@@ -67,9 +67,11 @@ function Dashboard() {
 
   const fetchLayers = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001'
-      console.log(`Fetching layers from ${apiUrl}/api/layers`)
-      const response = await fetch(`${apiUrl}/api/layers`)
+      // Use relative URL when served from same domain, otherwise use env var or localhost
+      const apiUrl = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' ? '' : 'http://localhost:3001')
+      const apiEndpoint = apiUrl ? `${apiUrl}/api/layers` : '/api/layers'
+      console.log(`Fetching layers from ${apiEndpoint}`)
+      const response = await fetch(apiEndpoint)
       if (!response.ok) {
         throw new Error(`Failed to fetch layers: ${response.status} ${response.statusText}`)
       }
@@ -179,7 +181,7 @@ function Dashboard() {
       
       {/* Statistics Cards - Only show when Gilgit Baltistan is selected */}
       {selectedRegion === 'Gilgit Baltistan' && (
-        <StatisticsCards layerData={layerData} activeLayers={activeLayers} />
+      <StatisticsCards layerData={layerData} activeLayers={activeLayers} />
       )}
       <FeaturedLayers 
         layers={layers}

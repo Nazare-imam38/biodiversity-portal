@@ -530,14 +530,14 @@ async function convertShapefileToGeoJSON(shapefilePath) {
 // Get list of available layers
 app.get('/api/layers', (req, res) => {
   try {
-    const layers = Object.keys(layerConfig).map(key => {
+  const layers = Object.keys(layerConfig).map(key => {
       try {
         const layer = layerConfig[key];
         const { style, ...layerWithoutStyle } = layer;
-        return {
-          id: key,
-          ...layerWithoutStyle
-        };
+    return {
+      id: key,
+      ...layerWithoutStyle
+    };
       } catch (layerError) {
         console.error(`Error processing layer ${key}:`, layerError);
         // Return a minimal layer object even if there's an error
@@ -547,8 +547,8 @@ app.get('/api/layers', (req, res) => {
           error: 'Layer configuration error'
         };
       }
-    });
-    res.json(layers);
+  });
+  res.json(layers);
   } catch (error) {
     console.error('Error in /api/layers:', error);
     console.error('Stack trace:', error.stack);
@@ -592,8 +592,8 @@ app.get('/api/layers/:layerId', async (req, res) => {
       }
       
       try {
-        const geojsonData = readFileSync(geojsonPath, 'utf8');
-        geoJSON = JSON.parse(geojsonData);
+      const geojsonData = readFileSync(geojsonPath, 'utf8');
+      geoJSON = JSON.parse(geojsonData);
         
         // Validate it's a valid GeoJSON
         if (!geoJSON || typeof geoJSON !== 'object') {
@@ -653,6 +653,27 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Biodiversity Portal API is running' });
 });
 
+// Serve frontend static files (in production)
+const clientDistPath = join(__dirname, '../client/dist');
+if (existsSync(clientDistPath)) {
+  // Serve static assets
+  app.use(express.static(clientDistPath));
+  
+  // Catch-all handler: send back React's index.html file for SPA routing
+  app.get('*', (req, res) => {
+    // Don't serve index.html for API routes
+    if (req.path.startsWith('/api')) {
+      return res.status(404).json({ error: 'API endpoint not found' });
+    }
+    res.sendFile(join(clientDistPath, 'index.html'));
+  });
+  
+  console.log('📦 Frontend build found - serving from:', clientDistPath);
+} else {
+  console.log('⚠️  Frontend build not found at:', clientDistPath);
+  console.log('   API-only mode - frontend must be built separately');
+}
+
 // Load Pakistan boundary on startup
 loadPakistanBoundary().then(() => {
   startServer();
@@ -665,14 +686,14 @@ loadPakistanBoundary().then(() => {
 
 function startServer(usingDefaultBounds = false) {
   try {
-    app.listen(PORT, () => {
-      console.log(`🚀 Biodiversity Portal API server running on http://localhost:${PORT}`);
-      console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
+  app.listen(PORT, () => {
+    console.log(`🚀 Biodiversity Portal API server running on http://localhost:${PORT}`);
+    console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
       if (usingDefaultBounds) {
-        console.log('⚠️  Using default Pakistan bounds');
+    console.log('⚠️  Using default Pakistan bounds');
       }
       console.log('✅ Server is ready to accept requests');
-    });
+});
   } catch (error) {
     console.error('❌ Failed to start server:', error);
     console.error('Stack:', error.stack);

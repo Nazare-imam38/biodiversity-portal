@@ -1,25 +1,18 @@
 services:
-  # Backend API Service
+  # Combined Backend + Frontend Service
   - type: web
-    name: biodiversity-portal-api
+    name: biodiversity-portal
     env: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm run install:all && cd client && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         generateValue: true
-
-  # Frontend Static Site
-  - type: static
-    name: biodiversity-portal-frontend
-    buildCommand: cd client && npm install && npm run build
-    staticPublishPath: ./client/dist
-    envVars:
       - key: VITE_API_URL
         sync: false
-        # Set this to your backend URL after backend deployment
-        # Example: https://biodiversity-portal-api.onrender.com
+        # This will be set automatically to the service URL
+        # Or set manually to: https://biodiversity-portal.onrender.com
 
