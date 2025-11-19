@@ -4,6 +4,7 @@ import LayerPanel from '../components/LayerPanel'
 import LoadingSpinner from '../components/LoadingSpinner'
 import StatisticsCards from '../components/StatisticsCards'
 import FeaturedLayers from '../components/FeaturedLayers'
+import PartnersSection from '../components/PartnersSection'
 import ScrollToFooter from '../components/ScrollToFooter'
 
 function Dashboard() {
@@ -123,6 +124,12 @@ function Dashboard() {
           />
         </div>
       </div>
+      
+      {/* Partners Section with spacing */}
+      <div className="mt-4 sm:mt-6">
+        <PartnersSection />
+      </div>
+      
       <ScrollToFooter />
     </div>
   )

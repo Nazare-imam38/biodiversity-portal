@@ -76,7 +76,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
           // Desktop: maximize height to show all 9 layers without scrolling
           maxHeight: !isMobile ? '100%' : (isOpen ? '85vh' : '0'),
           height: !isMobile ? 'calc(100vh - 50px)' : (isOpen ? '85vh' : '0'),
-          top: !isMobile ? '50px' : 'auto',
+          top: !isMobile ? 'auto' : (isOpen ? 'auto' : 'auto'),
           minHeight: !isMobile ? 'calc(100vh - 50px)' : 'auto'
         }}
       >

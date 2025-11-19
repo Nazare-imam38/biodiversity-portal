@@ -2,7 +2,7 @@ import { FaHome, FaMap, FaDatabase, FaBook, FaFileAlt, FaShieldAlt, FaCreativeCo
 
 export default function Footer() {
   return (
-    <footer className="bg-green-900 text-white mt-auto">
+    <footer className="bg-green-900 text-white mt-auto pt-4 sm:pt-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Column 1: Government of Pakistan */}

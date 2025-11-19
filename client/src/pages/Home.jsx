@@ -59,12 +59,12 @@ export default function Home() {
 
   // Hero section images for rotation
   const heroImages = [
-    { url: 'https://images.unsplash.com/photo-1519003722824-194d4455a60e?w=400&h=400&fit=crop&auto=format', alt: 'Iguana' },
-    { url: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=400&fit=crop&auto=format', alt: 'Puffin' },
-    { url: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&h=400&fit=crop&auto=format', alt: 'Deer' },
-    { url: 'https://images.unsplash.com/photo-1601042879365-fe391e9f1a89?w=400&h=400&fit=crop&auto=format', alt: 'Frogs' },
-    { url: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop&auto=format', alt: 'Fish' },
-    { url: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400&h=400&fit=crop&auto=format', alt: 'Seedling' }
+    { url: 'https://images.pexels.com/photos/14681717/pexels-photo-14681717.jpeg', alt: 'Biodiversity Image 1' },
+    { url: 'https://images.pexels.com/photos/1000057/pexels-photo-1000057.jpeg', alt: 'Biodiversity Image 2' },
+    { url: 'https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg', alt: 'Biodiversity Image 3' },
+    { url: 'https://images.pexels.com/photos/26586553/pexels-photo-26586553.jpeg', alt: 'Biodiversity Image 4' },
+    { url: 'https://images.pexels.com/photos/4055789/pexels-photo-4055789.jpeg', alt: 'Biodiversity Image 5' },
+    { url: 'https://images.pexels.com/photos/17811/pexels-photo.jpg', alt: 'Biodiversity Image 6' }
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -99,8 +99,11 @@ export default function Home() {
                     key={currentImageIndex}
                     src={heroImages[currentImageIndex].url} 
                     alt={heroImages[currentImageIndex].alt} 
-                    className="w-full h-full object-cover animate-fadeIn"
-                    style={{ animation: 'fadeIn 0.8s ease-in-out' }}
+                    className="w-full h-full object-cover object-center animate-fadeIn"
+                    style={{ 
+                      animation: 'fadeIn 0.8s ease-in-out',
+                      objectPosition: 'center center'
+                    }}
                     onError={(e) => {
                       // Fallback to next image if current fails
                       const nextIndex = (currentImageIndex + 1) % heroImages.length
@@ -127,7 +130,8 @@ export default function Home() {
                       <img 
                         src={item.url} 
                         alt={item.alt} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
+                        style={{ objectPosition: 'center center' }}
                         loading="lazy"
                         onError={(e) => {
                           // Fallback to a solid color if image fails to load
