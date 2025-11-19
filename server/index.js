@@ -22,8 +22,7 @@ app.use('/geojson', express.static(join(__dirname, '../geojson')));
 const layerConfig = {
   'pakistan-provinces': {
     name: 'Pakistan Provinces',
-    path: 'Assets/pak_admbnda_adm2_wfp_20220909.shp',
-    geojson: null, // Still use shapefile for boundary
+    geojson: 'geojson/pakistan-provinces.geojson',
     color: '#000000',
     type: 'polygon',
     description: 'Pakistan Provincial Boundaries',
@@ -122,26 +121,26 @@ let PAKISTAN_BOUNDARY = null;
 // Cache for processed GeoJSON layers to avoid reprocessing
 const layerCache = new Map();
 
-// Load Pakistan boundary from adm2 shapefile
+// Load Pakistan boundary from GeoJSON file
 async function loadPakistanBoundary() {
   try {
-    const adm2Path = join(__dirname, '..', 'Assets', 'pak_admbnda_adm2_wfp_20220909.shp');
-    console.log('Loading Pakistan boundary from adm2 shapefile...');
-    const source = await shapefile.open(adm2Path);
-    const features = [];
+    const geojsonPath = join(__dirname, '..', 'geojson', 'pakistan-provinces.geojson');
+    console.log('Loading Pakistan boundary from GeoJSON...');
     
-    let result = await source.read();
-    while (!result.done) {
-      if (result.value && result.value.geometry) {
-        features.push(result.value);
-      }
-      result = await source.read();
-    }
-    
-    if (features.length === 0) {
-      console.warn('No features found in adm2 shapefile, using default bounds');
+    if (!existsSync(geojsonPath)) {
+      console.warn('Pakistan provinces GeoJSON not found, using default bounds');
       return;
     }
+    
+    const geojsonData = readFileSync(geojsonPath, 'utf8');
+    const geoJSON = JSON.parse(geojsonData);
+    
+    if (!geoJSON || !geoJSON.features || geoJSON.features.length === 0) {
+      console.warn('No features found in GeoJSON, using default bounds');
+      return;
+    }
+    
+    const features = geoJSON.features;
     
     // Create a union of all adm2 polygons to get Pakistan boundary
     let pakistanUnion = null;
