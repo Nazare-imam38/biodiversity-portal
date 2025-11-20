@@ -1,4 +1,4 @@
-import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaTrashAlt } from 'react-icons/fa'
+import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut } from 'react-icons/fa'
 
 export default function StatisticsCards({ layerData, activeLayers }) {
   // Calculate statistics from active layers
@@ -49,7 +49,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       value: '485 Hectare Deforestation',
       subtitle: 'Degraded Ecosystems',
       color: 'bg-red-600',
-      icon: FaTrashAlt,
+      icon: FaCut,
       iconColor: 'text-red-800'
     },
     { 
