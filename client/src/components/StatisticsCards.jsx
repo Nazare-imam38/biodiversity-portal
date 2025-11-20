@@ -74,7 +74,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
             <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${card.color} rounded-lg mb-2 sm:mb-3 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg`}>
               <IconComponent className={`text-base sm:text-lg md:text-xl ${card.iconColor} opacity-90 transition-all duration-300`} />
             </div>
-            <div className="text-sm sm:text-base md:text-lg font-bold text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight">{card.value}</div>
+            <div className="text-sm sm:text-base md:text-lg font-bold text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight whitespace-pre-line">{card.value}</div>
             {card.subtitle && (
               <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.subtitle}</div>
             )}
