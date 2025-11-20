@@ -38,7 +38,15 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     },
     { 
       label: '', 
-      value: '2299 Hectare Enhancement\n485 Hectare Deforestation',
+      value: '2299 Hectare Enhancement',
+      subtitle: 'Degraded Ecosystems',
+      color: 'bg-green-600',
+      icon: FaSeedling,
+      iconColor: 'text-green-800'
+    },
+    { 
+      label: '', 
+      value: '485 Hectare Deforestation',
       subtitle: 'Degraded Ecosystems',
       color: 'bg-purple-500',
       icon: FaSeedling,
@@ -63,7 +71,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
   ]
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4 py-3 sm:py-4 bg-white border-b border-gray-200 overflow-x-auto">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4 py-3 sm:py-4 bg-white border-b border-gray-200 overflow-x-auto">
       {cards.map((card, index) => {
         const IconComponent = card.icon
         return (

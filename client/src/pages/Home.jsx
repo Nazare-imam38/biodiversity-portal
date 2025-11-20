@@ -111,21 +111,21 @@ export default function Home() {
                 {/* Large Animated Circle */}
                 <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gray-200 relative">
                   <div className="w-full h-full overflow-hidden" style={{ transform: 'scale(1.4)', transformOrigin: 'center center' }}>
-                    <img 
-                      key={currentImageIndex}
-                      src={heroImages[currentImageIndex].url} 
-                      alt={heroImages[currentImageIndex].alt} 
+                  <img 
+                    key={currentImageIndex}
+                    src={heroImages[currentImageIndex].url} 
+                    alt={heroImages[currentImageIndex].alt} 
                       className="w-full h-full object-cover animate-fadeIn"
-                      style={{ 
-                        animation: 'fadeIn 0.8s ease-in-out',
+                    style={{ 
+                      animation: 'fadeIn 0.8s ease-in-out',
                         objectPosition: currentImageIndex === 4 ? 'center 15%' : 'center 25%'
-                      }}
-                      onError={(e) => {
-                        // Fallback to next image if current fails
-                        const nextIndex = (currentImageIndex + 1) % heroImages.length
-                        e.target.src = heroImages[nextIndex].url
-                      }}
-                    />
+                    }}
+                    onError={(e) => {
+                      // Fallback to next image if current fails
+                      const nextIndex = (currentImageIndex + 1) % heroImages.length
+                      e.target.src = heroImages[nextIndex].url
+                    }}
+                  />
                   </div>
                 </div>
                 
@@ -153,21 +153,21 @@ export default function Home() {
                       }}
                     >
                       <div className="w-full h-full overflow-hidden" style={{ transform: 'scale(1.4)', transformOrigin: 'center center' }}>
-                        <img 
-                          src={item.url} 
-                          alt={item.alt} 
+                      <img 
+                        src={item.url} 
+                        alt={item.alt} 
                           className="w-full h-full object-cover"
                           style={{ objectPosition: idx === 4 ? 'center 15%' : 'center 25%' }}
-                          loading="lazy"
-                          onError={(e) => {
-                            // Fallback to a solid color if image fails to load
-                            e.target.style.display = 'none'
+                        loading="lazy"
+                        onError={(e) => {
+                          // Fallback to a solid color if image fails to load
+                          e.target.style.display = 'none'
                             const container = e.target.closest('div[class*="rounded-full"]')
                             if (container) {
                               container.style.backgroundColor = ['#22c55e', '#3b82f6', '#8b5cf6', '#f59e0b', '#06b6d4', '#10b981'][idx] || '#22c55e'
                             }
-                          }}
-                        />
+                        }}
+                      />
                       </div>
                     </div>
                     )
@@ -327,7 +327,7 @@ export default function Home() {
                 gradient: 'from-green-700 to-green-900'
               },
               { 
-                title: 'Land Degradation', 
+                title: 'Agroecological Regions', 
                 subtitle: 'Drought, Soil Health, Erosion',
                 image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop',
                 gradient: 'from-amber-600 to-amber-800'
