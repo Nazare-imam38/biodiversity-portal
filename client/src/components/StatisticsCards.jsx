@@ -14,8 +14,8 @@ export default function StatisticsCards({ layerData, activeLayers }) {
 
   const cards = [
     { 
-      label: 'Total Provincial Area', 
-      value: stats.totalProvincialArea, 
+      label: 'Sq Km Total Provincial Area', 
+      value: '729,71', 
       color: 'bg-blue-500',
       icon: FaGlobe,
       iconColor: 'text-blue-600'
@@ -64,8 +64,8 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     },
     { 
       label: '', 
-      value: '830,709 Mg/Km2',
-      subtitle: 'Carbon Storage',
+      value: '830,709',
+      subtitle: 'Mg/Km2 Carbon Storage',
       color: '#14b8a6',
       icon: FaCloud,
       iconColor: '#ffffff'
