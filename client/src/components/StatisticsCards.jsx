@@ -1,4 +1,4 @@
-import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf } from 'react-icons/fa'
+import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaFire } from 'react-icons/fa'
 
 export default function StatisticsCards({ layerData, activeLayers }) {
   // Calculate statistics from active layers
@@ -30,7 +30,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     },
     { 
       label: '', 
-      value: '329,721 Hectare Forest Area',
+      value: '329,721 Hectare',
       subtitle: 'Forest Area percentage 3.58%',
       color: 'bg-green-500',
       icon: FaTree,
@@ -48,9 +48,9 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       label: '', 
       value: '485 Hectare Deforestation',
       subtitle: 'Degraded Ecosystems',
-      color: 'bg-purple-500',
-      icon: FaSeedling,
-      iconColor: 'text-purple-600'
+      color: 'bg-red-600',
+      icon: FaFire,
+      iconColor: 'text-red-800'
     },
     { 
       label: '', 
