@@ -31,7 +31,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     { 
       label: '', 
       value: '329,721 Hectare Forest Area',
-      subtitle: 'Forest Area percentage 3.58 %',
+      subtitle: 'Forest Area percentage 3.58%',
       color: 'bg-green-500',
       icon: FaTree,
       iconColor: 'text-green-600'

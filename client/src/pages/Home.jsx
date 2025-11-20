@@ -110,21 +110,23 @@ export default function Home() {
               <div className="relative">
                 {/* Large Animated Circle */}
                 <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gray-200 relative">
-                  <img 
-                    key={currentImageIndex}
-                    src={heroImages[currentImageIndex].url} 
-                    alt={heroImages[currentImageIndex].alt} 
-                    className="w-full h-full object-cover object-center animate-fadeIn"
-                    style={{ 
-                      animation: 'fadeIn 0.8s ease-in-out',
-                      objectPosition: 'center center'
-                    }}
-                    onError={(e) => {
-                      // Fallback to next image if current fails
-                      const nextIndex = (currentImageIndex + 1) % heroImages.length
-                      e.target.src = heroImages[nextIndex].url
-                    }}
-                  />
+                  <div className="w-full h-full overflow-hidden" style={{ transform: 'scale(1.4)', transformOrigin: 'center center' }}>
+                    <img 
+                      key={currentImageIndex}
+                      src={heroImages[currentImageIndex].url} 
+                      alt={heroImages[currentImageIndex].alt} 
+                      className="w-full h-full object-cover animate-fadeIn"
+                      style={{ 
+                        animation: 'fadeIn 0.8s ease-in-out',
+                        objectPosition: 'center 25%'
+                      }}
+                      onError={(e) => {
+                        // Fallback to next image if current fails
+                        const nextIndex = (currentImageIndex + 1) % heroImages.length
+                        e.target.src = heroImages[nextIndex].url
+                      }}
+                    />
+                  </div>
                 </div>
                 
                 {/* Cascading Chain of Smaller Circles (Right Side) */}
@@ -150,18 +152,23 @@ export default function Home() {
                           transform: `translateX(${offset}px) ${idx === currentImageIndex ? 'scale(1.1)' : 'scale(1)'}`
                       }}
                     >
-                      <img 
-                        src={item.url} 
-                        alt={item.alt} 
-                        className="w-full h-full object-cover object-center"
-                        style={{ objectPosition: 'center center' }}
-                        loading="lazy"
-                        onError={(e) => {
-                          // Fallback to a solid color if image fails to load
-                          e.target.style.display = 'none'
-                          e.target.parentElement.style.backgroundColor = ['#22c55e', '#3b82f6', '#8b5cf6', '#f59e0b', '#06b6d4', '#10b981'][idx] || '#22c55e'
-                        }}
-                      />
+                      <div className="w-full h-full overflow-hidden" style={{ transform: 'scale(1.4)', transformOrigin: 'center center' }}>
+                        <img 
+                          src={item.url} 
+                          alt={item.alt} 
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: 'center 25%' }}
+                          loading="lazy"
+                          onError={(e) => {
+                            // Fallback to a solid color if image fails to load
+                            e.target.style.display = 'none'
+                            const container = e.target.closest('div[class*="rounded-full"]')
+                            if (container) {
+                              container.style.backgroundColor = ['#22c55e', '#3b82f6', '#8b5cf6', '#f59e0b', '#06b6d4', '#10b981'][idx] || '#22c55e'
+                            }
+                          }}
+                        />
+                      </div>
                     </div>
                     )
                   })}
