@@ -77,13 +77,6 @@ const layerConfig = {
     type: 'polygon',
     description: 'Protected Forest Areas'
   },
-  'sindh-forest': {
-    name: 'Sindh Forest Landscape',
-    geojson: 'geojson/sindh-forest.geojson',
-    color: '#10b981',
-    type: 'polygon',
-    description: 'Sindh Forest Landscape'
-  },
   'ramsar-sites': {
     name: 'Ramsar Sites',
     geojson: 'geojson/ramsar-sites.geojson',
@@ -713,12 +706,12 @@ function startServer(usingDefaultBounds = false) {
     const HOST = process.env.HOST || '0.0.0.0';
     app.listen(PORT, HOST, () => {
       console.log(`🚀 Biodiversity Portal API server running on http://${HOST}:${PORT}`);
-      console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
+    console.log(`📊 Available layers: ${Object.keys(layerConfig).length}`);
       if (usingDefaultBounds) {
-        console.log('⚠️  Using default Pakistan bounds');
+    console.log('⚠️  Using default Pakistan bounds');
       }
       console.log('✅ Server is ready to accept requests');
-    });
+});
   } catch (error) {
     console.error('❌ Failed to start server:', error);
     console.error('Stack:', error.stack);

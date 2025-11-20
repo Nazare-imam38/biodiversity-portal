@@ -24,7 +24,6 @@ const layerIcons = {
   'protected-areas-pol': FaShieldAlt,
   'protected-forest': FaTree,
   'ramsar-sites': FaWater,
-  'sindh-forest': FaTree,
   'gb-provincial': FaGlobe,
   'gb-district': FaMapMarkedAlt,
 }
