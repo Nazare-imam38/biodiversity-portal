@@ -62,7 +62,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     },
     { 
       label: '', 
-      value: '830709 Mg/Km2',
+      value: '830,709 Mg/Km2',
       subtitle: 'Carbon Storage',
       color: 'bg-green-600',
       icon: FaLeaf,
