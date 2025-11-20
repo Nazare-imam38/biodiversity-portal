@@ -1,4 +1,4 @@
-import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut } from 'react-icons/fa'
+import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud } from 'react-icons/fa'
 
 export default function StatisticsCards({ layerData, activeLayers }) {
   // Calculate statistics from active layers
@@ -38,7 +38,8 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     },
     { 
       label: '', 
-      value: '2299 Hectare Enhancement',
+      value: '2299',
+      valueText: 'Hectare Enhancement',
       subtitle: 'Degraded Ecosystems',
       color: 'bg-green-600',
       icon: FaSeedling,
@@ -46,7 +47,8 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     },
     { 
       label: '', 
-      value: '485 Hectare Deforestation',
+      value: '485',
+      valueText: 'Hectare Deforestation',
       subtitle: 'Degraded Ecosystems',
       color: 'bg-red-600',
       icon: FaCut,
@@ -64,8 +66,8 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       label: '', 
       value: '830,709 Mg/Km2',
       subtitle: 'Carbon Storage',
-      color: 'bg-green-600',
-      icon: FaLeaf,
+      color: '#2e2e2e',
+      icon: FaCloud,
       iconColor: '#2e2e2e'
     }
   ]
@@ -79,13 +81,19 @@ export default function StatisticsCards({ layerData, activeLayers }) {
             key={index}
             className="stat-card bg-white rounded-lg border border-gray-200 p-2 sm:p-3 md:p-4 shadow-sm hover:shadow-lg hover:border-green-400 hover:ring-2 hover:ring-green-300 hover:ring-opacity-50 transition-all duration-300 cursor-pointer transform hover:scale-105 min-w-0"
           >
-            <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${card.color} rounded-lg mb-2 sm:mb-3 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg`}>
+            <div 
+              className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${card.color.startsWith('#') ? '' : card.color} rounded-lg mb-2 sm:mb-3 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg`}
+              style={card.color.startsWith('#') ? { backgroundColor: card.color } : {}}
+            >
               <IconComponent 
                 className={`text-base sm:text-lg md:text-xl opacity-90 transition-all duration-300 ${card.iconColor.startsWith('#') ? '' : card.iconColor}`}
                 style={card.iconColor.startsWith('#') ? { color: card.iconColor } : {}}
               />
             </div>
-            <div className="text-sm sm:text-base md:text-lg font-bold text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight whitespace-pre-line">{card.value}</div>
+            <div className="text-sm sm:text-base md:text-lg text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight whitespace-pre-line">
+              <span className="font-bold">{card.value}</span>
+              {card.valueText && <span className="font-normal"> {card.valueText}</span>}
+            </div>
             {card.subtitle && (
               <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.subtitle}</div>
             )}
