@@ -118,7 +118,7 @@ export default function Home() {
                       className="w-full h-full object-cover animate-fadeIn"
                       style={{ 
                         animation: 'fadeIn 0.8s ease-in-out',
-                        objectPosition: 'center 25%'
+                        objectPosition: currentImageIndex === 4 ? 'center 15%' : 'center 25%'
                       }}
                       onError={(e) => {
                         // Fallback to next image if current fails
@@ -157,7 +157,7 @@ export default function Home() {
                           src={item.url} 
                           alt={item.alt} 
                           className="w-full h-full object-cover"
-                          style={{ objectPosition: 'center 25%' }}
+                          style={{ objectPosition: idx === 4 ? 'center 15%' : 'center 25%' }}
                           loading="lazy"
                           onError={(e) => {
                             // Fallback to a solid color if image fails to load
