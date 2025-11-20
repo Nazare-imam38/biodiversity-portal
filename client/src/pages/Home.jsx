@@ -78,7 +78,7 @@ export default function Home() {
     { url: '/ass/2.png', alt: 'Biodiversity Image 2' },
     { url: '/ass/3.jpg', alt: 'Biodiversity Image 3' },
     { url: '/ass/4.jpg', alt: 'Biodiversity Image 4' },
-    { url: '/ass/5.jpg', alt: 'Biodiversity Image 5' },
+    { url: '/ass/5.png', alt: 'Biodiversity Image 5' },
     { url: '/ass/6.jpg', alt: 'Biodiversity Image 6' }
   ]
 
