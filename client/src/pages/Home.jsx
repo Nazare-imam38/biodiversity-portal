@@ -214,7 +214,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* What This Portal Does */}
-            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-700 ease-out ${
+            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl hover:border-2 hover:border-green-400 hover:bg-green-50 transition-all duration-300 ease-out cursor-pointer ${
               whatWhyWhoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`} style={{ transitionDelay: whatWhyWhoVisible ? '0ms' : '0ms' }}>
               <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-lg mb-4 mx-auto">
@@ -227,7 +227,7 @@ export default function Home() {
             </div>
 
             {/* Why It Matters */}
-            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-700 ease-out ${
+            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl hover:border-2 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 ease-out cursor-pointer ${
               whatWhyWhoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`} style={{ transitionDelay: whatWhyWhoVisible ? '150ms' : '0ms' }}>
               <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-lg mb-4 mx-auto">
@@ -240,7 +240,7 @@ export default function Home() {
             </div>
 
             {/* Who It Serves */}
-            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-700 ease-out ${
+            <div className={`bg-white rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl hover:border-2 hover:border-green-400 hover:bg-green-50 transition-all duration-300 ease-out cursor-pointer ${
               whatWhyWhoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`} style={{ transitionDelay: whatWhyWhoVisible ? '300ms' : '0ms' }}>
               <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-lg mb-4 mx-auto">
