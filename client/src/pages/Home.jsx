@@ -53,7 +53,7 @@ function useScrollAnimation(options = {}) {
 
     return () => {
       try {
-        observer.disconnect()
+      observer.disconnect()
       } catch (error) {
         // Ignore disconnect errors
       }
@@ -74,12 +74,12 @@ export default function Home() {
 
   // Hero section images for rotation
   const heroImages = [
-    { url: 'https://images.pexels.com/photos/14681717/pexels-photo-14681717.jpeg', alt: 'Biodiversity Image 1' },
-    { url: 'https://images.pexels.com/photos/1000057/pexels-photo-1000057.jpeg', alt: 'Biodiversity Image 2' },
-    { url: 'https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg', alt: 'Biodiversity Image 3' },
-    { url: 'https://images.pexels.com/photos/26586553/pexels-photo-26586553.jpeg', alt: 'Biodiversity Image 4' },
-    { url: 'https://images.pexels.com/photos/4055789/pexels-photo-4055789.jpeg', alt: 'Biodiversity Image 5' },
-    { url: 'https://images.pexels.com/photos/17811/pexels-photo.jpg', alt: 'Biodiversity Image 6' }
+    { url: '/ass/1.png', alt: 'Biodiversity Image 1' },
+    { url: '/ass/2.png', alt: 'Biodiversity Image 2' },
+    { url: '/ass/3.jpg', alt: 'Biodiversity Image 3' },
+    { url: '/ass/4.jpg', alt: 'Biodiversity Image 4' },
+    { url: '/ass/5.jpg', alt: 'Biodiversity Image 5' },
+    { url: '/ass/6.jpg', alt: 'Biodiversity Image 6' }
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
