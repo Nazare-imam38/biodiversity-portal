@@ -31,15 +31,15 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     { 
       label: '', 
       value: `Forest Area ${stats.forestArea}`,
-      subtitle: `Total Provincial Area ${stats.totalProvincialAreaHectares}`,
+      subtitle: 'Forest Area percentage 3.58 %',
       color: 'bg-green-500',
       icon: FaTree,
       iconColor: 'text-green-600'
     },
     { 
       label: '', 
-      value: 'Degraded Ecosystems',
-      subtitle: 'Enhancement 2299 Hectare\nDeforestation 485 Hectare',
+      value: 'Enhancement 2299 Hectare\nDeforestation 485 Hectare',
+      subtitle: 'Degraded Ecosystems',
       color: 'bg-purple-500',
       icon: FaSeedling,
       iconColor: 'text-purple-600'
@@ -79,7 +79,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
               <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.subtitle}</div>
             )}
             {card.label && (
-              <div className="text-xs text-gray-600 transition-colors duration-300 line-clamp-2">{card.label}</div>
+            <div className="text-xs text-gray-600 transition-colors duration-300 line-clamp-2">{card.label}</div>
             )}
           </div>
         )
