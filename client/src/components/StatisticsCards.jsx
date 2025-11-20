@@ -68,7 +68,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       subtitle: 'Carbon Storage',
       color: '#2e2e2e',
       icon: FaCloud,
-      iconColor: '#2e2e2e'
+      iconColor: '#14b8a6'
     }
   ]
 
@@ -92,7 +92,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
             </div>
             <div className="text-sm sm:text-base md:text-lg text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight whitespace-pre-line">
               <span className="font-bold">{card.value}</span>
-              {card.valueText && <span className="font-normal"> {card.valueText}</span>}
+              {card.valueText && <span className="font-normal text-xs"> {card.valueText}</span>}
             </div>
             {card.subtitle && (
               <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.subtitle}</div>
