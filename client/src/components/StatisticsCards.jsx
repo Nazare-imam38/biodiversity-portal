@@ -38,7 +38,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
     },
     { 
       label: '', 
-      value: 'Enhancement 2299 Hectare\nDeforestation 485 Hectare',
+      value: '2299 Hectare Enhancement\n485 Hectare Deforestation',
       subtitle: 'Degraded Ecosystems',
       color: 'bg-purple-500',
       icon: FaSeedling,
