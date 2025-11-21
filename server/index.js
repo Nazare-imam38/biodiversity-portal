@@ -107,30 +107,6 @@ const layerConfig = {
     color: '#ef4444',
     type: 'point',
     description: 'Wildlife Species Presence Points in Gilgit Baltistan (1125 records)'
-  },
-  'deforestation-tiles': {
-    name: 'Deforestation',
-    tiles: '/tiles/deforestation/{z}/{x}/{y}.png',
-    color: '#dc2626',
-    type: 'raster',
-    description: 'Deforestation Areas (Raster Tiles)',
-    opacity: 0.7
-  },
-  'landcover-tiles': {
-    name: 'Land Cover',
-    tiles: '/tiles/landcover/{z}/{x}/{y}.png',
-    color: '#16a34a',
-    type: 'raster',
-    description: 'Land Use Land Cover 2020 (Raster Tiles)',
-    opacity: 0.7
-  },
-  'restoration-tiles': {
-    name: 'Restoration',
-    tiles: '/tiles/restoration/{z}/{x}/{y}.png',
-    color: '#22c55e',
-    type: 'raster',
-    description: 'Enhancement/Restoration Areas (Raster Tiles)',
-    opacity: 0.7
   }
 };
 

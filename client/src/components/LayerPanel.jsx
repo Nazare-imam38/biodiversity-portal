@@ -13,7 +13,6 @@ import {
   FaMapMarkedAlt,
   FaMapMarkerAlt,
   FaTrash,
-  FaCut,
   FaGlobe,
   FaCloud
 } from 'react-icons/fa'
@@ -30,9 +29,6 @@ const layerIcons = {
   'gb-provincial': FaGlobe,
   'gb-district': FaMapMarkedAlt,
   'species-distribution': FaMapMarkerAlt,
-  'deforestation-tiles': FaCut,
-  'landcover-tiles': FaLeaf,
-  'restoration-tiles': FaSeedling,
 }
 
 export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClearAll, showMobileButton = true, isOpen: externalIsOpen, setIsOpen: externalSetIsOpen }) {
