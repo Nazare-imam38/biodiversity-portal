@@ -13,38 +13,25 @@ export default function StatisticsCards({ layerData, activeLayers }) {
   }
 
   const cards = [
+    // 1. Total Provincial Area
     { 
-      label: 'Sq Km Total Provincial Area', 
+      label: 'Total Provincial Area', 
       value: '729,71', 
+      subtitle: 'Sq Km',
       color: 'bg-blue-500',
       icon: FaGlobe,
       iconColor: 'text-blue-600'
     },
-    { 
-      label: '', 
-      value: '56%',
-      subtitle: 'Current protected coverage',
-      color: 'bg-yellow-500',
-      icon: FaShieldAlt,
-      iconColor: 'text-yellow-600'
-    },
+    // 2. Forest Area 3.58%
     { 
       label: '', 
       value: '329,721',
-      subtitle: 'Hectare Forest Area 3.58%',
+      subtitle: 'Forest Area 3.58%',
       color: 'bg-green-500',
       icon: FaTree,
       iconColor: 'text-green-600'
     },
-    { 
-      label: '', 
-      value: '2299',
-      valueText: 'Hectare Enhancement',
-      subtitle: 'Degraded Ecosystems',
-      color: 'bg-green-600',
-      icon: FaSeedling,
-      iconColor: 'text-green-800'
-    },
+    // 3. Deforestation Degraded Ecosystems
     { 
       label: '', 
       value: '485',
@@ -54,6 +41,26 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       icon: FaCut,
       iconColor: 'text-red-800'
     },
+    // 4. Enhancement Degraded Ecosystems
+    { 
+      label: '', 
+      value: '2299',
+      valueText: 'Hectare Enhancement',
+      subtitle: 'Degraded Ecosystems',
+      color: 'bg-green-600',
+      icon: FaSeedling,
+      iconColor: 'text-green-800'
+    },
+    // 5. Current protected coverage
+    { 
+      label: '', 
+      value: '56%',
+      subtitle: 'Current protected coverage',
+      color: 'bg-yellow-500',
+      icon: FaShieldAlt,
+      iconColor: 'text-yellow-600'
+    },
+    // 6. Protected Areas Coverage of (KBAs)
     { 
       label: '', 
       value: '94%',
@@ -62,6 +69,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       icon: FaExclamationTriangle,
       iconColor: 'text-red-600'
     },
+    // 7. Mg/Km2 Carbon Storage
     { 
       label: '', 
       value: '830,709',
