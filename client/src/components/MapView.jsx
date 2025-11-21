@@ -369,15 +369,15 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       } else {
         // Default popup for other layers
         popupContent = `
-          <div style="max-width: 300px;">
-            <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color};">${layerConfig.name}</h3>
-            <div style="font-size: 12px;">
-              ${Object.keys(props)
-                .map(key => `<div style="margin: 4px 0;"><strong>${key}:</strong> ${props[key]}</div>`)
-                .join('')}
-            </div>
+        <div style="max-width: 300px;">
+          <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color};">${layerConfig.name}</h3>
+          <div style="font-size: 12px;">
+            ${Object.keys(props)
+              .map(key => `<div style="margin: 4px 0;"><strong>${key}:</strong> ${props[key]}</div>`)
+              .join('')}
           </div>
-        `
+        </div>
+      `
       }
       layer.bindPopup(popupContent)
     }
