@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents, ScaleControl } from 'react-leaflet'
+import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
 import Legend from './Legend'
-import MeasurementToolbar from './MeasurementToolbar'
 import { FaMap, FaSatellite } from 'react-icons/fa'
 
 // Fix for default marker icons in React-Leaflet
@@ -445,8 +444,6 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
         <MapBoundsController />
         <MapResizer />
         <RegionZoomController selectedRegion={selectedRegion} layerData={layerData} activeLayers={activeLayers} />
-        <MeasurementToolbar />
-        <ScaleControl position="bottomleft" imperial={false} metric={true} />
         
         {Array.from(activeLayers).map((layerId) => {
           const layer = layers.find(l => l.id === layerId)
