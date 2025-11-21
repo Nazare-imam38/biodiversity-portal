@@ -12,7 +12,8 @@ import {
   FaMapMarkerAlt,
   FaGlobe,
   FaChevronDown,
-  FaChevronUp
+  FaChevronUp,
+  FaCut
 } from 'react-icons/fa'
 
 const layerIcons = {
@@ -26,6 +27,10 @@ const layerIcons = {
   'ramsar-sites': FaWater,
   'gb-provincial': FaGlobe,
   'gb-district': FaMapMarkedAlt,
+  'species-distribution': FaMapMarkerAlt,
+  'deforestation-tiles': FaCut,
+  'landcover-tiles': FaLeaf,
+  'restoration-tiles': FaSeedling,
 }
 
 export default function Legend({ layers, activeLayers }) {

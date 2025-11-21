@@ -21,9 +21,9 @@ let PAKISTAN_ZOOM = 6
 function createCustomIcon(color) {
   return L.divIcon({
     className: 'custom-marker',
-    html: `<div style="background-color: ${color}; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>`,
-    iconSize: [12, 12],
-    iconAnchor: [6, 6]
+    html: `<div style="background-color: ${color}; width: 14px; height: 14px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.4); cursor: pointer;"></div>`,
+    iconSize: [14, 14],
+    iconAnchor: [7, 7]
   })
 }
 
@@ -349,16 +349,37 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     
     if (feature.properties) {
       const props = feature.properties
-      const popupContent = `
-        <div style="max-width: 300px;">
-          <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color};">${layerConfig.name}</h3>
-          <div style="font-size: 12px;">
-            ${Object.keys(props)
-              .map(key => `<div style="margin: 4px 0;"><strong>${key}:</strong> ${props[key]}</div>`)
-              .join('')}
+      
+      // Special formatting for species distribution layer
+      let popupContent = ''
+      if (layerConfig.id === 'species-distribution') {
+        popupContent = `
+          <div style="max-width: 300px; padding: 4px;">
+            <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color}; font-size: 14px;">Species Information</h3>
+            <div style="font-size: 12px; line-height: 1.6;">
+              ${props.species ? `<div style="margin: 4px 0;"><strong>Species:</strong> ${props.species}</div>` : ''}
+              ${props.genus ? `<div style="margin: 4px 0;"><strong>Genus:</strong> ${props.genus}</div>` : ''}
+              ${props.family ? `<div style="margin: 4px 0;"><strong>Family:</strong> ${props.family}</div>` : ''}
+              ${props.locality ? `<div style="margin: 4px 0;"><strong>Location:</strong> ${props.locality}</div>` : ''}
+              ${props.stateProvince ? `<div style="margin: 4px 0;"><strong>Province:</strong> ${props.stateProvince}</div>` : ''}
+              ${props.eventDate ? `<div style="margin: 4px 0;"><strong>Date:</strong> ${props.eventDate}</div>` : ''}
+              ${props.year ? `<div style="margin: 4px 0;"><strong>Year:</strong> ${props.year}</div>` : ''}
+            </div>
           </div>
-        </div>
-      `
+        `
+      } else {
+        // Default popup for other layers
+        popupContent = `
+          <div style="max-width: 300px;">
+            <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color};">${layerConfig.name}</h3>
+            <div style="font-size: 12px;">
+              ${Object.keys(props)
+                .map(key => `<div style="margin: 4px 0;"><strong>${key}:</strong> ${props[key]}</div>`)
+                .join('')}
+            </div>
+          </div>
+        `
+      }
       layer.bindPopup(popupContent)
     }
     layer.on({
