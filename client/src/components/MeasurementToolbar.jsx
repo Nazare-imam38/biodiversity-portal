@@ -12,6 +12,184 @@ export default function MeasurementToolbar() {
   const currentMeasurementRef = useRef(null)
   const isDrawingRef = useRef(false)
 
+  // Calculate polygon area using spherical excess (Shoelace formula adapted for spherical coordinates)
+  const calculatePolygonArea = useCallback((coords) => {
+    if (coords.length < 3) return 0
+
+    const R = 6371000 // Earth radius in meters
+    let area = 0
+
+    // Use spherical excess formula for more accurate area calculation
+    for (let i = 0; i < coords.length - 1; i++) {
+      const p1 = coords[i]
+      const p2 = coords[i + 1]
+      
+      const lat1 = (p1[0] * Math.PI) / 180
+      const lat2 = (p2[0] * Math.PI) / 180
+      const dLng = ((p2[1] - p1[1]) * Math.PI) / 180
+
+      area += dLng * (2 + Math.sin(lat1) + Math.sin(lat2))
+    }
+
+    area = Math.abs(area * R * R / 2)
+    return area
+  }, [])
+
+  const cleanupMeasurement = useCallback(() => {
+    if (currentMeasurementRef.current) {
+      currentMeasurementRef.current = null
+    }
+    isDrawingRef.current = false
+  }, [])
+
+  const updateMeasurement = useCallback((tempPoint = null, toolType = null) => {
+    if (!currentMeasurementRef.current || !map) return
+
+    const measurement = currentMeasurementRef.current
+    const pointsToUse = tempPoint ? [...measurement.points, tempPoint] : measurement.points
+    const currentTool = toolType || activeTool
+    
+    if (pointsToUse.length < 2) return
+
+    // Remove old label
+    if (measurement.label && measurementLayerRef.current) {
+      measurementLayerRef.current.removeLayer(measurement.label)
+      measurement.label = null
+    }
+
+    // Calculate measurement
+    let distance = 0
+    let area = 0
+    let labelText = ''
+
+    if (currentTool === 'distance') {
+      // Calculate total distance
+      for (let i = 0; i < pointsToUse.length - 1; i++) {
+        distance += pointsToUse[i].distanceTo(pointsToUse[i + 1])
+      }
+      
+      // Format distance
+      if (distance >= 1000) {
+        labelText = `${(distance / 1000).toFixed(2)} km`
+      } else {
+        labelText = `${distance.toFixed(2)} m`
+      }
+    } else if (currentTool === 'area' && pointsToUse.length >= 3) {
+      // Calculate area using spherical geometry
+      const coords = pointsToUse.map(p => [p.lat, p.lng])
+      // Close the polygon
+      if (coords[0][0] !== coords[coords.length - 1][0] || coords[0][1] !== coords[coords.length - 1][1]) {
+        coords.push(coords[0])
+      }
+      
+      // Calculate area using spherical excess formula
+      area = calculatePolygonArea(coords)
+      
+      // Format area
+      if (area >= 1000000) {
+        labelText = `${(area / 1000000).toFixed(2)} km²`
+      } else if (area >= 10000) {
+        labelText = `${(area / 10000).toFixed(2)} ha`
+      } else {
+        labelText = `${area.toFixed(2)} m²`
+      }
+    }
+
+    // Add label at the last point (or temp point)
+    if (labelText && pointsToUse.length > 0) {
+      const labelPoint = tempPoint || pointsToUse[pointsToUse.length - 1]
+      measurement.label = L.marker(labelPoint, {
+        icon: L.divIcon({
+          className: 'measurement-label',
+          html: `<div style="background-color: rgba(59, 130, 246, 0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.3); pointer-events: none;">${labelText}</div>`,
+          iconSize: [null, null],
+          iconAnchor: [0, 0]
+        }),
+        zIndexOffset: 1000,
+        interactive: false
+      }).addTo(measurementLayerRef.current)
+    }
+  }, [activeTool, map, calculatePolygonArea])
+
+  const startMeasurement = useCallback((startLatLng) => {
+    if (!map || !measurementLayerRef.current) return
+
+    isDrawingRef.current = true
+    const points = [startLatLng]
+    currentMeasurementRef.current = {
+      type: activeTool,
+      points: points,
+      polyline: null,
+      markers: [],
+      label: null
+    }
+
+    // Create start marker
+    const startMarker = L.marker(startLatLng, {
+      icon: L.divIcon({
+        className: 'measurement-marker',
+        html: '<div style="background-color: #3b82f6; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
+        iconSize: [12, 12],
+        iconAnchor: [6, 6]
+      })
+    }).addTo(measurementLayerRef.current)
+
+    currentMeasurementRef.current.markers.push(startMarker)
+  }, [activeTool, map, updateMeasurement])
+
+  const addPoint = useCallback((latlng) => {
+    if (!currentMeasurementRef.current || !measurementLayerRef.current) return
+
+    const measurement = currentMeasurementRef.current
+    measurement.points.push(latlng)
+
+    // Remove old polyline/polygon if exists
+    if (measurement.polyline) {
+      measurementLayerRef.current.removeLayer(measurement.polyline)
+    }
+
+    // Create new polyline/polygon
+    if (activeTool === 'distance') {
+      measurement.polyline = L.polyline(measurement.points, {
+        color: '#3b82f6',
+        weight: 3,
+        opacity: 0.8,
+        dashArray: '5, 5'
+      }).addTo(measurementLayerRef.current)
+    } else if (activeTool === 'area') {
+      if (measurement.points.length >= 3) {
+        measurement.polyline = L.polygon(measurement.points, {
+          color: '#3b82f6',
+          weight: 3,
+          opacity: 0.8,
+          fillColor: '#3b82f6',
+          fillOpacity: 0.2,
+          dashArray: '5, 5'
+        }).addTo(measurementLayerRef.current)
+      } else {
+        measurement.polyline = L.polyline(measurement.points, {
+          color: '#3b82f6',
+          weight: 3,
+          opacity: 0.8,
+          dashArray: '5, 5'
+        }).addTo(measurementLayerRef.current)
+      }
+    }
+
+    // Add point marker
+    const marker = L.marker(latlng, {
+      icon: L.divIcon({
+        className: 'measurement-marker',
+        html: '<div style="background-color: #3b82f6; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
+        iconSize: [12, 12],
+        iconAnchor: [6, 6]
+      })
+    }).addTo(measurementLayerRef.current)
+
+    measurement.markers.push(marker)
+    updateMeasurement()
+  }, [activeTool, map, updateMeasurement])
+
   // Initialize measurement layer
   useEffect(() => {
     if (!map) return
@@ -108,185 +286,7 @@ export default function MeasurementToolbar() {
       
       cleanupMeasurement()
     }
-  }, [map, activeTool, updateMeasurement])
-
-  const startMeasurement = (startLatLng) => {
-    if (!map || !measurementLayerRef.current) return
-
-    isDrawingRef.current = true
-    const points = [startLatLng]
-    currentMeasurementRef.current = {
-      type: activeTool,
-      points: points,
-      polyline: null,
-      markers: [],
-      label: null
-    }
-
-    // Create start marker
-    const startMarker = L.marker(startLatLng, {
-      icon: L.divIcon({
-        className: 'measurement-marker',
-        html: '<div style="background-color: #3b82f6; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
-        iconSize: [12, 12],
-        iconAnchor: [6, 6]
-      })
-    }).addTo(measurementLayerRef.current)
-
-    currentMeasurementRef.current.markers.push(startMarker)
-  }
-
-  const addPoint = (latlng) => {
-    if (!currentMeasurementRef.current || !measurementLayerRef.current) return
-
-    const measurement = currentMeasurementRef.current
-    measurement.points.push(latlng)
-
-    // Remove old polyline/polygon if exists
-    if (measurement.polyline) {
-      measurementLayerRef.current.removeLayer(measurement.polyline)
-    }
-
-    // Create new polyline/polygon
-    if (activeTool === 'distance') {
-      measurement.polyline = L.polyline(measurement.points, {
-        color: '#3b82f6',
-        weight: 3,
-        opacity: 0.8,
-        dashArray: '5, 5'
-      }).addTo(measurementLayerRef.current)
-    } else if (activeTool === 'area') {
-      if (measurement.points.length >= 3) {
-        measurement.polyline = L.polygon(measurement.points, {
-          color: '#3b82f6',
-          weight: 3,
-          opacity: 0.8,
-          fillColor: '#3b82f6',
-          fillOpacity: 0.2,
-          dashArray: '5, 5'
-        }).addTo(measurementLayerRef.current)
-      } else {
-        measurement.polyline = L.polyline(measurement.points, {
-          color: '#3b82f6',
-          weight: 3,
-          opacity: 0.8,
-          dashArray: '5, 5'
-        }).addTo(measurementLayerRef.current)
-      }
-    }
-
-    // Add point marker
-    const marker = L.marker(latlng, {
-      icon: L.divIcon({
-        className: 'measurement-marker',
-        html: '<div style="background-color: #3b82f6; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
-        iconSize: [12, 12],
-        iconAnchor: [6, 6]
-      })
-    }).addTo(measurementLayerRef.current)
-
-    measurement.markers.push(marker)
-    updateMeasurement()
-  }
-
-  const updateMeasurement = useCallback((tempPoint = null, toolType = null) => {
-    if (!currentMeasurementRef.current || !map) return
-
-    const measurement = currentMeasurementRef.current
-    const pointsToUse = tempPoint ? [...measurement.points, tempPoint] : measurement.points
-    const currentTool = toolType || activeTool
-    
-    if (pointsToUse.length < 2) return
-
-    // Remove old label
-    if (measurement.label && measurementLayerRef.current) {
-      measurementLayerRef.current.removeLayer(measurement.label)
-      measurement.label = null
-    }
-
-    // Calculate measurement
-    let distance = 0
-    let area = 0
-    let labelText = ''
-
-    if (currentTool === 'distance') {
-      // Calculate total distance
-      for (let i = 0; i < pointsToUse.length - 1; i++) {
-        distance += pointsToUse[i].distanceTo(pointsToUse[i + 1])
-      }
-      
-      // Format distance
-      if (distance >= 1000) {
-        labelText = `${(distance / 1000).toFixed(2)} km`
-      } else {
-        labelText = `${distance.toFixed(2)} m`
-      }
-    } else if (currentTool === 'area' && pointsToUse.length >= 3) {
-      // Calculate area using spherical geometry
-      const coords = pointsToUse.map(p => [p.lat, p.lng])
-      // Close the polygon
-      if (coords[0][0] !== coords[coords.length - 1][0] || coords[0][1] !== coords[coords.length - 1][1]) {
-        coords.push(coords[0])
-      }
-      
-      // Calculate area using spherical excess formula
-      area = calculatePolygonArea(coords)
-      
-      // Format area
-      if (area >= 1000000) {
-        labelText = `${(area / 1000000).toFixed(2)} km²`
-      } else if (area >= 10000) {
-        labelText = `${(area / 10000).toFixed(2)} ha`
-      } else {
-        labelText = `${area.toFixed(2)} m²`
-      }
-    }
-
-    // Add label at the last point (or temp point)
-    if (labelText && pointsToUse.length > 0) {
-      const labelPoint = tempPoint || pointsToUse[pointsToUse.length - 1]
-      measurement.label = L.marker(labelPoint, {
-        icon: L.divIcon({
-          className: 'measurement-label',
-          html: `<div style="background-color: rgba(59, 130, 246, 0.9); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.3); pointer-events: none;">${labelText}</div>`,
-          iconSize: [null, null],
-          iconAnchor: [0, 0]
-        }),
-        zIndexOffset: 1000,
-        interactive: false
-      }).addTo(measurementLayerRef.current)
-    }
-  }, [activeTool, map])
-
-  // Calculate polygon area using spherical excess (Shoelace formula adapted for spherical coordinates)
-  const calculatePolygonArea = (coords) => {
-    if (coords.length < 3) return 0
-
-    const R = 6371000 // Earth radius in meters
-    let area = 0
-
-    // Use spherical excess formula for more accurate area calculation
-    for (let i = 0; i < coords.length - 1; i++) {
-      const p1 = coords[i]
-      const p2 = coords[i + 1]
-      
-      const lat1 = (p1[0] * Math.PI) / 180
-      const lat2 = (p2[0] * Math.PI) / 180
-      const dLng = ((p2[1] - p1[1]) * Math.PI) / 180
-
-      area += dLng * (2 + Math.sin(lat1) + Math.sin(lat2))
-    }
-
-    area = Math.abs(area * R * R / 2)
-    return area
-  }
-
-  const cleanupMeasurement = () => {
-    if (currentMeasurementRef.current) {
-      currentMeasurementRef.current = null
-    }
-    isDrawingRef.current = false
-  }
+  }, [map, activeTool, updateMeasurement, startMeasurement, addPoint, cleanupMeasurement])
 
   const finishMeasurement = useCallback(() => {
     if (currentMeasurementRef.current && currentMeasurementRef.current.points.length >= 2) {
@@ -334,7 +334,7 @@ export default function MeasurementToolbar() {
     }
     cleanupMeasurement()
     setActiveTool(null)
-  }, [activeTool])
+  }, [activeTool, updateMeasurement, cleanupMeasurement])
 
   const clearAllMeasurements = () => {
     if (measurementLayerRef.current) {
