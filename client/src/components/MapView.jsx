@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents, ScaleControl } from 'react-leaflet'
 import L from 'leaflet'
 import Legend from './Legend'
+import MeasurementToolbar from './MeasurementToolbar'
 import { FaMap, FaSatellite } from 'react-icons/fa'
 
 // Fix for default marker icons in React-Leaflet
@@ -218,6 +219,14 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     // Load new layers using Promise.all to handle async properly
     const loadLayers = async () => {
       const loadPromises = activeArray.map(async (layerId) => {
+        // Find layer config to check type
+        const layer = layers.find(l => l.id === layerId)
+        
+        // Skip loading for raster tile layers (they don't need GeoJSON data)
+        if (layer && layer.type === 'raster') {
+          return
+        }
+        
         // Check if we need to load this layer
         const currentData = layerDataRef.current
         const currentLoading = loadingRef.current
@@ -415,22 +424,39 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
         <MapBoundsController />
         <MapResizer />
         <RegionZoomController selectedRegion={selectedRegion} layerData={layerData} activeLayers={activeLayers} />
+        <MeasurementToolbar />
+        <ScaleControl position="bottomleft" imperial={false} metric={true} />
         
         {Array.from(activeLayers).map((layerId) => {
           const layer = layers.find(l => l.id === layerId)
+          
+          if (!layer) {
+            console.warn(`Layer ${layerId}: Missing layer config`)
+            return null
+          }
+          
+          // Handle raster tile layers
+          if (layer.type === 'raster' && layer.tiles) {
+            const apiUrl = import.meta.env.VITE_API_URL || ''
+            const tileUrl = apiUrl ? `${apiUrl}${layer.tiles}` : layer.tiles
+            
+            return (
+              <TileLayer
+                key={layerId}
+                url={tileUrl}
+                attribution={layer.name}
+                opacity={layer.opacity || 0.7}
+                zIndex={100}
+              />
+            )
+          }
+          
+          // Handle GeoJSON layers (existing logic)
           const data = layerData[layerId]
           const isLoading = loading.has(layerId)
           
           // If layer is loading, don't render yet (avoid race condition warnings)
           if (isLoading) {
-            return null
-          }
-          
-          if (!layer) {
-            // Only warn if not loading (to avoid spam during initial load)
-            if (!isLoading) {
-              console.warn(`Layer ${layerId}: Missing layer config`)
-            }
             return null
           }
           
