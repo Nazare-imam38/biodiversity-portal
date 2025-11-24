@@ -24,11 +24,11 @@ app.use('/tiles', express.static(join(__dirname, '../tiles')));
 // Now using GeoJSON files instead of shapefiles for better performance
 const layerConfig = {
   'pakistan-provinces': {
-    name: 'Pakistan Provinces',
+    name: 'Pakistan District',
     geojson: 'geojson/pakistan-provinces.geojson',
     color: '#000000',
     type: 'polygon',
-    description: 'Pakistan Provincial Boundaries',
+    description: 'Pakistan District Boundaries',
     default: true, // Load by default
     style: {
       fill: false, // Hollow/transparent
@@ -114,6 +114,14 @@ const layerConfig = {
     color: '#ef4444',
     type: 'point',
     description: 'Wildlife Species Presence Points in Punjab (303 records)'
+  },
+  'punjab-lulc': {
+    name: 'Punjab Land Use Land Cover',
+    tiles: '/tiles/punjab-lulc/{z}/{x}/{y}.png',
+    color: '#22c55e',
+    type: 'raster',
+    description: 'Punjab Land Use Land Cover Map',
+    opacity: 0.7
   }
 };
 
@@ -869,7 +877,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     
     // Skip clipping for region-specific layers and boundary layers
     const isGBLayer = layerId === 'gb-provincial' || layerId === 'gb-district';
-    const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence'; // Punjab-specific layers
+    const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
     const isBoundaryLayer = layerId === 'pakistan-provinces'; // Boundary layers should not be clipped
     
     // Declare geojsonPath at function scope

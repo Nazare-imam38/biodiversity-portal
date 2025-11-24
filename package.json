@@ -14,7 +14,8 @@
     "postinstall": "cd client && npm install",
     "clip-gb": "node scripts/clip-layers-to-region.js --region=Gilgit Baltistan",
     "clip-punjab": "node scripts/clip-layers-to-region.js --region=Punjab",
-    "clip-all": "node scripts/clip-layers-to-region.js"
+    "clip-all": "node scripts/clip-layers-to-region.js",
+    "convert-punjab-lulc": "node scripts/convert-punjab-lulc-to-tiles.js"
   },
   "keywords": [
     "biodiversity",

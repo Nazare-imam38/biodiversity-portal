@@ -367,7 +367,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
   }, [activeLayers])
 
   const getLayerStyle = (layer, feature) => {
-    // Special styling for Pakistan Provinces layer - hollow with black outline
+    // Special styling for Pakistan District layer - hollow with black outline
     if (layer.id === 'pakistan-provinces') {
       return {
         color: '#000000', // Black outline
@@ -398,6 +398,13 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     }
   }
 
+  // Helper function to format coordinates
+  const formatCoord = (val) => {
+    if (val == null) return ''
+    const num = typeof val === 'number' ? val : parseFloat(val)
+    return isNaN(num) ? val : num.toFixed(6)
+  }
+
   const onEachFeature = (feature, layer, layerConfig) => {
     // Validate feature geometry
     if (!feature.geometry || !feature.geometry.coordinates) {
@@ -412,16 +419,13 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       let popupContent = ''
       if (layerConfig.id === 'wildlife-occurrence') {
         popupContent = `
-          <div style="max-width: 300px; padding: 4px;">
-            <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color}; font-size: 14px;">Species Information</h3>
+          <div style="max-width: 300px; padding: 8px;">
+            <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color}; font-size: 14px;">Wildlife Occurrence Information</h3>
             <div style="font-size: 12px; line-height: 1.6;">
-              ${props.species ? `<div style="margin: 4px 0;"><strong>Species:</strong> ${props.species}</div>` : ''}
-              ${props.genus ? `<div style="margin: 4px 0;"><strong>Genus:</strong> ${props.genus}</div>` : ''}
-              ${props.family ? `<div style="margin: 4px 0;"><strong>Family:</strong> ${props.family}</div>` : ''}
-              ${props.locality ? `<div style="margin: 4px 0;"><strong>Location:</strong> ${props.locality}</div>` : ''}
-              ${props.stateProvince ? `<div style="margin: 4px 0;"><strong>Province:</strong> ${props.stateProvince}</div>` : ''}
-              ${props.eventDate ? `<div style="margin: 4px 0;"><strong>Date:</strong> ${props.eventDate}</div>` : ''}
-              ${props.year ? `<div style="margin: 4px 0;"><strong>Year:</strong> ${props.year}</div>` : ''}
+              ${props.Species ? `<div style="margin: 4px 0;"><strong>Species:</strong> ${props.Species}</div>` : ''}
+              ${props.Common_nam ? `<div style="margin: 4px 0;"><strong>Common Name:</strong> ${props.Common_nam}</div>` : ''}
+              ${props.X_Longi != null ? `<div style="margin: 4px 0;"><strong>Longitude:</strong> ${formatCoord(props.X_Longi)}</div>` : ''}
+              ${props.Y_Lati != null ? `<div style="margin: 4px 0;"><strong>Latitude:</strong> ${formatCoord(props.Y_Lati)}</div>` : ''}
             </div>
           </div>
         `

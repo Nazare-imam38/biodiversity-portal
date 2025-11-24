@@ -202,7 +202,7 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
       },
       { 
         label: '', 
-        value: '3,100,249',
+        value: '310,024,9',
       subtitle: 'Mg/Km2 Carbon Storage',
       color: '#14b8a6',
       icon: FaCloud,

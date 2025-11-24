@@ -12,6 +12,7 @@ import {
   FaBars,
   FaMapMarkedAlt,
   FaMapMarkerAlt,
+  FaMap,
   FaTrash,
   FaGlobe,
   FaCloud,
@@ -32,6 +33,7 @@ const layerIcons = {
   'gb-district': FaMapMarkedAlt,
   'punjab-provincial': FaGlobe,
   'wildlife-occurrence': FaMapMarkerAlt,
+  'punjab-lulc': FaMap,
 }
 
 export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClearAll, showMobileButton = true, isOpen: externalIsOpen, setIsOpen: externalSetIsOpen, selectedRegion = 'National' }) {
@@ -152,7 +154,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   // Hide protected-forest and ramsar-sites for GB region (they have 0 features)
                   // Hide Punjab-specific layers for GB region
                   if (selectedRegion === 'Gilgit Baltistan') {
-                    return layer.id !== 'protected-forest' && layer.id !== 'ramsar-sites' && layer.id !== 'punjab-provincial' && layer.id !== 'wildlife-occurrence'
+                    return layer.id !== 'protected-forest' && layer.id !== 'ramsar-sites' && layer.id !== 'punjab-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc'
                   }
                   // Hide GB boundary layers for Punjab region
                   if (selectedRegion === 'Punjab') {
@@ -160,7 +162,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   }
                   // For other regions, hide all region-specific layers
                   if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab') {
-                    return layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'wildlife-occurrence'
+                    return layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc'
                   }
                   return true
                 })

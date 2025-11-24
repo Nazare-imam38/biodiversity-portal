@@ -27,6 +27,7 @@ const layerIcons = {
   'gb-provincial': FaGlobe,
   'gb-district': FaMapMarkedAlt,
   'wildlife-occurrence': FaMapMarkerAlt,
+  'punjab-lulc': FaMapMarkedAlt,
 }
 
 export default function Legend({ layers, activeLayers }) {
