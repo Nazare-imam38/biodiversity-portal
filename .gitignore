@@ -60,3 +60,6 @@ Baseline Data/
 *.tmp
 *.temp
 
+# Large tile files
+*.mbtiles
+
