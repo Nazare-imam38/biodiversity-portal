@@ -241,7 +241,7 @@ function RegionZoomController({ selectedRegion, layerData, activeLayers }) {
   return null
 }
 
-export default function MapView({ layers, activeLayers, selectedRegion = 'National', panelOpen = true }) {
+export default function MapView({ layers, activeLayers, selectedRegion = 'National', panelOpen = true, onLayerDataChange, onFeatureSelect }) {
   const geoJsonRefs = useRef({})
   const [layerData, setLayerData] = useState({})
   const [loading, setLoading] = useState(new Set())
@@ -251,6 +251,43 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
   const activeLayersRef = useRef(activeLayers)
   const layerDataRef = useRef({})
   const loadingRef = useRef(new Set())
+
+  // Notify parent when layerData changes
+  useEffect(() => {
+    if (onLayerDataChange) {
+      onLayerDataChange(layerData)
+    }
+  }, [layerData, onLayerDataChange])
+
+  // Helper function to generate a unique feature ID
+  const getFeatureId = (feature, layerId) => {
+    const props = feature.properties || {}
+    
+    // For wildlife occurrence, use Species + coordinates
+    if (layerId === 'wildlife-occurrence') {
+      return `${props.Species || 'unknown'}_${props.X_Longi}_${props.Y_Lati}`
+    }
+    
+    // For other layers, try common ID fields
+    if (props.WDPAID) return `${layerId}_${props.WDPAID}`
+    if (props.SitRecID) return `${layerId}_${props.SitRecID}`
+    if (props.Ramsar_Sit) return `${layerId}_${props.Ramsar_Sit}`
+    if (props.pk_key) return `${layerId}_${props.pk_key}`
+    if (props.OBJECTID) return `${layerId}_${props.OBJECTID}`
+    if (props.NAME) return `${layerId}_${props.NAME}_${props.Latitude || props.SitLat || ''}_${props.Longitude || props.SitLong || ''}`
+    
+    // Fallback: use coordinates if available
+    if (feature.geometry && feature.geometry.coordinates) {
+      const coords = feature.geometry.coordinates
+      if (Array.isArray(coords[0])) {
+        return `${layerId}_${coords[0][0]}_${coords[0][1]}`
+      }
+      return `${layerId}_${coords[0]}_${coords[1]}`
+    }
+    
+    // Last resort: use index (not ideal but works)
+    return `${layerId}_${Math.random()}`
+  }
 
   // Pakistan bounds are set as constants, no need to fetch
 
@@ -443,6 +480,18 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       `
       }
       layer.bindPopup(popupContent)
+      
+      // Add click handler to notify parent of feature selection
+      layer.on('click', (e) => {
+        if (onFeatureSelect) {
+          const featureId = getFeatureId(feature, layerConfig.id)
+          onFeatureSelect({
+            layerId: layerConfig.id,
+            featureId: featureId,
+            feature: feature
+          })
+        }
+      })
     }
     layer.on({
       mouseover: (e) => {

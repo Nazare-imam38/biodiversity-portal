@@ -197,3 +197,33 @@ html {
   display: none;  /* Chrome, Safari and Opera */
 }
 
+/* Dashboard scrollbar styling - more visible */
+.dashboard-scroll-container {
+  scrollbar-width: 12px;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+.dashboard-scroll-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.dashboard-scroll-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.dashboard-scroll-container::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 6px;
+  border: 2px solid #f1f5f9;
+}
+
+.dashboard-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+.dashboard-scroll-container::-webkit-scrollbar-thumb:active {
+  background: #475569;
+}
+

@@ -7,6 +7,7 @@ import StatisticsCards from '../components/StatisticsCards'
 import FeaturedLayers from '../components/FeaturedLayers'
 import PartnersSection from '../components/PartnersSection'
 import ScrollToFooter from '../components/ScrollToFooter'
+import LayerDataDashboard from '../components/LayerDataDashboard'
 
 function Dashboard() {
   const [layers, setLayers] = useState([])
@@ -15,6 +16,17 @@ function Dashboard() {
   const [error, setError] = useState(null)
   const [layerData, setLayerData] = useState({})
   const [isMobile, setIsMobile] = useState(false)
+  const [selectedFeature, setSelectedFeature] = useState(null)
+  
+  // Handler to receive layerData from MapView
+  const handleLayerDataChange = (data) => {
+    setLayerData(data)
+  }
+  
+  // Handler to receive feature selection from MapView
+  const handleFeatureSelect = (featureInfo) => {
+    setSelectedFeature(featureInfo)
+  }
   const [isLayerPanelOpen, setIsLayerPanelOpen] = useState(() => {
     if (typeof window !== 'undefined') {
       return window.innerWidth >= 1024
@@ -255,9 +267,24 @@ function Dashboard() {
             activeLayers={activeLayers}
             selectedRegion={selectedRegion}
             panelOpen={isLayerPanelOpen}
+            onLayerDataChange={handleLayerDataChange}
+            onFeatureSelect={handleFeatureSelect}
           />
         </div>
       </div>
+      
+      {/* Layer Data Dashboard - Show below map for Gilgit Baltistan and Punjab */}
+      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab') && (
+        <div className="mt-4 sm:mt-6">
+          <LayerDataDashboard 
+            layerData={layerData}
+            activeLayers={activeLayers}
+            layers={layers}
+            selectedRegion={selectedRegion}
+            selectedFeature={selectedFeature}
+          />
+        </div>
+      )}
       
       {/* Partners Section with spacing */}
       <div className={isMobile ? "mt-2" : "mt-4 sm:mt-6"}>
