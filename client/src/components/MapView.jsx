@@ -259,7 +259,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     }
   }, [layerData, onLayerDataChange])
 
-  // Helper function to generate a unique feature ID
+  // Helper function to generate a unique feature ID (must match LayerDataDashboard)
   const getFeatureId = (feature, layerId) => {
     const props = feature.properties || {}
     
@@ -442,6 +442,142 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     return isNaN(num) ? val : num.toFixed(6)
   }
 
+  // Format value for display (same as dashboard)
+  const formatValue = (value) => {
+    if (value === null || value === undefined || value === '') {
+      return 'N/A'
+    }
+    if (typeof value === 'number') {
+      if (Number.isInteger(value)) {
+        return value.toLocaleString()
+      }
+      return value.toFixed(6)
+    }
+    if (typeof value === 'string' && value.length > 100) {
+      return value.substring(0, 100) + '...'
+    }
+    return String(value)
+  }
+
+  // Format date value (same as dashboard)
+  const formatDate = (value) => {
+    if (!value) return 'N/A'
+    try {
+      const date = new Date(value)
+      if (isNaN(date.getTime())) return String(value)
+      return date.toLocaleDateString()
+    } catch {
+      return String(value)
+    }
+  }
+
+  // Icon mappings for popups (using Unicode symbols that work reliably in HTML)
+  const layerIcons = {
+    'agroecological-zones': '🌾',
+    'ecoregions': '🌿',
+    'kbas': '📍',
+    'protected-areas': '🛡️',
+    'protected-areas-pol': '🛡️',
+    'protected-forest': '🌲',
+    'ramsar-sites': '💧',
+    'wildlife-occurrence': '🦋'
+  }
+
+  // Layer column mappings (same as dashboard)
+  const layerColumnMappings = {
+    'agroecological-zones': {
+      columns: ['pk_key', 'pk_name', 'Area', 'AreaWise', 'Label'],
+      displayNames: {
+        'pk_key': 'Key',
+        'pk_name': 'Zone Name',
+        'Area': 'Area',
+        'AreaWise': 'Area (%)',
+        'Label': 'Label'
+      }
+    },
+    'ecoregions': {
+      columns: ['ECO_NAME', 'BIOME_NAME', 'REALM', 'ECO_BIOME_', 'NNH_NAME'],
+      displayNames: {
+        'ECO_NAME': 'Ecoregion Name',
+        'BIOME_NAME': 'Biome',
+        'REALM': 'Realm',
+        'ECO_BIOME_': 'Eco-Biome',
+        'NNH_NAME': 'NNH Status'
+      }
+    },
+    'kbas': {
+      columns: ['NatName', 'IntName', 'SitLat', 'SitLong', 'SitAreaKM2', 'KbaStatus', 'IbaStatus'],
+      displayNames: {
+        'NatName': 'National Name',
+        'IntName': 'International Name',
+        'SitLat': 'Latitude',
+        'SitLong': 'Longitude',
+        'SitAreaKM2': 'Area (km²)',
+        'KbaStatus': 'KBA Status',
+        'IbaStatus': 'IBA Status'
+      }
+    },
+    'protected-areas': {
+      columns: ['NAME', 'DESIG', 'DESIG_ENG', 'IUCN_CAT', 'STATUS', 'STATUS_YR', 'REP_AREA'],
+      displayNames: {
+        'NAME': 'Name',
+        'DESIG': 'Designation',
+        'DESIG_ENG': 'Designation (English)',
+        'IUCN_CAT': 'IUCN Category',
+        'STATUS': 'Status',
+        'STATUS_YR': 'Status Year',
+        'REP_AREA': 'Reported Area'
+      }
+    },
+    'protected-areas-pol': {
+      columns: ['NAME', 'DESIG', 'DESIG_ENG', 'IUCN_CAT', 'STATUS', 'STATUS_YR', 'GIS_AREA'],
+      displayNames: {
+        'NAME': 'Name',
+        'DESIG': 'Designation',
+        'DESIG_ENG': 'Designation (English)',
+        'IUCN_CAT': 'IUCN Category',
+        'STATUS': 'Status',
+        'STATUS_YR': 'Status Year',
+        'GIS_AREA': 'GIS Area'
+      }
+    },
+    'protected-forest': {
+      columns: ['F_Zone', 'F_Circle', 'F_Div', 'F_Name', 'GPS_Area', 'Gross_Area', 'F_Type', 'Legal_Stat'],
+      displayNames: {
+        'F_Zone': 'Zone',
+        'F_Circle': 'Circle',
+        'F_Div': 'Division',
+        'F_Name': 'Forest Name',
+        'GPS_Area': 'GPS Area',
+        'Gross_Area': 'Gross Area',
+        'F_Type': 'Forest Type',
+        'Legal_Stat': 'Legal Status'
+      }
+    },
+    'ramsar-sites': {
+      columns: ['Site_name', 'Region', 'Country', 'Designatio', 'Area__ha_', 'Latitude', 'Longitude', 'Wetland_Ty'],
+      displayNames: {
+        'Site_name': 'Site Name',
+        'Region': 'Region',
+        'Country': 'Country',
+        'Designatio': 'Designation Date',
+        'Area__ha_': 'Area (ha)',
+        'Latitude': 'Latitude',
+        'Longitude': 'Longitude',
+        'Wetland_Ty': 'Wetland Type'
+      }
+    },
+    'wildlife-occurrence': {
+      columns: ['Species', 'Common_nam', 'X_Longi', 'Y_Lati'],
+      displayNames: {
+        'Species': 'Species',
+        'Common_nam': 'Common Name',
+        'X_Longi': 'Longitude',
+        'Y_Lati': 'Latitude'
+      }
+    }
+  }
+
   const onEachFeature = (feature, layer, layerConfig) => {
     // Validate feature geometry
     if (!feature.geometry || !feature.geometry.coordinates) {
@@ -451,35 +587,129 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     
     if (feature.properties) {
       const props = feature.properties
+      const layerId = layerConfig.id
+      const columnMapping = layerColumnMappings[layerId]
       
-      // Special formatting for wildlife occurrence layer
       let popupContent = ''
-      if (layerConfig.id === 'wildlife-occurrence') {
+      
+      // Use column mappings if available, otherwise show all properties
+      if (columnMapping) {
+        const { columns, displayNames } = columnMapping
+        // Filter to only show columns that exist in the feature
+        const visibleColumns = columns.filter(col => props[col] != null)
+        
+        if (visibleColumns.length > 0) {
+          const icon = layerIcons[layerId] || '📍'
         popupContent = `
-          <div style="max-width: 300px; padding: 8px;">
-            <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color}; font-size: 14px;">Wildlife Occurrence Information</h3>
-            <div style="font-size: 12px; line-height: 1.6;">
-              ${props.Species ? `<div style="margin: 4px 0;"><strong>Species:</strong> ${props.Species}</div>` : ''}
-              ${props.Common_nam ? `<div style="margin: 4px 0;"><strong>Common Name:</strong> ${props.Common_nam}</div>` : ''}
-              ${props.X_Longi != null ? `<div style="margin: 4px 0;"><strong>Longitude:</strong> ${formatCoord(props.X_Longi)}</div>` : ''}
-              ${props.Y_Lati != null ? `<div style="margin: 4px 0;"><strong>Latitude:</strong> ${formatCoord(props.Y_Lati)}</div>` : ''}
+            <div style="width: 380px; padding: 0; margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
+              <div style="background: ${layerConfig.color}; padding: 10px 12px; color: white; margin: 0;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 16px; line-height: 1; flex-shrink: 0;">
+                    ${icon}
+                  </div>
+                  <h3 style="font-weight: bold; margin: 0; font-size: 14px; color: white; flex: 1; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${layerConfig.name}</h3>
+                </div>
+              </div>
+              <div style="background: white; padding: 10px 12px; max-height: 400px; overflow-y: auto; margin: 0;">
+                ${visibleColumns.map(col => {
+                  const value = props[col]
+                  let displayValue = formatValue(value)
+                  // Format dates specially
+                  if (col === 'Designatio' && value) {
+                    displayValue = formatDate(value)
+                  }
+                  // Truncate long values
+                  if (typeof displayValue === 'string' && displayValue.length > 40) {
+                    displayValue = displayValue.substring(0, 40) + '...'
+                  }
+                  // Escape HTML to prevent XSS
+                  const safeValue = String(displayValue).replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
+                  const safeLabel = String(displayNames[col] || col).replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                  return `<div style="margin: 4px 0; padding: 4px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 8px;">
+                    <strong style="color: #6b7280; font-weight: 600; min-width: 130px; font-size: 11px; flex-shrink: 0;">${safeLabel}:</strong>
+                    <span style="color: #1f2937; font-weight: 500; flex: 1; word-break: break-word; line-height: 1.4; font-size: 11px;">${safeValue}</span>
+                  </div>`
+                }).join('')}
+              </div>
+            </div>
+          `
+        } else {
+          // Fallback if no mapped columns have values
+          const icon = layerIcons[layerId] || '📍'
+          popupContent = `
+            <div style="width: 300px; padding: 0; margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
+              <div style="background: ${layerConfig.color}; padding: 10px 12px; color: white; margin: 0;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 16px; line-height: 1; flex-shrink: 0;">
+                    ${icon}
+                  </div>
+                  <h3 style="font-weight: bold; margin: 0; font-size: 14px; color: white; flex: 1; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${layerConfig.name}</h3>
+                </div>
+              </div>
+              <div style="background: white; padding: 20px; margin: 0;">
+                <div style="font-size: 12px; color: #6b7280; text-align: center;">No data available</div>
             </div>
           </div>
         `
+        }
       } else {
-        // Default popup for other layers
+        // For layers without mappings, show first 10 properties
+        const allKeys = Object.keys(props).slice(0, 10)
+        const icon = layerIcons[layerId] || '📍'
+        if (allKeys.length > 0) {
+          popupContent = `
+            <div style="width: 380px; padding: 0; margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
+              <div style="background: ${layerConfig.color}; padding: 10px 12px; color: white; margin: 0;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 16px; line-height: 1; flex-shrink: 0;">
+                    ${icon}
+                  </div>
+                  <h3 style="font-weight: bold; margin: 0; font-size: 14px; color: white; flex: 1; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${layerConfig.name}</h3>
+                </div>
+              </div>
+              <div style="background: white; padding: 10px 12px; max-height: 400px; overflow-y: auto; margin: 0;">
+                ${allKeys.map(key => {
+                  const value = formatValue(props[key])
+                  // Truncate long values
+                  const displayValue = typeof value === 'string' && value.length > 40 ? value.substring(0, 40) + '...' : value
+                  // Escape HTML to prevent XSS
+                  const safeValue = String(displayValue).replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
+                  const safeKey = String(key).replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                  return `<div style="margin: 4px 0; padding: 4px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 8px;">
+                    <strong style="color: #6b7280; font-weight: 600; min-width: 130px; font-size: 11px; flex-shrink: 0;">${safeKey}:</strong>
+                    <span style="color: #1f2937; font-weight: 500; flex: 1; word-break: break-word; line-height: 1.4; font-size: 11px;">${safeValue}</span>
+                  </div>`
+                }).join('')}
+              </div>
+            </div>
+          `
+        } else {
         popupContent = `
-        <div style="max-width: 300px;">
-          <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color};">${layerConfig.name}</h3>
-          <div style="font-size: 12px;">
-            ${Object.keys(props)
-              .map(key => `<div style="margin: 4px 0;"><strong>${key}:</strong> ${props[key]}</div>`)
-              .join('')}
+            <div style="width: 300px; padding: 0; margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
+              <div style="background: ${layerConfig.color}; padding: 10px 12px; color: white; margin: 0;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 16px; line-height: 1; flex-shrink: 0;">
+                    ${icon}
+                  </div>
+                  <h3 style="font-weight: bold; margin: 0; font-size: 14px; color: white; flex: 1; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${layerConfig.name}</h3>
+                </div>
+              </div>
+              <div style="background: white; padding: 20px; margin: 0;">
+                <div style="font-size: 12px; color: #6b7280; text-align: center;">No data available</div>
           </div>
         </div>
       `
       }
-      layer.bindPopup(popupContent)
+      }
+      
+      layer.bindPopup(popupContent, {
+        className: 'custom-popup',
+        maxWidth: 400,
+        autoPan: true,
+        closeButton: true,
+        autoClose: true,
+        keepInView: true
+      })
       
       // Add click handler to notify parent of feature selection
       layer.on('click', (e) => {

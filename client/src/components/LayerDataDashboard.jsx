@@ -192,18 +192,18 @@ function FallbackLayerTable({ layerId, layer, data, selectedFeature, tableRefs }
   }, [selectedFeatureIndex, layerId, tableRefs])
   
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
-      <div className="bg-gray-50 px-4 py-2 border-b border-gray-200">
+    <div className="border border-gray-200 rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
+      <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="font-semibold text-gray-800" style={{ color: layer?.color || '#22c55e' }}>
+            <h3 className="font-bold text-lg text-gray-900" style={{ color: layer?.color || '#22c55e' }}>
               {layer?.name || layerId}
             </h3>
-            <p className="text-sm text-gray-600 mt-1">{data.features.length} feature(s)</p>
+            <p className="text-sm text-gray-600 mt-1 font-medium">{data.features.length} feature(s)</p>
           </div>
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="ml-4 p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded transition-colors"
+            className="ml-4 p-2.5 text-gray-600 hover:text-white hover:bg-gradient-to-br hover:from-green-500 hover:to-green-600 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
             aria-label={isExpanded ? "Collapse" : "Expand"}
             title={isExpanded ? "Collapse table" : "Expand table"}
           >
@@ -216,18 +216,18 @@ function FallbackLayerTable({ layerId, layer, data, selectedFeature, tableRefs }
         </div>
       </div>
       {isExpanded && (
-        <div className="overflow-x-auto" ref={el => { if (el) tableRefs.current[layerId] = el }}>
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              {allKeys.map(key => (
-                <th key={key} className="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                  {key}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+        <div className="overflow-x-auto bg-white" ref={el => { if (el) tableRefs.current[layerId] = el }}>
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gradient-to-r from-gray-100 to-gray-50">
+              <tr>
+                {allKeys.map(key => (
+                  <th key={key} className="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-b-2 border-gray-300">
+                    {key}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-100">
             {data.features.slice(0, 50).map((feature, idx) => {
               const featureId = getFeatureId(feature, layerId)
               const isSelected = selectedFeature && 
@@ -238,17 +238,17 @@ function FallbackLayerTable({ layerId, layer, data, selectedFeature, tableRefs }
                 <tr 
                   key={idx}
                   data-feature-index={idx}
-                  className={`transition-colors ${
+                  className={`transition-all duration-200 ${
                     isSelected 
-                      ? 'bg-green-100 border-l-4 border-green-600 font-semibold' 
-                      : 'hover:bg-gray-50'
-                  }`}
+                      ? 'bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 font-semibold shadow-sm' 
+                      : 'hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-sm'
+                  } ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}
                 >
                   {allKeys.map(key => (
                     <td 
                       key={key} 
-                      className={`px-4 py-2 text-sm ${
-                        isSelected ? 'text-green-900' : 'text-gray-700'
+                      className={`px-6 py-4 text-sm font-medium ${
+                        isSelected ? 'text-green-900' : 'text-gray-800'
                       }`}
                     >
                       {formatValue(feature.properties[key])}
@@ -359,59 +359,59 @@ function LayerTable({ layerId, layer, data, columnMapping, selectedFeature, tabl
               <button
                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                 disabled={currentPage === 1}
-                className="p-1 rounded hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-lg bg-white border border-gray-300 hover:bg-gradient-to-br hover:from-green-500 hover:to-green-600 hover:text-white hover:border-green-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-600 transition-all duration-200 shadow-sm hover:shadow-md"
                 aria-label="Previous page"
               >
-                <FaChevronLeft className="text-gray-600" />
+                <FaChevronLeft className="text-sm" />
               </button>
-              <span className="text-sm text-gray-700 font-medium">
+              <span className="text-sm text-gray-700 font-bold px-3 py-1.5 bg-white rounded-lg border border-gray-300 shadow-sm">
                 Page {currentPage} of {totalPages}
               </span>
               <button
                 onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                 disabled={currentPage === totalPages}
-                className="p-1 rounded hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-lg bg-white border border-gray-300 hover:bg-gradient-to-br hover:from-green-500 hover:to-green-600 hover:text-white hover:border-green-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-600 transition-all duration-200 shadow-sm hover:shadow-md"
                 aria-label="Next page"
               >
-                <FaChevronRight className="text-gray-600" />
+                <FaChevronRight className="text-sm" />
               </button>
             </div>
           )}
         </div>
         {showPagination && (
-          <div className="mt-2 flex flex-wrap gap-1">
+          <div className="mt-3 flex flex-wrap gap-2">
             {Array.from({ length: Math.min(totalPages, 30) }, (_, i) => i + 1).map(pageNum => (
               <button
                 key={pageNum}
                 onClick={() => setCurrentPage(pageNum)}
-                className={`px-2 py-1 text-xs rounded transition-colors ${
+                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 shadow-sm ${
                   currentPage === pageNum
-                    ? 'bg-green-600 text-white font-semibold'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+                    ? 'bg-gradient-to-br from-green-500 to-green-600 text-white shadow-md transform scale-105'
+                    : 'bg-white text-gray-700 hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 hover:text-green-700 border border-gray-300 hover:border-green-400 hover:shadow-md'
                 }`}
               >
                 {pageNum}
               </button>
             ))}
             {totalPages > 30 && (
-              <span className="px-2 py-1 text-xs text-gray-500">...</span>
+              <span className="px-3 py-1.5 text-xs text-gray-500 font-medium">...</span>
             )}
           </div>
         )}
       </div>
       {isExpanded && (
-        <div className="overflow-x-auto" ref={el => { if (el) tableRefs.current[layerId] = el }}>
+        <div className="overflow-x-auto bg-white" ref={el => { if (el) tableRefs.current[layerId] = el }}>
           <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              {visibleColumns.map(col => (
-                <th key={col} className="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider sticky top-0 bg-gray-50 z-10">
-                  {displayNames[col] || col}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+            <thead className="bg-gradient-to-r from-gray-100 to-gray-50 sticky top-0 z-20">
+              <tr>
+                {visibleColumns.map(col => (
+                  <th key={col} className="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-b-2 border-gray-300">
+                    {displayNames[col] || col}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-100">
             {paginatedFeatures.map((feature, idx) => {
               const featureIndex = startIndex + idx
               const featureId = getFeatureId(feature, layerId)
@@ -419,36 +419,36 @@ function LayerTable({ layerId, layer, data, columnMapping, selectedFeature, tabl
                                 selectedFeature.layerId === layerId && 
                                 selectedFeature.featureId === featureId
               
-              return (
-                <tr 
-                  key={featureIndex}
-                  data-feature-index={featureIndex}
-                  className={`transition-colors ${
-                    isSelected 
-                      ? 'bg-green-100 border-l-4 border-green-600 font-semibold' 
-                      : 'hover:bg-gray-50'
-                  }`}
-                >
-                  {visibleColumns.map(col => {
-                    const value = feature.properties?.[col]
-                    // Format dates specially
-                    let displayValue = formatValue(value)
-                    if (col === 'Designatio' && value) {
-                      displayValue = formatDate(value)
-                    }
-                    return (
-                      <td 
-                        key={col} 
-                        className={`px-4 py-2 text-sm whitespace-nowrap ${
-                          isSelected ? 'text-green-900' : 'text-gray-700'
-                        }`}
-                      >
-                        {displayValue}
-                      </td>
-                    )
-                  })}
-                </tr>
-              )
+                return (
+                  <tr 
+                    key={featureIndex}
+                    data-feature-index={featureIndex}
+                    className={`transition-all duration-200 ${
+                      isSelected 
+                        ? 'bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 font-semibold shadow-sm' 
+                        : 'hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-sm'
+                    } ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}
+                  >
+                    {visibleColumns.map(col => {
+                      const value = feature.properties?.[col]
+                      // Format dates specially
+                      let displayValue = formatValue(value)
+                      if (col === 'Designatio' && value) {
+                        displayValue = formatDate(value)
+                      }
+                      return (
+                        <td 
+                          key={col} 
+                          className={`px-6 py-4 text-sm font-medium whitespace-nowrap ${
+                            isSelected ? 'text-green-900' : 'text-gray-800'
+                          }`}
+                        >
+                          {displayValue}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                )
             })}
           </tbody>
         </table>
@@ -558,12 +558,16 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
   }
 
   return (
-    <div className="w-full bg-white border-t border-gray-200 shadow-lg relative">
-      <div className="px-4 py-3 bg-gradient-to-r from-green-50 to-blue-50 border-b border-gray-200">
-        <div className="flex items-center space-x-2">
-          <FaTable className="text-green-600" />
-          <h2 className="text-lg font-semibold text-gray-800">Layer Data Dashboard</h2>
-          <FaInfoCircle className="text-gray-400 text-sm" title="Data from active layers" />
+    <div className="w-full bg-white border-t-4 border-green-500 shadow-2xl relative">
+      <div className="px-6 py-4 border-b-2 border-green-600" style={{ backgroundColor: '#22c55e', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' }}>
+        <div className="flex items-center space-x-3">
+          <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
+            <FaTable className="text-white text-xl" />
+          </div>
+          <h2 className="text-xl font-bold text-white drop-shadow-md" style={{ fontFamily: 'inherit' }}>Layer Data Dashboard</h2>
+          <div className="p-1.5 bg-white/20 rounded-full backdrop-blur-sm">
+            <FaInfoCircle className="text-white text-sm" title="Data from active layers" />
+          </div>
         </div>
       </div>
 
@@ -571,14 +575,14 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
       {(canScrollUp || canScrollDown) && (
         <button
           onClick={handleScroll}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-all transform hover:scale-110 active:scale-95"
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-50 bg-gradient-to-br from-green-500 to-green-600 text-white p-4 rounded-full shadow-2xl hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-110 active:scale-95 border-2 border-white"
           aria-label={canScrollDown ? "Scroll down" : "Scroll to top"}
           title={canScrollDown ? "Scroll down" : "Scroll to top"}
         >
           {canScrollDown ? (
-            <FaChevronDown className="text-base" />
+            <FaChevronDown className="text-lg font-bold" />
           ) : (
-            <FaChevronUp className="text-base" />
+            <FaChevronUp className="text-lg font-bold" />
           )}
         </button>
       )}

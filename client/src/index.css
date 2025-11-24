@@ -227,3 +227,33 @@ html {
   background: #475569;
 }
 
+/* Custom Leaflet popup styling - remove extra white space and allow dynamic sizing */
+.leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  min-height: auto !important;
+}
+
+.leaflet-popup-tip {
+  background: white !important;
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Ensure popup container doesn't add extra height */
+.leaflet-popup {
+  margin: 0 !important;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+  height: auto !important;
+}
+
