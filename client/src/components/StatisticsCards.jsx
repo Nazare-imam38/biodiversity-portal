@@ -1,4 +1,83 @@
+import { useState, useEffect, useRef } from 'react'
 import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud } from 'react-icons/fa'
+
+// Typewriter animation component for numbers
+function TypewriterNumber({ value, delay = 30, index = 0 }) {
+  const [displayValue, setDisplayValue] = useState('')
+  const [isAnimating, setIsAnimating] = useState(false)
+  const hasAnimated = useRef(false)
+
+  useEffect(() => {
+    // Only animate once when component mounts
+    if (hasAnimated.current) return
+    
+    // Stagger animation start for each card
+    const startDelay = index * 100
+    
+    const startAnimation = setTimeout(() => {
+      setIsAnimating(true)
+      hasAnimated.current = true
+      
+      // Extract the numeric part and any suffix (like %)
+      const match = value.match(/^([\d,]+)(.*)$/)
+      if (!match) {
+        setDisplayValue(value)
+        setIsAnimating(false)
+        return
+      }
+      
+      const numericPart = match[1]
+      const suffix = match[2] || ''
+      
+      // Remove commas for animation
+      const cleanNumber = numericPart.replace(/,/g, '')
+      let currentIndex = 0
+      
+      const animate = () => {
+        if (currentIndex <= cleanNumber.length) {
+          // Add back commas as we build the number
+          let partialNumber = cleanNumber.substring(0, currentIndex)
+          
+          // Add commas for thousands
+          if (partialNumber.length > 3) {
+            partialNumber = partialNumber.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+          }
+          
+          setDisplayValue(partialNumber + suffix)
+          currentIndex++
+          setTimeout(animate, delay)
+        } else {
+          setIsAnimating(false)
+        }
+      }
+      
+      animate()
+    }, startDelay)
+    
+    return () => {
+      clearTimeout(startAnimation)
+    }
+  }, [value, delay, index])
+
+  return (
+    <span className="font-bold inline-block" style={{ fontVariantNumeric: 'tabular-nums' }}>
+      {displayValue || (hasAnimated.current ? value : '')}
+      {isAnimating && (
+        <span 
+          className="inline-block ml-0.5 animate-pulse text-gray-500"
+          style={{ 
+            animation: 'blink 1s infinite',
+            width: '2px',
+            height: '1em',
+            backgroundColor: 'currentColor',
+            verticalAlign: 'baseline'
+          }}
+        >
+        </span>
+      )}
+    </span>
+  )
+}
 
 export default function StatisticsCards({ layerData, activeLayers }) {
   // Calculate statistics from active layers
@@ -91,7 +170,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
               />
             </div>
             <div className="text-sm sm:text-base md:text-lg text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight whitespace-pre-line">
-              <span className="font-bold">{card.value}</span>
+              <TypewriterNumber value={card.value} delay={30} index={index} />
             </div>
             {card.valueText && (
               <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.valueText}</div>

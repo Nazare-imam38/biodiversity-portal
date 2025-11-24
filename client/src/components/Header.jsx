@@ -156,7 +156,7 @@ export default function Header() {
               )}
               {!undpLogoError ? (
                 <img 
-                  src="/Assets/undp.png" 
+                  src="/Assets/UNDP%20A.png" 
                   alt="UNDP Pakistan" 
                   className="h-8 lg:h-10 w-auto object-contain"
                   style={{ maxWidth: '100px' }}

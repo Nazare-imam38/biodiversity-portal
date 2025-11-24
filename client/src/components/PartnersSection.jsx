@@ -9,7 +9,7 @@ export default function PartnersSection() {
           {/* UNDP Logo */}
           <div className="flex items-center justify-center" style={{ width: '140px', height: '80px' }}>
             <img 
-              src="/Assets/undp.png" 
+              src="/Assets/UNDP%20A.png" 
               alt="United Nations Development Programme" 
               className="w-full h-full object-contain"
               onError={(e) => {

@@ -177,6 +177,16 @@ html {
   animation: fadeIn 0.8s ease-in-out;
 }
 
+/* Blink animation for typewriter cursor */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
 /* Hide scrollbar but keep functionality */
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */

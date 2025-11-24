@@ -63,6 +63,9 @@ function useScrollAnimation(options = {}) {
   return [ref, isVisible]
 }
 
+// Image version for cache-busting - update this when images change
+const IMAGE_VERSION = 'v3'
+
 export default function Home() {
   const navigate = useNavigate()
   
@@ -72,14 +75,14 @@ export default function Home() {
   const [featuresRef, featuresVisible] = useScrollAnimation()
   const [datasetsRef, datasetsVisible] = useScrollAnimation()
 
-  // Hero section images for rotation
+  // Hero section images for rotation - using updated images from /ass directory
   const heroImages = [
-    { url: '/ass/1.png', alt: 'Biodiversity Image 1' },
-    { url: '/ass/2.png', alt: 'Biodiversity Image 2' },
-    { url: '/ass/3.jpg', alt: 'Biodiversity Image 3' },
-    { url: '/ass/4.jpg', alt: 'Biodiversity Image 4' },
-    { url: '/ass/5.png', alt: 'Biodiversity Image 5' },
-    { url: '/ass/6.jpg', alt: 'Biodiversity Image 6' }
+    { url: `/ass/plant.png?${IMAGE_VERSION}`, alt: 'Biodiversity - Planting Seedling' },
+    { url: `/ass/chakor.jpg?${IMAGE_VERSION}`, alt: 'Biodiversity - Chakor Birds' },
+    { url: `/ass/shaheen.jpg?${IMAGE_VERSION}`, alt: 'Biodiversity - Shaheen Falcon' },
+    { url: `/ass/leopard.jpg?${IMAGE_VERSION}`, alt: 'Biodiversity - Snow Leopard' },
+    { url: `/ass/fish.png?${IMAGE_VERSION}`, alt: 'Biodiversity - Fish' },
+    { url: `/ass/markhor.jpg?${IMAGE_VERSION}`, alt: 'Biodiversity - Markhor' }
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -317,19 +320,19 @@ export default function Home() {
               { 
                 title: 'Biodiversity Data', 
                 subtitle: 'Species, KBAs, Wetlands, PAs',
-                image: 'https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=800&h=600&fit=crop',
+                image: 'https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=800&h=600&fit=crop&q=80',
                 gradient: 'from-green-600 to-green-800'
               },
               { 
                 title: 'Forests & Land Cover', 
                 subtitle: 'Cover, Change, Biomass, Fires',
-                image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop',
+                image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop&q=80',
                 gradient: 'from-green-700 to-green-900'
               },
               { 
                 title: 'Agroecological Regions', 
                 subtitle: 'Drought, Soil Health, Erosion',
-                image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop',
+                image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop&q=80',
                 gradient: 'from-amber-600 to-amber-800'
               }
             ].map((dataset, idx) => (
