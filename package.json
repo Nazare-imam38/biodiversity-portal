@@ -11,7 +11,10 @@
     "build": "npm run install:all && cd client && npm run build",
     "install:all": "npm install && cd client && npm install",
     "vercel-build": "npm run install:all && cd client && npm run build",
-    "postinstall": "cd client && npm install"
+    "postinstall": "cd client && npm install",
+    "clip-gb": "node scripts/clip-layers-to-region.js --region=Gilgit Baltistan",
+    "clip-punjab": "node scripts/clip-layers-to-region.js --region=Punjab",
+    "clip-all": "node scripts/clip-layers-to-region.js"
   },
   "keywords": [
     "biodiversity",

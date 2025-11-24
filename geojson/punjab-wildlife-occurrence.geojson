@@ -1,0 +1,4853 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 72.146851,
+        "Y_Lati": 31.148975,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.146851,
+          31.148975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 72.1477,
+        "Y_Lati": 31.163584,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.1477,
+          31.163584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.635436,
+        "Y_Lati": 32.836255,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.635436,
+          32.836255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 71.435509,
+        "Y_Lati": 32.445535,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.435509,
+          32.445535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 71.404543,
+        "Y_Lati": 32.489648,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.404543,
+          32.489648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 70.852174,
+        "Y_Lati": 30.506419,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.852174,
+          30.506419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 70.842009,
+        "Y_Lati": 30.524639,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.842009,
+          30.524639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 70.82543,
+        "Y_Lati": 30.535413,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.82543,
+          30.535413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 70.861212,
+        "Y_Lati": 30.49898,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.861212,
+          30.49898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 70.852914,
+        "Y_Lati": 30.520283,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.852914,
+          30.520283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.856258,
+        "Y_Lati": 31.222874,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.856258,
+          31.222874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.853814,
+        "Y_Lati": 31.219046,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.853814,
+          31.219046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.865802,
+        "Y_Lati": 31.225159,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.865802,
+          31.225159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.855704,
+        "Y_Lati": 31.222523,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.855704,
+          31.222523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.873861,
+        "Y_Lati": 31.232737,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.873861,
+          31.232737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.848363,
+        "Y_Lati": 31.216331,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.848363,
+          31.216331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.836431,
+        "Y_Lati": 31.215071,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.836431,
+          31.215071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Chitra indica",
+        "X_Longi": 73.882337,
+        "Y_Lati": 31.245743,
+        "Common_nam": "Chitra indica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.882337,
+          31.245743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 73.474162,
+        "Y_Lati": 33.859864,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.474162,
+          33.859864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 73.535687,
+        "Y_Lati": 33.787297,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.535687,
+          33.787297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 73.42959,
+        "Y_Lati": 33.853679,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.42959,
+          33.853679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 73.470245,
+        "Y_Lati": 33.937445,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.470245,
+          33.937445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 71.639933,
+        "Y_Lati": 32.813879,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.639933,
+          32.813879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 71.646489,
+        "Y_Lati": 32.834232,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.646489,
+          32.834232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 71.61625,
+        "Y_Lati": 32.81674,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.61625,
+          32.81674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 71.63214,
+        "Y_Lati": 32.811315,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.63214,
+          32.811315
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 71.647886,
+        "Y_Lati": 32.826017,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.647886,
+          32.826017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 71.627678,
+        "Y_Lati": 32.822195,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.627678,
+          32.822195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 71.609654,
+        "Y_Lati": 32.834098,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.609654,
+          32.834098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Leopard",
+        "X_Longi": 71.941645,
+        "Y_Lati": 32.547238,
+        "Common_nam": "Leopard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.941645,
+          32.547238
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hardella thurjii",
+        "X_Longi": 72.143131,
+        "Y_Lati": 31.154234,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.143131,
+          31.154234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Geoclemys hamiltonii",
+        "X_Longi": 73.71467,
+        "Y_Lati": 32.332666,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.71467,
+          32.332666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Geoclemys hamiltonii",
+        "X_Longi": 72.1494,
+        "Y_Lati": 31.140073,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.1494,
+          31.140073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Geoclemys hamiltonii",
+        "X_Longi": 74.474004,
+        "Y_Lati": 32.675137,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.474004,
+          32.675137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Geoclemys hamiltonii",
+        "X_Longi": 74.415158,
+        "Y_Lati": 32.515334,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.415158,
+          32.515334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Geoclemys hamiltonii",
+        "X_Longi": 71.388005,
+        "Y_Lati": 32.470388,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.388005,
+          32.470388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Geoclemys hamiltonii",
+        "X_Longi": 70.854358,
+        "Y_Lati": 30.515074,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.854358,
+          30.515074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Lissemys punciata",
+        "X_Longi": 73.738496,
+        "Y_Lati": 32.120338,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.738496,
+          32.120338
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Lissemys punciata",
+        "X_Longi": 74.382287,
+        "Y_Lati": 32.482666,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.382287,
+          32.482666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Lissemys punciata",
+        "X_Longi": 72.947852,
+        "Y_Lati": 31.730738,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.947852,
+          31.730738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Lissemys punciata",
+        "X_Longi": 73.512009,
+        "Y_Lati": 32.68433,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.512009,
+          32.68433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Lissemys punciata",
+        "X_Longi": 73.627482,
+        "Y_Lati": 32.828748,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.627482,
+          32.828748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Lissemys punciata",
+        "X_Longi": 73.855704,
+        "Y_Lati": 31.222613,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.855704,
+          31.222613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 73.758183,
+        "Y_Lati": 32.322186,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.758183,
+          32.322186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 72.143136,
+        "Y_Lati": 31.148094,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.143136,
+          31.148094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 74.462215,
+        "Y_Lati": 32.670494,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.462215,
+          32.670494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 73.758183,
+        "Y_Lati": 32.322186,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.758183,
+          32.322186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 74.327385,
+        "Y_Lati": 32.439476,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.327385,
+          32.439476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 72.947546,
+        "Y_Lati": 31.726679,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.947546,
+          31.726679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 73.520103,
+        "Y_Lati": 32.679546,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.520103,
+          32.679546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 73.627966,
+        "Y_Lati": 32.834758,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.627966,
+          32.834758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 71.373301,
+        "Y_Lati": 32.421311,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.373301,
+          32.421311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 70.845995,
+        "Y_Lati": 30.513497,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.845995,
+          30.513497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 71.218379,
+        "Y_Lati": 32.172602,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.218379,
+          32.172602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 72.557481,
+        "Y_Lati": 29.825569,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.557481,
+          29.825569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 72.422443,
+        "Y_Lati": 29.679466,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.422443,
+          29.679466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 73.381147,
+        "Y_Lati": 30.365584,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.381147,
+          30.365584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 72.849124,
+        "Y_Lati": 29.807997,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.849124,
+          29.807997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga smithii",
+        "X_Longi": 73.866228,
+        "Y_Lati": 31.222085,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.866228,
+          31.222085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 73.658527,
+        "Y_Lati": 32.310389,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.658527,
+          32.310389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 72.140564,
+        "Y_Lati": 31.162182,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.140564,
+          31.162182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 74.4536,
+        "Y_Lati": 32.678048,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.4536,
+          32.678048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 73.658527,
+        "Y_Lati": 32.310389,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.658527,
+          32.310389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 74.318332,
+        "Y_Lati": 32.409347,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.318332,
+          32.409347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 72.942403,
+        "Y_Lati": 31.723686,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.942403,
+          31.723686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 73.53286,
+        "Y_Lati": 32.690591,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.53286,
+          32.690591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 71.462277,
+        "Y_Lati": 32.490682,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.462277,
+          32.490682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 70.85353,
+        "Y_Lati": 30.527247,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.85353,
+          30.527247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 71.240338,
+        "Y_Lati": 32.176414,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.240338,
+          32.176414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 72.546314,
+        "Y_Lati": 29.824508,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.546314,
+          29.824508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 72.42374,
+        "Y_Lati": 29.680496,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.42374,
+          29.680496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 73.388551,
+        "Y_Lati": 30.366249,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.388551,
+          30.366249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 72.841185,
+        "Y_Lati": 29.805069,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.841185,
+          29.805069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Kachuga tecta",
+        "X_Longi": 73.860265,
+        "Y_Lati": 31.224386,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.860265,
+          31.224386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 73.685302,
+        "Y_Lati": 32.325689,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.685302,
+          32.325689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 72.141778,
+        "Y_Lati": 31.143928,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.141778,
+          31.143928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 74.469426,
+        "Y_Lati": 32.683942,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.469426,
+          32.683942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 73.685302,
+        "Y_Lati": 32.325689,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.685302,
+          32.325689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 74.366852,
+        "Y_Lati": 32.462467,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.366852,
+          32.462467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 72.949217,
+        "Y_Lati": 31.732596,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.949217,
+          31.732596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 73.526968,
+        "Y_Lati": 32.688711,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.526968,
+          32.688711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 73.639846,
+        "Y_Lati": 32.832425,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.639846,
+          32.832425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 71.463211,
+        "Y_Lati": 32.458482,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.463211,
+          32.458482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 70.844663,
+        "Y_Lati": 30.51731,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.844663,
+          30.51731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 71.235879,
+        "Y_Lati": 32.187619,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.235879,
+          32.187619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 72.552513,
+        "Y_Lati": 29.826376,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.552513,
+          29.826376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 72.416696,
+        "Y_Lati": 29.675432,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.416696,
+          29.675432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 73.39583,
+        "Y_Lati": 30.366813,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.39583,
+          30.366813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 72.857155,
+        "Y_Lati": 29.811546,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.857155,
+          29.811546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia gangetica",
+        "X_Longi": 73.859053,
+        "Y_Lati": 31.220127,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.859053,
+          31.220127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 73.729155,
+        "Y_Lati": 32.326588,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.729155,
+          32.326588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 72.145218,
+        "Y_Lati": 31.141292,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.145218,
+          31.141292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 73.729155,
+        "Y_Lati": 32.326588,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.729155,
+          32.326588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 74.423537,
+        "Y_Lati": 32.54377,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.423537,
+          32.54377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 73.532865,
+        "Y_Lati": 32.682475,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.532865,
+          32.682475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 73.633483,
+        "Y_Lati": 32.828299,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.633483,
+          32.828299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 71.334648,
+        "Y_Lati": 32.459457,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.334648,
+          32.459457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 70.855207,
+        "Y_Lati": 30.50586,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.855207,
+          30.50586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 71.234491,
+        "Y_Lati": 32.156367,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.234491,
+          32.156367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Nilssonia hurum",
+        "X_Longi": 73.853508,
+        "Y_Lati": 31.218615,
+        "Common_nam": "Freshwater Turtles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.853508,
+          31.218615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 70.045604,
+        "Y_Lati": 28.535698,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.045604,
+          28.535698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 70.853356,
+        "Y_Lati": 29.312269,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.853356,
+          29.312269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 70.900964,
+        "Y_Lati": 29.118742,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.900964,
+          29.118742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 70.878196,
+        "Y_Lati": 30.06718,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.878196,
+          30.06718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 73.861851,
+        "Y_Lati": 30.379097,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.861851,
+          30.379097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 74.313967,
+        "Y_Lati": 31.611557,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.313967,
+          31.611557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 72.033971,
+        "Y_Lati": 30.34493,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.033971,
+          30.34493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 71.47347,
+        "Y_Lati": 32.057433,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.47347,
+          32.057433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 74.6964,
+        "Y_Lati": 31.970975,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.6964,
+          31.970975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 74.759474,
+        "Y_Lati": 31.966791,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.759474,
+          31.966791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 74.79597,
+        "Y_Lati": 32.001444,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.79597,
+          32.001444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 74.940098,
+        "Y_Lati": 32.092758,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.940098,
+          32.092758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 75.090592,
+        "Y_Lati": 32.109233,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.090592,
+          32.109233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 75.187905,
+        "Y_Lati": 32.108374,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.187905,
+          32.108374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 75.27884,
+        "Y_Lati": 32.197058,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.27884,
+          32.197058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 75.315745,
+        "Y_Lati": 32.269236,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.315745,
+          32.269236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 75.298195,
+        "Y_Lati": 32.319466,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.298195,
+          32.319466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 75.206346,
+        "Y_Lati": 32.388326,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.206346,
+          32.388326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 73.994475,
+        "Y_Lati": 31.083881,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.994475,
+          31.083881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 73.183257,
+        "Y_Lati": 32.424657,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.183257,
+          32.424657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 70.83929,
+        "Y_Lati": 30.543075,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.83929,
+          30.543075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 70.848716,
+        "Y_Lati": 30.53502,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.848716,
+          30.53502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 70.847915,
+        "Y_Lati": 30.544926,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.847915,
+          30.544926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 70.843038,
+        "Y_Lati": 30.539078,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.843038,
+          30.539078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 71.403979,
+        "Y_Lati": 32.604457,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.403979,
+          32.604457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Hog deer",
+        "X_Longi": 71.904401,
+        "Y_Lati": 29.316937,
+        "Common_nam": "Hog deer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.904401,
+          29.316937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 72.208702,
+        "Y_Lati": 28.422662,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.208702,
+          28.422662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 72.178436,
+        "Y_Lati": 28.423173,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.178436,
+          28.423173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 72.173391,
+        "Y_Lati": 28.369564,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.173391,
+          28.369564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 72.107708,
+        "Y_Lati": 28.399085,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.107708,
+          28.399085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 72.018626,
+        "Y_Lati": 28.316907,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.018626,
+          28.316907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.81632,
+        "Y_Lati": 28.294674,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.81632,
+          28.294674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.762569,
+        "Y_Lati": 28.011085,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.762569,
+          28.011085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.655696,
+        "Y_Lati": 28.16044,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.655696,
+          28.16044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.565097,
+        "Y_Lati": 27.944008,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.565097,
+          27.944008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.552106,
+        "Y_Lati": 28.085919,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.552106,
+          28.085919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 70.839536,
+        "Y_Lati": 27.746898,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.839536,
+          27.746898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.088838,
+        "Y_Lati": 28.023799,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.088838,
+          28.023799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.220883,
+        "Y_Lati": 28.08138,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.220883,
+          28.08138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.358727,
+        "Y_Lati": 27.899025,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.358727,
+          27.899025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.173118,
+        "Y_Lati": 27.848816,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.173118,
+          27.848816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.428525,
+        "Y_Lati": 28.005542,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.428525,
+          28.005542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 70.752839,
+        "Y_Lati": 27.789159,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.752839,
+          27.789159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.416352,
+        "Y_Lati": 27.961526,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.416352,
+          27.961526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian bustard",
+        "X_Longi": 71.449025,
+        "Y_Lati": 27.900524,
+        "Common_nam": "Indian bustard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.449025,
+          27.900524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.861948,
+        "Y_Lati": 32.93404,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.861948,
+          32.93404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.682994,
+        "Y_Lati": 32.939432,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.682994,
+          32.939432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.76125,
+        "Y_Lati": 32.922992,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.76125,
+          32.922992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.725415,
+        "Y_Lati": 32.767479,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.725415,
+          32.767479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.751017,
+        "Y_Lati": 32.857239,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.751017,
+          32.857239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.88764,
+        "Y_Lati": 32.925117,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.88764,
+          32.925117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.978526,
+        "Y_Lati": 32.722019,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.978526,
+          32.722019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.000174,
+        "Y_Lati": 32.887216,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.000174,
+          32.887216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.714832,
+        "Y_Lati": 32.755646,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.714832,
+          32.755646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.762034,
+        "Y_Lati": 32.860766,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.762034,
+          32.860766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.857375,
+        "Y_Lati": 32.803809,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.857375,
+          32.803809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.084535,
+        "Y_Lati": 32.781605,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.084535,
+          32.781605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.401195,
+        "Y_Lati": 32.903466,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.401195,
+          32.903466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.176674,
+        "Y_Lati": 32.626885,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.176674,
+          32.626885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.850055,
+        "Y_Lati": 32.816729,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.850055,
+          32.816729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.758353,
+        "Y_Lati": 32.688808,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.758353,
+          32.688808
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.468614,
+        "Y_Lati": 32.641303,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.468614,
+          32.641303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.715095,
+        "Y_Lati": 32.775769,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.715095,
+          32.775769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.759261,
+        "Y_Lati": 33.293794,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.759261,
+          33.293794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.437423,
+        "Y_Lati": 33.07506,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.437423,
+          33.07506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.043314,
+        "Y_Lati": 32.588559,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.043314,
+          32.588559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.358298,
+        "Y_Lati": 33.009225,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.358298,
+          33.009225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.410624,
+        "Y_Lati": 33.113331,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.410624,
+          33.113331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.246181,
+        "Y_Lati": 33.525935,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.246181,
+          33.525935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.239358,
+        "Y_Lati": 33.471031,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.239358,
+          33.471031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 71.893024,
+        "Y_Lati": 33.158901,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.893024,
+          33.158901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.17986,
+        "Y_Lati": 33.216765,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.17986,
+          33.216765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.036395,
+        "Y_Lati": 33.18253,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.036395,
+          33.18253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.131675,
+        "Y_Lati": 33.201009,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.131675,
+          33.201009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.11686,
+        "Y_Lati": 33.18358,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.11686,
+          33.18358
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 71.90008,
+        "Y_Lati": 33.13347,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.90008,
+          33.13347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.795988,
+        "Y_Lati": 33.281753,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.795988,
+          33.281753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.834939,
+        "Y_Lati": 33.354415,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.834939,
+          33.354415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.375182,
+        "Y_Lati": 33.060542,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.375182,
+          33.060542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.776701,
+        "Y_Lati": 32.838418,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.776701,
+          32.838418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.750556,
+        "Y_Lati": 32.907516,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.750556,
+          32.907516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 71.900077,
+        "Y_Lati": 33.133473,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.900077,
+          33.133473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.181605,
+        "Y_Lati": 33.515806,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.181605,
+          33.515806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 72.867246,
+        "Y_Lati": 32.567281,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.867246,
+          32.567281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 73.149032,
+        "Y_Lati": 32.607611,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.149032,
+          32.607611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Indian Pangolin",
+        "X_Longi": 71.936527,
+        "Y_Lati": 32.692068,
+        "Common_nam": "Indian Pangolin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.936527,
+          32.692068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.682249,
+        "Y_Lati": 30.504938,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.682249,
+          30.504938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.662792,
+        "Y_Lati": 30.498395,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.662792,
+          30.498395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.649528,
+        "Y_Lati": 30.48199,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.649528,
+          30.48199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.63771,
+        "Y_Lati": 30.475647,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.63771,
+          30.475647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.626419,
+        "Y_Lati": 30.465728,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.626419,
+          30.465728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 74.035924,
+        "Y_Lati": 31.097252,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.035924,
+          31.097252
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 74.024473,
+        "Y_Lati": 31.09069,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.024473,
+          31.09069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 74.012955,
+        "Y_Lati": 31.099188,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.012955,
+          31.099188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 74.007255,
+        "Y_Lati": 31.083531,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.007255,
+          31.083531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 74.037352,
+        "Y_Lati": 31.10654,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.037352,
+          31.10654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.157484,
+        "Y_Lati": 32.435639,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.157484,
+          32.435639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.194523,
+        "Y_Lati": 32.427824,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.194523,
+          32.427824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.176922,
+        "Y_Lati": 32.424079,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.176922,
+          32.424079
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.196477,
+        "Y_Lati": 32.40653,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.196477,
+          32.40653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.203377,
+        "Y_Lati": 32.451266,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.203377,
+          32.451266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 70.905292,
+        "Y_Lati": 30.630065,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.905292,
+          30.630065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.544169,
+        "Y_Lati": 29.77213,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.544169,
+          29.77213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.546745,
+        "Y_Lati": 29.759375,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.546745,
+          29.759375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.533693,
+        "Y_Lati": 29.761503,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.533693,
+          29.761503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.566545,
+        "Y_Lati": 30.518086,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.566545,
+          30.518086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.603415,
+        "Y_Lati": 30.538472,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.603415,
+          30.538472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.6397,
+        "Y_Lati": 30.537287,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.6397,
+          30.537287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.674141,
+        "Y_Lati": 30.541505,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.674141,
+          30.541505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.759996,
+        "Y_Lati": 30.560316,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.759996,
+          30.560316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.716463,
+        "Y_Lati": 30.553177,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.716463,
+          30.553177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.976143,
+        "Y_Lati": 29.344808,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.976143,
+          29.344808
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.965795,
+        "Y_Lati": 29.357098,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.965795,
+          29.357098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 70.962382,
+        "Y_Lati": 30.00048,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.962382,
+          30.00048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 70.955307,
+        "Y_Lati": 30.009073,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.955307,
+          30.009073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.447326,
+        "Y_Lati": 31.282185,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.447326,
+          31.282185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.44801,
+        "Y_Lati": 31.28198,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.44801,
+          31.28198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 70.928496,
+        "Y_Lati": 30.072424,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.928496,
+          30.072424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.913997,
+        "Y_Lati": 31.67966,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.913997,
+          31.67966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.544336,
+        "Y_Lati": 29.800666,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.544336,
+          29.800666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.035,
+        "Y_Lati": 29.315833,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.035,
+          29.315833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 72.045494,
+        "Y_Lati": 31.119153,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.045494,
+          31.119153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.332374,
+        "Y_Lati": 31.115296,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.332374,
+          31.115296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.988881,
+        "Y_Lati": 29.436247,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.988881,
+          29.436247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.227102,
+        "Y_Lati": 30.220565,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.227102,
+          30.220565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.176004,
+        "Y_Lati": 29.99017,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.176004,
+          29.99017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 73.569398,
+        "Y_Lati": 32.697018,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.569398,
+          32.697018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "white-rumped vulture",
+        "X_Longi": 71.619166,
+        "Y_Lati": 32.349667,
+        "Common_nam": "white-rumped vulture"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.619166,
+          32.349667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 71.382972,
+        "Y_Lati": 32.425864,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.382972,
+          32.425864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 71.435688,
+        "Y_Lati": 32.475956,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.435688,
+          32.475956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 71.419186,
+        "Y_Lati": 32.827792,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.419186,
+          32.827792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 71.375861,
+        "Y_Lati": 32.934061,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.375861,
+          32.934061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 71.760824,
+        "Y_Lati": 33.271177,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.760824,
+          33.271177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 71.927793,
+        "Y_Lati": 33.301101,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.927793,
+          33.301101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.081837,
+        "Y_Lati": 33.683145,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.081837,
+          33.683145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.552793,
+        "Y_Lati": 33.68927,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.552793,
+          33.68927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.37299,
+        "Y_Lati": 32.47021,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.37299,
+          32.47021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.346081,
+        "Y_Lati": 32.762793,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.346081,
+          32.762793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.189461,
+        "Y_Lati": 32.946251,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.189461,
+          32.946251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.35371,
+        "Y_Lati": 33.237441,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.35371,
+          33.237441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.359,
+        "Y_Lati": 33.241215,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.359,
+          33.241215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.57707,
+        "Y_Lati": 33.472341,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.57707,
+          33.472341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.628426,
+        "Y_Lati": 32.680434,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.628426,
+          32.680434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.663508,
+        "Y_Lati": 33.025933,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.663508,
+          33.025933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.863879,
+        "Y_Lati": 33.173552,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.863879,
+          33.173552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 72.919109,
+        "Y_Lati": 32.676365,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.919109,
+          32.676365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 73.301902,
+        "Y_Lati": 32.676729,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.301902,
+          32.676729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 73.548567,
+        "Y_Lati": 32.794468,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.548567,
+          32.794468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 73.264,
+        "Y_Lati": 33.210881,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.264,
+          33.210881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 73.55019528,
+        "Y_Lati": 33.10007972,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.55019528,
+          33.10007972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 73.55009444,
+        "Y_Lati": 33.13339806,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.55009444,
+          33.13339806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 73.58351472,
+        "Y_Lati": 33.13357194,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.58351472,
+          33.13357194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "P_urial",
+        "X_Longi": 73.58336333,
+        "Y_Lati": 33.15000583,
+        "Common_nam": "P_urial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.58336333,
+          33.15000583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.203784,
+        "Y_Lati": 32.617395,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.203784,
+          32.617395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.223412,
+        "Y_Lati": 32.61631,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.223412,
+          32.61631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.22622,
+        "Y_Lati": 32.628074,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.22622,
+          32.628074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.213275,
+        "Y_Lati": 32.627343,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.213275,
+          32.627343
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 73.724711,
+        "Y_Lati": 32.902313,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.724711,
+          32.902313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 73.717812,
+        "Y_Lati": 32.89153,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.717812,
+          32.89153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 73.767461,
+        "Y_Lati": 32.957071,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.767461,
+          32.957071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 73.784684,
+        "Y_Lati": 32.954903,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.784684,
+          32.954903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 73.753171,
+        "Y_Lati": 32.924281,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.753171,
+          32.924281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 73.667976,
+        "Y_Lati": 32.879832,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.667976,
+          32.879832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 74.246229,
+        "Y_Lati": 31.566161,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.246229,
+          31.566161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 74.265641,
+        "Y_Lati": 31.574598,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.265641,
+          31.574598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 74.261265,
+        "Y_Lati": 31.572067,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.261265,
+          31.572067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.532105,
+        "Y_Lati": 31.296311,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.532105,
+          31.296311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.521114,
+        "Y_Lati": 31.297959,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.521114,
+          31.297959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.521398,
+        "Y_Lati": 31.287686,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.521398,
+          31.287686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.923273,
+        "Y_Lati": 30.82565,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.923273,
+          30.82565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.788336,
+        "Y_Lati": 30.775635,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.788336,
+          30.775635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.234219,
+        "Y_Lati": 31.209544,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.234219,
+          31.209544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.202618,
+        "Y_Lati": 31.185885,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.202618,
+          31.185885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 72.266928,
+        "Y_Lati": 31.291281,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.266928,
+          31.291281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.4856,
+        "Y_Lati": 30.082956,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.4856,
+          30.082956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.429901,
+        "Y_Lati": 30.309214,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.429901,
+          30.309214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.341432,
+        "Y_Lati": 30.105961,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.341432,
+          30.105961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.229579,
+        "Y_Lati": 30.050514,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.229579,
+          30.050514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.226353,
+        "Y_Lati": 30.038112,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.226353,
+          30.038112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.70312,
+        "Y_Lati": 29.465176,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.70312,
+          29.465176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.783993,
+        "Y_Lati": 29.45022,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.783993,
+          29.45022
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "sociable lapwing",
+        "X_Longi": 71.627056,
+        "Y_Lati": 29.422961,
+        "Common_nam": "sociable lapwing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.627056,
+          29.422961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 74.475429,
+        "Y_Lati": 32.683081,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.475429,
+          32.683081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 73.702428,
+        "Y_Lati": 32.333048,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.702428,
+          32.333048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 73.868188,
+        "Y_Lati": 30.381605,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.868188,
+          30.381605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 71.444827,
+        "Y_Lati": 32.461202,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.444827,
+          32.461202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 71.387178,
+        "Y_Lati": 32.4665,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.387178,
+          32.4665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 71.458487,
+        "Y_Lati": 32.510717,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.458487,
+          32.510717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 73.521496,
+        "Y_Lati": 32.694607,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.521496,
+          32.694607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.705563,
+        "Y_Lati": 32.777777,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.705563,
+          32.777777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.710671,
+        "Y_Lati": 32.776217,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.710671,
+          32.776217
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.702271,
+        "Y_Lati": 32.772296,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.702271,
+          32.772296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 71.802539,
+        "Y_Lati": 32.69536,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.802539,
+          32.69536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 71.802456,
+        "Y_Lati": 32.684082,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.802456,
+          32.684082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 71.808877,
+        "Y_Lati": 32.690317,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.808877,
+          32.690317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 73.133138,
+        "Y_Lati": 33.702056,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.133138,
+          33.702056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 73.115249,
+        "Y_Lati": 33.704029,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.115249,
+          33.704029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.086925,
+        "Y_Lati": 32.498145,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.086925,
+          32.498145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.039762,
+        "Y_Lati": 32.564653,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.039762,
+          32.564653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.025973,
+        "Y_Lati": 32.555133,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.025973,
+          32.555133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.009278,
+        "Y_Lati": 32.554503,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.009278,
+          32.554503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.22153,
+        "Y_Lati": 32.622597,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.22153,
+          32.622597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Species": "Oxyura leucocephala",
+        "X_Longi": 72.205225,
+        "Y_Lati": 32.621007,
+        "Common_nam": "White-headed Duck"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.205225,
+          32.621007
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,3085 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784043,
+        "WDPA_PID": "555784043",
+        "PA_DEF": "1",
+        "NAME": "Kharewala",
+        "ORIG_NAME": "Kharewala",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 130.991501416,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.70761111000007,
+          30.907111110000073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784044,
+        "WDPA_PID": "555784044",
+        "PA_DEF": "1",
+        "NAME": "Gharial Wildlife Sanctuary",
+        "ORIG_NAME": "Gharial Wildlife Sanctuary",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.49899300000004,
+          30.968151000000034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555790273,
+        "WDPA_PID": "555790273",
+        "PA_DEF": "1",
+        "NAME": "Changa Manga Forest",
+        "ORIG_NAME": "Changa Manga Forest",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 50.627883448,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2021,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.46762210000003,
+          31.11585320000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784047,
+        "WDPA_PID": "555784047",
+        "PA_DEF": "1",
+        "NAME": "Gura Forest",
+        "ORIG_NAME": "Gura Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 13.597733711,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.32742600000006,
+          32.36807900000008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784048,
+        "WDPA_PID": "555784048",
+        "PA_DEF": "1",
+        "NAME": "Pirowal",
+        "ORIG_NAME": "Pirowal",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 19.8138405504,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.03396934900007,
+          30.344883613000036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784049,
+        "WDPA_PID": "555784049",
+        "PA_DEF": "1",
+        "NAME": "Karangal Reserve Forest",
+        "ORIG_NAME": "Karangal Reserve Forest",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 5.10724403076,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.02451000000008,
+          32.787780000000055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784050,
+        "WDPA_PID": "555784050",
+        "PA_DEF": "1",
+        "NAME": "Fateh Major Plantation",
+        "ORIG_NAME": "Fateh Major Plantation",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 12.5476325374,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.21433000000007,
+          31.350400000000036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784054,
+        "WDPA_PID": "555784054",
+        "PA_DEF": "1",
+        "NAME": "Amb",
+        "ORIG_NAME": "Amb",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 32.3876972885,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.93601400000006,
+          32.50858500000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784055,
+        "WDPA_PID": "555784055",
+        "PA_DEF": "1",
+        "NAME": "Nangol Shaho",
+        "ORIG_NAME": "Nangol Shaho",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.485633346823,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.64500000000004,
+          32.05639000000008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784057,
+        "WDPA_PID": "555784057",
+        "PA_DEF": "1",
+        "NAME": "Choa Chukki",
+        "ORIG_NAME": "Choa Chukki",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 20.1335491704,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.96708300000006,
+          32.42258300000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784058,
+        "WDPA_PID": "555784058",
+        "PA_DEF": "1",
+        "NAME": "Sakeser Shahpur",
+        "ORIG_NAME": "Sakeser Shahpur",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 14.6904087414,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.93363900000003,
+          32.541806000000065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784059,
+        "WDPA_PID": "555784059",
+        "PA_DEF": "1",
+        "NAME": "Mitha Tiwana Plantation",
+        "ORIG_NAME": "Mitha Tiwana Plantation",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 11.1612300119,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2005,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.18827800000008,
+          30.963307000000043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784060,
+        "WDPA_PID": "555784060",
+        "PA_DEF": "1",
+        "NAME": "Bhakkar",
+        "ORIG_NAME": "Bhakkar",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 21.2418049373,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.13060000000007,
+          31.721900000000062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784061,
+        "WDPA_PID": "555784061",
+        "PA_DEF": "1",
+        "NAME": "Jalalpur Sobtian Scrub Forest",
+        "ORIG_NAME": "Jalalpur Sobtian Scrub Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1.14123836503,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.22667000000007,
+          32.777280000000076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784062,
+        "WDPA_PID": "555784062",
+        "PA_DEF": "1",
+        "NAME": "Pabbi & Rasool Reserve Forest",
+        "ORIG_NAME": "Pabbi & Rasool Reserve Forest",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 147.203561311,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.22667000000007,
+          32.83278000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784063,
+        "WDPA_PID": "555784063",
+        "PA_DEF": "1",
+        "NAME": "Shorkot",
+        "ORIG_NAME": "Shorkot",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 40.7891541886,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.21238800000003,
+          30.783416000000045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784064,
+        "WDPA_PID": "555784064",
+        "PA_DEF": "1",
+        "NAME": "Depalpur Plantation",
+        "ORIG_NAME": "Depalpur Plantation",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 29.2796438689,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.48625300000003,
+          30.645064000000048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784065,
+        "WDPA_PID": "555784065",
+        "PA_DEF": "1",
+        "NAME": "Makiala",
+        "ORIG_NAME": "Makiala",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 32.3957911777,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.09160000000003,
+          32.69670000000008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784053,
+        "WDPA_PID": "555784053",
+        "PA_DEF": "1",
+        "NAME": "Ucchali Lake",
+        "ORIG_NAME": "Ucchali Lake",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 7.90457304735,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.20000000000005,
+          32.558170000000075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784067,
+        "WDPA_PID": "555784067",
+        "PA_DEF": "1",
+        "NAME": "Daman",
+        "ORIG_NAME": "Daman",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 22.703358964,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.43333800000005,
+          29.08783600000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784068,
+        "WDPA_PID": "555784068",
+        "PA_DEF": "1",
+        "NAME": "Jauharabad Plantation",
+        "ORIG_NAME": "Jauharabad Plantation",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 3.98615,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1990,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.20958333000004,
+          31.16380556000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784071,
+        "WDPA_PID": "555784071",
+        "PA_DEF": "1",
+        "NAME": "Karang",
+        "ORIG_NAME": "Karang",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 13.1606636989,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.26360300000005,
+          32.657935000000066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784074,
+        "WDPA_PID": "555784074",
+        "PA_DEF": "1",
+        "NAME": "Head Panjnad",
+        "ORIG_NAME": "Head Panjnad",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 24.1562120599,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.13372222000004,
+          30.16230556000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784075,
+        "WDPA_PID": "555784075",
+        "PA_DEF": "1",
+        "NAME": "Anga",
+        "ORIG_NAME": "Anga",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 14.7146904087,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.08947200000006,
+          32.598583000000076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784076,
+        "WDPA_PID": "555784076",
+        "PA_DEF": "1",
+        "NAME": "Chitta",
+        "ORIG_NAME": "Chitta",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 4.92108458114,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.00438900000006,
+          32.559000000000026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784077,
+        "WDPA_PID": "555784077",
+        "PA_DEF": "1",
+        "NAME": "Phadial",
+        "ORIG_NAME": "Phadial",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 44.3140428976,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.16552290000004,
+          32.83393830000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784079,
+        "WDPA_PID": "555784079",
+        "PA_DEF": "1",
+        "NAME": "Kussak",
+        "ORIG_NAME": "Kussak",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 28.1748280049,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.08270000000005,
+          32.72846666700008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784080,
+        "WDPA_PID": "555784080",
+        "PA_DEF": "1",
+        "NAME": "Mardwal-I",
+        "ORIG_NAME": "Mardwal-I",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 11.9951436665,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.16772200000008,
+          32.606056000000024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784081,
+        "WDPA_PID": "555784081",
+        "PA_DEF": "1",
+        "NAME": "Mardwal-II",
+        "ORIG_NAME": "Mardwal-II",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 4.56900040469,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.16772200000008,
+          32.606056000000024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784084,
+        "WDPA_PID": "555784084",
+        "PA_DEF": "1",
+        "NAME": "Sakeser Kambalpur",
+        "ORIG_NAME": "Sakeser Kambalpur",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 8.81424524484,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.93377800000007,
+          32.54313900000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784085,
+        "WDPA_PID": "555784085",
+        "PA_DEF": "1",
+        "NAME": "Khariot",
+        "ORIG_NAME": "Khariot",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 41.1210036423,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.20618100000007,
+          32.69082800000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784086,
+        "WDPA_PID": "555784086",
+        "PA_DEF": "1",
+        "NAME": "Drangan",
+        "ORIG_NAME": "Drangan",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 19.2472683124,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.02131000000003,
+          32.78186000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784088,
+        "WDPA_PID": "555784088",
+        "PA_DEF": "1",
+        "NAME": "Bejapur Forest",
+        "ORIG_NAME": "Bejapur Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.91460946985,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.86500000000007,
+          32.39278000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784090,
+        "WDPA_PID": "555784090",
+        "PA_DEF": "1",
+        "NAME": "Bela Forest Thatta Faqiruallah Dhonike at River Chenab",
+        "ORIG_NAME": "Bela Forest Thatta Faqiruallah Dhonike at River Chenab",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.60218535006,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.15565000000004,
+          32.78128000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784091,
+        "WDPA_PID": "555784091",
+        "PA_DEF": "1",
+        "NAME": "Rakh Kandal",
+        "ORIG_NAME": "Rakh Kandal",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 29.987206087,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.80427100000003,
+          32.688671000000056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784092,
+        "WDPA_PID": "555784092",
+        "PA_DEF": "1",
+        "NAME": "Khabeki",
+        "ORIG_NAME": "Khabeki",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 20.29094,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.27638000000007,
+          32.66160700000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784093,
+        "WDPA_PID": "555784093",
+        "PA_DEF": "1",
+        "NAME": "Kalar Kahar Lake",
+        "ORIG_NAME": "Kalar Kahar Lake",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1.14394981789,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.70796000000007,
+          32.77497600000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784095,
+        "WDPA_PID": "555784095",
+        "PA_DEF": "1",
+        "NAME": "Shein Daki",
+        "ORIG_NAME": "Shein Daki",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 16.1149332254,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.92213500000008,
+          32.26570600000008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784099,
+        "WDPA_PID": "555784099",
+        "PA_DEF": "1",
+        "NAME": "Rakh Ghulaman",
+        "ORIG_NAME": "Rakh Ghulaman",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 43.3670578713,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.67329600000005,
+          32.584760000000074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784100,
+        "WDPA_PID": "555784100",
+        "PA_DEF": "1",
+        "NAME": "Rajan Shah",
+        "ORIG_NAME": "Rajan Shah",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 21.10249469,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.16725400000007,
+          32.19396800000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784101,
+        "WDPA_PID": "555784101",
+        "PA_DEF": "1",
+        "NAME": "Jhalar Lake",
+        "ORIG_NAME": "Jhalar Lake",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.23132335087,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.02010000000007,
+          32.56000000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784103,
+        "WDPA_PID": "555784103",
+        "PA_DEF": "1",
+        "NAME": "Kundian",
+        "ORIG_NAME": "Kundian",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 78.0008093889,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.61653700000005,
+          32.412686000000065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784104,
+        "WDPA_PID": "555784104",
+        "PA_DEF": "1",
+        "NAME": "Fatehpur",
+        "ORIG_NAME": "Fatehpur",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.98259813841,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.90077800000006,
+          32.44263900000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784107,
+        "WDPA_PID": "555784107",
+        "PA_DEF": "1",
+        "NAME": "Machu",
+        "ORIG_NAME": "Machu",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 41.091780109,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.29036600000006,
+          32.29777000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784111,
+        "WDPA_PID": "555784111",
+        "PA_DEF": "1",
+        "NAME": "Warrcha",
+        "ORIG_NAME": "Warrcha",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 23.4115742614,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.96694400000007,
+          32.413028000000054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784112,
+        "WDPA_PID": "555784112",
+        "PA_DEF": "1",
+        "NAME": "Bela Forest Jokalian",
+        "ORIG_NAME": "Bela Forest Jokalian",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.98664508296,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.30984000000007,
+          32.664360000000045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784115,
+        "WDPA_PID": "555784115",
+        "PA_DEF": "1",
+        "NAME": "Khanpur",
+        "ORIG_NAME": "Khanpur",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 127.701335492,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.12038889000007,
+          30.190722220000055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555781534,
+        "WDPA_PID": "555781534",
+        "PA_DEF": "1",
+        "NAME": "Babarr",
+        "ORIG_NAME": "Babarr",
+        "DESIG": "Community Game Reserve (CGR)",
+        "DESIG_ENG": "Community Game Reserve (CGR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.5503,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2007,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-KP",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.93005000000005,
+          31.48894000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555781667,
+        "WDPA_PID": "555781667",
+        "PA_DEF": "1",
+        "NAME": "Sajikot",
+        "ORIG_NAME": "Sajikot",
+        "DESIG": "Community Game Reserve (CGR)",
+        "DESIG_ENG": "Community Game Reserve (CGR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.9,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2008,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-KP",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.13248000000004,
+          33.15999000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 143009,
+        "WDPA_PID": "143009",
+        "PA_DEF": "1",
+        "NAME": "Chashma Barrage",
+        "ORIG_NAME": "Chashma Barrage",
+        "DESIG": "Ramsar Site, Wetland of International Importance",
+        "DESIG_ENG": "Ramsar Site, Wetland of International Importance",
+        "DESIG_TYPE": "International",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "(i)(ii)(iii)(iv)(v)",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 340.99,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1996,
+        "GOV_TYPE": "Not Reported",
+        "OWN_TYPE": "Not Reported",
+        "MANG_AUTH": "Not Reported",
+        "MANG_PLAN": "Management plan is not implemented and not available",
+        "VERIF": "State Verified",
+        "METADATAID": 1856,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.36666666700006,
+          32.41666666700007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 143011,
+        "WDPA_PID": "143011",
+        "PA_DEF": "1",
+        "NAME": "Uchhali Complex",
+        "ORIG_NAME": "Uchhali Complex",
+        "DESIG": "Ramsar Site, Wetland of International Importance",
+        "DESIG_ENG": "Ramsar Site, Wetland of International Importance",
+        "DESIG_TYPE": "International",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "(i)(ii)(iii)(v)",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 12.43,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1996,
+        "GOV_TYPE": "Not Reported",
+        "OWN_TYPE": "Not Reported",
+        "MANG_AUTH": "Not Reported",
+        "MANG_PLAN": "Management plan is not implemented and not available",
+        "VERIF": "State Verified",
+        "METADATAID": 1856,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.00000000000006,
+          32.61666666700006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 6687,
+        "WDPA_PID": "6687",
+        "PA_DEF": "1",
+        "NAME": "Khabbeke Lake",
+        "ORIG_NAME": "Khabbeke Lake",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.73868879,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 745,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.23000000000008,
+          32.62000000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 2091,
+        "WDPA_PID": "2091",
+        "PA_DEF": "1",
+        "NAME": "Lal Suhanra",
+        "ORIG_NAME": "Lal Suhanra",
+        "DESIG": "UNESCO-MAB Biosphere Reserve",
+        "DESIG_ENG": "UNESCO-MAB Biosphere Reserve",
+        "DESIG_TYPE": "International",
+        "IUCN_CAT": "Not Applicable",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 657.889026,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 988,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.83000000000004,
+          29.500000000000057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555781554,
+        "WDPA_PID": "555781554",
+        "PA_DEF": "1",
+        "NAME": "Chashma Barrage",
+        "ORIG_NAME": "Chashma Barrage",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 360.178066,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.38026000000008,
+          32.435708000000034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555781681,
+        "WDPA_PID": "555781681",
+        "PA_DEF": "1",
+        "NAME": "Salt Range",
+        "ORIG_NAME": "Salt Range",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 175.993525,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.73099000000008,
+          32.71714500000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784097,
+        "WDPA_PID": "555784097",
+        "PA_DEF": "1",
+        "NAME": "Ara, Pareera, Diljabba",
+        "ORIG_NAME": "Ara, Pareera, Diljabba",
+        "DESIG": "Nature Reserve",
+        "DESIG_ENG": "Nature Reserve",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 77.834885,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.14409000000006,
+          32.82186000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784114,
+        "WDPA_PID": "555784114",
+        "PA_DEF": "1",
+        "NAME": "Chidru",
+        "ORIG_NAME": "Chidru",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 16,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.78976400000005,
+          32.55534200000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784045,
+        "WDPA_PID": "555784045",
+        "PA_DEF": "1",
+        "NAME": "JalalPur Sharif",
+        "ORIG_NAME": "JalalPur Sharif",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 22.62646702,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.32266200000004,
+          32.714890000000025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784052,
+        "WDPA_PID": "555784052",
+        "PA_DEF": "1",
+        "NAME": "Bara Pind Forest",
+        "ORIG_NAME": "Bara Pind Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1.48118170781,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.99601000000007,
+          32.338880000000074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784056,
+        "WDPA_PID": "555784056",
+        "PA_DEF": "1",
+        "NAME": "Chirwind Forest",
+        "ORIG_NAME": "Chirwind Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.582760016188,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.73167000000007,
+          32.26917000000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784069,
+        "WDPA_PID": "555784069",
+        "PA_DEF": "1",
+        "NAME": "Inayat Wildlife Sanctuary",
+        "ORIG_NAME": "Inayat Wildlife Sanctuary",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 42.1075410709,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.46678600000007,
+          32.711299000000054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784070,
+        "WDPA_PID": "555784070",
+        "PA_DEF": "1",
+        "NAME": "Seowal & Nangal Forest",
+        "ORIG_NAME": "Seowal & Nangal Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.78429785512,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.77770000000004,
+          32.31111000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784072,
+        "WDPA_PID": "555784072",
+        "PA_DEF": "1",
+        "NAME": "Murree Kahuta and Kotli Sattian",
+        "ORIG_NAME": "Murree Kahuta and Kotli Sattian",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 473.670578713,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.45861100000008,
+          33.84111100000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784078,
+        "WDPA_PID": "555784078",
+        "PA_DEF": "1",
+        "NAME": "Rakh & Jhang Branch Canal Bank",
+        "ORIG_NAME": "Rakh & Jhang Branch Canal Bank",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.85344,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.58971800000006,
+          31.93765700000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784082,
+        "WDPA_PID": "555784082",
+        "PA_DEF": "1",
+        "NAME": "Kamlay Bhag Forest",
+        "ORIG_NAME": "Kamlay Bhag Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.485633346823,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.75250000000005,
+          32.28111000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784083,
+        "WDPA_PID": "555784083",
+        "PA_DEF": "1",
+        "NAME": "Dhool Forest",
+        "ORIG_NAME": "Dhool Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.26628895184,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.08972000000006,
+          32.46556000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784087,
+        "WDPA_PID": "555784087",
+        "PA_DEF": "1",
+        "NAME": "Badwal",
+        "ORIG_NAME": "Badwal",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0.590853905301,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.20997000000006,
+          32.25353000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784089,
+        "WDPA_PID": "555784089",
+        "PA_DEF": "1",
+        "NAME": "Bela Forest Saidullahpur",
+        "ORIG_NAME": "Bela Forest Saidullahpur",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.35532173209,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.45991000000004,
+          32.681970000000035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784102,
+        "WDPA_PID": "555784102",
+        "PA_DEF": "1",
+        "NAME": "Head Marala Wildlife Sanctuary",
+        "ORIG_NAME": "Head Marala Wildlife Sanctuary",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 6.377846,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.48134400000004,
+          32.678829000000064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784106,
+        "WDPA_PID": "555784106",
+        "PA_DEF": "1",
+        "NAME": "Banhal Forest",
+        "ORIG_NAME": "Banhal Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1.2100364225,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.01528000000008,
+          32.30610000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784108,
+        "WDPA_PID": "555784108",
+        "PA_DEF": "1",
+        "NAME": "Kang & Pindi Minhasan Forest",
+        "ORIG_NAME": "Kang & Pindi Minhasan Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 3.24160259004,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.86306000000008,
+          32.38139000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784109,
+        "WDPA_PID": "555784109",
+        "PA_DEF": "1",
+        "NAME": "Jhatokay Forest",
+        "ORIG_NAME": "Jhatokay Forest",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.96236341562,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.81826200000006,
+          32.351567000000045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784110,
+        "WDPA_PID": "555784110",
+        "PA_DEF": "1",
+        "NAME": "Qadirabad Link Canal Bank",
+        "ORIG_NAME": "Qadirabad Link Canal Bank",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 2.92608,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.74648500000006,
+          32.10326300000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784113,
+        "WDPA_PID": "555784113",
+        "PA_DEF": "1",
+        "NAME": "Tilla Reserve Forest",
+        "ORIG_NAME": "Tilla Reserve Forest",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 53.2820720356,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.44732000000005,
+          32.86118400000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784073,
+        "WDPA_PID": "555784073",
+        "PA_DEF": "1",
+        "NAME": "Border Belt",
+        "ORIG_NAME": "Border Belt",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2021,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.96996400000006,
+          28.217659000000026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784098,
+        "WDPA_PID": "555784098",
+        "PA_DEF": "1",
+        "NAME": "Great Indian Bustard",
+        "ORIG_NAME": "Great Indian Bustard",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 168,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.50007700000003,
+          27.95299200000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784105,
+        "WDPA_PID": "555784105",
+        "PA_DEF": "1",
+        "NAME": "Chinkara Public Wildlife Reserve",
+        "ORIG_NAME": "Chinkara Public Wildlife Reserve",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 4507,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.49965500000008,
+          28.111041000000057
+        ]
+      }
+    }
+  ]
+}

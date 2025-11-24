@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import { FaShieldAlt, FaTree, FaWater, FaMapMarkedAlt, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa'
 
-export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, onClearAll }) {
+export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, onClearAll, selectedRegion = 'National' }) {
   const [isExpanded, setIsExpanded] = useState(true)
   
   // Featured layers - most important ones
-  const featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
+  // Exclude protected-forest and ramsar-sites for GB region (they have 0 features)
+  let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
+  if (selectedRegion === 'Gilgit Baltistan') {
+    featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB
+  }
   const featuredLayers = layers.filter(layer => featuredLayerIds.includes(layer.id))
   
   // Check if any of the featured layers are active

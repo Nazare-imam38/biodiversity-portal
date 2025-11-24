@@ -1,0 +1,143 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Ramsar_Sit": 816,
+        "Site_name": "Chashma Barrage",
+        "Region": "Asia",
+        "Country": "Pakistan",
+        "Territory": null,
+        "Designatio": "1996-03-21T19:00:00.000Z",
+        "Last_publi": "1996-03-21T19:00:00.000Z",
+        "Area__ha_": 34099,
+        "Latitude": 32.41666667,
+        "Longitude": 71.36666667,
+        "Annotated": "Chashma Barrage. 22/03/96; Punjab; 34,099 ha; 32Â°25'N 071Â°22'E. Wildlife Sanctuary. A storage reservoir on the Indus River supporting various aquatic plants. Up to 200,000 waterbirds of numerous species use the site for staging and wintering. An especi",
+        "Criterion1": "Yes",
+        "Criterion2": "Yes",
+        "Criterion3": "Yes",
+        "Criterion4": "Yes",
+        "Criterion5": "Yes",
+        "Criterion6": "No",
+        "Criterion7": "No",
+        "Criterion8": "No",
+        "Criterion9": "No",
+        "Wetland_Ty": "Human-made wetlands, 6: Water storage areas/Reservoirs",
+        "Maximum_el": 225,
+        "Minimum_el": 225,
+        "Montreux_l": "No",
+        "Management": "No",
+        "Manageme_1": "No",
+        "Ecosystem": "Cultural Services, Scientific and educational, Provisioning Services, Fresh water, Wetland non-food products, Food for humans, Regulating Services, Hazard reduction, Maintenance of hydrological regimes",
+        "Threats": "Biological resource use, Gathering terrestrial plants, Fishing and harvesting aquatic resources, Natural system modifications, Dams and water management/use, Agriculture & aquaculture, Livestock farming and ranching, Human intrusions & disturbance, Unspe",
+        "large_admi": "Punjab Province",
+        "Global_int": null,
+        "Regional_i": null,
+        "National_c": null,
+        "Does_the_w": "No",
+        "Ramsar_Adv": "No"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.36666667,
+          32.41666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Ramsar_Sit": 817,
+        "Site_name": "Taunsa Barrage",
+        "Region": "Asia",
+        "Country": "Pakistan",
+        "Territory": null,
+        "Designatio": "1996-03-21T19:00:00.000Z",
+        "Last_publi": "1996-03-21T19:00:00.000Z",
+        "Area__ha_": 6756,
+        "Latitude": 30.7,
+        "Longitude": 70.83333333,
+        "Annotated": "Taunsa Barrage. 22/03/96; Punjab; 6,576 ha; 30Â°42'N 070Â°50'E. Wildlife Sanctuary. A large reservoir on the Indus River, constructed for irrigation purposes. Vegetation includes riverine forest and numerous species of aquatic plants. A very important wi",
+        "Criterion1": "Yes",
+        "Criterion2": "Yes",
+        "Criterion3": "No",
+        "Criterion4": "No",
+        "Criterion5": "No",
+        "Criterion6": "No",
+        "Criterion7": "No",
+        "Criterion8": "No",
+        "Criterion9": "No",
+        "Wetland_Ty": "Human-made wetlands, 6: Water storage areas/Reservoirs",
+        "Maximum_el": 139,
+        "Minimum_el": 139,
+        "Montreux_l": "No",
+        "Management": "No",
+        "Manageme_1": "No",
+        "Ecosystem": "Regulating Services, Hazard reduction, Maintenance of hydrological regimes, Provisioning Services, Fresh water, Wetland non-food products, Food for humans, Cultural Services, Scientific and educational, Recreation and tourism",
+        "Threats": "Natural system modifications, Fire and fire suppression, Dams and water management/use, Human intrusions & disturbance, Unspecified/others, Biological resource use, Hunting and collecting terrestrial animals, Fishing and harvesting aquatic resources",
+        "large_admi": "Punjab Province",
+        "Global_int": null,
+        "Regional_i": null,
+        "National_c": null,
+        "Does_the_w": "No",
+        "Ramsar_Adv": "No"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.83333333,
+          30.7
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Ramsar_Sit": 818,
+        "Site_name": "Uchhali Complex",
+        "Region": "Asia",
+        "Country": "Pakistan",
+        "Territory": null,
+        "Designatio": "1996-03-21T19:00:00.000Z",
+        "Last_publi": "1996-03-21T19:00:00.000Z",
+        "Area__ha_": 1243,
+        "Latitude": 32.61666667,
+        "Longitude": 72,
+        "Annotated": "Uchhali Complex (including Khabbaki, Uchhali and Jahlar Lakes). 22/03/96; Punjab; 1,243 ha; 32Â°37'N 072Â°00'E. Game Reserve; Wildlife Sanctuary. Three separate brackish to saline lakes of fluctuating levels, surrounded by agricultural fields, located in",
+        "Criterion1": "Yes",
+        "Criterion2": "Yes",
+        "Criterion3": "Yes",
+        "Criterion4": "No",
+        "Criterion5": "Yes",
+        "Criterion6": "No",
+        "Criterion7": "No",
+        "Criterion8": "No",
+        "Criterion9": "No",
+        "Wetland_Ty": "Inland wetlands, Q: Permanent saline/ brackish/ alkaline lakes",
+        "Maximum_el": 978,
+        "Minimum_el": 700,
+        "Montreux_l": "No",
+        "Management": "No",
+        "Manageme_1": "Yes",
+        "Ecosystem": "Cultural Services, Scientific and educational, Recreation and tourism, Provisioning Services, Wetland non-food products, Fresh water, Food for humans, Regulating Services, Maintenance of hydrological regimes",
+        "Threats": "Natural system modifications, Dams and water management/use, Water regulation, Water abstraction, Drainage, Biological resource use, Unspecified, Hunting and collecting terrestrial animals, Invasive and other problematic species and genes, Invasive non-n",
+        "large_admi": "Punjab Province",
+        "Global_int": null,
+        "Regional_i": null,
+        "National_c": null,
+        "Does_the_w": "No",
+        "Ramsar_Adv": "No"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72,
+          32.61666667
+        ]
+      }
+    }
+  ]
+}

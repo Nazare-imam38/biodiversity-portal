@@ -39,7 +39,7 @@ function Dashboard() {
     fetchLayers()
   }, [])
 
-  // Automatically toggle gb-district layer based on region selection
+  // Automatically toggle region boundary layer based on region selection
   useEffect(() => {
     if (layers.length === 0) return // Wait for layers to load
     
@@ -52,15 +52,42 @@ function Dashboard() {
           console.log('Auto-activating gb-district layer for Gilgit Baltistan')
           newSet.add('gb-district')
         }
+        // Remove Punjab boundary if it was active
+        if (newSet.has('punjab-provincial')) {
+          newSet.delete('punjab-provincial')
+        }
+        // Keep pakistan-provinces active for overlay
+        if (!newSet.has('pakistan-provinces')) {
+          newSet.add('pakistan-provinces')
+        }
+      } else if (selectedRegion === 'Punjab') {
+        // Add punjab-provincial layer when Punjab is selected
+        if (!newSet.has('punjab-provincial')) {
+          console.log('Auto-activating punjab-provincial layer for Punjab')
+          newSet.add('punjab-provincial')
+        }
+        // Remove GB boundary layers if they were active
+        if (newSet.has('gb-district')) {
+          newSet.delete('gb-district')
+        }
+        if (newSet.has('gb-provincial')) {
+          newSet.delete('gb-provincial')
+        }
         // Keep pakistan-provinces active for overlay
         if (!newSet.has('pakistan-provinces')) {
           newSet.add('pakistan-provinces')
         }
       } else {
-        // Remove gb-district layer when National is selected
+        // Remove all region-specific boundary layers when other regions are selected
         if (newSet.has('gb-district')) {
-          console.log('Auto-deactivating gb-district layer for National')
+          console.log('Auto-deactivating gb-district layer')
           newSet.delete('gb-district')
+        }
+        if (newSet.has('gb-provincial')) {
+          newSet.delete('gb-provincial')
+        }
+        if (newSet.has('punjab-provincial')) {
+          newSet.delete('punjab-provincial')
         }
       }
       
@@ -127,8 +154,12 @@ function Dashboard() {
   }
 
   const clearFeaturedLayers = () => {
-    // Only clear the 4 featured layers: protected-areas, protected-forest, ramsar-sites, kbas
-    const featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
+    // Only clear the featured layers based on region
+    // Exclude protected-forest and ramsar-sites for GB region (they have 0 features)
+    let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
+    if (selectedRegion === 'Gilgit Baltistan') {
+      featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB
+    }
     setActiveLayers(prev => {
       const newSet = new Set(prev)
       featuredLayerIds.forEach(layerId => {
@@ -175,15 +206,16 @@ function Dashboard() {
         </div>
       </div>
       
-      {/* Statistics Cards - Only show when Gilgit Baltistan is selected */}
-      {selectedRegion === 'Gilgit Baltistan' && (
-      <StatisticsCards layerData={layerData} activeLayers={activeLayers} />
+      {/* Statistics Cards - Show for Gilgit Baltistan and Punjab */}
+      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab') && (
+      <StatisticsCards layerData={layerData} activeLayers={activeLayers} selectedRegion={selectedRegion} />
       )}
       <FeaturedLayers 
         layers={layers}
         activeLayers={activeLayers}
         onToggleLayer={toggleLayer}
         onClearAll={clearFeaturedLayers}
+        selectedRegion={selectedRegion}
       />
       <div className="flex flex-col lg:flex-row flex-1" style={{ minHeight: isMobile ? 'auto' : 'calc(100vh - 280px)' }}>
         <LayerPanel 
@@ -194,12 +226,16 @@ function Dashboard() {
           showMobileButton={false}
           isOpen={isLayerPanelOpen}
           setIsOpen={setIsLayerPanelOpen}
+          selectedRegion={selectedRegion}
         />
-        <div className="flex-1 relative min-w-0 w-full" style={{ 
+        <div 
+          className="flex-1 relative min-w-0 transition-all duration-300" 
+          style={{ 
           height: isMobile ? 'calc(100vh - 280px)' : 'calc(100vh - 50px)',
           minHeight: '400px',
           maxHeight: isMobile ? 'calc(100vh - 280px)' : 'none'
-        }}>
+          }}
+        >
           {/* Mobile toggle button - Fixed to map container, above bottom sheet */}
           {isMobile && (
             <button
@@ -218,6 +254,7 @@ function Dashboard() {
             layers={layers}
             activeLayers={activeLayers}
             selectedRegion={selectedRegion}
+            panelOpen={isLayerPanelOpen}
           />
         </div>
       </div>

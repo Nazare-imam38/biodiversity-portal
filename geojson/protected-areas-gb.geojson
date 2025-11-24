@@ -1,0 +1,2445 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555790275,
+        "WDPA_PID": "555790275",
+        "PA_DEF": "1",
+        "NAME": "Basha (Shigar)",
+        "ORIG_NAME": "Basha (Shigar)",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 334,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.23380000000003,
+          35.47240000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555790276,
+        "WDPA_PID": "555790276",
+        "PA_DEF": "1",
+        "NAME": "Chupursan",
+        "ORIG_NAME": "Chupursan",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 812,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.08270000000005,
+          36.46230000000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555790277,
+        "WDPA_PID": "555790277",
+        "PA_DEF": "1",
+        "NAME": "Mendi (Rondu)",
+        "ORIG_NAME": "Mendi (Rondu)",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 68.2,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2024,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.13030000000003,
+          35.35220000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784117,
+        "WDPA_PID": "555784117",
+        "PA_DEF": "1",
+        "NAME": "Yasin-Ghizer",
+        "ORIG_NAME": "Yasin-Ghizer",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 427.35,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.34860000000003,
+          36.50300000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784118,
+        "WDPA_PID": "555784118",
+        "PA_DEF": "1",
+        "NAME": "Hoper",
+        "ORIG_NAME": "Hoper",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1153,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2017,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.61321000000004,
+          36.30945000000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784119,
+        "WDPA_PID": "555784119",
+        "PA_DEF": "1",
+        "NAME": "Darel/Dudushal",
+        "ORIG_NAME": "Darel/Dudushal",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 886,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.63503000000003,
+          35.716170000000034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784120,
+        "WDPA_PID": "555784120",
+        "PA_DEF": "1",
+        "NAME": "Ishkoman-Ghizer",
+        "ORIG_NAME": "Ishkoman-Ghizer",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 297.85,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2011,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.84231000000005,
+          36.52458000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784121,
+        "WDPA_PID": "555784121",
+        "PA_DEF": "1",
+        "NAME": "Thore",
+        "ORIG_NAME": "Thore",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 542,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.85761000000008,
+          35.480920000000026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784122,
+        "WDPA_PID": "555784122",
+        "PA_DEF": "1",
+        "NAME": "Khanbari",
+        "ORIG_NAME": "Khanbari",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 810,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.87875000000008,
+          35.60732000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784123,
+        "WDPA_PID": "555784123",
+        "PA_DEF": "1",
+        "NAME": "Thak-Niat",
+        "ORIG_NAME": "Thak-Niat",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 533,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.93284000000006,
+          35.459700000000055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784125,
+        "WDPA_PID": "555784125",
+        "PA_DEF": "1",
+        "NAME": "Butogah Gichi",
+        "ORIG_NAME": "Butogah Gichi",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 384,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.02028000000007,
+          35.29663000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784126,
+        "WDPA_PID": "555784126",
+        "PA_DEF": "1",
+        "NAME": "Hudur",
+        "ORIG_NAME": "Hudur",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 404,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2017,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.02610000000004,
+          35.56760000000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784129,
+        "WDPA_PID": "555784129",
+        "PA_DEF": "1",
+        "NAME": "Khinar",
+        "ORIG_NAME": "Khinar",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 326,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.16007000000008,
+          35.44391000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784131,
+        "WDPA_PID": "555784131",
+        "PA_DEF": "1",
+        "NAME": "Bunar-Gini",
+        "ORIG_NAME": "Bunar-Gini",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 798,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.20752000000005,
+          35.39032000000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784132,
+        "WDPA_PID": "555784132",
+        "PA_DEF": "1",
+        "NAME": "Harali",
+        "ORIG_NAME": "Harali",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 406,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.24190000000004,
+          36.04580000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784133,
+        "WDPA_PID": "555784133",
+        "PA_DEF": "1",
+        "NAME": "Gais",
+        "ORIG_NAME": "Gais",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 315,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2017,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.24290000000008,
+          35.51720000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784135,
+        "WDPA_PID": "555784135",
+        "PA_DEF": "1",
+        "NAME": "Sakwar/Jutial/Barmas",
+        "ORIG_NAME": "Sakwar/Jutial/Barmas",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 194.29,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.32650000000007,
+          35.870400000000075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784137,
+        "WDPA_PID": "555784137",
+        "PA_DEF": "1",
+        "NAME": "Sai Juglote",
+        "ORIG_NAME": "Sai Juglote",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 326,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2013,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.42150000000004,
+          35.713100000000054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784139,
+        "WDPA_PID": "555784139",
+        "PA_DEF": "1",
+        "NAME": "Bagrot",
+        "ORIG_NAME": "Bagrot",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 482,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2017,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.52660000000003,
+          36.09880000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784141,
+        "WDPA_PID": "555784141",
+        "PA_DEF": "1",
+        "NAME": "Nanga Parbat National Park (Also knowns as Fairy Meadows NP)",
+        "ORIG_NAME": "Nanga Parbat National Park (Also knowns as Fairy Meadows NP)",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1196,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2021,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.59233000000006,
+          35.18035000000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784142,
+        "WDPA_PID": "555784142",
+        "PA_DEF": "1",
+        "NAME": "Goharabad/Thalichi",
+        "ORIG_NAME": "Goharabad/Thalichi",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 310,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.60546000000005,
+          35.58064000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784143,
+        "WDPA_PID": "555784143",
+        "PA_DEF": "1",
+        "NAME": "Nanga Parbat",
+        "ORIG_NAME": "Nanga Parbat",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 640,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2017,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.61600000000004,
+          35.406300000000044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784144,
+        "WDPA_PID": "555784144",
+        "PA_DEF": "1",
+        "NAME": "Bunji",
+        "ORIG_NAME": "Bunji",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 378,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2020,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.67952000000008,
+          35.64472000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784145,
+        "WDPA_PID": "555784145",
+        "PA_DEF": "1",
+        "NAME": "Ramanji",
+        "ORIG_NAME": "Ramanji",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 154,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.68825000000004,
+          36.78363000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784146,
+        "WDPA_PID": "555784146",
+        "PA_DEF": "1",
+        "NAME": "Rupal",
+        "ORIG_NAME": "Rupal",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 524,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.70050000000003,
+          35.22515000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784147,
+        "WDPA_PID": "555784147",
+        "PA_DEF": "1",
+        "NAME": "Doyan",
+        "ORIG_NAME": "Doyan",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 52,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2020,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.73385000000007,
+          35.48998000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784148,
+        "WDPA_PID": "555784148",
+        "PA_DEF": "1",
+        "NAME": "Sassi",
+        "ORIG_NAME": "Sassi",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 136,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2017,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.74064000000004,
+          35.84540000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784149,
+        "WDPA_PID": "555784149",
+        "PA_DEF": "1",
+        "NAME": "Misgar",
+        "ORIG_NAME": "Misgar",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 956,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.75773000000004,
+          36.79222000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784150,
+        "WDPA_PID": "555784150",
+        "PA_DEF": "1",
+        "NAME": "Haramosh",
+        "ORIG_NAME": "Haramosh",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 465,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2017,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.77650000000006,
+          35.840400000000045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784151,
+        "WDPA_PID": "555784151",
+        "PA_DEF": "1",
+        "NAME": "Khyber",
+        "ORIG_NAME": "Khyber",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 320,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1998,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.79662000000008,
+          36.57851000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784152,
+        "WDPA_PID": "555784152",
+        "PA_DEF": "1",
+        "NAME": "Mir Malik",
+        "ORIG_NAME": "Mir Malik",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 317,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2020,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.79785000000004,
+          35.13566000000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784153,
+        "WDPA_PID": "555784153",
+        "PA_DEF": "1",
+        "NAME": "DMT",
+        "ORIG_NAME": "DMT",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 264,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2020,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.80038000000008,
+          35.41898000000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784154,
+        "WDPA_PID": "555784154",
+        "PA_DEF": "1",
+        "NAME": "Gorikote /Tarishing",
+        "ORIG_NAME": "Gorikote /Tarishing",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 181.3,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.84976000000006,
+          35.28283000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784155,
+        "WDPA_PID": "555784155",
+        "PA_DEF": "1",
+        "NAME": "Gulmit (Gojal)",
+        "ORIG_NAME": "Gulmit (Gojal)",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 0,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.86335000000008,
+          36.387470000000064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784158,
+        "WDPA_PID": "555784158",
+        "PA_DEF": "1",
+        "NAME": "Perishing/Astore",
+        "ORIG_NAME": "Perishing/Astore",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 220.15,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.87834000000004,
+          35.38882000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784160,
+        "WDPA_PID": "555784160",
+        "PA_DEF": "1",
+        "NAME": "KVO",
+        "ORIG_NAME": "KVO",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 326.34,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.90170000000006,
+          36.577600000000075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784161,
+        "WDPA_PID": "555784161",
+        "PA_DEF": "1",
+        "NAME": "Kalapani",
+        "ORIG_NAME": "Kalapani",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 648,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2018,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.90641000000005,
+          34.85973000000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784162,
+        "WDPA_PID": "555784162",
+        "PA_DEF": "1",
+        "NAME": "Himalaya National Park",
+        "ORIG_NAME": "Himalaya National Park",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1989,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2021,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.92731000000003,
+          34.902460000000076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784166,
+        "WDPA_PID": "555784166",
+        "PA_DEF": "1",
+        "NAME": "Skoyo, Karabathkng and Basingo (SKB)",
+        "ORIG_NAME": "Skoyo, Karabathkng and Basingo (SKB)",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 132,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2020,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.40226000000007,
+          35.43649000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784167,
+        "WDPA_PID": "555784167",
+        "PA_DEF": "1",
+        "NAME": "Shimshal",
+        "ORIG_NAME": "Shimshal",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 168.3,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.43860000000006,
+          36.42710000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784168,
+        "WDPA_PID": "555784168",
+        "PA_DEF": "1",
+        "NAME": "Hoto-Chunda-Kachura-Soq (HCKS)",
+        "ORIG_NAME": "Hoto-Chunda-Kachura-Soq (HCKS)",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 124,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2020,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.47721000000007,
+          35.34125000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555790274,
+        "WDPA_PID": "555790274",
+        "PA_DEF": "1",
+        "NAME": "Satpara",
+        "ORIG_NAME": "Satpara",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 311,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1975,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.62810000000007,
+          35.19480000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784170,
+        "WDPA_PID": "555784170",
+        "PA_DEF": "1",
+        "NAME": "Hussainabad/Goal",
+        "ORIG_NAME": "Hussainabad/Goal",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 336.7,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70358000000004,
+          35.28904000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784172,
+        "WDPA_PID": "555784172",
+        "PA_DEF": "1",
+        "NAME": "Hushey",
+        "ORIG_NAME": "Hushey",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 583,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1998,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.35880000000003,
+          35.45067000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784173,
+        "WDPA_PID": "555784173",
+        "PA_DEF": "1",
+        "NAME": "Askoli, Biafo, Dumrdo, Lascum (ABDL)",
+        "ORIG_NAME": "Askoli, Biafo, Dumrdo, Lascum (ABDL)",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 161,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.87722200000007,
+          34.709167000000036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784174,
+        "WDPA_PID": "555784174",
+        "PA_DEF": "1",
+        "NAME": "Mintho, Minthoka, Madhupur (MMM)",
+        "ORIG_NAME": "Mintho, Minthoka, Madhupur (MMM)",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 339,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.88916700000004,
+          34.98166700000007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784033,
+        "WDPA_PID": "555784033",
+        "PA_DEF": "1",
+        "NAME": "Deosai National Park",
+        "ORIG_NAME": "Deosai National Park",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 3626,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1993,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 745,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.41666666700007,
+          35.08333333300004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784116,
+        "WDPA_PID": "555784116",
+        "PA_DEF": "1",
+        "NAME": "Chassi /Bowasdar",
+        "ORIG_NAME": "Chassi /Bowasdar",
+        "DESIG": "Game Reserve (GR)",
+        "DESIG_ENG": "Game Reserve (GR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 370.3,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1975,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.89430000000004,
+          36.06430000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784127,
+        "WDPA_PID": "555784127",
+        "PA_DEF": "1",
+        "NAME": "Sherqillah-Ghizer",
+        "ORIG_NAME": "Sherqillah-Ghizer",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 168.3,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.04322000000008,
+          36.09474000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784130,
+        "WDPA_PID": "555784130",
+        "PA_DEF": "1",
+        "NAME": "Qarumber-Ghizer",
+        "ORIG_NAME": "Qarumber-Ghizer",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 640,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1998,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.18400000000008,
+          36.531400000000076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784134,
+        "WDPA_PID": "555784134",
+        "PA_DEF": "1",
+        "NAME": "Bar (Nagar)",
+        "ORIG_NAME": "Bar (Nagar)",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 906,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1998,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.28440000000006,
+          36.44730000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784136,
+        "WDPA_PID": "555784136",
+        "PA_DEF": "1",
+        "NAME": "Skinderabad/Nilt/Jafferabad",
+        "ORIG_NAME": "Skinderabad/Nilt/Jafferabad",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 113.96,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.41890000000006,
+          36.23287000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784138,
+        "WDPA_PID": "555784138",
+        "PA_DEF": "1",
+        "NAME": "Shinaki",
+        "ORIG_NAME": "Shinaki",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 230,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1998,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.45880000000005,
+          36.28450000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784140,
+        "WDPA_PID": "555784140",
+        "PA_DEF": "1",
+        "NAME": "Gulmat/Minapin",
+        "ORIG_NAME": "Gulmat/Minapin",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 543.9,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.53389000000004,
+          36.24899000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784156,
+        "WDPA_PID": "555784156",
+        "PA_DEF": "1",
+        "NAME": "Gulkin",
+        "ORIG_NAME": "Gulkin",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 100,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1998,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.86353000000008,
+          36.40712000000008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784157,
+        "WDPA_PID": "555784157",
+        "PA_DEF": "1",
+        "NAME": "Hussaini",
+        "ORIG_NAME": "Hussaini",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 104.42,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.87508000000008,
+          36.42333000000008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784159,
+        "WDPA_PID": "555784159",
+        "PA_DEF": "1",
+        "NAME": "Passu",
+        "ORIG_NAME": "Passu",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 294,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.89720000000005,
+          36.465230000000076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784163,
+        "WDPA_PID": "555784163",
+        "PA_DEF": "1",
+        "NAME": "Hisper",
+        "ORIG_NAME": "Hisper",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 409,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2017,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.98873000000003,
+          36.17526000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784165,
+        "WDPA_PID": "555784165",
+        "PA_DEF": "1",
+        "NAME": "Kanday/Sailing",
+        "ORIG_NAME": "Kanday/Sailing",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 271.95,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2006,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.08727000000005,
+          36.55919000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784176,
+        "WDPA_PID": "555784176",
+        "PA_DEF": "1",
+        "NAME": "Sumayar",
+        "ORIG_NAME": "Sumayar",
+        "DESIG": "Community Controlled Hunting Areas",
+        "DESIG_ENG": "Community Controlled Hunting Areas",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1564,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "Communal",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-GB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.65472200000005,
+          36.30222200000003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555781550,
+        "WDPA_PID": "555781550",
+        "PA_DEF": "1",
+        "NAME": "Broghil",
+        "ORIG_NAME": "Broghil",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "REP_AREA": 1347.44,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2010,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-KP",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.36667000000006,
+          36.16667000000007
+        ]
+      }
+    }
+  ]
+}

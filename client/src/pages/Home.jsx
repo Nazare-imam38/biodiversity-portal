@@ -11,6 +11,7 @@ import {
   FaShieldAlt, 
   FaDownload 
 } from 'react-icons/fa'
+import StyledButton from '../components/StyledButton'
 
 // Custom hook for scroll animations
 function useScrollAnimation(options = {}) {
@@ -187,12 +188,11 @@ export default function Home() {
               <p className="text-lg sm:text-xl text-green-100 mb-8 max-w-2xl">
                 A unified system for biodiversity and forest data to guide national reporting and policy.
               </p>
-              <button
-                onClick={() => navigate('/dashboard')}
-                className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
-              >
+              <div className="flex justify-center lg:justify-start">
+                <StyledButton onClick={() => navigate('/dashboard')}>
                 Let's Explore
-              </button>
+                </StyledButton>
+              </div>
             </div>
           </div>
         </div>

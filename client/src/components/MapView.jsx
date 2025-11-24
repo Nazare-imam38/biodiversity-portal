@@ -62,8 +62,8 @@ function MapBoundsController() {
   return null
 }
 
-// Component to handle map resize on mobile
-function MapResizer() {
+// Component to handle map resize on mobile and panel state changes
+function MapResizer({ panelOpen }) {
   const map = useMap()
   
   useEffect(() => {
@@ -101,7 +101,18 @@ function MapResizer() {
       window.removeEventListener('resize', handleResize)
       window.removeEventListener('orientationchange', handleResize)
     }
-  }, [map])
+  }, [map, panelOpen]) // Add panelOpen as dependency
+  
+  // Resize when panel state changes
+  useEffect(() => {
+    if (map) {
+      const timeoutId = setTimeout(() => {
+        map.invalidateSize()
+      }, 350) // Wait for animation to complete (300ms + 50ms buffer)
+      
+      return () => clearTimeout(timeoutId)
+    }
+  }, [map, panelOpen])
   
   return null
 }
@@ -165,6 +176,45 @@ function RegionZoomController({ selectedRegion, layerData, activeLayers }) {
             performZoom()
           }, 500)
         }
+      } else if (selectedRegion === 'Punjab') {
+        // Check if punjab-provincial layer is active and loaded
+        const hasPunjabLayer = activeLayers.has('punjab-provincial')
+        const punjabLayerData = layerData['punjab-provincial']
+        
+        if (hasPunjabLayer && punjabLayerData && punjabLayerData.features && punjabLayerData.features.length > 0) {
+          // Calculate bounds from GeoJSON features
+          const bounds = L.latLngBounds([])
+          
+          punjabLayerData.features.forEach(feature => {
+            if (feature.geometry && feature.geometry.coordinates) {
+              const extractCoords = (coords) => {
+                if (Array.isArray(coords[0])) {
+                  coords.forEach(c => extractCoords(c))
+                } else if (coords.length === 2 && typeof coords[0] === 'number') {
+                  // [lng, lat] format
+                  bounds.extend([coords[1], coords[0]])
+                }
+              }
+              extractCoords(feature.geometry.coordinates)
+            }
+          })
+          
+          if (bounds.isValid()) {
+            // Add some padding around the bounds
+            map.fitBounds(bounds, { 
+              padding: [50, 50],
+              maxZoom: 9,
+              animate: true,
+              duration: 0.8
+            })
+            console.log('Zoomed to Punjab bounds')
+          }
+        } else {
+          // If layer data not loaded yet, wait a bit and try again
+          zoomTimeoutRef.current = setTimeout(() => {
+            performZoom()
+          }, 500)
+        }
       } else if (selectedRegion === 'National') {
         // Zoom back to Pakistan view
         map.setView(PAKISTAN_CENTER, PAKISTAN_ZOOM, { 
@@ -191,7 +241,7 @@ function RegionZoomController({ selectedRegion, layerData, activeLayers }) {
   return null
 }
 
-export default function MapView({ layers, activeLayers, selectedRegion = 'National' }) {
+export default function MapView({ layers, activeLayers, selectedRegion = 'National', panelOpen = true }) {
   const geoJsonRefs = useRef({})
   const [layerData, setLayerData] = useState({})
   const [loading, setLoading] = useState(new Set())
@@ -241,7 +291,9 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
           try {
             // Use relative URL when served from same domain, otherwise use env var or localhost
             const apiUrl = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' ? '' : 'http://localhost:3001')
-            const apiEndpoint = apiUrl ? `${apiUrl}/api/layers/${layerId}` : `/api/layers/${layerId}`
+            // Include region parameter in the API call
+            const regionParam = selectedRegion ? `?region=${encodeURIComponent(selectedRegion)}` : ''
+            const apiEndpoint = apiUrl ? `${apiUrl}/api/layers/${layerId}${regionParam}` : `/api/layers/${layerId}${regionParam}`
             const response = await fetch(apiEndpoint)
             if (!response.ok) {
               const errorData = await response.json().catch(() => ({}))
@@ -286,7 +338,14 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     }
     
     loadLayers()
-  }, [activeLayers]) // Only depend on activeLayers, use refs for current state
+  }, [activeLayers, selectedRegion]) // Reload when activeLayers or selectedRegion changes
+
+  // Clear layer data when region changes to force reload with new region
+  useEffect(() => {
+    console.log(`Region changed to: ${selectedRegion}, clearing layer data to reload with new region`)
+    setLayerData({})
+    layerDataRef.current = {}
+  }, [selectedRegion])
 
   // Clean up removed layers in a separate effect to avoid conflicts
   useEffect(() => {
@@ -349,9 +408,9 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     if (feature.properties) {
       const props = feature.properties
       
-      // Special formatting for species distribution layer
+      // Special formatting for wildlife occurrence layer
       let popupContent = ''
-      if (layerConfig.id === 'species-distribution') {
+      if (layerConfig.id === 'wildlife-occurrence') {
         popupContent = `
           <div style="max-width: 300px; padding: 4px;">
             <h3 style="font-weight: bold; margin-bottom: 8px; color: ${layerConfig.color}; font-size: 14px;">Species Information</h3>
@@ -442,7 +501,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
         
         <BaseMapSwitcher baseMap={baseMap} onBaseMapChange={setBaseMap} />
         <MapBoundsController />
-        <MapResizer />
+        <MapResizer panelOpen={panelOpen} />
         <RegionZoomController selectedRegion={selectedRegion} layerData={layerData} activeLayers={activeLayers} />
         
         {Array.from(activeLayers).map((layerId) => {

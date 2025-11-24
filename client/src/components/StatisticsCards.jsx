@@ -2,13 +2,22 @@ import { useState, useEffect, useRef } from 'react'
 import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud } from 'react-icons/fa'
 
 // Typewriter animation component for numbers
-function TypewriterNumber({ value, delay = 30, index = 0 }) {
+function TypewriterNumber({ value, delay = 30, index = 0, key = '' }) {
   const [displayValue, setDisplayValue] = useState('')
   const [isAnimating, setIsAnimating] = useState(false)
   const hasAnimated = useRef(false)
+  const lastValueRef = useRef('')
 
   useEffect(() => {
-    // Only animate once when component mounts
+    // Reset animation if value changes (e.g., when region changes)
+    if (lastValueRef.current !== value) {
+      hasAnimated.current = false
+      setDisplayValue('')
+      setIsAnimating(false)
+      lastValueRef.current = value
+    }
+    
+    // Only animate once per value
     if (hasAnimated.current) return
     
     // Stagger animation start for each card
@@ -57,7 +66,7 @@ function TypewriterNumber({ value, delay = 30, index = 0 }) {
     return () => {
       clearTimeout(startAnimation)
     }
-  }, [value, delay, index])
+  }, [value, delay, index, key])
 
   return (
     <span className="font-bold inline-block" style={{ fontVariantNumeric: 'tabular-nums' }}>
@@ -79,22 +88,13 @@ function TypewriterNumber({ value, delay = 30, index = 0 }) {
   )
 }
 
-export default function StatisticsCards({ layerData, activeLayers }) {
-  // Calculate statistics from active layers
-  const stats = {
-    totalProvincialArea: '729,71 Sq Km',
-    forestArea: '329,721 Hectare',
-    totalProvincialAreaHectares: '729,710,0 Hectares',
-    restorationAreas: '1.2M ha',
-    protectedAreas: '14.1%',
-    speciesAtRisk: 177,
-    deforestationRate: '-0.5%'
-  }
-
-  const cards = [
+export default function StatisticsCards({ layerData, activeLayers, selectedRegion = 'Gilgit Baltistan' }) {
+  // Region-specific statistics data
+  const regionStats = {
+    'Gilgit Baltistan': [
     { 
       label: 'Sq Km Total Provincial Area', 
-      value: '729,71', 
+        value: '72,971', 
       color: 'bg-blue-500',
       icon: FaGlobe,
       iconColor: 'text-blue-600'
@@ -116,22 +116,22 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       icon: FaCut,
       iconColor: 'text-red-800'
     },
-    { 
-      label: '', 
-      value: '2299',
-      valueText: 'Hectare Enhancement',
-      subtitle: 'Degraded Ecosystems',
-      color: 'bg-green-600',
-      icon: FaSeedling,
-      iconColor: 'text-green-800'
-    },
-    { 
-      label: '', 
-      value: '56%',
-      subtitle: 'Current protected coverage',
-      color: 'bg-yellow-500',
-      icon: FaShieldAlt,
-      iconColor: 'text-yellow-600'
+      { 
+        label: '', 
+        value: '2,299',
+        valueText: 'Hectare Enhancement',
+        subtitle: 'Degraded Ecosystems',
+        color: 'bg-green-600',
+        icon: FaSeedling,
+        iconColor: 'text-green-800'
+      },
+      { 
+        label: '', 
+        value: '56%',
+        subtitle: 'Current protected coverage',
+        color: 'bg-yellow-500',
+        icon: FaShieldAlt,
+        iconColor: 'text-yellow-600'
     },
     { 
       label: '', 
@@ -149,15 +149,78 @@ export default function StatisticsCards({ layerData, activeLayers }) {
       icon: FaCloud,
       iconColor: '#ffffff'
     }
+    ],
+    'Punjab': [
+      { 
+        label: 'Sq Km Total Provincial Area', 
+        value: '205,344', 
+        color: 'bg-blue-500',
+        icon: FaGlobe,
+        iconColor: 'text-blue-600'
+      },
+      { 
+        label: '', 
+        value: '535,106',
+        subtitle: 'Hectare Forest Area 2.6%',
+        color: 'bg-green-500',
+        icon: FaTree,
+        iconColor: 'text-green-600'
+      },
+      { 
+        label: '', 
+        value: '7,380',
+        valueText: 'Hectare Deforestation',
+        subtitle: 'Degraded Ecosystems',
+        color: 'bg-red-600',
+        icon: FaCut,
+        iconColor: 'text-red-800'
+      },
+      { 
+        label: '', 
+        value: '6,774',
+        valueText: 'Hectare Enhancement',
+        subtitle: 'Degraded Ecosystems',
+        color: 'bg-green-600',
+        icon: FaSeedling,
+        iconColor: 'text-green-800'
+      },
+      { 
+        label: '', 
+        value: '2.6%',
+        subtitle: 'Current protected coverage',
+        color: 'bg-yellow-500',
+        icon: FaShieldAlt,
+        iconColor: 'text-yellow-600'
+      },
+      { 
+        label: '', 
+        value: '33%',
+        subtitle: 'Protected Areas Coverage of (KBAs)',
+        color: 'bg-red-500',
+        icon: FaExclamationTriangle,
+        iconColor: 'text-red-600'
+      },
+      { 
+        label: '', 
+        value: '3,100,249',
+      subtitle: 'Mg/Km2 Carbon Storage',
+      color: '#14b8a6',
+      icon: FaCloud,
+      iconColor: '#ffffff'
+    }
   ]
+  }
+
+  // Get cards for the selected region, default to Gilgit Baltistan
+  const cards = regionStats[selectedRegion] || regionStats['Gilgit Baltistan']
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4 py-3 sm:py-4 bg-white border-b border-gray-200 overflow-x-auto">
+    <div key={selectedRegion} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4 py-3 sm:py-4 bg-white border-b border-gray-200 overflow-x-auto">
       {cards.map((card, index) => {
         const IconComponent = card.icon
         return (
           <div
-            key={index}
+            key={`${selectedRegion}-${index}`}
             className="stat-card bg-white rounded-lg border border-gray-200 p-2 sm:p-3 md:p-4 shadow-sm hover:shadow-lg hover:border-green-400 hover:ring-2 hover:ring-green-300 hover:ring-opacity-50 transition-all duration-300 cursor-pointer transform hover:scale-105 min-w-0"
           >
             <div 
@@ -170,7 +233,7 @@ export default function StatisticsCards({ layerData, activeLayers }) {
               />
             </div>
             <div className="text-sm sm:text-base md:text-lg text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight whitespace-pre-line">
-              <TypewriterNumber value={card.value} delay={30} index={index} />
+              <TypewriterNumber value={card.value} delay={30} index={index} key={`${selectedRegion}-${index}-${card.value}`} />
             </div>
             {card.valueText && (
               <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.valueText}</div>

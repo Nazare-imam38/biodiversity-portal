@@ -1,0 +1,5599 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 835,
+        "WDPA_PID": "835",
+        "PA_DEF": "1",
+        "NAME": "Lal Suhanra",
+        "ORIG_NAME": "Lal Suhanra",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "V",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 657.889026,
+        "GIS_AREA": 72.7303709137,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 218,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.06687000000005,
+              29.368490000000065
+            ],
+            [
+              72.06557000000004,
+              29.366550000000075
+            ],
+            [
+              72.04308000000003,
+              29.34982000000008
+            ],
+            [
+              72.02482000000003,
+              29.348920000000078
+            ],
+            [
+              72.00548000000003,
+              29.34716000000003
+            ],
+            [
+              71.99840000000006,
+              29.34599000000003
+            ],
+            [
+              71.99328000000008,
+              29.35569000000004
+            ],
+            [
+              71.98560000000003,
+              29.374600000000044
+            ],
+            [
+              71.99094000000008,
+              29.39271000000008
+            ],
+            [
+              71.99695000000008,
+              29.415370000000053
+            ],
+            [
+              71.98285000000004,
+              29.429430000000025
+            ],
+            [
+              71.99891000000008,
+              29.44133000000005
+            ],
+            [
+              72.01796999900006,
+              29.449500000000057
+            ],
+            [
+              72.05331000000007,
+              29.445820000000026
+            ],
+            [
+              72.05627000000004,
+              29.426580000000058
+            ],
+            [
+              72.07120000000003,
+              29.40701000000007
+            ],
+            [
+              72.05749000000003,
+              29.388210000000072
+            ],
+            [
+              72.06687000000005,
+              29.368490000000065
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 6688,
+        "WDPA_PID": "6688",
+        "PA_DEF": "1",
+        "NAME": "Taunsa Barrage",
+        "ORIG_NAME": "Taunsa Barrage",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "IV",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 249.433428,
+        "GIS_AREA": 71.3165210321,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.82510000000008,
+              30.544260000000065
+            ],
+            [
+              70.81461000000007,
+              30.52436000000006
+            ],
+            [
+              70.78571000000005,
+              30.528490000000033
+            ],
+            [
+              70.76655999900004,
+              30.54341000000005
+            ],
+            [
+              70.76386000000008,
+              30.563980000000072
+            ],
+            [
+              70.76132000000007,
+              30.59093000000007
+            ],
+            [
+              70.76077000000004,
+              30.61239000000006
+            ],
+            [
+              70.76140000000004,
+              30.616940000000056
+            ],
+            [
+              70.77182000000005,
+              30.634100000000046
+            ],
+            [
+              70.79249000000004,
+              30.637870000000078
+            ],
+            [
+              70.81627000000003,
+              30.63930000000005
+            ],
+            [
+              70.83485000000007,
+              30.622100000000046
+            ],
+            [
+              70.83002000000005,
+              30.59618000000006
+            ],
+            [
+              70.82137000000006,
+              30.564850000000035
+            ],
+            [
+              70.82510000000008,
+              30.544260000000065
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 6690,
+        "WDPA_PID": "6690",
+        "PA_DEF": "1",
+        "NAME": "Chumbi Surla",
+        "ORIG_NAME": "Chumbi Surla",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "IV",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 49.291785,
+        "GIS_AREA": 557.791728038,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 218,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.35019000000005,
+              32.54675000000003
+            ],
+            [
+              72.32642000000004,
+              32.545030000000054
+            ],
+            [
+              72.30271000000005,
+              32.54711000000003
+            ],
+            [
+              72.27987000000007,
+              32.552940000000035
+            ],
+            [
+              72.25854000000004,
+              32.56230000000005
+            ],
+            [
+              72.23935000000006,
+              32.574940000000026
+            ],
+            [
+              72.22293000000008,
+              32.59048000000007
+            ],
+            [
+              72.20975000000004,
+              32.608430000000055
+            ],
+            [
+              72.20023000000003,
+              32.62825000000004
+            ],
+            [
+              72.19464000000005,
+              32.64933000000008
+            ],
+            [
+              72.19315000000006,
+              32.67104000000006
+            ],
+            [
+              72.19584000000003,
+              32.69276000000008
+            ],
+            [
+              72.20261000000005,
+              32.71377000000007
+            ],
+            [
+              72.21324000000004,
+              32.73341000000005
+            ],
+            [
+              72.22743000000008,
+              32.75118000000003
+            ],
+            [
+              72.24475000000007,
+              32.76645000000008
+            ],
+            [
+              72.26466000000005,
+              32.77879000000007
+            ],
+            [
+              72.28657000000004,
+              32.787840000000074
+            ],
+            [
+              72.30980000000005,
+              32.79329000000007
+            ],
+            [
+              72.33361000000008,
+              32.79501000000005
+            ],
+            [
+              72.35738000000003,
+              32.79292000000004
+            ],
+            [
+              72.38026000000008,
+              32.78708000000006
+            ],
+            [
+              72.40161000000006,
+              32.77770000000004
+            ],
+            [
+              72.42083000000008,
+              32.765040000000056
+            ],
+            [
+              72.43724000000003,
+              32.74949000000004
+            ],
+            [
+              72.45039000100007,
+              32.73153000000008
+            ],
+            [
+              72.45989000000003,
+              32.711700000000064
+            ],
+            [
+              72.46541999900006,
+              32.69061000000005
+            ],
+            [
+              72.46685000000008,
+              32.66891000000004
+            ],
+            [
+              72.46412000000004,
+              32.64721000000003
+            ],
+            [
+              72.45731000000006,
+              32.62621000000007
+            ],
+            [
+              72.44663999900007,
+              32.60657000000003
+            ],
+            [
+              72.43243000000007,
+              32.58883000000003
+            ],
+            [
+              72.41513000000003,
+              32.573570000000075
+            ],
+            [
+              72.39524000000006,
+              32.56123000000002
+            ],
+            [
+              72.37337000000008,
+              32.55220000000003
+            ],
+            [
+              72.35019000000005,
+              32.54675000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 6691,
+        "WDPA_PID": "6691",
+        "PA_DEF": "1",
+        "NAME": "Namal Lake",
+        "ORIG_NAME": "Namal Lake",
+        "DESIG": "Wetland",
+        "DESIG_ENG": "Wetland",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "IV",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 6.645089,
+        "GIS_AREA": 4.47935461473,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              71.82797000000005,
+              32.671020000000055
+            ],
+            [
+              71.81972000100006,
+              32.66835000000003
+            ],
+            [
+              71.81158000000005,
+              32.67113000000006
+            ],
+            [
+              71.80740000000003,
+              32.67806000000007
+            ],
+            [
+              71.80910000100005,
+              32.68589000000003
+            ],
+            [
+              71.81591000000003,
+              32.69097000000005
+            ],
+            [
+              71.82463000000007,
+              32.69091000000003
+            ],
+            [
+              71.83118000000007,
+              32.68575000000004
+            ],
+            [
+              71.83250000000004,
+              32.67789000000005
+            ],
+            [
+              71.82797000000005,
+              32.671020000000055
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 6692,
+        "WDPA_PID": "6692",
+        "PA_DEF": "1",
+        "NAME": "Chashma",
+        "ORIG_NAME": "Chashma",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "IV",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 9.9,
+        "GIS_AREA": 215.716014745,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1974,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-KP",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              71.42398000000003,
+              32.39103000000006
+            ],
+            [
+              71.40301000000005,
+              32.38512000000003
+            ],
+            [
+              71.37989000000005,
+              32.38558000000006
+            ],
+            [
+              71.36484000000007,
+              32.39378000000005
+            ],
+            [
+              71.36214000000007,
+              32.398790000000076
+            ],
+            [
+              71.35731000000004,
+              32.40426000000008
+            ],
+            [
+              71.35300000000007,
+              32.412010000000066
+            ],
+            [
+              71.35085000000004,
+              32.41747000000004
+            ],
+            [
+              71.35003000000006,
+              32.42924000000005
+            ],
+            [
+              71.35406000000006,
+              32.45142000000004
+            ],
+            [
+              71.36280000000005,
+              32.468900000000076
+            ],
+            [
+              71.38698999900004,
+              32.50519000000003
+            ],
+            [
+              71.44211000000007,
+              32.581810000000075
+            ],
+            [
+              71.45824000000005,
+              32.600630000000024
+            ],
+            [
+              71.46873000000005,
+              32.606930000000034
+            ],
+            [
+              71.48382000000004,
+              32.609650000000045
+            ],
+            [
+              71.50214000000005,
+              32.60599000000008
+            ],
+            [
+              71.51830000000007,
+              32.59504000000004
+            ],
+            [
+              71.52583000000004,
+              32.58546000000007
+            ],
+            [
+              71.52798000000007,
+              32.58045000000004
+            ],
+            [
+              71.52904000000007,
+              32.569060000000036
+            ],
+            [
+              71.52633000000003,
+              32.55949000000004
+            ],
+            [
+              71.51932000000005,
+              32.545840000000055
+            ],
+            [
+              71.51608000000004,
+              32.53992000000005
+            ],
+            [
+              71.50314000000003,
+              32.527180000000044
+            ],
+            [
+              71.49937000000006,
+              32.523090000000025
+            ],
+            [
+              71.48967000000005,
+              32.51171000000005
+            ],
+            [
+              71.48051000000004,
+              32.493040000000065
+            ],
+            [
+              71.47781000000003,
+              32.48576000000003
+            ],
+            [
+              71.47026000000005,
+              32.468450000000075
+            ],
+            [
+              71.46272000000005,
+              32.448870000000056
+            ],
+            [
+              71.46055999900005,
+              32.44294000000008
+            ],
+            [
+              71.45195000000007,
+              32.42883000000006
+            ],
+            [
+              71.44872000000004,
+              32.42291000000006
+            ],
+            [
+              71.43850000000003,
+              32.40697000000006
+            ],
+            [
+              71.42398000000003,
+              32.39103000000006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 6755,
+        "WDPA_PID": "6755",
+        "PA_DEF": "1",
+        "NAME": "Sodhi",
+        "ORIG_NAME": "Sodhi",
+        "DESIG": "Wildlife Sanctuary (WS)",
+        "DESIG_ENG": "Wildlife Sanctuary (WS)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "IV",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 58.174828,
+        "GIS_AREA": 53.1582510747,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.34674999900005,
+              32.046710000000076
+            ],
+            [
+              72.33221000100008,
+              32.04448000000008
+            ],
+            [
+              72.31779000000006,
+              32.04694000000006
+            ],
+            [
+              72.30524000100007,
+              32.05377000000004
+            ],
+            [
+              72.29607000000004,
+              32.06417000000005
+            ],
+            [
+              72.29140000000007,
+              32.076880000000074
+            ],
+            [
+              72.29177000000004,
+              32.090370000000064
+            ],
+            [
+              72.29715999900003,
+              32.102990000000034
+            ],
+            [
+              72.30691000000007,
+              32.113260000000025
+            ],
+            [
+              72.31984000000006,
+              32.11990000000003
+            ],
+            [
+              72.33439000000004,
+              32.12213000000003
+            ],
+            [
+              72.34882000000005,
+              32.11967000000004
+            ],
+            [
+              72.36137000000008,
+              32.11283000000003
+            ],
+            [
+              72.37054000000006,
+              32.10242000000005
+            ],
+            [
+              72.37521000100008,
+              32.08972000000006
+            ],
+            [
+              72.37482000000006,
+              32.076230000000066
+            ],
+            [
+              72.36942000000005,
+              32.06361000000004
+            ],
+            [
+              72.35968000000008,
+              32.05335000000002
+            ],
+            [
+              72.34674999900005,
+              32.046710000000076
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 14235,
+        "WDPA_PID": "14235",
+        "PA_DEF": "1",
+        "NAME": "Chinji",
+        "ORIG_NAME": "Chinji",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "II",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 60.716309,
+        "GIS_AREA": 40.0086154491,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "Not Reported",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.48315000100007,
+              32.96796000000006
+            ],
+            [
+              72.47121000000004,
+              32.964420000000075
+            ],
+            [
+              72.46802000000008,
+              32.96900000000005
+            ],
+            [
+              72.46541000100007,
+              32.97721000000007
+            ],
+            [
+              72.46551000000005,
+              32.986330000000066
+            ],
+            [
+              72.47151000000008,
+              32.991280000000074
+            ],
+            [
+              72.47427999900003,
+              32.99718000000007
+            ],
+            [
+              72.47548000000006,
+              33.00719000000004
+            ],
+            [
+              72.47500000000008,
+              33.01266000000004
+            ],
+            [
+              72.46915000000007,
+              33.02272000000005
+            ],
+            [
+              72.46492000000006,
+              33.03141000000005
+            ],
+            [
+              72.46556000000004,
+              33.04006000000004
+            ],
+            [
+              72.47054000000003,
+              33.04958000000005
+            ],
+            [
+              72.47438000000005,
+              33.05456000000004
+            ],
+            [
+              72.48576000000008,
+              33.05583000000007
+            ],
+            [
+              72.49981000000008,
+              33.05252000000007
+            ],
+            [
+              72.51211000000006,
+              33.039210000000026
+            ],
+            [
+              72.51630000000006,
+              33.02779000000004
+            ],
+            [
+              72.51934000000006,
+              33.01000000000005
+            ],
+            [
+              72.51980000000003,
+              33.002710000000036
+            ],
+            [
+              72.52028000000007,
+              32.99724000000003
+            ],
+            [
+              72.51744000100007,
+              32.98589000000004
+            ],
+            [
+              72.51575000000008,
+              32.97998000000007
+            ],
+            [
+              72.50809000000004,
+              32.97231000000005
+            ],
+            [
+              72.49075000000005,
+              32.96972000000005
+            ],
+            [
+              72.48315000100007,
+              32.96796000000006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 143010,
+        "WDPA_PID": "143010",
+        "PA_DEF": "1",
+        "NAME": "Taunsa Barrage",
+        "ORIG_NAME": "Taunsa Barrage",
+        "DESIG": "Ramsar Site, Wetland of International Importance",
+        "DESIG_ENG": "Ramsar Site, Wetland of International Importance",
+        "DESIG_TYPE": "International",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "(i)(ii)(iii)",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 65.76,
+        "GIS_AREA": 71.3165210321,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1996,
+        "GOV_TYPE": "Not Reported",
+        "OWN_TYPE": "Not Reported",
+        "MANG_AUTH": "Not Reported",
+        "MANG_PLAN": "Management plan is not implented and not available",
+        "VERIF": "State Verified",
+        "METADATAID": 1856,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.82510000000008,
+              30.544260000000065
+            ],
+            [
+              70.81461000000007,
+              30.52436000000006
+            ],
+            [
+              70.78571000000005,
+              30.528490000000033
+            ],
+            [
+              70.76655999900004,
+              30.54341000000005
+            ],
+            [
+              70.76386000000008,
+              30.563980000000072
+            ],
+            [
+              70.76132000000007,
+              30.59093000000007
+            ],
+            [
+              70.76077000000004,
+              30.61239000000006
+            ],
+            [
+              70.76140000000004,
+              30.616940000000056
+            ],
+            [
+              70.77182000000005,
+              30.634100000000046
+            ],
+            [
+              70.79249000000004,
+              30.637870000000078
+            ],
+            [
+              70.81627000000003,
+              30.63930000000005
+            ],
+            [
+              70.83485000000007,
+              30.622100000000046
+            ],
+            [
+              70.83002000000005,
+              30.59618000000006
+            ],
+            [
+              70.82137000000006,
+              30.564850000000035
+            ],
+            [
+              70.82510000000008,
+              30.544260000000065
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784013,
+        "WDPA_PID": "555784013",
+        "PA_DEF": "1",
+        "NAME": "Bajwat",
+        "ORIG_NAME": "Bajwat",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "IV",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 57.948199,
+        "GIS_AREA": 53.6451343658,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.64612000000005,
+              32.11320000000006
+            ],
+            [
+              74.63145000000003,
+              32.11103000000003
+            ],
+            [
+              74.61699000000004,
+              32.11357000000004
+            ],
+            [
+              74.60450000000003,
+              32.120510000000024
+            ],
+            [
+              74.59548000000007,
+              32.13100000000003
+            ],
+            [
+              74.59103000000005,
+              32.14378000000005
+            ],
+            [
+              74.59167000000008,
+              32.15732000000003
+            ],
+            [
+              74.59734000000003,
+              32.16996000000006
+            ],
+            [
+              74.60735000000005,
+              32.18022000000008
+            ],
+            [
+              74.62048000000004,
+              32.18682000000007
+            ],
+            [
+              74.63516000000004,
+              32.18897000000004
+            ],
+            [
+              74.64964000000003,
+              32.18643000000003
+            ],
+            [
+              74.66212000000007,
+              32.179490000000044
+            ],
+            [
+              74.67113000000006,
+              32.16900000000004
+            ],
+            [
+              74.67558000000008,
+              32.156220000000076
+            ],
+            [
+              74.67493000000007,
+              32.14268000000004
+            ],
+            [
+              74.66925000000003,
+              32.130040000000065
+            ],
+            [
+              74.65925000100003,
+              32.11979000000002
+            ],
+            [
+              74.64612000000005,
+              32.11320000000006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784014,
+        "WDPA_PID": "555784014",
+        "PA_DEF": "1",
+        "NAME": "Daphar",
+        "ORIG_NAME": "Daphar",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "IV",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 28.838527,
+        "GIS_AREA": 28.3229975388,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.34290000000004,
+              32.13997000000006
+            ],
+            [
+              73.33226000000008,
+              32.138370000000066
+            ],
+            [
+              73.32174000000003,
+              32.14018000000004
+            ],
+            [
+              73.31261000000006,
+              32.14519000000007
+            ],
+            [
+              73.30598000000003,
+              32.15280000000007
+            ],
+            [
+              73.30264000000005,
+              32.16208000000006
+            ],
+            [
+              73.30300000000005,
+              32.17193000000003
+            ],
+            [
+              73.30700999900006,
+              32.18113000000005
+            ],
+            [
+              73.31420000000003,
+              32.18861000000004
+            ],
+            [
+              73.32369000000006,
+              32.193430000000035
+            ],
+            [
+              73.33434000000005,
+              32.19503000000003
+            ],
+            [
+              73.34487000100006,
+              32.19321000000008
+            ],
+            [
+              73.35400000000004,
+              32.18820000000005
+            ],
+            [
+              73.36063000000007,
+              32.18059000000005
+            ],
+            [
+              73.36395000000005,
+              32.17131000000006
+            ],
+            [
+              73.36359000000004,
+              32.161470000000065
+            ],
+            [
+              73.35957000000008,
+              32.15226000000007
+            ],
+            [
+              73.35239000000007,
+              32.14479000000006
+            ],
+            [
+              73.34290000000004,
+              32.13997000000006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784015,
+        "WDPA_PID": "555784015",
+        "PA_DEF": "1",
+        "NAME": "Rasool Barrage",
+        "ORIG_NAME": "Rasool Barrage",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "IV",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 11.380008,
+        "GIS_AREA": 10.8888917265,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Not Reported",
+        "OWN_TYPE": "Not Reported",
+        "MANG_AUTH": "Not Reported",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 218,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.56201000000004,
+              32.706210000000056
+            ],
+            [
+              73.55270000000007,
+              32.702420000000075
+            ],
+            [
+              73.54266000000007,
+              32.70333000000005
+            ],
+            [
+              73.53459000000004,
+              32.70871000000005
+            ],
+            [
+              73.53064999900005,
+              32.71711000000005
+            ],
+            [
+              73.53189000000003,
+              32.72630000000004
+            ],
+            [
+              73.53799000000004,
+              32.733790000000056
+            ],
+            [
+              73.54730999900005,
+              32.73758000000004
+            ],
+            [
+              73.55735000000004,
+              32.73667000000006
+            ],
+            [
+              73.56542000000007,
+              32.73129000000006
+            ],
+            [
+              73.56935999900008,
+              32.72289000000006
+            ],
+            [
+              73.56812000000008,
+              32.71371000000005
+            ],
+            [
+              73.56201000000004,
+              32.706210000000056
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784016,
+        "WDPA_PID": "555784016",
+        "PA_DEF": "1",
+        "NAME": "Head Qadirabad",
+        "ORIG_NAME": "Head Qadirabad",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 22.881425,
+        "GIS_AREA": 27.9690203665,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.50950000000006,
+              32.05344000000002
+            ],
+            [
+              73.49893000100008,
+              32.05185000000006
+            ],
+            [
+              73.48849000000007,
+              32.053660000000036
+            ],
+            [
+              73.47943000000004,
+              32.058640000000025
+            ],
+            [
+              73.47285000000005,
+              32.06620000000004
+            ],
+            [
+              73.46955000000008,
+              32.07543000000004
+            ],
+            [
+              73.46992000000006,
+              32.085210000000075
+            ],
+            [
+              73.47392000000008,
+              32.09435000000008
+            ],
+            [
+              73.48107000000005,
+              32.101770000000045
+            ],
+            [
+              73.49050000000005,
+              32.10656000000006
+            ],
+            [
+              73.50106999900004,
+              32.10815000000002
+            ],
+            [
+              73.51153000000005,
+              32.106340000000046
+            ],
+            [
+              73.52058000000005,
+              32.101350000000025
+            ],
+            [
+              73.52715000000006,
+              32.093800000000044
+            ],
+            [
+              73.53045000000003,
+              32.08457000000004
+            ],
+            [
+              73.53008000000005,
+              32.074790000000064
+            ],
+            [
+              73.52607000000006,
+              32.06565000000006
+            ],
+            [
+              73.51893000000007,
+              32.05823000000004
+            ],
+            [
+              73.50950000000006,
+              32.05344000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784017,
+        "WDPA_PID": "555784017",
+        "PA_DEF": "1",
+        "NAME": "Kheri Murat",
+        "ORIG_NAME": "Kheri Murat",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 35.370295,
+        "GIS_AREA": 55.1480681867,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 218,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.68371000000008,
+              33.46258000000006
+            ],
+            [
+              72.66870000000006,
+              33.460320000000024
+            ],
+            [
+              72.65384000000006,
+              33.46284000000003
+            ],
+            [
+              72.64093000000008,
+              33.469850000000065
+            ],
+            [
+              72.63152000000008,
+              33.48050000000006
+            ],
+            [
+              72.62676000000005,
+              33.493480000000034
+            ],
+            [
+              72.62720000000007,
+              33.50727000000006
+            ],
+            [
+              72.63282000000004,
+              33.520170000000064
+            ],
+            [
+              72.64292000000006,
+              33.53065000000004
+            ],
+            [
+              72.65629000000007,
+              33.53743000000003
+            ],
+            [
+              72.67130000000003,
+              33.53968000000003
+            ],
+            [
+              72.68617000000006,
+              33.53716000000003
+            ],
+            [
+              72.69909000100006,
+              33.53015000000005
+            ],
+            [
+              72.70849000000004,
+              33.51950000000005
+            ],
+            [
+              72.71323999900005,
+              33.506500000000074
+            ],
+            [
+              72.71278000000007,
+              33.49273000000005
+            ],
+            [
+              72.70716000000004,
+              33.47983000000005
+            ],
+            [
+              72.69707000000005,
+              33.46936000000005
+            ],
+            [
+              72.68371000000008,
+              33.46258000000006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784018,
+        "WDPA_PID": "555784018",
+        "PA_DEF": "1",
+        "NAME": "Kot Sabzal",
+        "ORIG_NAME": "Kot Sabzal",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 101.173614,
+        "GIS_AREA": 100.850752845,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              71.00904000000008,
+              29.19804000000005
+            ],
+            [
+              70.99921000000006,
+              29.197280000000035
+            ],
+            [
+              70.98939000000007,
+              29.198120000000074
+            ],
+            [
+              70.97990000000004,
+              29.200540000000046
+            ],
+            [
+              70.97103000000004,
+              29.20446000000004
+            ],
+            [
+              70.96301999900004,
+              29.209760000000074
+            ],
+            [
+              70.95615000000004,
+              29.216290000000072
+            ],
+            [
+              70.95060000000007,
+              29.223850000000027
+            ],
+            [
+              70.94656000000003,
+              29.23219000000006
+            ],
+            [
+              70.94413000000003,
+              29.241080000000068
+            ],
+            [
+              70.94341000000003,
+              29.250240000000076
+            ],
+            [
+              70.94440000000003,
+              29.259400000000028
+            ],
+            [
+              70.94708000000003,
+              29.26827000000003
+            ],
+            [
+              70.95138000000003,
+              29.27657000000005
+            ],
+            [
+              70.95715000000007,
+              29.28409000000005
+            ],
+            [
+              70.96423000000004,
+              29.290550000000053
+            ],
+            [
+              70.97239000000008,
+              29.295790000000068
+            ],
+            [
+              70.98139000000003,
+              29.299640000000068
+            ],
+            [
+              70.99096000000003,
+              29.30197000000004
+            ],
+            [
+              71.00079000000005,
+              29.302730000000054
+            ],
+            [
+              71.01063000000005,
+              29.30189000000007
+            ],
+            [
+              71.02011999900003,
+              29.299460000000067
+            ],
+            [
+              71.02899000000008,
+              29.295530000000042
+            ],
+            [
+              71.03701000000007,
+              29.290230000000065
+            ],
+            [
+              71.04388000000006,
+              29.283700000000067
+            ],
+            [
+              71.04942000000005,
+              29.276140000000055
+            ],
+            [
+              71.05347000000006,
+              29.267790000000048
+            ],
+            [
+              71.05588000000006,
+              29.25891000000007
+            ],
+            [
+              71.05659000100007,
+              29.249760000000038
+            ],
+            [
+              71.05560000000008,
+              29.240590000000054
+            ],
+            [
+              71.05290000000008,
+              29.231730000000027
+            ],
+            [
+              71.04860000000008,
+              29.223430000000064
+            ],
+            [
+              71.04282999900005,
+              29.21592000000004
+            ],
+            [
+              71.03576000000004,
+              29.20945000000006
+            ],
+            [
+              71.02760000000006,
+              29.204210000000046
+            ],
+            [
+              71.01860000000005,
+              29.200370000000078
+            ],
+            [
+              71.00904000000008,
+              29.19804000000005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784019,
+        "WDPA_PID": "555784019",
+        "PA_DEF": "1",
+        "NAME": "Head Islam/Chak Kotora",
+        "ORIG_NAME": "Head Islam/Chak Kotora",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 31.303116,
+        "GIS_AREA": 30.7459512404,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.58006000000006,
+              29.802320000000066
+            ],
+            [
+              72.56919000100004,
+              29.800640000000044
+            ],
+            [
+              72.55843000000004,
+              29.802490000000034
+            ],
+            [
+              72.54904999900003,
+              29.807660000000055
+            ],
+            [
+              72.54220000000004,
+              29.815530000000024
+            ],
+            [
+              72.53870000000006,
+              29.825140000000033
+            ],
+            [
+              72.53899000100006,
+              29.835350000000062
+            ],
+            [
+              72.54301000000004,
+              29.844890000000078
+            ],
+            [
+              72.55029000000007,
+              29.85266000000007
+            ],
+            [
+              72.55994000000004,
+              29.857680000000073
+            ],
+            [
+              72.57081000000005,
+              29.85937000000007
+            ],
+            [
+              72.58159000000006,
+              29.857510000000048
+            ],
+            [
+              72.59096999900004,
+              29.85233000000005
+            ],
+            [
+              72.59780999900005,
+              29.844460000000026
+            ],
+            [
+              72.60130000000004,
+              29.834850000000074
+            ],
+            [
+              72.60101000000003,
+              29.82466000000005
+            ],
+            [
+              72.59698000000003,
+              29.81511000000006
+            ],
+            [
+              72.58971000000008,
+              29.807350000000042
+            ],
+            [
+              72.58006000000006,
+              29.802320000000066
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784020,
+        "WDPA_PID": "555784020",
+        "PA_DEF": "1",
+        "NAME": "Abbasia",
+        "ORIG_NAME": "Abbasia",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 100.663699,
+        "GIS_AREA": 100.356748523,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.92903000000007,
+              28.77821000000006
+            ],
+            [
+              70.91926000000007,
+              28.777450000000044
+            ],
+            [
+              70.90949000000006,
+              28.778290000000027
+            ],
+            [
+              70.90005000000008,
+              28.780700000000024
+            ],
+            [
+              70.89123000000006,
+              28.784610000000043
+            ],
+            [
+              70.88326000000006,
+              28.78989000000007
+            ],
+            [
+              70.87642000000005,
+              28.796400000000062
+            ],
+            [
+              70.87090000000006,
+              28.803920000000062
+            ],
+            [
+              70.86686999900007,
+              28.81224000000003
+            ],
+            [
+              70.86445000000003,
+              28.821100000000058
+            ],
+            [
+              70.86372000000006,
+              28.830220000000054
+            ],
+            [
+              70.86470000000008,
+              28.839360000000056
+            ],
+            [
+              70.86736000000008,
+              28.848200000000077
+            ],
+            [
+              70.87163000000004,
+              28.85647000000006
+            ],
+            [
+              70.87736000000007,
+              28.863960000000077
+            ],
+            [
+              70.88439000000005,
+              28.87041000000005
+            ],
+            [
+              70.89250000000004,
+              28.875630000000058
+            ],
+            [
+              70.90145000000007,
+              28.87946000000005
+            ],
+            [
+              70.91096000000005,
+              28.881790000000024
+            ],
+            [
+              70.92075000000006,
+              28.882550000000037
+            ],
+            [
+              70.93051999900007,
+              28.881710000000055
+            ],
+            [
+              70.93996000000004,
+              28.879300000000057
+            ],
+            [
+              70.94879000000003,
+              28.87539000000004
+            ],
+            [
+              70.95676000000003,
+              28.870100000000036
+            ],
+            [
+              70.96361000000007,
+              28.863590000000045
+            ],
+            [
+              70.96912000000003,
+              28.85606000000007
+            ],
+            [
+              70.97315000000003,
+              28.847740000000044
+            ],
+            [
+              70.97556000000003,
+              28.83889000000005
+            ],
+            [
+              70.97628000000003,
+              28.829770000000053
+            ],
+            [
+              70.97529000000003,
+              28.820640000000026
+            ],
+            [
+              70.97262000000006,
+              28.811800000000062
+            ],
+            [
+              70.96835000000004,
+              28.803530000000023
+            ],
+            [
+              70.96262000000007,
+              28.796040000000062
+            ],
+            [
+              70.95559000000003,
+              28.789600000000064
+            ],
+            [
+              70.94748000000004,
+              28.784370000000024
+            ],
+            [
+              70.93854000000005,
+              28.78054000000003
+            ],
+            [
+              70.92903000000007,
+              28.77821000000006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784021,
+        "WDPA_PID": "555784021",
+        "PA_DEF": "1",
+        "NAME": "Chichawatni",
+        "ORIG_NAME": "Chichawatni",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 46.668151,
+        "GIS_AREA": 45.8003520412,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2021,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.51234000000005,
+              30.466170000000034
+            ],
+            [
+              72.49901000000006,
+              30.464110000000062
+            ],
+            [
+              72.48579000000007,
+              30.466380000000072
+            ],
+            [
+              72.47429000000005,
+              30.47270000000003
+            ],
+            [
+              72.46589000000006,
+              30.482320000000072
+            ],
+            [
+              72.46161000000006,
+              30.494060000000047
+            ],
+            [
+              72.46194000000008,
+              30.506530000000055
+            ],
+            [
+              72.46688000000006,
+              30.518210000000067
+            ],
+            [
+              72.47581000000008,
+              30.52770000000004
+            ],
+            [
+              72.48766000000006,
+              30.533840000000055
+            ],
+            [
+              72.50099000000006,
+              30.535900000000026
+            ],
+            [
+              72.51422000000008,
+              30.53362000000004
+            ],
+            [
+              72.52573000000007,
+              30.527300000000025
+            ],
+            [
+              72.53411999900004,
+              30.51768000000004
+            ],
+            [
+              72.53840000000008,
+              30.505930000000035
+            ],
+            [
+              72.53805000000006,
+              30.493460000000027
+            ],
+            [
+              72.53310000000005,
+              30.481790000000046
+            ],
+            [
+              72.52418000000006,
+              30.47231000000005
+            ],
+            [
+              72.51234000000005,
+              30.466170000000034
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784022,
+        "WDPA_PID": "555784022",
+        "PA_DEF": "1",
+        "NAME": "Kamalia",
+        "ORIG_NAME": "Kamalia",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 43.976123,
+        "GIS_AREA": 41.9817432685,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2021,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.01170000000008,
+              30.634290000000078
+            ],
+            [
+              72.99891000000008,
+              30.632330000000024
+            ],
+            [
+              72.98624000000007,
+              30.634520000000066
+            ],
+            [
+              72.97524000000004,
+              30.640580000000057
+            ],
+            [
+              72.96722000000005,
+              30.649800000000027
+            ],
+            [
+              72.96317000000005,
+              30.661060000000077
+            ],
+            [
+              72.96354000100007,
+              30.67300000000006
+            ],
+            [
+              72.96832000100005,
+              30.68417000000005
+            ],
+            [
+              72.97692000100005,
+              30.693250000000035
+            ],
+            [
+              72.98830000000004,
+              30.69912000000005
+            ],
+            [
+              73.00110000000006,
+              30.701080000000047
+            ],
+            [
+              73.01377000100007,
+              30.698890000000063
+            ],
+            [
+              73.02476999900006,
+              30.69282000000004
+            ],
+            [
+              73.03278000000006,
+              30.68360000000007
+            ],
+            [
+              73.03684000000004,
+              30.672340000000077
+            ],
+            [
+              73.03645000000006,
+              30.66040000000004
+            ],
+            [
+              73.03167000000008,
+              30.649230000000045
+            ],
+            [
+              73.02307000000008,
+              30.640150000000062
+            ],
+            [
+              73.01170000000008,
+              30.634290000000078
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784023,
+        "WDPA_PID": "555784023",
+        "PA_DEF": "1",
+        "NAME": "Thal",
+        "ORIG_NAME": "Thal",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 40.469446,
+        "GIS_AREA": 13335.7109643,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2022,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.04672000000005,
+              32.228170000000034
+            ],
+            [
+              72.06394000000006,
+              32.21497000000005
+            ],
+            [
+              72.07854000000003,
+              32.189040000000034
+            ],
+            [
+              72.09011000000004,
+              32.16868000000005
+            ],
+            [
+              72.09531000000004,
+              32.14985000000007
+            ],
+            [
+              72.09335000000004,
+              32.126190000000065
+            ],
+            [
+              72.09241000000003,
+              32.10113000000007
+            ],
+            [
+              72.08728000000008,
+              32.078460000000064
+            ],
+            [
+              72.07867000000005,
+              32.04859000000005
+            ],
+            [
+              72.07715000000007,
+              32.022170000000074
+            ],
+            [
+              72.06805000000003,
+              31.99323000000004
+            ],
+            [
+              72.05948000000006,
+              31.964260000000024
+            ],
+            [
+              72.04937000000007,
+              31.93670000000003
+            ],
+            [
+              72.03757000000007,
+              31.906900000000064
+            ],
+            [
+              72.02281000000005,
+              31.868970000000047
+            ],
+            [
+              72.01558000000006,
+              31.831750000000056
+            ],
+            [
+              72.01718000000005,
+              31.802530000000047
+            ],
+            [
+              72.00269000000003,
+              31.770970000000034
+            ],
+            [
+              71.98933000000005,
+              31.741210000000024
+            ],
+            [
+              71.97292000000004,
+              31.70058000000006
+            ],
+            [
+              71.96022000000005,
+              31.67399000000006
+            ],
+            [
+              71.94621999900005,
+              31.640580000000057
+            ],
+            [
+              71.92841000000004,
+              31.604540000000043
+            ],
+            [
+              71.91286000000008,
+              31.571620000000053
+            ],
+            [
+              71.89362000000006,
+              31.52466000000004
+            ],
+            [
+              71.87257000000005,
+              31.485960000000034
+            ],
+            [
+              71.85888999900004,
+              31.44479000000007
+            ],
+            [
+              71.84424000000007,
+              31.405910000000063
+            ],
+            [
+              71.82774000000006,
+              31.359330000000057
+            ],
+            [
+              71.81865000000005,
+              31.326700000000073
+            ],
+            [
+              71.80422000100003,
+              31.293300000000045
+            ],
+            [
+              71.79953000000006,
+              31.264670000000024
+            ],
+            [
+              71.78921000100007,
+              31.226600000000076
+            ],
+            [
+              71.78040000000004,
+              31.201720000000023
+            ],
+            [
+              71.76240000000007,
+              31.171580000000063
+            ],
+            [
+              71.73911000000004,
+              31.14157000000006
+            ],
+            [
+              71.71095000000008,
+              31.108020000000067
+            ],
+            [
+              71.67506000000003,
+              31.06507000000005
+            ],
+            [
+              71.65691000000004,
+              31.044500000000028
+            ],
+            [
+              71.63885000000005,
+              31.027120000000025
+            ],
+            [
+              71.62281000000007,
+              31.006050000000073
+            ],
+            [
+              71.60068000000007,
+              30.976440000000025
+            ],
+            [
+              71.58737000000008,
+              30.941160000000025
+            ],
+            [
+              71.58559000000008,
+              30.918390000000045
+            ],
+            [
+              71.58324000000005,
+              30.89426000000003
+            ],
+            [
+              71.57649000000004,
+              30.864760000000047
+            ],
+            [
+              71.55865000000006,
+              30.835960000000057
+            ],
+            [
+              71.52646000100003,
+              30.786950000000047
+            ],
+            [
+              71.50277000000006,
+              30.755540000000053
+            ],
+            [
+              71.49170000000004,
+              30.739360000000033
+            ],
+            [
+              71.47810000000004,
+              30.70909000000006
+            ],
+            [
+              71.46858000000003,
+              30.691500000000076
+            ],
+            [
+              71.43676000000005,
+              30.634240000000034
+            ],
+            [
+              71.41750000000008,
+              30.589950000000044
+            ],
+            [
+              71.40692000000007,
+              30.571470000000033
+            ],
+            [
+              71.38279999900004,
+              30.522250000000042
+            ],
+            [
+              71.36828000000008,
+              30.49472000000003
+            ],
+            [
+              71.35881000000006,
+              30.477130000000045
+            ],
+            [
+              71.32483000000008,
+              30.431760000000054
+            ],
+            [
+              71.29517000100003,
+              30.389030000000048
+            ],
+            [
+              71.28350000000006,
+              30.367360000000076
+            ],
+            [
+              71.27131000000003,
+              30.34572000000003
+            ],
+            [
+              71.25143000000008,
+              30.31236000000007
+            ],
+            [
+              71.23311000000007,
+              30.277600000000064
+            ],
+            [
+              71.21858000000003,
+              30.246860000000027
+            ],
+            [
+              71.20753000000008,
+              30.227460000000065
+            ],
+            [
+              71.19649999900008,
+              30.208520000000078
+            ],
+            [
+              71.17365000000007,
+              30.179770000000076
+            ],
+            [
+              71.15491000000003,
+              30.166450000000054
+            ],
+            [
+              71.13412999900004,
+              30.15545000000003
+            ],
+            [
+              71.11350000000004,
+              30.149910000000034
+            ],
+            [
+              71.09328000000005,
+              30.159430000000043
+            ],
+            [
+              71.07788000000005,
+              30.173400000000072
+            ],
+            [
+              71.06470000000007,
+              30.191440000000057
+            ],
+            [
+              71.05305000000004,
+              30.208090000000027
+            ],
+            [
+              71.04087000000004,
+              30.224740000000054
+            ],
+            [
+              71.03505000000007,
+              30.243550000000027
+            ],
+            [
+              71.03447000000006,
+              30.261810000000025
+            ],
+            [
+              71.03506000000004,
+              30.284610000000043
+            ],
+            [
+              71.03648000000004,
+              30.319250000000068
+            ],
+            [
+              71.03122999900006,
+              30.33988000000005
+            ],
+            [
+              71.01976000000008,
+              30.364730000000066
+            ],
+            [
+              71.01240000000007,
+              30.38540000000006
+            ],
+            [
+              71.00536000000005,
+              30.41883000000007
+            ],
+            [
+              71.00137000000007,
+              30.448100000000068
+            ],
+            [
+              71.00142000100004,
+              30.47091000000006
+            ],
+            [
+              71.00248000000005,
+              30.491870000000063
+            ],
+            [
+              71.00415000000004,
+              30.516030000000057
+            ],
+            [
+              71.00321000000008,
+              30.54114000000004
+            ],
+            [
+              71.00373999900006,
+              30.561660000000074
+            ],
+            [
+              71.00691000000006,
+              30.582580000000064
+            ],
+            [
+              71.01175000000006,
+              30.627200000000073
+            ],
+            [
+              71.01002000000005,
+              30.662360000000035
+            ],
+            [
+              71.01817000000005,
+              30.692320000000052
+            ],
+            [
+              71.02877000100005,
+              30.73455000000007
+            ],
+            [
+              71.03476000000006,
+              30.761810000000025
+            ],
+            [
+              71.03844000000004,
+              30.781360000000063
+            ],
+            [
+              71.04392000000007,
+              30.809090000000026
+            ],
+            [
+              71.04618000000005,
+              30.83504000000005
+            ],
+            [
+              71.04738000000003,
+              30.860570000000052
+            ],
+            [
+              71.04957000000007,
+              30.883800000000065
+            ],
+            [
+              71.05058000000008,
+              30.902030000000025
+            ],
+            [
+              71.05014000000006,
+              30.925760000000025
+            ],
+            [
+              71.04430000000008,
+              30.965550000000064
+            ],
+            [
+              71.03925000000004,
+              30.995290000000068
+            ],
+            [
+              71.03265000000005,
+              31.02643000000006
+            ],
+            [
+              71.02643000000006,
+              31.052550000000053
+            ],
+            [
+              71.02724000000006,
+              31.104080000000067
+            ],
+            [
+              71.03298000000007,
+              31.141380000000026
+            ],
+            [
+              71.03686000000005,
+              31.167770000000075
+            ],
+            [
+              71.04991000100006,
+              31.200370000000078
+            ],
+            [
+              71.06680000000006,
+              31.237000000000023
+            ],
+            [
+              71.08434000000005,
+              31.277270000000044
+            ],
+            [
+              71.09609000100005,
+              31.319470000000024
+            ],
+            [
+              71.10418000000004,
+              31.363560000000064
+            ],
+            [
+              71.10792000000004,
+              31.403630000000078
+            ],
+            [
+              71.11373000000003,
+              31.441820000000064
+            ],
+            [
+              71.11513999900006,
+              31.474180000000047
+            ],
+            [
+              71.11934000000008,
+              31.51150000000007
+            ],
+            [
+              71.12371000000007,
+              31.535130000000038
+            ],
+            [
+              71.12240000000008,
+              31.54564000000005
+            ],
+            [
+              71.12243000000007,
+              31.566630000000032
+            ],
+            [
+              71.12352000000004,
+              31.58713000000006
+            ],
+            [
+              71.12254000000007,
+              31.609950000000026
+            ],
+            [
+              71.12319000000008,
+              31.634110000000078
+            ],
+            [
+              71.12550000000005,
+              31.660060000000044
+            ],
+            [
+              71.13400000000007,
+              31.697750000000042
+            ],
+            [
+              71.13931000000008,
+              31.716350000000034
+            ],
+            [
+              71.14429000000007,
+              31.74270000000007
+            ],
+            [
+              71.15076000000005,
+              31.764470000000074
+            ],
+            [
+              71.16749000000004,
+              31.790140000000065
+            ],
+            [
+              71.18690000000004,
+              31.816220000000044
+            ],
+            [
+              71.20354000000003,
+              31.837780000000066
+            ],
+            [
+              71.22674000000006,
+              31.864690000000053
+            ],
+            [
+              71.24449000000004,
+              31.887590000000046
+            ],
+            [
+              71.25566000000003,
+              31.904240000000073
+            ],
+            [
+              71.26527000000004,
+              31.922290000000032
+            ],
+            [
+              71.26690000000008,
+              31.94187000000005
+            ],
+            [
+              71.27147000000008,
+              31.970500000000072
+            ],
+            [
+              71.28173000000004,
+              32.01088000000004
+            ],
+            [
+              71.28918000000004,
+              32.046290000000056
+            ],
+            [
+              71.29790000000008,
+              32.069830000000024
+            ],
+            [
+              71.31066999900008,
+              32.103770000000054
+            ],
+            [
+              71.32605000000007,
+              32.13491000000005
+            ],
+            [
+              71.33646000000005,
+              32.160690000000045
+            ],
+            [
+              71.34669000000008,
+              32.180090000000064
+            ],
+            [
+              71.36157000000003,
+              32.19391000000007
+            ],
+            [
+              71.37918000000008,
+              32.20860000000005
+            ],
+            [
+              71.39571000100005,
+              32.22330000000005
+            ],
+            [
+              71.41693999900008,
+              32.233340000000055
+            ],
+            [
+              71.44215000000008,
+              32.23281000000003
+            ],
+            [
+              71.46966000000003,
+              32.237700000000075
+            ],
+            [
+              71.52242000000007,
+              32.22607000000005
+            ],
+            [
+              71.57196000000005,
+              32.23181000000005
+            ],
+            [
+              71.59515000000005,
+              32.23540000000003
+            ],
+            [
+              71.62259000000006,
+              32.237520000000075
+            ],
+            [
+              71.65225000000004,
+              32.24232000000006
+            ],
+            [
+              71.68359000000004,
+              32.24844000000007
+            ],
+            [
+              71.71110000100003,
+              32.25282000000004
+            ],
+            [
+              71.74302000000006,
+              32.26028000000008
+            ],
+            [
+              71.76733000000007,
+              32.26472000000007
+            ],
+            [
+              71.79378000000008,
+              32.26911000000007
+            ],
+            [
+              71.82602000100007,
+              32.27016000000003
+            ],
+            [
+              71.85937999900005,
+              32.27209000000005
+            ],
+            [
+              71.88813000100004,
+              32.265460000000076
+            ],
+            [
+              71.91657000000004,
+              32.265210000000025
+            ],
+            [
+              71.94004000000007,
+              32.260980000000075
+            ],
+            [
+              71.96983000000006,
+              32.253400000000056
+            ],
+            [
+              71.99966000000006,
+              32.24717000000004
+            ],
+            [
+              72.02725000000004,
+              32.23870000000005
+            ],
+            [
+              72.04672000000005,
+              32.228170000000034
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784024,
+        "WDPA_PID": "555784024",
+        "PA_DEF": "1",
+        "NAME": "Kala Chitta",
+        "ORIG_NAME": "Kala Chitta",
+        "DESIG": "National Park (NP)",
+        "DESIG_ENG": "National Park (NP)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 369.65601,
+        "GIS_AREA": 363.770206101,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 2023,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.49373000100007,
+              33.659830000000056
+            ],
+            [
+              72.51328000000007,
+              33.654210000000035
+            ],
+            [
+              72.51869000000005,
+              33.65143000000006
+            ],
+            [
+              72.53438000000006,
+              33.64174000000003
+            ],
+            [
+              72.54034000100006,
+              33.63850000000008
+            ],
+            [
+              72.55602000000005,
+              33.629260000000045
+            ],
+            [
+              72.56528999900007,
+              33.63008000000008
+            ],
+            [
+              72.57621000000006,
+              33.63181000000003
+            ],
+            [
+              72.58929000000006,
+              33.632600000000025
+            ],
+            [
+              72.60899000100005,
+              33.64015000000006
+            ],
+            [
+              72.61882000000008,
+              33.64143000000007
+            ],
+            [
+              72.63843000000003,
+              33.64079000000004
+            ],
+            [
+              72.64600999900006,
+              33.63799000000006
+            ],
+            [
+              72.66557000000006,
+              33.63325000000003
+            ],
+            [
+              72.67589000100008,
+              33.63133000000005
+            ],
+            [
+              72.69440000000003,
+              33.63069000000007
+            ],
+            [
+              72.70149000000004,
+              33.631530000000055
+            ],
+            [
+              72.71949000000006,
+              33.63272000000006
+            ],
+            [
+              72.72820000000007,
+              33.63263000000006
+            ],
+            [
+              72.76414000000005,
+              33.631800000000055
+            ],
+            [
+              72.77226000000007,
+              33.62853000000007
+            ],
+            [
+              72.77267000000006,
+              33.61897000000005
+            ],
+            [
+              72.76660000000004,
+              33.61357000000004
+            ],
+            [
+              72.76218000000006,
+              33.608610000000056
+            ],
+            [
+              72.73536999900006,
+              33.59979000000004
+            ],
+            [
+              72.72337000000005,
+              33.599000000000046
+            ],
+            [
+              72.71356000000003,
+              33.598190000000045
+            ],
+            [
+              72.69178000000005,
+              33.597950000000026
+            ],
+            [
+              72.68089000000003,
+              33.59760000000006
+            ],
+            [
+              72.65529000000004,
+              33.59740000000005
+            ],
+            [
+              72.64113000000003,
+              33.59753000000006
+            ],
+            [
+              72.61992999900008,
+              33.600910000000056
+            ],
+            [
+              72.61124000000007,
+              33.60236000000003
+            ],
+            [
+              72.59924000000007,
+              33.60111000000006
+            ],
+            [
+              72.58941000000004,
+              33.598460000000046
+            ],
+            [
+              72.57362000000006,
+              33.59815000000003
+            ],
+            [
+              72.56271000000004,
+              33.596430000000055
+            ],
+            [
+              72.54039000000006,
+              33.59754000000004
+            ],
+            [
+              72.53331000000003,
+              33.59760000000006
+            ],
+            [
+              72.51701000000008,
+              33.60048000000006
+            ],
+            [
+              72.51104000000004,
+              33.601890000000026
+            ],
+            [
+              72.50125999900007,
+              33.60379000000006
+            ],
+            [
+              72.48004000000003,
+              33.60579000000007
+            ],
+            [
+              72.45552999900008,
+              33.605540000000076
+            ],
+            [
+              72.43697000000003,
+              33.60114000000004
+            ],
+            [
+              72.42116000000004,
+              33.59944000000007
+            ],
+            [
+              72.40160000000003,
+              33.60369000000003
+            ],
+            [
+              72.38582000000008,
+              33.60472000000004
+            ],
+            [
+              72.38207000000006,
+              33.61113000000006
+            ],
+            [
+              72.37228000000005,
+              33.61211000000003
+            ],
+            [
+              72.35323000000005,
+              33.61316000000005
+            ],
+            [
+              72.34613000000007,
+              33.61140000000006
+            ],
+            [
+              72.34065000000004,
+              33.608250000000055
+            ],
+            [
+              72.33463000000006,
+              33.604190000000074
+            ],
+            [
+              72.32584000000003,
+              33.59743000000003
+            ],
+            [
+              72.31165000000004,
+              33.593890000000044
+            ],
+            [
+              72.29478000000006,
+              33.594010000000026
+            ],
+            [
+              72.27136000000007,
+              33.593720000000076
+            ],
+            [
+              72.25885000000005,
+              33.59562000000005
+            ],
+            [
+              72.25070000100004,
+              33.597500000000025
+            ],
+            [
+              72.23444000000006,
+              33.60579000000007
+            ],
+            [
+              72.23726999900003,
+              33.61761000000007
+            ],
+            [
+              72.24384000000003,
+              33.623020000000054
+            ],
+            [
+              72.24932999900005,
+              33.626630000000034
+            ],
+            [
+              72.26134000000008,
+              33.63019000000003
+            ],
+            [
+              72.27442000000008,
+              33.63101000000006
+            ],
+            [
+              72.29457000000008,
+              33.63087000000007
+            ],
+            [
+              72.30221000000006,
+              33.63127000000003
+            ],
+            [
+              72.31366000000008,
+              33.63256000000007
+            ],
+            [
+              72.31914000000006,
+              33.63617000000005
+            ],
+            [
+              72.32685000000004,
+              33.644760000000076
+            ],
+            [
+              72.32908000000003,
+              33.64975000000004
+            ],
+            [
+              72.31932000000006,
+              33.65528000000006
+            ],
+            [
+              72.30682000000007,
+              33.65855000000005
+            ],
+            [
+              72.29157000000004,
+              33.659110000000055
+            ],
+            [
+              72.27902000000006,
+              33.657380000000046
+            ],
+            [
+              72.23974000000004,
+              33.65127000000007
+            ],
+            [
+              72.23158000000006,
+              33.65223000000003
+            ],
+            [
+              72.22397000000007,
+              33.65455000000003
+            ],
+            [
+              72.21634999900004,
+              33.65643000000006
+            ],
+            [
+              72.20819999900004,
+              33.658750000000055
+            ],
+            [
+              72.19077000000004,
+              33.65931000000006
+            ],
+            [
+              72.18474000000003,
+              33.65435000000008
+            ],
+            [
+              72.18088999900004,
+              33.650270000000035
+            ],
+            [
+              72.17649000000006,
+              33.64530000000008
+            ],
+            [
+              72.16932000000008,
+              33.634870000000035
+            ],
+            [
+              72.15892000000008,
+              33.62811000000005
+            ],
+            [
+              72.14421000000004,
+              33.62820000000005
+            ],
+            [
+              72.13011000000006,
+              33.63647000000003
+            ],
+            [
+              72.12748000000005,
+              33.64785000000006
+            ],
+            [
+              72.12644000000006,
+              33.655140000000074
+            ],
+            [
+              72.12869000000006,
+              33.664690000000064
+            ],
+            [
+              72.13090999900004,
+              33.66968000000003
+            ],
+            [
+              72.13421999900004,
+              33.67512000000005
+            ],
+            [
+              72.14248000000003,
+              33.686000000000035
+            ],
+            [
+              72.14579000000003,
+              33.690530000000024
+            ],
+            [
+              72.15459000000004,
+              33.70049000000006
+            ],
+            [
+              72.15790000000004,
+              33.70593000000002
+            ],
+            [
+              72.16999000000004,
+              33.71768000000003
+            ],
+            [
+              72.17767000000003,
+              33.72447000000005
+            ],
+            [
+              72.18423000000007,
+              33.72670000000005
+            ],
+            [
+              72.19025000000005,
+              33.72803000000005
+            ],
+            [
+              72.20551000000006,
+              33.72702000000004
+            ],
+            [
+              72.22070000000008,
+              33.719190000000026
+            ],
+            [
+              72.23370999900004,
+              33.710000000000036
+            ],
+            [
+              72.23968000000008,
+              33.70633000000004
+            ],
+            [
+              72.26899000000003,
+              33.69294000000008
+            ],
+            [
+              72.27660000000003,
+              33.69016000000005
+            ],
+            [
+              72.29726000000005,
+              33.68456000000003
+            ],
+            [
+              72.30541000100004,
+              33.68268000000006
+            ],
+            [
+              72.31848000000008,
+              33.681670000000054
+            ],
+            [
+              72.32720000000006,
+              33.681610000000035
+            ],
+            [
+              72.35608000000008,
+              33.68050000000005
+            ],
+            [
+              72.37788000000006,
+              33.67987000000005
+            ],
+            [
+              72.38441000000006,
+              33.67982000000006
+            ],
+            [
+              72.39912000000004,
+              33.678800000000024
+            ],
+            [
+              72.40836000000007,
+              33.67736000000008
+            ],
+            [
+              72.43342000000007,
+              33.67580000000004
+            ],
+            [
+              72.45189000000005,
+              33.67019000000005
+            ],
+            [
+              72.45786000000004,
+              33.66787000000005
+            ],
+            [
+              72.47958999900004,
+              33.66222000000005
+            ],
+            [
+              72.48611000000005,
+              33.66127000000006
+            ],
+            [
+              72.49373000100007,
+              33.659830000000056
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "WDPAID": 555784051,
+        "WDPA_PID": "555784051",
+        "PA_DEF": "1",
+        "NAME": "Cholistan",
+        "ORIG_NAME": "Cholistan",
+        "DESIG": "Public Wildlife Reserve (PWR)",
+        "DESIG_ENG": "Public Wildlife Reserve (PWR)",
+        "DESIG_TYPE": "National",
+        "IUCN_CAT": "Not Reported",
+        "INT_CRIT": "Not Applicable",
+        "MARINE": "0",
+        "REP_M_AREA": 0,
+        "GIS_M_AREA": 0,
+        "REP_AREA": 18827,
+        "GIS_AREA": 21908.952374,
+        "NO_TAKE": "Not Applicable",
+        "NO_TK_AREA": 0,
+        "STATUS": "Designated",
+        "STATUS_YR": 1975,
+        "GOV_TYPE": "Sub-national ministry or agency",
+        "OWN_TYPE": "State",
+        "MANG_AUTH": "Sub-national (Provincial Wildlife Department)",
+        "MANG_PLAN": "Not Reported",
+        "VERIF": "State Verified",
+        "METADATAID": 2105,
+        "SUB_LOC": "PK-PB",
+        "PARENT_ISO": "PAK",
+        "ISO3": "PAK",
+        "SUPP_INFO": "Not Applicable",
+        "CONS_OBJ": "Not Applicable"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              71.99840000000006,
+              29.34599000000003
+            ],
+            [
+              72.00548000000003,
+              29.34716000000003
+            ],
+            [
+              72.02482000000003,
+              29.348920000000078
+            ],
+            [
+              72.04308000000003,
+              29.34982000000008
+            ],
+            [
+              72.06557000000004,
+              29.366550000000075
+            ],
+            [
+              72.07493000000005,
+              29.380460000000028
+            ],
+            [
+              72.08493000000004,
+              29.397520000000043
+            ],
+            [
+              72.08346000000006,
+              29.414450000000045
+            ],
+            [
+              72.09444000000008,
+              29.42966000000007
+            ],
+            [
+              72.11164000000008,
+              29.443800000000067
+            ],
+            [
+              72.13064999900007,
+              29.45013000000006
+            ],
+            [
+              72.14905000000005,
+              29.45420000000007
+            ],
+            [
+              72.16848000000005,
+              29.47192000000007
+            ],
+            [
+              72.18822000000006,
+              29.483700000000056
+            ],
+            [
+              72.21333000000004,
+              29.48527000000007
+            ],
+            [
+              72.23254000000003,
+              29.482920000000036
+            ],
+            [
+              72.25925000000007,
+              29.485820000000047
+            ],
+            [
+              72.27573000000007,
+              29.49356000000006
+            ],
+            [
+              72.29743000000008,
+              29.501630000000034
+            ],
+            [
+              72.31488000000007,
+              29.507510000000025
+            ],
+            [
+              72.33627000000007,
+              29.50735000000003
+            ],
+            [
+              72.35709000100007,
+              29.505840000000035
+            ],
+            [
+              72.38365000000005,
+              29.50461000000007
+            ],
+            [
+              72.40436000100004,
+              29.500360000000057
+            ],
+            [
+              72.42405000000008,
+              29.48380000000003
+            ],
+            [
+              72.43604000000005,
+              29.47022000000004
+            ],
+            [
+              72.45245000000006,
+              29.463340000000073
+            ],
+            [
+              72.46545000000003,
+              29.449260000000038
+            ],
+            [
+              72.46455000000003,
+              29.426930000000027
+            ],
+            [
+              72.48662000000007,
+              29.41805000000005
+            ],
+            [
+              72.48508000000004,
+              29.39300000000003
+            ],
+            [
+              72.48480000100005,
+              29.37292000000008
+            ],
+            [
+              72.48832000000004,
+              29.356850000000065
+            ],
+            [
+              72.49080000100008,
+              29.340810000000033
+            ],
+            [
+              72.49218000000008,
+              29.323420000000056
+            ],
+            [
+              72.48884999900008,
+              29.305270000000064
+            ],
+            [
+              72.47879000000006,
+              29.288230000000055
+            ],
+            [
+              72.47504000000004,
+              29.272820000000024
+            ],
+            [
+              72.47014000100006,
+              29.254260000000045
+            ],
+            [
+              72.44716000000005,
+              29.239430000000027
+            ],
+            [
+              72.42776000000003,
+              29.23589000000004
+            ],
+            [
+              72.40534000000008,
+              29.23473000000007
+            ],
+            [
+              72.38715000000008,
+              29.23526000000004
+            ],
+            [
+              72.36800000000005,
+              29.23810000000003
+            ],
+            [
+              72.33387000000005,
+              29.230420000000038
+            ],
+            [
+              72.30756000000008,
+              29.222970000000032
+            ],
+            [
+              72.28337999900003,
+              29.23004000000003
+            ],
+            [
+              72.26071000000007,
+              29.222470000000044
+            ],
+            [
+              72.23723999900005,
+              29.22085000000004
+            ],
+            [
+              72.20915000000008,
+              29.22118000000006
+            ],
+            [
+              72.17308000000008,
+              29.21670000000006
+            ],
+            [
+              72.15571000000006,
+              29.211250000000064
+            ],
+            [
+              72.13501000000008,
+              29.199960000000033
+            ],
+            [
+              72.12648000000007,
+              29.18011000000007
+            ],
+            [
+              72.11969000000005,
+              29.16524000000004
+            ],
+            [
+              72.11146000000008,
+              29.139000000000067
+            ],
+            [
+              72.13394000000005,
+              29.12835000000007
+            ],
+            [
+              72.12458000000004,
+              29.114000000000033
+            ],
+            [
+              72.11420000000004,
+              29.100130000000036
+            ],
+            [
+              72.10937000000007,
+              29.081560000000025
+            ],
+            [
+              72.12834000000004,
+              29.07466000000005
+            ],
+            [
+              72.16134000000005,
+              29.08197000000007
+            ],
+            [
+              72.18118000000004,
+              29.084610000000055
+            ],
+            [
+              72.19904000000008,
+              29.089590000000044
+            ],
+            [
+              72.22470000000004,
+              29.081120000000055
+            ],
+            [
+              72.23470999900007,
+              29.057100000000048
+            ],
+            [
+              72.25782000000004,
+              29.05006000000003
+            ],
+            [
+              72.27419000000003,
+              29.056910000000073
+            ],
+            [
+              72.28958000000006,
+              29.065590000000043
+            ],
+            [
+              72.31751000000008,
+              29.06251000000003
+            ],
+            [
+              72.33477000000005,
+              29.05197000000004
+            ],
+            [
+              72.35343000000006,
+              29.050980000000038
+            ],
+            [
+              72.37218000000007,
+              29.052260000000047
+            ],
+            [
+              72.39771999900006,
+              29.05424000000005
+            ],
+            [
+              72.41629000100005,
+              29.050960000000032
+            ],
+            [
+              72.43324000000007,
+              29.045890000000043
+            ],
+            [
+              72.44862000000006,
+              29.02810000000005
+            ],
+            [
+              72.46667000000008,
+              29.01159000000007
+            ],
+            [
+              72.48482000000007,
+              29.01105000000007
+            ],
+            [
+              72.50429999900007,
+              29.030530000000056
+            ],
+            [
+              72.51821000000007,
+              29.040610000000072
+            ],
+            [
+              72.53751000100004,
+              29.042760000000044
+            ],
+            [
+              72.54507000000007,
+              29.024270000000058
+            ],
+            [
+              72.56171000000006,
+              29.011900000000026
+            ],
+            [
+              72.58389000000005,
+              29.02081000000004
+            ],
+            [
+              72.60660000000007,
+              29.030140000000074
+            ],
+            [
+              72.62498000000005,
+              29.03505000000007
+            ],
+            [
+              72.64718000000005,
+              29.031610000000057
+            ],
+            [
+              72.66351000000003,
+              29.024710000000027
+            ],
+            [
+              72.68593999900008,
+              29.02720000000005
+            ],
+            [
+              72.70289000000008,
+              29.03487000000007
+            ],
+            [
+              72.72227000000004,
+              29.038820000000044
+            ],
+            [
+              72.74095000000005,
+              29.038220000000024
+            ],
+            [
+              72.76017000000007,
+              29.03806000000003
+            ],
+            [
+              72.77942000000007,
+              29.03881000000007
+            ],
+            [
+              72.79974999900008,
+              29.04043000000007
+            ],
+            [
+              72.82064000000008,
+              29.042950000000076
+            ],
+            [
+              72.83945000000006,
+              29.045520000000067
+            ],
+            [
+              72.85779000000008,
+              29.049030000000073
+            ],
+            [
+              72.87662999900004,
+              29.05206000000004
+            ],
+            [
+              72.89716000000004,
+              29.058220000000063
+            ],
+            [
+              72.96238000000005,
+              29.060790000000054
+            ],
+            [
+              72.95780000000008,
+              29.053270000000055
+            ],
+            [
+              72.94969000000003,
+              29.03848000000005
+            ],
+            [
+              72.94700000000006,
+              29.033930000000055
+            ],
+            [
+              72.94353000000007,
+              29.03009000000003
+            ],
+            [
+              72.94036000000006,
+              29.027600000000064
+            ],
+            [
+              72.93692000000004,
+              29.025820000000067
+            ],
+            [
+              72.93350000000004,
+              29.024250000000052
+            ],
+            [
+              72.92876000000007,
+              29.02227000000005
+            ],
+            [
+              72.91482000000008,
+              29.01717000000008
+            ],
+            [
+              72.90508000100004,
+              29.013390000000072
+            ],
+            [
+              72.89640000000003,
+              29.00985000000003
+            ],
+            [
+              72.88299000000006,
+              29.005210000000034
+            ],
+            [
+              72.87300000000005,
+              29.001670000000047
+            ],
+            [
+              72.86013000000008,
+              28.997490000000028
+            ],
+            [
+              72.85120000000006,
+              28.994410000000073
+            ],
+            [
+              72.84252000000004,
+              28.991520000000037
+            ],
+            [
+              72.83015999900005,
+              28.986630000000048
+            ],
+            [
+              72.81937000000005,
+              28.981960000000072
+            ],
+            [
+              72.81438000000003,
+              28.980200000000025
+            ],
+            [
+              72.78571000000005,
+              28.96840000000003
+            ],
+            [
+              72.77600000000007,
+              28.965080000000057
+            ],
+            [
+              72.75288000000006,
+              28.95574000000005
+            ],
+            [
+              72.73946000100005,
+              28.950630000000046
+            ],
+            [
+              72.72948000000008,
+              28.946390000000065
+            ],
+            [
+              72.71866999900004,
+              28.94011000000006
+            ],
+            [
+              72.70919000000004,
+              28.93405000000007
+            ],
+            [
+              72.70075000000008,
+              28.929770000000076
+            ],
+            [
+              72.69259000000005,
+              28.925520000000063
+            ],
+            [
+              72.68548999900008,
+              28.922150000000045
+            ],
+            [
+              72.67049000000003,
+              28.91408000000007
+            ],
+            [
+              72.64362000000006,
+              28.897650000000056
+            ],
+            [
+              72.61968000000007,
+              28.88530000000003
+            ],
+            [
+              72.60813000000007,
+              28.879470000000026
+            ],
+            [
+              72.59837000000005,
+              28.873860000000036
+            ],
+            [
+              72.59121000000005,
+              28.869650000000036
+            ],
+            [
+              72.58363000000008,
+              28.864610000000027
+            ],
+            [
+              72.56367000000006,
+              28.854970000000037
+            ],
+            [
+              72.55524000000008,
+              28.850250000000074
+            ],
+            [
+              72.53577000000007,
+              28.838770000000068
+            ],
+            [
+              72.52054000000004,
+              28.83045000000004
+            ],
+            [
+              72.51107000000007,
+              28.825510000000065
+            ],
+            [
+              72.49583000000007,
+              28.816500000000076
+            ],
+            [
+              72.48347000000007,
+              28.809960000000046
+            ],
+            [
+              72.47350000000006,
+              28.804340000000025
+            ],
+            [
+              72.46456000000006,
+              28.800310000000025
+            ],
+            [
+              72.45645000000007,
+              28.79786000000007
+            ],
+            [
+              72.44756000000007,
+              28.795440000000042
+            ],
+            [
+              72.42586000000006,
+              28.79060000000004
+            ],
+            [
+              72.42090000000007,
+              28.789150000000063
+            ],
+            [
+              72.41355000000004,
+              28.785900000000026
+            ],
+            [
+              72.40723000100007,
+              28.782300000000077
+            ],
+            [
+              72.40145000000007,
+              28.77869000000004
+            ],
+            [
+              72.39487000000008,
+              28.77326000000005
+            ],
+            [
+              72.38006000000007,
+              28.756880000000024
+            ],
+            [
+              72.37186000000008,
+              28.747550000000047
+            ],
+            [
+              72.36209000000008,
+              28.73735000000005
+            ],
+            [
+              72.35496000100005,
+              28.72914000000003
+            ],
+            [
+              72.34544000000005,
+              28.718920000000026
+            ],
+            [
+              72.33488000000006,
+              28.70732000000004
+            ],
+            [
+              72.32486000000006,
+              28.696630000000027
+            ],
+            [
+              72.31403999900004,
+              28.68551000000008
+            ],
+            [
+              72.30136000000005,
+              28.669790000000035
+            ],
+            [
+              72.29710000000006,
+              28.66226000000006
+            ],
+            [
+              72.29549000000003,
+              28.657040000000052
+            ],
+            [
+              72.29436000000004,
+              28.651500000000055
+            ],
+            [
+              72.28893000000005,
+              28.632300000000043
+            ],
+            [
+              72.28437000000008,
+              28.620420000000024
+            ],
+            [
+              72.28082000000006,
+              28.605760000000032
+            ],
+            [
+              72.27435000000008,
+              28.586100000000044
+            ],
+            [
+              72.26868000000007,
+              28.56827000000004
+            ],
+            [
+              72.26221000000004,
+              28.549740000000043
+            ],
+            [
+              72.25736000000006,
+              28.534650000000056
+            ],
+            [
+              72.24716000000006,
+              28.506530000000055
+            ],
+            [
+              72.23642000000007,
+              28.476590000000044
+            ],
+            [
+              72.22813000000008,
+              28.45488000000006
+            ],
+            [
+              72.21441000000004,
+              28.413020000000074
+            ],
+            [
+              72.20641000000006,
+              28.393830000000037
+            ],
+            [
+              72.20296000000008,
+              28.38721000000004
+            ],
+            [
+              72.19952000000006,
+              28.38220000000007
+            ],
+            [
+              72.18822000000006,
+              28.368990000000053
+            ],
+            [
+              72.17901000000006,
+              28.358510000000024
+            ],
+            [
+              72.16849000000008,
+              28.34599000000003
+            ],
+            [
+              72.15535999900004,
+              28.332100000000025
+            ],
+            [
+              72.14252000100004,
+              28.320040000000063
+            ],
+            [
+              72.13204000000007,
+              28.310960000000023
+            ],
+            [
+              72.12054000000006,
+              28.30233000000004
+            ],
+            [
+              72.10903000000008,
+              28.29463000000004
+            ],
+            [
+              72.09701000000007,
+              28.285540000000026
+            ],
+            [
+              72.08447000000007,
+              28.27693000000005
+            ],
+            [
+              72.07427000000007,
+              28.269670000000076
+            ],
+            [
+              72.06512999900008,
+              28.26285000000007
+            ],
+            [
+              72.05546999900008,
+              28.25582000000003
+            ],
+            [
+              72.04396999900007,
+              28.24672000000004
+            ],
+            [
+              72.01183000000003,
+              28.222180000000037
+            ],
+            [
+              72.00163000100008,
+              28.21261000000004
+            ],
+            [
+              71.99194000000006,
+              28.201910000000055
+            ],
+            [
+              71.98355000000004,
+              28.19118000000003
+            ],
+            [
+              71.97385000000008,
+              28.179550000000063
+            ],
+            [
+              71.96181000000007,
+              28.166330000000073
+            ],
+            [
+              71.95161000000007,
+              28.154930000000036
+            ],
+            [
+              71.94462000000004,
+              28.14590000000004
+            ],
+            [
+              71.94263000000007,
+              28.143220000000042
+            ],
+            [
+              71.93694000000005,
+              28.13507000000004
+            ],
+            [
+              71.93010000000004,
+              28.124340000000075
+            ],
+            [
+              71.92509000100006,
+              28.11474000000004
+            ],
+            [
+              71.92216000000008,
+              28.104210000000023
+            ],
+            [
+              71.92027000100006,
+              28.09483000000006
+            ],
+            [
+              71.91809000000006,
+              28.081990000000076
+            ],
+            [
+              71.91621000000004,
+              28.067130000000077
+            ],
+            [
+              71.91344000000004,
+              28.050610000000063
+            ],
+            [
+              71.91039000000006,
+              28.036110000000065
+            ],
+            [
+              71.90908000000007,
+              28.024950000000047
+            ],
+            [
+              71.90872000000007,
+              28.013250000000028
+            ],
+            [
+              71.90813000000003,
+              28.00362000000007
+            ],
+            [
+              71.90910000000008,
+              27.995810000000063
+            ],
+            [
+              71.90891000000005,
+              27.99291000000005
+            ],
+            [
+              71.90691000000004,
+              27.980000000000075
+            ],
+            [
+              71.90582000000006,
+              27.97381000000007
+            ],
+            [
+              71.90448000000004,
+              27.968090000000075
+            ],
+            [
+              71.90237000000008,
+              27.96329000000003
+            ],
+            [
+              71.90028000000007,
+              27.960100000000068
+            ],
+            [
+              71.89792999900004,
+              27.95804000000004
+            ],
+            [
+              71.89274000000006,
+              27.955540000000042
+            ],
+            [
+              71.88728000000003,
+              27.95306000000005
+            ],
+            [
+              71.88042000000007,
+              27.951020000000028
+            ],
+            [
+              71.87328000000008,
+              27.949020000000075
+            ],
+            [
+              71.86992000000004,
+              27.948370000000068
+            ],
+            [
+              71.85435000000007,
+              27.944090000000074
+            ],
+            [
+              71.84270000000004,
+              27.941160000000025
+            ],
+            [
+              71.81418000000008,
+              27.932620000000043
+            ],
+            [
+              71.78566000000006,
+              27.92268000000007
+            ],
+            [
+              71.76828000000006,
+              27.916340000000048
+            ],
+            [
+              71.75208000000003,
+              27.909370000000024
+            ],
+            [
+              71.71849999900007,
+              27.895500000000027
+            ],
+            [
+              71.70502000000005,
+              27.890070000000037
+            ],
+            [
+              71.69179999900007,
+              27.885770000000036
+            ],
+            [
+              71.67963000000003,
+              27.882390000000044
+            ],
+            [
+              71.66644000000008,
+              27.880160000000046
+            ],
+            [
+              71.65169000000003,
+              27.878160000000037
+            ],
+            [
+              71.63590000000005,
+              27.876610000000028
+            ],
+            [
+              71.61805999900008,
+              27.875330000000076
+            ],
+            [
+              71.60152000000005,
+              27.874010000000055
+            ],
+            [
+              71.58393000100006,
+              27.87316000000004
+            ],
+            [
+              71.56789000000003,
+              27.87298000000004
+            ],
+            [
+              71.54876000000007,
+              27.87191000000007
+            ],
+            [
+              71.53014000100006,
+              27.870610000000056
+            ],
+            [
+              71.49550000100004,
+              27.868430000000046
+            ],
+            [
+              71.47455000000008,
+              27.867350000000044
+            ],
+            [
+              71.45127000000008,
+              27.865360000000067
+            ],
+            [
+              71.43292000000008,
+              27.86426000000006
+            ],
+            [
+              71.41327000000007,
+              27.86361000000005
+            ],
+            [
+              71.39465000000007,
+              27.863450000000057
+            ],
+            [
+              71.37784999900003,
+              27.863480000000038
+            ],
+            [
+              71.36286000000007,
+              27.862840000000062
+            ],
+            [
+              71.34994000000006,
+              27.861710000000073
+            ],
+            [
+              71.33804000000003,
+              27.859450000000038
+            ],
+            [
+              71.32691000000005,
+              27.856480000000033
+            ],
+            [
+              71.31528000000003,
+              27.85283000000004
+            ],
+            [
+              71.30752000000007,
+              27.851020000000062
+            ],
+            [
+              71.29976000000005,
+              27.85012000000006
+            ],
+            [
+              71.29734000100007,
+              27.849500000000035
+            ],
+            [
+              71.28811999900006,
+              27.848370000000045
+            ],
+            [
+              71.27209000000005,
+              27.84672000000006
+            ],
+            [
+              71.25684000000007,
+              27.846290000000067
+            ],
+            [
+              71.24341000000004,
+              27.844940000000065
+            ],
+            [
+              71.23151000000007,
+              27.84242000000006
+            ],
+            [
+              71.21832000000006,
+              27.83809000000008
+            ],
+            [
+              71.20721000000003,
+              27.832370000000026
+            ],
+            [
+              71.19556000000006,
+              27.82689000000005
+            ],
+            [
+              71.18237000000005,
+              27.820940000000064
+            ],
+            [
+              71.17101000000008,
+              27.815660000000037
+            ],
+            [
+              71.15703999900006,
+              27.80995000000007
+            ],
+            [
+              71.14309000000003,
+              27.804680000000076
+            ],
+            [
+              71.12991000000005,
+              27.799180000000035
+            ],
+            [
+              71.11543000000006,
+              27.793450000000064
+            ],
+            [
+              71.10045000000008,
+              27.786340000000052
+            ],
+            [
+              71.08443000000005,
+              27.779710000000023
+            ],
+            [
+              71.06866000000008,
+              27.773510000000044
+            ],
+            [
+              71.05472000000003,
+              27.76824000000005
+            ],
+            [
+              71.04078000000004,
+              27.762060000000076
+            ],
+            [
+              71.02839000100005,
+              27.757000000000062
+            ],
+            [
+              71.01315000000005,
+              27.75058000000007
+            ],
+            [
+              70.98888000000005,
+              27.738640000000032
+            ],
+            [
+              70.97752000000008,
+              27.732680000000073
+            ],
+            [
+              70.96969000000007,
+              27.728030000000047
+            ],
+            [
+              70.95998000000003,
+              27.72327000000007
+            ],
+            [
+              70.95094000000006,
+              27.72073000000006
+            ],
+            [
+              70.94241000000005,
+              27.71843000000007
+            ],
+            [
+              70.93519000000003,
+              27.715910000000065
+            ],
+            [
+              70.92591000100003,
+              27.713140000000067
+            ],
+            [
+              70.91378000100008,
+              27.70832000000007
+            ],
+            [
+              70.90165000000007,
+              27.704860000000053
+            ],
+            [
+              70.88797000000005,
+              27.70234000000005
+            ],
+            [
+              70.87482000000006,
+              27.70094000000006
+            ],
+            [
+              70.86397000000005,
+              27.70183000000003
+            ],
+            [
+              70.85261000000008,
+              27.70342000000005
+            ],
+            [
+              70.84022000000004,
+              27.705470000000048
+            ],
+            [
+              70.82962999900008,
+              27.70661000000007
+            ],
+            [
+              70.82162000000005,
+              27.706830000000025
+            ],
+            [
+              70.80923000000007,
+              27.707480000000032
+            ],
+            [
+              70.79864999900008,
+              27.708150000000046
+            ],
+            [
+              70.79220000000004,
+              27.708840000000066
+            ],
+            [
+              70.77696000000003,
+              27.709940000000074
+            ],
+            [
+              70.76820000000004,
+              27.711080000000038
+            ],
+            [
+              70.76096000000007,
+              27.71291000000008
+            ],
+            [
+              70.75708000000003,
+              27.715180000000032
+            ],
+            [
+              70.75372000000004,
+              27.718840000000057
+            ],
+            [
+              70.75111000000004,
+              27.722970000000032
+            ],
+            [
+              70.74775000000005,
+              27.72869000000003
+            ],
+            [
+              70.74204000000003,
+              27.735560000000078
+            ],
+            [
+              70.73142000000007,
+              27.75090000000006
+            ],
+            [
+              70.71301000000005,
+              27.780910000000063
+            ],
+            [
+              70.70833000000005,
+              27.788920000000076
+            ],
+            [
+              70.70261000000005,
+              27.796940000000063
+            ],
+            [
+              70.69641000000007,
+              27.805170000000032
+            ],
+            [
+              70.69042999900006,
+              27.814100000000053
+            ],
+            [
+              70.68472000000008,
+              27.823720000000037
+            ],
+            [
+              70.68081000000006,
+              27.833570000000066
+            ],
+            [
+              70.67793000000006,
+              27.84178000000003
+            ],
+            [
+              70.67662000000007,
+              27.84743000000003
+            ],
+            [
+              70.67557000000005,
+              27.852350000000058
+            ],
+            [
+              70.67450000000008,
+              27.862000000000023
+            ],
+            [
+              70.67443999900007,
+              27.88146000000006
+            ],
+            [
+              70.67387000000008,
+              27.899370000000033
+            ],
+            [
+              70.67358000100006,
+              27.90572000000003
+            ],
+            [
+              70.67306000000008,
+              27.911070000000052
+            ],
+            [
+              70.67123000000004,
+              27.915180000000078
+            ],
+            [
+              70.66654000000005,
+              27.921820000000025
+            ],
+            [
+              70.66264000000007,
+              27.927100000000053
+            ],
+            [
+              70.65643000000006,
+              27.932340000000067
+            ],
+            [
+              70.65176000000008,
+              27.936000000000035
+            ],
+            [
+              70.63930000000005,
+              27.94790000000006
+            ],
+            [
+              70.63100000000003,
+              27.95521000000008
+            ],
+            [
+              70.62243000000007,
+              27.962280000000078
+            ],
+            [
+              70.61490000000003,
+              27.96891000000005
+            ],
+            [
+              70.60736000000003,
+              27.97715000000005
+            ],
+            [
+              70.59332000000006,
+              27.99177000000003
+            ],
+            [
+              70.58710000100007,
+              27.99863000000005
+            ],
+            [
+              70.57982000000004,
+              28.00434000000007
+            ],
+            [
+              70.56503000000004,
+              28.015300000000025
+            ],
+            [
+              70.55749000000003,
+              28.019640000000038
+            ],
+            [
+              70.54816000000005,
+              28.023270000000025
+            ],
+            [
+              70.53907000000004,
+              28.026450000000068
+            ],
+            [
+              70.53130000000004,
+              28.029400000000066
+            ],
+            [
+              70.51369000000005,
+              28.032310000000052
+            ],
+            [
+              70.50099000000006,
+              28.032950000000028
+            ],
+            [
+              70.49036999900005,
+              28.032440000000065
+            ],
+            [
+              70.48003000000006,
+              28.03126000000003
+            ],
+            [
+              70.46994000100005,
+              28.02938000000006
+            ],
+            [
+              70.44952000000006,
+              28.023780000000045
+            ],
+            [
+              70.43684999900006,
+              28.02051000000006
+            ],
+            [
+              70.41384000000005,
+              28.01517000000007
+            ],
+            [
+              70.39910000000003,
+              28.013460000000066
+            ],
+            [
+              70.38511999900004,
+              28.011570000000063
+            ],
+            [
+              70.37506000000008,
+              28.00899000000004
+            ],
+            [
+              70.36757000000006,
+              28.00598000000008
+            ],
+            [
+              70.36190000000005,
+              28.002050000000054
+            ],
+            [
+              70.35777000000007,
+              27.998910000000024
+            ],
+            [
+              70.35108000000008,
+              27.992830000000026
+            ],
+            [
+              70.34620000000007,
+              27.987060000000042
+            ],
+            [
+              70.33772000000005,
+              27.978540000000066
+            ],
+            [
+              70.33231000000006,
+              27.973240000000033
+            ],
+            [
+              70.31742000000008,
+              27.956180000000074
+            ],
+            [
+              70.31073000000004,
+              27.949950000000058
+            ],
+            [
+              70.29606999900005,
+              27.936800000000062
+            ],
+            [
+              70.28835000000004,
+              27.931730000000073
+            ],
+            [
+              70.27625000000006,
+              27.924300000000073
+            ],
+            [
+              70.26543000000004,
+              27.91828000000004
+            ],
+            [
+              70.25357000000008,
+              27.913170000000036
+            ],
+            [
+              70.24197000000004,
+              27.90737000000007
+            ],
+            [
+              70.23218000000003,
+              27.902270000000044
+            ],
+            [
+              70.22900000000004,
+              27.90034000000003
+            ],
+            [
+              70.21843000000007,
+              27.906390000000044
+            ],
+            [
+              70.19708000000003,
+              27.91897000000006
+            ],
+            [
+              70.18342000000007,
+              27.930530000000033
+            ],
+            [
+              70.16605000000004,
+              27.936210000000074
+            ],
+            [
+              70.14323000000007,
+              27.953360000000032
+            ],
+            [
+              70.12276000000003,
+              27.957700000000045
+            ],
+            [
+              70.10172000000006,
+              27.958860000000072
+            ],
+            [
+              70.09969000000007,
+              27.960710000000063
+            ],
+            [
+              70.11070000000007,
+              27.974710000000073
+            ],
+            [
+              70.12226000000004,
+              27.990530000000035
+            ],
+            [
+              70.12721000000005,
+              28.01099000000005
+            ],
+            [
+              70.13515000000007,
+              28.025480000000073
+            ],
+            [
+              70.13958000000008,
+              28.044580000000053
+            ],
+            [
+              70.14808000000005,
+              28.06135000000006
+            ],
+            [
+              70.15962000000007,
+              28.07534000000004
+            ],
+            [
+              70.17421000000007,
+              28.087010000000078
+            ],
+            [
+              70.18980000000005,
+              28.09686000000005
+            ],
+            [
+              70.20951000000008,
+              28.106640000000027
+            ],
+            [
+              70.22469000000007,
+              28.121500000000026
+            ],
+            [
+              70.23943999900007,
+              28.141820000000052
+            ],
+            [
+              70.25624000000005,
+              28.16122000000007
+            ],
+            [
+              70.28074000000004,
+              28.178680000000043
+            ],
+            [
+              70.30676000000005,
+              28.194300000000055
+            ],
+            [
+              70.32902000000007,
+              28.20130000000006
+            ],
+            [
+              70.35345000000007,
+              28.21374000000003
+            ],
+            [
+              70.37885000000006,
+              28.223420000000033
+            ],
+            [
+              70.40485000000007,
+              28.236290000000054
+            ],
+            [
+              70.42942000000005,
+              28.255540000000053
+            ],
+            [
+              70.44408999900008,
+              28.26810000000006
+            ],
+            [
+              70.45770000000005,
+              28.279310000000066
+            ],
+            [
+              70.48537999900003,
+              28.298060000000078
+            ],
+            [
+              70.50934000000007,
+              28.31048000000004
+            ],
+            [
+              70.53382000000005,
+              28.32334000000003
+            ],
+            [
+              70.56714000000005,
+              28.339260000000024
+            ],
+            [
+              70.58285000100005,
+              28.350870000000043
+            ],
+            [
+              70.60215000000005,
+              28.36152000000004
+            ],
+            [
+              70.63039000000003,
+              28.38023000000004
+            ],
+            [
+              70.65241000000003,
+              28.396750000000054
+            ],
+            [
+              70.66972000000004,
+              28.410150000000044
+            ],
+            [
+              70.68873000000008,
+              28.42992000000004
+            ],
+            [
+              70.70207000000005,
+              28.449760000000026
+            ],
+            [
+              70.70919000000004,
+              28.46834000000007
+            ],
+            [
+              70.71519000100005,
+              28.483300000000042
+            ],
+            [
+              70.73047000000008,
+              28.49673000000007
+            ],
+            [
+              70.75085000000007,
+              28.507330000000024
+            ],
+            [
+              70.78134000100005,
+              28.53099000000003
+            ],
+            [
+              70.80704000000003,
+              28.547890000000052
+            ],
+            [
+              70.82584000000003,
+              28.556230000000028
+            ],
+            [
+              70.84488000000005,
+              28.575060000000065
+            ],
+            [
+              70.86037000000005,
+              28.596230000000048
+            ],
+            [
+              70.87305000000003,
+              28.607860000000073
+            ],
+            [
+              70.88974000000007,
+              28.613950000000045
+            ],
+            [
+              70.90899000000007,
+              28.619080000000054
+            ],
+            [
+              70.92718000000008,
+              28.62286000000006
+            ],
+            [
+              70.94039000000004,
+              28.634480000000053
+            ],
+            [
+              70.94967000000008,
+              28.65438000000006
+            ],
+            [
+              70.95786000000004,
+              28.671560000000056
+            ],
+            [
+              70.96759000000003,
+              28.688720000000046
+            ],
+            [
+              70.98524000000003,
+              28.712110000000052
+            ],
+            [
+              71.00127000000003,
+              28.731880000000046
+            ],
+            [
+              71.01986000000005,
+              28.750690000000077
+            ],
+            [
+              71.04421000000008,
+              28.77168000000006
+            ],
+            [
+              71.06712000000005,
+              28.79633000000007
+            ],
+            [
+              71.08465000000007,
+              28.813330000000065
+            ],
+            [
+              71.10152000000005,
+              28.824400000000026
+            ],
+            [
+              71.11374000000006,
+              28.83603000000005
+            ],
+            [
+              71.11984999900005,
+              28.851870000000076
+            ],
+            [
+              71.13260000000008,
+              28.863480000000038
+            ],
+            [
+              71.15051000000005,
+              28.87408000000005
+            ],
+            [
+              71.16286999900007,
+              28.89071000000007
+            ],
+            [
+              71.17532000000006,
+              28.91008000000005
+            ],
+            [
+              71.19143000000008,
+              28.930750000000046
+            ],
+            [
+              71.20471000000003,
+              28.94234000000006
+            ],
+            [
+              71.22254000000004,
+              28.949280000000044
+            ],
+            [
+              71.24659000000008,
+              28.956080000000043
+            ],
+            [
+              71.26337000000007,
+              28.96213000000006
+            ],
+            [
+              71.28744000000006,
+              28.969390000000033
+            ],
+            [
+              71.31403000000006,
+              28.973850000000027
+            ],
+            [
+              71.33539000100006,
+              28.977050000000077
+            ],
+            [
+              71.36244000000005,
+              28.979210000000023
+            ],
+            [
+              71.40748000000008,
+              28.975500000000068
+            ],
+            [
+              71.43637000000007,
+              28.96986000000004
+            ],
+            [
+              71.45611999900007,
+              28.97079000000008
+            ],
+            [
+              71.47845000000007,
+              28.971210000000042
+            ],
+            [
+              71.49727000000007,
+              28.975810000000024
+            ],
+            [
+              71.51826000000005,
+              28.983550000000037
+            ],
+            [
+              71.54236999900007,
+              28.991210000000024
+            ],
+            [
+              71.56125000000003,
+              28.997630000000072
+            ],
+            [
+              71.58134000000007,
+              29.009480000000053
+            ],
+            [
+              71.60363000000007,
+              29.024940000000072
+            ],
+            [
+              71.61964000000006,
+              29.038710000000037
+            ],
+            [
+              71.63707000000005,
+              29.047880000000077
+            ],
+            [
+              71.65482000000003,
+              29.05111000000005
+            ],
+            [
+              71.67397000000005,
+              29.065260000000023
+            ],
+            [
+              71.68751000000003,
+              29.08227000000005
+            ],
+            [
+              71.70962000000003,
+              29.107300000000066
+            ],
+            [
+              71.72633000000008,
+              29.125600000000077
+            ],
+            [
+              71.74125000000004,
+              29.137100000000032
+            ],
+            [
+              71.75758999900006,
+              29.144000000000062
+            ],
+            [
+              71.77352000000008,
+              29.15411000000006
+            ],
+            [
+              71.78386000000006,
+              29.168000000000063
+            ],
+            [
+              71.79163000000005,
+              29.182860000000062
+            ],
+            [
+              71.80698000000007,
+              29.206200000000024
+            ],
+            [
+              71.81693000000007,
+              29.223760000000027
+            ],
+            [
+              71.82901000000004,
+              29.242620000000045
+            ],
+            [
+              71.84594999900008,
+              29.26684000000006
+            ],
+            [
+              71.85848999900003,
+              29.28340000000003
+            ],
+            [
+              71.87669000000005,
+              29.29800000000006
+            ],
+            [
+              71.89945000000006,
+              29.308830000000057
+            ],
+            [
+              71.92275000000006,
+              29.320100000000025
+            ],
+            [
+              71.93873000000008,
+              29.33018000000004
+            ],
+            [
+              71.95567000000005,
+              29.337960000000066
+            ],
+            [
+              71.97928000000007,
+              29.34283000000005
+            ],
+            [
+              71.99840000000006,
+              29.34599000000003
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

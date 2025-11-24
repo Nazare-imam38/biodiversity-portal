@@ -26,7 +26,7 @@ const layerIcons = {
   'ramsar-sites': FaWater,
   'gb-provincial': FaGlobe,
   'gb-district': FaMapMarkedAlt,
-  'species-distribution': FaMapMarkerAlt,
+  'wildlife-occurrence': FaMapMarkerAlt,
 }
 
 export default function Legend({ layers, activeLayers }) {

@@ -14,7 +14,9 @@ import {
   FaMapMarkerAlt,
   FaTrash,
   FaGlobe,
-  FaCloud
+  FaCloud,
+  FaChevronLeft,
+  FaChevronRight
 } from 'react-icons/fa'
 
 const layerIcons = {
@@ -28,10 +30,11 @@ const layerIcons = {
   'ramsar-sites': FaWater,
   'gb-provincial': FaGlobe,
   'gb-district': FaMapMarkedAlt,
-  'species-distribution': FaMapMarkerAlt,
+  'punjab-provincial': FaGlobe,
+  'wildlife-occurrence': FaMapMarkerAlt,
 }
 
-export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClearAll, showMobileButton = true, isOpen: externalIsOpen, setIsOpen: externalSetIsOpen }) {
+export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClearAll, showMobileButton = true, isOpen: externalIsOpen, setIsOpen: externalSetIsOpen, selectedRegion = 'National' }) {
   const [isMobile, setIsMobile] = useState(false)
   // Desktop: open by default, Mobile: closed by default
   const [internalIsOpen, setInternalIsOpen] = useState(() => {
@@ -64,19 +67,43 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
     <>
       {/* Mobile toggle button is now rendered in Dashboard inside map container */}
 
+      {/* Desktop Collapse/Expand Button - When Panel is Collapsed */}
+      {!isMobile && !isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="hidden lg:flex fixed left-0 top-1/2 transform -translate-y-1/2 z-[101] bg-green-600 text-white p-3 rounded-r-lg shadow-lg hover:bg-green-700 transition-all duration-300 items-center justify-center"
+          style={{ 
+            height: '60px',
+            borderTopRightRadius: '8px',
+            borderBottomRightRadius: '8px'
+          }}
+          title="Expand Data Layers Panel"
+        >
+          <FaChevronRight className="text-lg" />
+        </button>
+      )}
+
       {/* Desktop Sidebar / Mobile Bottom Sheet */}
       <div
         className={`${
           // Mobile: bottom sheet from bottom
           isOpen ? 'translate-y-0' : 'translate-y-full'
-        } lg:translate-y-0 lg:translate-x-0 fixed lg:static inset-x-0 lg:inset-x-auto bottom-0 lg:bottom-auto left-0 lg:left-auto w-full lg:w-80 xl:w-96 bg-white shadow-2xl lg:shadow-lg z-[100] transition-transform duration-300 ease-in-out overflow-hidden lg:overflow-visible border-t lg:border-t-0 lg:border-r border-gray-200 flex flex-col rounded-t-3xl lg:rounded-none`}
+        } lg:translate-y-0 ${
+          // Desktop: slide in/out from left
+          isOpen ? 'lg:translate-x-0' : 'lg:-translate-x-full'
+        } fixed lg:static inset-x-0 lg:inset-x-auto bottom-0 lg:bottom-auto left-0 lg:left-auto w-full lg:w-80 xl:w-96 bg-white shadow-2xl lg:shadow-lg z-[100] transition-all duration-300 ease-in-out overflow-hidden lg:overflow-visible border-t lg:border-t-0 lg:border-r border-gray-200 flex flex-col rounded-t-3xl lg:rounded-none`}
         style={{ 
           // Mobile: bottom sheet with max height
           // Desktop: maximize height to show all 9 layers without scrolling
           maxHeight: !isMobile ? '100%' : (isOpen ? '85vh' : '0'),
           height: !isMobile ? 'calc(100vh - 50px)' : (isOpen ? '85vh' : '0'),
           top: !isMobile ? 'auto' : (isOpen ? 'auto' : 'auto'),
-          minHeight: !isMobile ? 'calc(100vh - 50px)' : 'auto'
+          minHeight: !isMobile ? 'calc(100vh - 50px)' : 'auto',
+          // Desktop: collapse width when closed to allow map to expand
+          width: !isMobile && !isOpen ? '0' : undefined,
+          minWidth: !isMobile && !isOpen ? '0' : undefined,
+          maxWidth: !isMobile && !isOpen ? '0' : undefined,
+          overflow: !isMobile && !isOpen ? 'hidden' : undefined
         }}
       >
         {/* Mobile: Drag handle */}
@@ -98,6 +125,17 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   <span className="hidden sm:inline">Clear All</span>
                 </button>
               )}
+              {/* Desktop: Collapse button */}
+              {!isMobile && (
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="hidden lg:flex text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-all"
+                  title="Collapse panel"
+                >
+                  <FaChevronLeft className="text-base" />
+                </button>
+              )}
+              {/* Mobile: Close button */}
               <button
                 onClick={() => setIsOpen(false)}
                 className="lg:hidden text-gray-500 hover:text-gray-700 p-1"
@@ -109,7 +147,24 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
 
           <div className="space-y-0.5 lg:space-y-1">
             {layers && layers.length > 0 ? (
-              layers.map((layer) => {
+              layers
+                .filter(layer => {
+                  // Hide protected-forest and ramsar-sites for GB region (they have 0 features)
+                  // Hide Punjab-specific layers for GB region
+                  if (selectedRegion === 'Gilgit Baltistan') {
+                    return layer.id !== 'protected-forest' && layer.id !== 'ramsar-sites' && layer.id !== 'punjab-provincial' && layer.id !== 'wildlife-occurrence'
+                  }
+                  // Hide GB boundary layers for Punjab region
+                  if (selectedRegion === 'Punjab') {
+                    return layer.id !== 'gb-provincial' && layer.id !== 'gb-district'
+                  }
+                  // For other regions, hide all region-specific layers
+                  if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab') {
+                    return layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'wildlife-occurrence'
+                  }
+                  return true
+                })
+                .map((layer) => {
                 const IconComponent = layerIcons[layer.id] || FaLeaf
                 return (
                   <LayerItem
