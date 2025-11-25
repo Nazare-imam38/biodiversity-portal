@@ -153,6 +153,12 @@ let PUNJAB_BOUNDARY = null;
 // Sindh boundary polygon - will be loaded on startup
 let SINDH_BOUNDARY = null;
 
+// Balochistan boundary polygon - will be loaded on startup
+let BALOCHISTAN_BOUNDARY = null;
+
+// Khyber Pakhtunkhwa boundary polygon - will be loaded on startup
+let KP_BOUNDARY = null;
+
 // Cache for processed GeoJSON layers to avoid reprocessing
 // Cache key format: "layerId:region" (e.g., "kbas:national" or "kbas:gilgit-baltistan")
 const layerCache = new Map();
@@ -347,6 +353,200 @@ async function loadSindhBoundary() {
     }
   } catch (error) {
     console.error('Error loading Sindh boundary:', error);
+  }
+}
+
+// Load Balochistan boundary from GeoJSON file
+async function loadBalochistanBoundary() {
+  try {
+    // Use provincial boundary for clipping
+    const geojsonPath = join(__dirname, '..', 'geojson', 'balochistan-provincial.geojson');
+    console.log('Loading Balochistan boundary from GeoJSON...');
+    
+    if (!existsSync(geojsonPath)) {
+      console.warn('Balochistan provincial GeoJSON not found, Balochistan clipping will be unavailable');
+      return;
+    }
+    
+    const geojsonData = readFileSync(geojsonPath, 'utf8');
+    const geoJSON = JSON.parse(geojsonData);
+    
+    if (!geoJSON || !geoJSON.features || geoJSON.features.length === 0) {
+      console.warn('No features found in Balochistan GeoJSON');
+      return;
+    }
+    
+    const features = geoJSON.features;
+    
+    // Create Balochistan boundary - handle single MultiPolygon feature directly
+    if (features.length === 1 && features[0].geometry) {
+      if (features[0].geometry.type === 'MultiPolygon') {
+        BALOCHISTAN_BOUNDARY = turf.multiPolygon(features[0].geometry.coordinates);
+        const bbox = turf.bbox(BALOCHISTAN_BOUNDARY);
+        console.log('Balochistan boundary loaded successfully (using MultiPolygon directly)');
+        console.log('Balochistan bounds:', {
+          minLat: bbox[1],
+          maxLat: bbox[3],
+          minLng: bbox[0],
+          maxLng: bbox[2]
+        });
+        return;
+      } else if (features[0].geometry.type === 'Polygon') {
+        BALOCHISTAN_BOUNDARY = turf.polygon(features[0].geometry.coordinates);
+        const bbox = turf.bbox(BALOCHISTAN_BOUNDARY);
+        console.log('Balochistan boundary loaded successfully (using Polygon directly)');
+        console.log('Balochistan bounds:', {
+          minLat: bbox[1],
+          maxLat: bbox[3],
+          minLng: bbox[0],
+          maxLng: bbox[2]
+        });
+        return;
+      }
+    }
+    
+    // For multiple features, create a union
+    let balochistanUnion = null;
+    for (const feature of features) {
+      if (feature.geometry && feature.geometry.type === 'Polygon') {
+        const polygon = turf.polygon(feature.geometry.coordinates);
+        if (!balochistanUnion) {
+          balochistanUnion = polygon;
+        } else {
+          try {
+            balochistanUnion = turf.union(balochistanUnion, polygon);
+          } catch (e) {
+            console.warn('Error unioning Balochistan polygon:', e.message);
+          }
+        }
+      } else if (feature.geometry && feature.geometry.type === 'MultiPolygon') {
+        for (const coords of feature.geometry.coordinates) {
+          const polygon = turf.polygon(coords);
+          if (!balochistanUnion) {
+            balochistanUnion = polygon;
+          } else {
+            try {
+              balochistanUnion = turf.union(balochistanUnion, polygon);
+            } catch (e) {
+              console.warn('Error unioning Balochistan MultiPolygon:', e.message);
+            }
+          }
+        }
+      }
+    }
+    
+    if (balochistanUnion) {
+      BALOCHISTAN_BOUNDARY = balochistanUnion;
+      const bbox = turf.bbox(balochistanUnion);
+      console.log('Balochistan boundary loaded successfully');
+      console.log('Balochistan bounds:', {
+        minLat: bbox[1],
+        maxLat: bbox[3],
+        minLng: bbox[0],
+        maxLng: bbox[2]
+      });
+    } else {
+      console.warn('Failed to create Balochistan boundary union');
+    }
+  } catch (error) {
+    console.error('Error loading Balochistan boundary:', error);
+  }
+}
+
+// Load Khyber Pakhtunkhwa boundary from GeoJSON file
+async function loadKPBoundary() {
+  try {
+    // Use provincial boundary for clipping
+    const geojsonPath = join(__dirname, '..', 'geojson', 'kp-provincial.geojson');
+    console.log('Loading Khyber Pakhtunkhwa boundary from GeoJSON...');
+    
+    if (!existsSync(geojsonPath)) {
+      console.warn('KP provincial GeoJSON not found, KP clipping will be unavailable');
+      return;
+    }
+    
+    const geojsonData = readFileSync(geojsonPath, 'utf8');
+    const geoJSON = JSON.parse(geojsonData);
+    
+    if (!geoJSON || !geoJSON.features || geoJSON.features.length === 0) {
+      console.warn('No features found in KP GeoJSON');
+      return;
+    }
+    
+    const features = geoJSON.features;
+    
+    // Create KP boundary - handle single MultiPolygon feature directly
+    if (features.length === 1 && features[0].geometry) {
+      if (features[0].geometry.type === 'MultiPolygon') {
+        KP_BOUNDARY = turf.multiPolygon(features[0].geometry.coordinates);
+        const bbox = turf.bbox(KP_BOUNDARY);
+        console.log('KP boundary loaded successfully (using MultiPolygon directly)');
+        console.log('KP bounds:', {
+          minLat: bbox[1],
+          maxLat: bbox[3],
+          minLng: bbox[0],
+          maxLng: bbox[2]
+        });
+        return;
+      } else if (features[0].geometry.type === 'Polygon') {
+        KP_BOUNDARY = turf.polygon(features[0].geometry.coordinates);
+        const bbox = turf.bbox(KP_BOUNDARY);
+        console.log('KP boundary loaded successfully (using Polygon directly)');
+        console.log('KP bounds:', {
+          minLat: bbox[1],
+          maxLat: bbox[3],
+          minLng: bbox[0],
+          maxLng: bbox[2]
+        });
+        return;
+      }
+    }
+    
+    // For multiple features, create a union
+    let kpUnion = null;
+    for (const feature of features) {
+      if (feature.geometry && feature.geometry.type === 'Polygon') {
+        const polygon = turf.polygon(feature.geometry.coordinates);
+        if (!kpUnion) {
+          kpUnion = polygon;
+        } else {
+          try {
+            kpUnion = turf.union(kpUnion, polygon);
+          } catch (e) {
+            console.warn('Error unioning KP polygon:', e.message);
+          }
+        }
+      } else if (feature.geometry && feature.geometry.type === 'MultiPolygon') {
+        for (const coords of feature.geometry.coordinates) {
+          const polygon = turf.polygon(coords);
+          if (!kpUnion) {
+            kpUnion = polygon;
+          } else {
+            try {
+              kpUnion = turf.union(kpUnion, polygon);
+            } catch (e) {
+              console.warn('Error unioning KP MultiPolygon:', e.message);
+            }
+          }
+        }
+      }
+    }
+    
+    if (kpUnion) {
+      KP_BOUNDARY = kpUnion;
+      const bbox = turf.bbox(kpUnion);
+      console.log('KP boundary loaded successfully');
+      console.log('KP bounds:', {
+        minLat: bbox[1],
+        maxLat: bbox[3],
+        minLng: bbox[0],
+        maxLng: bbox[2]
+      });
+    } else {
+      console.warn('Failed to create KP boundary union');
+    }
+  } catch (error) {
+    console.error('Error loading KP boundary:', error);
   }
 }
 
@@ -1003,6 +1203,8 @@ app.get('/api/layers/:layerId', async (req, res) => {
     const isGBLayer = layerId === 'gb-provincial' || layerId === 'gb-district';
     const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
     const isSindhLayer = false; // No Sindh-specific layers yet, but reserved for future use
+    const isBalochistanLayer = false; // No Balochistan-specific layers yet, but reserved for future use
+    const isKPLayer = false; // No KP-specific layers yet, but reserved for future use
     const isPakistanLULCLayer = layerId === 'pakistan-lulc'; // Pakistan LULC layer (national level)
     const isBoundaryLayer = layerId === 'pakistan-provinces'; // Boundary layers should not be clipped
     
@@ -1012,7 +1214,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Use GeoJSON file if available, otherwise convert from shapefile
     if (layer.geojson) {
       // For region-specific clipping, use pre-clipped files if available
-      if ((region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBoundaryLayer) {
+      if ((region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isBoundaryLayer) {
         // Determine the suffix based on region
         let regionSuffix = '';
         if (region === 'Gilgit Baltistan') {
@@ -1021,8 +1223,12 @@ app.get('/api/layers/:layerId', async (req, res) => {
           regionSuffix = 'punjab';
         } else if (region === 'Sindh') {
           regionSuffix = 'sindh';
+        } else if (region === 'Balochistan') {
+          regionSuffix = 'balochistan';
+        } else if (region === 'Khyber Pakhtunkhwa') {
+          regionSuffix = 'kp';
         }
-        // Try to use pre-clipped region file (e.g., kbas-gb.geojson or kbas-punjab.geojson or kbas-sindh.geojson)
+        // Try to use pre-clipped region file (e.g., kbas-gb.geojson or kbas-punjab.geojson or kbas-sindh.geojson or kbas-balochistan.geojson or kbas-kp.geojson)
         const regionPath = join(__dirname, '..', layer.geojson.replace('.geojson', `-${regionSuffix}.geojson`));
         if (existsSync(regionPath)) {
           geojsonPath = regionPath;
@@ -1084,7 +1290,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Only clip on-the-fly if pre-clipped file doesn't exist and boundary is available
     // This is a fallback for layers that haven't been pre-clipped yet
     // Only applies to GeoJSON files (geojsonPath is defined)
-    if (layer.geojson && (region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBoundaryLayer) {
+    if (layer.geojson && (region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isBoundaryLayer) {
       let regionSuffix = '';
       let regionBoundary = null;
       
@@ -1097,6 +1303,12 @@ app.get('/api/layers/:layerId', async (req, res) => {
       } else if (region === 'Sindh') {
         regionSuffix = 'sindh';
         regionBoundary = SINDH_BOUNDARY;
+      } else if (region === 'Balochistan') {
+        regionSuffix = 'balochistan';
+        regionBoundary = BALOCHISTAN_BOUNDARY;
+      } else if (region === 'Khyber Pakhtunkhwa') {
+        regionSuffix = 'kp';
+        regionBoundary = KP_BOUNDARY;
       }
       
       const isPreClippedFile = geojsonPath && (geojsonPath.includes(`-${regionSuffix}.geojson`));
@@ -1230,6 +1442,24 @@ Promise.race([
   ]).catch((error) => {
     console.warn('Error loading Sindh boundary:', error.message);
     return null; // Continue even if Sindh boundary fails
+  }),
+  Promise.race([
+    loadBalochistanBoundary(),
+    new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Balochistan boundary loading timeout')), BOUNDARY_LOAD_TIMEOUT)
+    )
+  ]).catch((error) => {
+    console.warn('Error loading Balochistan boundary:', error.message);
+    return null; // Continue even if Balochistan boundary fails
+  }),
+  Promise.race([
+    loadKPBoundary(),
+    new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('KP boundary loading timeout')), BOUNDARY_LOAD_TIMEOUT)
+    )
+  ]).catch((error) => {
+    console.warn('Error loading KP boundary:', error.message);
+    return null; // Continue even if KP boundary fails
   })
 ]).then(() => {
   startServer();

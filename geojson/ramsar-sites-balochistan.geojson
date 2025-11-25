@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Ramsar_Sit": 1063,
+        "Site_name": "Astola Island",
+        "Region": "Asia",
+        "Country": "Pakistan",
+        "Territory": null,
+        "Designatio": "2001-05-09T19:00:00.000Z",
+        "Last_publi": "2001-05-09T19:00:00.000Z",
+        "Area__ha_": 5000,
+        "Latitude": 25.11666667,
+        "Longitude": 63.86666667,
+        "Annotated": "Astola (Haft Talar) Island. 10/05/01. Balochistan. 5,000 ha. 25Â°07'N 063Â°52'E. An uninhabitated island about six km in length, some 25 km south of the desert coast of Balochistan. It is the only significant offshore island along the north coast of the",
+        "Criterion1": "Yes",
+        "Criterion2": "Yes",
+        "Criterion3": "Yes",
+        "Criterion4": "Yes",
+        "Criterion5": "No",
+        "Criterion6": "No",
+        "Criterion7": "No",
+        "Criterion8": "No",
+        "Criterion9": "No",
+        "Wetland_Ty": "Marine or coastal wetlands, D: Rocky marine shores, E: Sand, shingle or pebble shores",
+        "Maximum_el": 200,
+        "Minimum_el": 0,
+        "Montreux_l": "No",
+        "Management": "No",
+        "Manageme_1": "No",
+        "Ecosystem": "Cultural Services, Spiritual and inspirational, Scientific and educational, Provisioning Services, Food for humans",
+        "Threats": "Invasive and other problematic species and genes, Invasive non-native/ alien species, Natural system modifications, Unspecified/others, Biological resource use, Fishing and harvesting aquatic resources",
+        "large_admi": "Balochistan Province",
+        "Global_int": null,
+        "Regional_i": null,
+        "National_c": null,
+        "Does_the_w": "No",
+        "Ramsar_Adv": "No"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          63.86666667,
+          25.11666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Ramsar_Sit": 1066,
+        "Site_name": "Jiwani Coastal Wetland",
+        "Region": "Asia",
+        "Country": "Pakistan",
+        "Territory": null,
+        "Designatio": "2001-05-09T19:00:00.000Z",
+        "Last_publi": "2001-05-09T19:00:00.000Z",
+        "Area__ha_": 4600,
+        "Latitude": 25.08333333,
+        "Longitude": 61.8,
+        "Annotated": "Jiwani Coastal Wetland. 10/05/01; Balochistan; 4,600 ha; 25Â°05'N 061Â°48'E. Located along Gawater Bay around the delta of the Dasht River, a very significant area of mangrove forests extending westward to the Iranian frontier, contiguous with Iran's Gov",
+        "Criterion1": "Yes",
+        "Criterion2": "Yes",
+        "Criterion3": "No",
+        "Criterion4": "Yes",
+        "Criterion5": "No",
+        "Criterion6": "No",
+        "Criterion7": "No",
+        "Criterion8": "No",
+        "Criterion9": "No",
+        "Wetland_Ty": "Marine or coastal wetlands, D: Rocky marine shores, F: Estuarine waters, I: Intertidal forested wetlands, E: Sand, shingle or pebble shores, Inland wetlands, L: Permanent inland deltas",
+        "Maximum_el": 0,
+        "Minimum_el": 0,
+        "Montreux_l": "No",
+        "Management": "No",
+        "Manageme_1": "No",
+        "Ecosystem": "Regulating Services, Hazard reduction, Provisioning Services, Food for humans, Cultural Services, Spiritual and inspirational, Recreation and tourism",
+        "Threats": "Natural system modifications, Unspecified/others, Biological resource use, Hunting and collecting terrestrial animals, Fishing and harvesting aquatic resources, Logging and wood harvesting, Energy production and mining, Oil and gas drilling, Climate chan",
+        "large_admi": "Balochistan",
+        "Global_int": null,
+        "Regional_i": null,
+        "National_c": null,
+        "Does_the_w": "Yes",
+        "Ramsar_Adv": "No"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.8,
+          25.08333333
+        ]
+      }
+    }
+  ]
+}

@@ -30,6 +30,14 @@ const regions = {
   'Sindh': {
     boundaryFile: 'sindh-provincial.geojson',
     suffix: 'sindh'
+  },
+  'Balochistan': {
+    boundaryFile: 'balochistan-provincial.geojson',
+    suffix: 'balochistan'
+  },
+  'Khyber Pakhtunkhwa': {
+    boundaryFile: 'kp-provincial.geojson',
+    suffix: 'kp'
   }
 };
 

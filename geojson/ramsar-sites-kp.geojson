@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Ramsar_Sit": 98,
+        "Site_name": "Tanda Dam",
+        "Region": "Asia",
+        "Country": "Pakistan",
+        "Territory": null,
+        "Designatio": "1976-07-22T19:00:00.000Z",
+        "Last_publi": "1991-12-31T19:00:00.000Z",
+        "Area__ha_": 405,
+        "Latitude": 33.58333333,
+        "Longitude": 71.36666667,
+        "Annotated": "Tanda Dam. 23/07/76; North West Frontier Province; 405 ha; 33Â°35'N 071Â°22'E. Wildlife Reserve. A small water-storage reservoir supporting irrigated agriculture and a small fishery. The site is a wintering area for Anatidae (ducks, geese, swans, etc.) a",
+        "Criterion1": "No",
+        "Criterion2": "No",
+        "Criterion3": "No",
+        "Criterion4": "No",
+        "Criterion5": "No",
+        "Criterion6": "No",
+        "Criterion7": "No",
+        "Criterion8": "No",
+        "Criterion9": "No",
+        "Wetland_Ty": "Human-made wetlands, 6: Water storage areas/Reservoirs",
+        "Maximum_el": 528,
+        "Minimum_el": 528,
+        "Montreux_l": "No",
+        "Management": "No",
+        "Manageme_1": "No",
+        "Ecosystem": "Provisioning Services, Fresh water, Food for humans, Cultural Services, Recreation and tourism, Regulating Services, Maintenance of hydrological regimes",
+        "Threats": "Agriculture & aquaculture, Livestock farming and ranching, Biological resource use, Logging and wood harvesting, Natural system modifications, Dams and water management/use, Energy production and mining, Renewable energy",
+        "large_admi": "North West Frontier Province",
+        "Global_int": null,
+        "Regional_i": null,
+        "National_c": null,
+        "Does_the_w": "No",
+        "Ramsar_Adv": "Yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.36666667,
+          33.58333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Ramsar_Sit": 97,
+        "Site_name": "Thanedar Wala Game Reserve",
+        "Region": "Asia",
+        "Country": "Pakistan",
+        "Territory": null,
+        "Designatio": "1976-07-22T19:00:00.000Z",
+        "Last_publi": "1991-12-31T19:00:00.000Z",
+        "Area__ha_": 4047,
+        "Latitude": 32.61666667,
+        "Longitude": 71.08333333,
+        "Annotated": "Thanedar Wala. 23/07/76; North West Frontier Province; 4,047 ha; 32Â°37'N 071Â°05'E. Game Reserve. A stretch of the Kurram River and associated floodplain, consisting of braided river channels and seasonally flooded islands. Reeds and sedges occur, along",
+        "Criterion1": "Yes",
+        "Criterion2": "Yes",
+        "Criterion3": "Yes",
+        "Criterion4": "No",
+        "Criterion5": "No",
+        "Criterion6": "No",
+        "Criterion7": "No",
+        "Criterion8": "No",
+        "Criterion9": "No",
+        "Wetland_Ty": "Inland wetlands, Q: Permanent saline/ brackish/ alkaline lakes, R: Seasonal/ intermittent saline/ brackish/ alkaline lakes and flats, Sp: Permanent saline/ brackish/ alkaline marshes/ pools, Ss: Seasonal/ intermittent saline/ brackish/ alkaline marshes/",
+        "Maximum_el": 303,
+        "Minimum_el": 303,
+        "Montreux_l": "No",
+        "Management": "No",
+        "Manageme_1": "No",
+        "Ecosystem": "Provisioning Services, Wetland non-food products, Food for humans, Cultural Services, Recreation and tourism",
+        "Threats": "Natural system modifications, Dams and water management/use, Biological resource use, Hunting and collecting terrestrial animals, Agriculture & aquaculture, Livestock farming and ranching, Water regulation, Canalisation and river regulation",
+        "large_admi": "North West Frontier Province",
+        "Global_int": null,
+        "Regional_i": null,
+        "National_c": null,
+        "Does_the_w": "No",
+        "Ramsar_Adv": "Yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.08333333,
+          32.61666667
+        ]
+      }
+    }
+  ]
+}
