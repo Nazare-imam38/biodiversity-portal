@@ -417,6 +417,42 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       }
     }
     
+    // Special styling for Gilgit Baltistan Provincial - hollow with purple outline
+    if (layer.id === 'gb-provincial') {
+      return {
+        color: '#8b5cf6', // Purple outline
+        weight: 2.5,
+        opacity: 1,
+        fillColor: 'transparent', // Hollow/transparent fill
+        fillOpacity: 0,
+        dashArray: undefined
+      }
+    }
+    
+    // Special styling for Gilgit Baltistan District - hollow with indigo outline
+    if (layer.id === 'gb-district') {
+      return {
+        color: '#6366f1', // Indigo outline
+        weight: 2.5,
+        opacity: 1,
+        fillColor: 'transparent', // Hollow/transparent fill
+        fillOpacity: 0,
+        dashArray: undefined
+      }
+    }
+    
+    // Special styling for Punjab Provincial (Lahore) - hollow with purple outline
+    if (layer.id === 'punjab-provincial') {
+      return {
+        color: '#8b5cf6', // Purple outline
+        weight: 2.5,
+        opacity: 1,
+        fillColor: 'transparent', // Hollow/transparent fill
+        fillOpacity: 0,
+        dashArray: undefined
+      }
+    }
+    
     // For polygons and lines, use better colors
     return {
       color: layer.color,
@@ -472,16 +508,19 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
     }
   }
 
-  // Icon mappings for popups (using Unicode symbols that work reliably in HTML)
-  const layerIcons = {
-    'agroecological-zones': '🌾',
-    'ecoregions': '🌿',
-    'kbas': '📍',
-    'protected-areas': '🛡️',
-    'protected-areas-pol': '🛡️',
-    'protected-forest': '🌲',
-    'ramsar-sites': '💧',
-    'wildlife-occurrence': '🦋'
+  // Icon mappings for popups (using SVG icons matching Font Awesome)
+  const getLayerIconSVG = (layerId) => {
+    const icons = {
+      'agroecological-zones': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M546.2 9.7c-5.6-12.5-21.6-13-28.3-1.2C486.9 62.4 431.4 96 368 96h-80C182 96 96 182 96 288c0 7 .8 13.7 1.5 20.5C161.3 262.8 223.5 256 288 256s126.7 6.8 190.5 52.5c.7-6.8 1.5-13.5 1.5-20.5 0-52.2-25-98.2-63.8-127.3 23.7-36.5 55.4-69.9 86.7-100.9 7.4-7.4 11.3-18.1 9.3-28.6zM368 128c27.8 0 53.5 8.6 74.7 23.3-20.2 20.2-42.2 38.2-65.5 54.1-2.7-9.3-4.2-19-4.2-29.4 0-26.5-21.5-48-48-48s-48 21.5-48 48c0 10.4-1.5 20.1-4.2 29.4-23.3-15.9-45.3-33.9-65.5-54.1C314.5 136.6 340.2 128 368 128zM20.6 127.1C7.8 127.1-2.2 141.1.6 154.1c16.5 69.3 65.7 128.1 129 162.1 3.2 1.4 6.9 1.4 10.1 0 63.3-34 112.5-92.8 129-162.1 2.8-13-7.2-27-20-27z"/></svg>', // FaLeaf
+      'ecoregions': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M442.7 67.3c-11.8-10.7-30.2-10-42.6 0L288 160.9 192 65 64 192l96 95.1 96-95.1 112.1-93.6c12.4-10.3 30.8-10.7 42.6 0 11.8 10.7 12.7 28.2 2 39.5L320 256l96 95.1 96-95.1c10.7-11.3 9.8-28.8-2-39.5z"/></svg>', // FaSeedling
+      'kbas': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M288 0c-69.59 0-126 56.41-126 126 0 56.26 82.35 158.8 113.9 196.02 6.39 7.54 17.82 7.54 24.2 0C331.65 284.8 414 182.26 414 126 414 56.41 357.59 0 288 0zm0 168c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42zM20.12 215.95A32.006 32.006 0 0 0 0 245.66v250.32c0 11.32 11.43 19.06 21.94 14.86L160 448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-57.49-76.72v182.96l192 64V266.15c-16.92 27.1-37.83 53.52-57.49 76.72-9.13 10.78-22.44 16.96-36.51 16.96zm187.33-123.74c-5.18 14.88-12.41 30.44-21.25 46.42V448l138.06 46.2c10.51 4.2 21.94-3.54 21.94-14.86V245.66c0-9.95-5.81-18.89-14.78-22.97l-122.97 41.7z"/></svg>', // FaMapMarkedAlt
+      'protected-areas': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM256.1 446.3l-.1-381 175.9 73.3c-3.3 151.4-82.1 261.1-175.8 307.7z"/></svg>', // FaShieldAlt
+      'protected-areas-pol': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM256.1 446.3l-.1-381 175.9 73.3c-3.3 151.4-82.1 261.1-175.8 307.7z"/></svg>', // FaShieldAlt
+      'protected-forest': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M378.2 138.9l-175.1 175.1c-3.1 3.1-8.2 3.1-11.3 0l-175.1-175.1c-3.1-3.1-3.1-8.2 0-11.3l11.3-11.3c3.1-3.1 8.2-3.1 11.3 0L192 280.7l156.9-156.9c3.1-3.1 8.2-3.1 11.3 0l11.3 11.3c3.1 3.1 3.1 8.2 0 11.3z"/></svg>', // FaTree
+      'ramsar-sites': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M327.1 96c-89.97 0-168.54 54.77-212.27 101.63L27.5 131.58c-12.13-9.18-30.24.6-27.14 14.66L24.54 256 .35 365.77c-3.1 14.06 15.01 23.83 27.14 14.66l87.33-66.05C158.56 320.23 237.13 375 327.1 375c96.65 0 175.9-79.23 175.9-175.5C503.1 103.15 423.75 96 327.1 96zm0 32c79.42 0 143.9 64.35 143.9 143.5S406.52 415 327.1 415c-79.42 0-143.9-64.35-143.9-143.5S247.68 128 327.1 128z"/></svg>', // FaWater
+      'wildlife-occurrence': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.774-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></svg>' // FaMapMarkerAlt
+    }
+    return icons[layerId] || '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" style="width: 16px; height: 16px;"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.774-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></svg>'
   }
 
   // Layer column mappings (same as dashboard)
@@ -600,12 +639,12 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
         const visibleColumns = columns.filter(col => props[col] != null)
         
         if (visibleColumns.length > 0) {
-          const icon = layerIcons[layerId] || '📍'
+          const icon = getLayerIconSVG(layerId)
         popupContent = `
             <div style="width: 380px; padding: 0; margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
               <div style="background: ${layerConfig.color}; padding: 10px 12px; color: white; margin: 0;">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 16px; line-height: 1; flex-shrink: 0;">
+                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; line-height: 1; flex-shrink: 0; color: white;">
                     ${icon}
                   </div>
                   <h3 style="font-weight: bold; margin: 0; font-size: 14px; color: white; flex: 1; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${layerConfig.name}</h3>
@@ -636,12 +675,12 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
           `
         } else {
           // Fallback if no mapped columns have values
-          const icon = layerIcons[layerId] || '📍'
+          const icon = getLayerIconSVG(layerId)
           popupContent = `
             <div style="width: 300px; padding: 0; margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
               <div style="background: ${layerConfig.color}; padding: 10px 12px; color: white; margin: 0;">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 16px; line-height: 1; flex-shrink: 0;">
+                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; line-height: 1; flex-shrink: 0; color: white;">
                     ${icon}
                   </div>
                   <h3 style="font-weight: bold; margin: 0; font-size: 14px; color: white; flex: 1; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${layerConfig.name}</h3>
@@ -656,13 +695,13 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       } else {
         // For layers without mappings, show first 10 properties
         const allKeys = Object.keys(props).slice(0, 10)
-        const icon = layerIcons[layerId] || '📍'
+        const icon = getLayerIconSVG(layerId)
         if (allKeys.length > 0) {
           popupContent = `
             <div style="width: 380px; padding: 0; margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
               <div style="background: ${layerConfig.color}; padding: 10px 12px; color: white; margin: 0;">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 16px; line-height: 1; flex-shrink: 0;">
+                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; line-height: 1; flex-shrink: 0; color: white;">
                     ${icon}
                   </div>
                   <h3 style="font-weight: bold; margin: 0; font-size: 14px; color: white; flex: 1; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${layerConfig.name}</h3>
@@ -685,12 +724,13 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
             </div>
           `
         } else {
+          const iconNoData = getLayerIconSVG(layerId)
         popupContent = `
             <div style="width: 300px; padding: 0; margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
               <div style="background: ${layerConfig.color}; padding: 10px 12px; color: white; margin: 0;">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 16px; line-height: 1; flex-shrink: 0;">
-                    ${icon}
+                  <div style="background: rgba(255,255,255,0.25); padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; line-height: 1; flex-shrink: 0; color: white;">
+                    ${iconNoData}
                   </div>
                   <h3 style="font-weight: bold; margin: 0; font-size: 14px; color: white; flex: 1; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${layerConfig.name}</h3>
                 </div>

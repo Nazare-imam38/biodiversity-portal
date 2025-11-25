@@ -26,6 +26,10 @@ const regions = {
   'Punjab': {
     boundaryFile: 'punjab-provincial.geojson',
     suffix: 'punjab'
+  },
+  'Sindh': {
+    boundaryFile: 'sindh-provincial.geojson',
+    suffix: 'sindh'
   }
 };
 

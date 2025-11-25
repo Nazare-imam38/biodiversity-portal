@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaLeaf, FaBars, FaSearch, FaBell, FaUserCircle, FaTimes } from 'react-icons/fa'
 
 export default function Header() {
   const location = useLocation()
+  const navigate = useNavigate()
   const [currentDate, setCurrentDate] = useState('')
   const [currentTime, setCurrentTime] = useState('')
   const [undpLogoError, setUndpLogoError] = useState(false)
@@ -88,7 +89,6 @@ export default function Header() {
               href="#" 
               onClick={(e) => {
                 e.preventDefault()
-                setActivePage('Data Visualization')
               }}
               className={`px-2 lg:px-4 py-2 rounded-lg transition-all duration-300 text-sm lg:text-base ${
                 activePage === 'Data Visualization'
@@ -103,7 +103,6 @@ export default function Header() {
               href="#" 
               onClick={(e) => {
                 e.preventDefault()
-                setActivePage('Data Management')
               }}
               className={`px-2 lg:px-4 py-2 rounded-lg transition-all duration-300 text-sm lg:text-base ${
                 activePage === 'Data Management'
@@ -118,7 +117,6 @@ export default function Header() {
               href="#" 
               onClick={(e) => {
                 e.preventDefault()
-                setActivePage('Tools')
               }}
               className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                 activePage === 'Tools'
@@ -132,7 +130,6 @@ export default function Header() {
               href="#" 
               onClick={(e) => {
                 e.preventDefault()
-                setActivePage('Contact')
               }}
               className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                 activePage === 'Contact'
@@ -198,7 +195,11 @@ export default function Header() {
             <FaBell className="text-base sm:text-lg" />
             <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full"></span>
           </button>
-          <button className="p-1.5 sm:p-2 text-gray-600 hover:text-green-600 transition-colors">
+          <button 
+            onClick={() => navigate('/login')}
+            className="p-1.5 sm:p-2 text-gray-600 hover:text-green-600 transition-colors"
+            aria-label="Login"
+          >
             <FaUserCircle className="text-xl sm:text-2xl" />
           </button>
         </div>
@@ -255,7 +256,6 @@ export default function Header() {
             href="#" 
             onClick={(e) => {
               e.preventDefault()
-              setActivePage('Data Visualization')
               setMobileMenuOpen(false)
             }}
             className={`px-4 py-3 rounded-lg transition-all ${
@@ -270,7 +270,6 @@ export default function Header() {
             href="#" 
             onClick={(e) => {
               e.preventDefault()
-              setActivePage('Data Management')
               setMobileMenuOpen(false)
             }}
             className={`px-4 py-3 rounded-lg transition-all ${
@@ -285,7 +284,6 @@ export default function Header() {
             href="#" 
             onClick={(e) => {
               e.preventDefault()
-              setActivePage('Tools')
               setMobileMenuOpen(false)
             }}
             className={`px-4 py-3 rounded-lg transition-all ${
@@ -300,7 +298,6 @@ export default function Header() {
             href="#" 
             onClick={(e) => {
               e.preventDefault()
-              setActivePage('Contact')
               setMobileMenuOpen(false)
             }}
             className={`px-4 py-3 rounded-lg transition-all ${

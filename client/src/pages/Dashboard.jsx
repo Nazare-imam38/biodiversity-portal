@@ -51,61 +51,58 @@ function Dashboard() {
     fetchLayers()
   }, [])
 
-  // Automatically toggle region boundary layer based on region selection
+  // Store active layers per region to maintain independent state
+  const [regionActiveLayers, setRegionActiveLayers] = useState({})
+  
+  // Automatically toggle region boundary layer and clear all layers except defaults when region changes
   useEffect(() => {
     if (layers.length === 0) return // Wait for layers to load
     
+    // Save current active layers for the previous region before switching
+    // This will be handled by the region change effect
+    
+    // When region changes, restore that region's saved layers or start fresh with defaults
     setActiveLayers(prev => {
-      const newSet = new Set(prev)
+      // Get saved layers for the new region, or start with defaults
+      const savedLayers = regionActiveLayers[selectedRegion] || new Set()
       
+      // Always include pakistan-provinces as default
+      const defaultLayers = new Set(['pakistan-provinces'])
+      
+      // Define region-specific boundary layers that should be auto-activated
       if (selectedRegion === 'Gilgit Baltistan') {
-        // Add gb-district layer when Gilgit Baltistan is selected
-        if (!newSet.has('gb-district')) {
-          console.log('Auto-activating gb-district layer for Gilgit Baltistan')
-          newSet.add('gb-district')
-        }
-        // Remove Punjab boundary if it was active
-        if (newSet.has('punjab-provincial')) {
-          newSet.delete('punjab-provincial')
-        }
-        // Keep pakistan-provinces active for overlay
-        if (!newSet.has('pakistan-provinces')) {
-          newSet.add('pakistan-provinces')
-        }
+        defaultLayers.add('gb-district')
       } else if (selectedRegion === 'Punjab') {
-        // Add punjab-provincial layer when Punjab is selected
-        if (!newSet.has('punjab-provincial')) {
-          console.log('Auto-activating punjab-provincial layer for Punjab')
-          newSet.add('punjab-provincial')
-        }
-        // Remove GB boundary layers if they were active
-        if (newSet.has('gb-district')) {
-          newSet.delete('gb-district')
-        }
-        if (newSet.has('gb-provincial')) {
-          newSet.delete('gb-provincial')
-        }
-        // Keep pakistan-provinces active for overlay
-        if (!newSet.has('pakistan-provinces')) {
-          newSet.add('pakistan-provinces')
-        }
-      } else {
-        // Remove all region-specific boundary layers when other regions are selected
-        if (newSet.has('gb-district')) {
-          console.log('Auto-deactivating gb-district layer')
-          newSet.delete('gb-district')
-        }
-        if (newSet.has('gb-provincial')) {
-          newSet.delete('gb-provincial')
-        }
-        if (newSet.has('punjab-provincial')) {
-          newSet.delete('punjab-provincial')
-        }
+        defaultLayers.add('punjab-provincial')
       }
       
+      // Merge saved layers with defaults, but prioritize defaults for boundary layers
+      const newSet = new Set(defaultLayers)
+      
+      // Add back saved layers that are not region-specific boundaries
+      savedLayers.forEach(layerId => {
+        // Don't restore region-specific boundary layers (they're handled above)
+        if (layerId !== 'gb-district' && layerId !== 'gb-provincial' && 
+            layerId !== 'punjab-provincial' && layerId !== 'pakistan-provinces') {
+          newSet.add(layerId)
+        }
+      })
+      
+      console.log(`Restored layers for ${selectedRegion}:`, Array.from(newSet))
       return newSet
     })
   }, [selectedRegion, layers])
+  
+  // Save active layers for current region whenever they change
+  useEffect(() => {
+    if (selectedRegion && activeLayers.size > 0) {
+      setRegionActiveLayers(prev => ({
+        ...prev,
+        [selectedRegion]: new Set(activeLayers)
+      }))
+      console.log(`Saved layers for ${selectedRegion}:`, Array.from(activeLayers))
+    }
+  }, [activeLayers, selectedRegion])
 
   const fetchLayers = async () => {
     try {

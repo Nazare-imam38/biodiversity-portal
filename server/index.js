@@ -69,7 +69,7 @@ const layerConfig = {
   'protected-areas-pol': {
     name: 'Protected Areas (Polygons)',
     geojson: 'geojson/protected-areas-pol.geojson',
-    color: '#8b5cf6',
+    color: '#f97316',
     type: 'polygon',
     description: 'Protected Areas Polygons'
   },
@@ -149,6 +149,9 @@ let GB_BOUNDARY = null;
 
 // Punjab boundary polygon - will be loaded on startup
 let PUNJAB_BOUNDARY = null;
+
+// Sindh boundary polygon - will be loaded on startup
+let SINDH_BOUNDARY = null;
 
 // Cache for processed GeoJSON layers to avoid reprocessing
 // Cache key format: "layerId:region" (e.g., "kbas:national" or "kbas:gilgit-baltistan")
@@ -250,6 +253,100 @@ async function loadPunjabBoundary() {
     }
   } catch (error) {
     console.error('Error loading Punjab boundary:', error);
+  }
+}
+
+// Load Sindh boundary from GeoJSON file
+async function loadSindhBoundary() {
+  try {
+    const geojsonPath = join(__dirname, '..', 'geojson', 'sindh-provincial.geojson');
+    console.log('Loading Sindh boundary from GeoJSON...');
+
+    if (!existsSync(geojsonPath)) {
+      console.warn('Sindh provincial GeoJSON not found, Sindh clipping will be unavailable');
+      return;
+    }
+
+    const geojsonData = readFileSync(geojsonPath, 'utf8');
+    const geoJSON = JSON.parse(geojsonData);
+
+    if (!geoJSON || !geoJSON.features || geoJSON.features.length === 0) {
+      console.warn('No features found in Sindh GeoJSON');
+      return;
+    }
+
+    const features = geoJSON.features;
+
+    if (features.length === 1 && features[0].geometry) {
+      if (features[0].geometry.type === 'MultiPolygon') {
+        SINDH_BOUNDARY = turf.multiPolygon(features[0].geometry.coordinates);
+        const bbox = turf.bbox(SINDH_BOUNDARY);
+        console.log('Sindh boundary loaded successfully (using MultiPolygon directly)');
+        console.log('Sindh bounds:', {
+          minLat: bbox[1],
+          maxLat: bbox[3],
+          minLng: bbox[0],
+          maxLng: bbox[2]
+        });
+        return;
+      } else if (features[0].geometry.type === 'Polygon') {
+        SINDH_BOUNDARY = turf.polygon(features[0].geometry.coordinates);
+        const bbox = turf.bbox(SINDH_BOUNDARY);
+        console.log('Sindh boundary loaded successfully (using Polygon directly)');
+        console.log('Sindh bounds:', {
+          minLat: bbox[1],
+          maxLat: bbox[3],
+          minLng: bbox[0],
+          maxLng: bbox[2]
+        });
+        return;
+      }
+    }
+
+    let sindhUnion = null;
+    for (const feature of features) {
+      if (feature.geometry && feature.geometry.type === 'Polygon') {
+        const polygon = turf.polygon(feature.geometry.coordinates);
+        if (!sindhUnion) {
+          sindhUnion = polygon;
+        } else {
+          try {
+            sindhUnion = turf.union(sindhUnion, polygon);
+          } catch (e) {
+            console.warn('Error unioning Sindh polygon:', e.message);
+          }
+        }
+      } else if (feature.geometry && feature.geometry.type === 'MultiPolygon') {
+        for (const coords of feature.geometry.coordinates) {
+          const polygon = turf.polygon(coords);
+          if (!sindhUnion) {
+            sindhUnion = polygon;
+          } else {
+            try {
+              sindhUnion = turf.union(sindhUnion, polygon);
+            } catch (e) {
+              console.warn('Error unioning Sindh MultiPolygon:', e.message);
+            }
+          }
+        }
+      }
+    }
+
+    if (sindhUnion) {
+      SINDH_BOUNDARY = sindhUnion;
+      const bbox = turf.bbox(sindhUnion);
+      console.log('Sindh boundary loaded successfully');
+      console.log('Sindh bounds:', {
+        minLat: bbox[1],
+        maxLat: bbox[3],
+        minLng: bbox[0],
+        maxLng: bbox[2]
+      });
+    } else {
+      console.warn('Failed to create Sindh boundary union');
+    }
+  } catch (error) {
+    console.error('Error loading Sindh boundary:', error);
   }
 }
 
@@ -905,6 +1002,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Skip clipping for region-specific layers and boundary layers
     const isGBLayer = layerId === 'gb-provincial' || layerId === 'gb-district';
     const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
+    const isSindhLayer = false; // No Sindh-specific layers yet, but reserved for future use
     const isPakistanLULCLayer = layerId === 'pakistan-lulc'; // Pakistan LULC layer (national level)
     const isBoundaryLayer = layerId === 'pakistan-provinces'; // Boundary layers should not be clipped
     
@@ -914,10 +1012,17 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Use GeoJSON file if available, otherwise convert from shapefile
     if (layer.geojson) {
       // For region-specific clipping, use pre-clipped files if available
-      if ((region === 'Gilgit Baltistan' || region === 'Punjab') && !isGBLayer && !isPunjabLayer && !isBoundaryLayer) {
+      if ((region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBoundaryLayer) {
         // Determine the suffix based on region
-        const regionSuffix = region === 'Gilgit Baltistan' ? 'gb' : 'punjab';
-        // Try to use pre-clipped region file (e.g., kbas-gb.geojson or kbas-punjab.geojson)
+        let regionSuffix = '';
+        if (region === 'Gilgit Baltistan') {
+          regionSuffix = 'gb';
+        } else if (region === 'Punjab') {
+          regionSuffix = 'punjab';
+        } else if (region === 'Sindh') {
+          regionSuffix = 'sindh';
+        }
+        // Try to use pre-clipped region file (e.g., kbas-gb.geojson or kbas-punjab.geojson or kbas-sindh.geojson)
         const regionPath = join(__dirname, '..', layer.geojson.replace('.geojson', `-${regionSuffix}.geojson`));
         if (existsSync(regionPath)) {
           geojsonPath = regionPath;
@@ -979,10 +1084,22 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Only clip on-the-fly if pre-clipped file doesn't exist and boundary is available
     // This is a fallback for layers that haven't been pre-clipped yet
     // Only applies to GeoJSON files (geojsonPath is defined)
-    if (layer.geojson && (region === 'Gilgit Baltistan' || region === 'Punjab') && !isGBLayer && !isPunjabLayer && !isBoundaryLayer) {
-      const regionSuffix = region === 'Gilgit Baltistan' ? 'gb' : 'punjab';
+    if (layer.geojson && (region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBoundaryLayer) {
+      let regionSuffix = '';
+      let regionBoundary = null;
+      
+      if (region === 'Gilgit Baltistan') {
+        regionSuffix = 'gb';
+        regionBoundary = GB_BOUNDARY;
+      } else if (region === 'Punjab') {
+        regionSuffix = 'punjab';
+        regionBoundary = PUNJAB_BOUNDARY;
+      } else if (region === 'Sindh') {
+        regionSuffix = 'sindh';
+        regionBoundary = SINDH_BOUNDARY;
+      }
+      
       const isPreClippedFile = geojsonPath && (geojsonPath.includes(`-${regionSuffix}.geojson`));
-      const regionBoundary = region === 'Gilgit Baltistan' ? GB_BOUNDARY : PUNJAB_BOUNDARY;
       
       if (!isPreClippedFile && regionBoundary) {
         console.log(`Clipping layer ${layerId} to ${region} boundary (on-the-fly)...`);
@@ -1104,6 +1221,15 @@ Promise.race([
   ]).catch((error) => {
     console.warn('Error loading Punjab boundary:', error.message);
     return null; // Continue even if Punjab boundary fails
+  }),
+  Promise.race([
+    loadSindhBoundary(),
+    new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Sindh boundary loading timeout')), BOUNDARY_LOAD_TIMEOUT)
+    )
+  ]).catch((error) => {
+    console.warn('Error loading Sindh boundary:', error.message);
+    return null; // Continue even if Sindh boundary fails
   })
 ]).then(() => {
   startServer();

@@ -560,12 +560,12 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
 
   return (
     <div className="w-full bg-white border-t-4 border-green-500 shadow-2xl relative">
-      <div className="px-6 py-4 border-b-2 border-green-600" style={{ backgroundColor: '#22c55e', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' }}>
+      <div className="px-6 py-4 border-b-2 border-green-600" style={{ backgroundColor: '#159f48', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' }}>
         <div className="flex items-center space-x-3">
           <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
             <FaTable className="text-white text-xl" />
           </div>
-          <h2 className="text-xl font-bold text-white drop-shadow-md" style={{ fontFamily: 'inherit' }}>Layer Data Dashboard</h2>
+          <h2 className="text-sm sm:text-base font-semibold text-white drop-shadow-md" style={{ fontFamily: 'inherit' }}>Layer Data Dashboard</h2>
           <div className="p-1.5 bg-white/20 rounded-full backdrop-blur-sm">
             <FaInfoCircle className="text-white text-sm" title="Data from active layers" />
           </div>
