@@ -108,6 +108,27 @@ const layerConfig = {
     type: 'polygon',
     description: 'Punjab Provincial Boundaries'
   },
+  'balochistan-provincial': {
+    name: 'Balochistan Provincial',
+    geojson: 'geojson/balochistan-provincial.geojson',
+    color: '#8b5cf6',
+    type: 'polygon',
+    description: 'Balochistan Provincial Boundaries'
+  },
+  'sindh-provincial': {
+    name: 'Sindh Provincial',
+    geojson: 'geojson/sindh-provincial.geojson',
+    color: '#8b5cf6',
+    type: 'polygon',
+    description: 'Sindh Provincial Boundaries'
+  },
+  'kp-provincial': {
+    name: 'Khyber Pakhtunkhwa Provincial',
+    geojson: 'geojson/kp-provincial.geojson',
+    color: '#8b5cf6',
+    type: 'polygon',
+    description: 'Khyber Pakhtunkhwa Provincial Boundaries'
+  },
   'wildlife-occurrence': {
     name: 'Wildlife Occurrence',
     geojson: 'geojson/wildlife-occurrence.geojson',
@@ -1302,9 +1323,9 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Skip clipping for region-specific layers and boundary layers
     const isGBLayer = layerId === 'gb-provincial' || layerId === 'gb-district';
     const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
-    const isSindhLayer = false; // No Sindh-specific layers yet, but reserved for future use
-    const isBalochistanLayer = false; // No Balochistan-specific layers yet, but reserved for future use
-    const isKPLayer = false; // No KP-specific layers yet, but reserved for future use
+    const isSindhLayer = layerId === 'sindh-provincial'; // Sindh-specific layers
+    const isBalochistanLayer = layerId === 'balochistan-provincial'; // Balochistan-specific layers
+    const isKPLayer = layerId === 'kp-provincial'; // KP-specific layers
     const isPakistanLULCLayer = layerId === 'pakistan-lulc'; // Pakistan LULC layer (national level)
     const isBoundaryLayer = layerId === 'pakistan-provinces'; // Boundary layers should not be clipped
     

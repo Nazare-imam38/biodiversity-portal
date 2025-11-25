@@ -74,6 +74,12 @@ function Dashboard() {
         defaultLayers.add('gb-district')
       } else if (selectedRegion === 'Punjab') {
         defaultLayers.add('punjab-provincial')
+      } else if (selectedRegion === 'Balochistan') {
+        defaultLayers.add('balochistan-provincial')
+      } else if (selectedRegion === 'Sindh') {
+        defaultLayers.add('sindh-provincial')
+      } else if (selectedRegion === 'Khyber Pakhtunkhwa') {
+        defaultLayers.add('kp-provincial')
       }
       
       // Merge saved layers with defaults, but prioritize defaults for boundary layers
@@ -83,7 +89,9 @@ function Dashboard() {
       savedLayers.forEach(layerId => {
         // Don't restore region-specific boundary layers (they're handled above)
         if (layerId !== 'gb-district' && layerId !== 'gb-provincial' && 
-            layerId !== 'punjab-provincial' && layerId !== 'pakistan-provinces') {
+            layerId !== 'punjab-provincial' && layerId !== 'balochistan-provincial' && 
+            layerId !== 'sindh-provincial' && layerId !== 'kp-provincial' && 
+            layerId !== 'pakistan-provinces') {
           newSet.add(layerId)
         }
       })
