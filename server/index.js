@@ -121,7 +121,7 @@ const layerConfig = {
     color: '#22c55e',
     type: 'raster',
     description: 'Punjab Land Use Land Cover Map',
-    
+    opacity: 0.9
   },
   'pakistan-lulc': {
     name: 'Pakistan Land Use Land Cover',
@@ -129,7 +129,7 @@ const layerConfig = {
     color: '#10b981',
     type: 'raster',
     description: 'Pakistan Land Use Land Cover Map',
-    
+    opacity: 0.9
   }
 };
 

@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { useMap } from "react-leaflet"
 import L from "leaflet"
 
-export default function MBTilesOverlay({ layerId, tileUrl, opacity = 0.7, isActive }) {
+export default function MBTilesOverlay({ layerId, tileUrl, opacity = 0.9, isActive }) {
   const map = useMap()
   const tileLayerRef = useRef(null)
 

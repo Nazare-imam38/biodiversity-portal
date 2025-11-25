@@ -812,7 +812,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
                   key={layerId}
                   layerId={layerId}
                   tileUrl={tileUrl}
-                  opacity={layer.opacity || 0.7}
+                  opacity={layer.opacity || 0.9}
                   isActive={true}
                 />
               )
