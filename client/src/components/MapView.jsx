@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents } from 'react-le
 import L from 'leaflet'
 import Legend from './Legend'
 import { FaMap, FaSatellite } from 'react-icons/fa'
+import MBTilesOverlay from './MBTilesOverlay'
 
 // Fix for default marker icons in React-Leaflet
 delete L.Icon.Default.prototype._getIconUrl
@@ -797,8 +798,25 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
           
           // Handle raster tile layers
           if (layer.type === 'raster' && layer.tiles) {
-            const apiUrl = import.meta.env.VITE_API_URL || ''
-            const tileUrl = apiUrl ? `${apiUrl}${layer.tiles}` : layer.tiles
+            // Check if it's an external URL (starts with http:// or https://)
+            const isExternalUrl = layer.tiles.startsWith('http://') || layer.tiles.startsWith('https://')
+            const tileUrl = isExternalUrl 
+              ? layer.tiles 
+              : (import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}${layer.tiles}` : layer.tiles)
+            
+            // Use MBTilesOverlay for LULC layers (external MBTiles), regular TileLayer for local tiles
+            if (isExternalUrl && (layerId === 'punjab-lulc' || layerId === 'pakistan-lulc')) {
+              console.log(`Rendering MBTiles overlay for ${layerId}:`, tileUrl)
+              return (
+                <MBTilesOverlay
+                  key={layerId}
+                  layerId={layerId}
+                  tileUrl={tileUrl}
+                  opacity={layer.opacity || 0.7}
+                  isActive={true}
+                />
+              )
+            }
             
             return (
               <TileLayer

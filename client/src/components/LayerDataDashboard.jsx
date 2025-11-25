@@ -472,7 +472,8 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
       'gb-provincial',
       'gb-district',
       'punjab-provincial',
-      'punjab-lulc' // Raster layer
+      'punjab-lulc', // Raster layer
+      'pakistan-lulc' // Raster layer
     ]
     
     return Array.from(activeLayers)

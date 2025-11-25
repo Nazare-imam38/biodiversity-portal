@@ -117,11 +117,19 @@ const layerConfig = {
   },
   'punjab-lulc': {
     name: 'Punjab Land Use Land Cover',
-    tiles: '/tiles/punjab-lulc/{z}/{x}/{y}.png',
+    tiles: 'https://tiles.dhamarketplace.com/data/Punjab-LULC/{z}/{x}/{y}.png',
     color: '#22c55e',
     type: 'raster',
     description: 'Punjab Land Use Land Cover Map',
-    opacity: 0.7
+    
+  },
+  'pakistan-lulc': {
+    name: 'Pakistan Land Use Land Cover',
+    tiles: 'https://tiles.dhamarketplace.com/data/Pakistan-LULC/{z}/{x}/{y}.png',
+    color: '#10b981',
+    type: 'raster',
+    description: 'Pakistan Land Use Land Cover Map',
+    
   }
 };
 
@@ -828,10 +836,17 @@ app.get('/api/layers', (req, res) => {
       try {
         const layer = layerConfig[key];
         const { style, ...layerWithoutStyle } = layer;
-    return {
+    const layerData = {
       id: key,
       ...layerWithoutStyle
     };
+    
+    // Log LULC layers for debugging
+    if (key === 'punjab-lulc' || key === 'pakistan-lulc') {
+      console.log(`Serving ${key} with tiles URL:`, layerData.tiles);
+    }
+    
+    return layerData;
       } catch (layerError) {
         console.error(`Error processing layer ${key}:`, layerError);
         // Return a minimal layer object even if there's an error
@@ -873,11 +888,24 @@ app.get('/api/layers/:layerId', async (req, res) => {
   console.log(`Requesting layer: ${layerId} (${layer.name}) for region: ${region}`);
   
   try {
+    // Handle raster layers (they don't have GeoJSON data)
+    if (layer.type === 'raster') {
+      console.log(`Layer ${layerId} is a raster layer, returning empty GeoJSON`);
+      const emptyGeoJSON = {
+        type: 'FeatureCollection',
+        features: []
+      };
+      // Cache the result
+      layerCache.set(cacheKey, emptyGeoJSON);
+      return res.json(emptyGeoJSON);
+    }
+    
     let geoJSON;
     
     // Skip clipping for region-specific layers and boundary layers
     const isGBLayer = layerId === 'gb-provincial' || layerId === 'gb-district';
     const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
+    const isPakistanLULCLayer = layerId === 'pakistan-lulc'; // Pakistan LULC layer (national level)
     const isBoundaryLayer = layerId === 'pakistan-provinces'; // Boundary layers should not be clipped
     
     // Declare geojsonPath at function scope

@@ -121,6 +121,12 @@ function Dashboard() {
       console.log('Fetched layers:', data.length, 'layers found')
       console.log('Layer IDs:', data.map(l => l.id))
       
+      // Check for LULC layers
+      const punjabLULC = data.find(l => l.id === 'punjab-lulc')
+      const pakistanLULC = data.find(l => l.id === 'pakistan-lulc')
+      console.log('Punjab LULC layer:', punjabLULC ? 'Found' : 'NOT FOUND', punjabLULC)
+      console.log('Pakistan LULC layer:', pakistanLULC ? 'Found' : 'NOT FOUND', pakistanLULC)
+      
       if (!data || data.length === 0) {
         throw new Error('No layers returned from server')
       }
@@ -153,10 +159,13 @@ function Dashboard() {
     setActiveLayers(prev => {
       const newSet = new Set(prev)
       if (newSet.has(layerId)) {
+        console.log(`Deactivating layer: ${layerId}`)
         newSet.delete(layerId)
       } else {
+        console.log(`Activating layer: ${layerId}`)
         newSet.add(layerId)
       }
+      console.log(`Active layers after toggle:`, Array.from(newSet))
       return newSet
     })
   }
