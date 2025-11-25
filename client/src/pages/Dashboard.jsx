@@ -35,8 +35,8 @@ function Dashboard() {
   })
   const [selectedRegion, setSelectedRegion] = useState('Gilgit Baltistan') // Default to Gilgit Baltistan to show stats
   
-  // Define all regions - only Gilgit Baltistan shows stats
-  const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'AJK', 'Balochistan', 'Sindh', 'Khyber Pakhtunkhwa']
+  // Define all regions
+  const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'Azad Kashmir', 'Balochistan', 'Sindh', 'Khyber Pakhtunkhwa']
 
   useEffect(() => {
     const checkMobile = () => {
@@ -279,8 +279,8 @@ function Dashboard() {
         </div>
       </div>
       
-      {/* Layer Data Dashboard - Show below map for Gilgit Baltistan and Punjab */}
-      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab') && (
+      {/* Layer Data Dashboard - Show below map for all provinces */}
+      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan' || selectedRegion === 'Khyber Pakhtunkhwa' || selectedRegion === 'Azad Kashmir') && (
         <div className="mt-4 sm:mt-6">
           <LayerDataDashboard 
             layerData={layerData}

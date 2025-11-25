@@ -159,6 +159,9 @@ let BALOCHISTAN_BOUNDARY = null;
 // Khyber Pakhtunkhwa boundary polygon - will be loaded on startup
 let KP_BOUNDARY = null;
 
+// Azad Kashmir boundary polygon - will be loaded on startup
+let AJK_BOUNDARY = null;
+
 // Cache for processed GeoJSON layers to avoid reprocessing
 // Cache key format: "layerId:region" (e.g., "kbas:national" or "kbas:gilgit-baltistan")
 const layerCache = new Map();
@@ -547,6 +550,103 @@ async function loadKPBoundary() {
     }
   } catch (error) {
     console.error('Error loading KP boundary:', error);
+  }
+}
+
+// Load Azad Kashmir boundary from GeoJSON file
+async function loadAJKBoundary() {
+  try {
+    // Use provincial boundary for clipping
+    const geojsonPath = join(__dirname, '..', 'geojson', 'ajk-provincial.geojson');
+    console.log('Loading Azad Kashmir boundary from GeoJSON...');
+    
+    if (!existsSync(geojsonPath)) {
+      console.warn('AJK provincial GeoJSON not found, AJK clipping will be unavailable');
+      return;
+    }
+    
+    const geojsonData = readFileSync(geojsonPath, 'utf8');
+    const geoJSON = JSON.parse(geojsonData);
+    
+    if (!geoJSON || !geoJSON.features || geoJSON.features.length === 0) {
+      console.warn('No features found in AJK GeoJSON');
+      return;
+    }
+    
+    const features = geoJSON.features;
+    
+    // Create AJK boundary - handle single MultiPolygon feature directly
+    if (features.length === 1 && features[0].geometry) {
+      if (features[0].geometry.type === 'MultiPolygon') {
+        AJK_BOUNDARY = turf.multiPolygon(features[0].geometry.coordinates);
+        const bbox = turf.bbox(AJK_BOUNDARY);
+        console.log('AJK boundary loaded successfully (using MultiPolygon directly)');
+        console.log('AJK bounds:', {
+          minLat: bbox[1],
+          maxLat: bbox[3],
+          minLng: bbox[0],
+          maxLng: bbox[2]
+        });
+        return;
+      } else if (features[0].geometry.type === 'Polygon') {
+        AJK_BOUNDARY = turf.polygon(features[0].geometry.coordinates);
+        const bbox = turf.bbox(AJK_BOUNDARY);
+        console.log('AJK boundary loaded successfully (using Polygon directly)');
+        console.log('AJK bounds:', {
+          minLat: bbox[1],
+          maxLat: bbox[3],
+          minLng: bbox[0],
+          maxLng: bbox[2]
+        });
+        return;
+      }
+    }
+    
+    // For multiple features, create a union
+    let ajkUnion = null;
+    for (const feature of features) {
+      if (feature.geometry && feature.geometry.type === 'Polygon') {
+        const polygon = turf.polygon(feature.geometry.coordinates);
+        if (!ajkUnion) {
+          ajkUnion = polygon;
+        } else {
+          try {
+            ajkUnion = turf.union(ajkUnion, polygon);
+          } catch (e) {
+            console.warn('Error unioning AJK polygon:', e.message);
+          }
+        }
+      } else if (feature.geometry && feature.geometry.type === 'MultiPolygon') {
+        for (const coords of feature.geometry.coordinates) {
+          const polygon = turf.polygon(coords);
+          if (!ajkUnion) {
+            ajkUnion = polygon;
+          } else {
+            try {
+              ajkUnion = turf.union(ajkUnion, polygon);
+            } catch (e) {
+              console.warn('Error unioning AJK MultiPolygon:', e.message);
+            }
+          }
+        }
+      }
+    }
+    
+    if (ajkUnion) {
+      AJK_BOUNDARY = ajkUnion;
+      const bbox = turf.bbox(ajkUnion);
+      console.log('AJK boundary loaded successfully');
+      console.log('AJK bounds:', {
+        minLat: bbox[1],
+        maxLat: bbox[3],
+        minLng: bbox[0],
+        maxLng: bbox[2]
+      });
+    } else {
+      console.warn('Failed to create AJK boundary union');
+    }
+  } catch (error) {
+    console.error('Error loading AJK boundary:', error);
   }
 }
 
@@ -1214,7 +1314,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Use GeoJSON file if available, otherwise convert from shapefile
     if (layer.geojson) {
       // For region-specific clipping, use pre-clipped files if available
-      if ((region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isBoundaryLayer) {
+      if ((region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa' || region === 'Azad Kashmir') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isBoundaryLayer) {
         // Determine the suffix based on region
         let regionSuffix = '';
         if (region === 'Gilgit Baltistan') {
@@ -1227,6 +1327,8 @@ app.get('/api/layers/:layerId', async (req, res) => {
           regionSuffix = 'balochistan';
         } else if (region === 'Khyber Pakhtunkhwa') {
           regionSuffix = 'kp';
+        } else if (region === 'Azad Kashmir') {
+          regionSuffix = 'ajk';
         }
         // Try to use pre-clipped region file (e.g., kbas-gb.geojson or kbas-punjab.geojson or kbas-sindh.geojson or kbas-balochistan.geojson or kbas-kp.geojson)
         const regionPath = join(__dirname, '..', layer.geojson.replace('.geojson', `-${regionSuffix}.geojson`));
@@ -1290,7 +1392,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Only clip on-the-fly if pre-clipped file doesn't exist and boundary is available
     // This is a fallback for layers that haven't been pre-clipped yet
     // Only applies to GeoJSON files (geojsonPath is defined)
-    if (layer.geojson && (region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isBoundaryLayer) {
+    if (layer.geojson && (region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa' || region === 'Azad Kashmir') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isBoundaryLayer) {
       let regionSuffix = '';
       let regionBoundary = null;
       
@@ -1309,6 +1411,9 @@ app.get('/api/layers/:layerId', async (req, res) => {
       } else if (region === 'Khyber Pakhtunkhwa') {
         regionSuffix = 'kp';
         regionBoundary = KP_BOUNDARY;
+      } else if (region === 'Azad Kashmir') {
+        regionSuffix = 'ajk';
+        regionBoundary = AJK_BOUNDARY;
       }
       
       const isPreClippedFile = geojsonPath && (geojsonPath.includes(`-${regionSuffix}.geojson`));
@@ -1460,6 +1565,15 @@ Promise.race([
   ]).catch((error) => {
     console.warn('Error loading KP boundary:', error.message);
     return null; // Continue even if KP boundary fails
+  }),
+  Promise.race([
+    loadAJKBoundary(),
+    new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('AJK boundary loading timeout')), BOUNDARY_LOAD_TIMEOUT)
+    )
+  ]).catch((error) => {
+    console.warn('Error loading AJK boundary:', error.message);
+    return null; // Continue even if AJK boundary fails
   })
 ]).then(() => {
   startServer();

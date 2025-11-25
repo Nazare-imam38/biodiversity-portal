@@ -490,7 +490,15 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
   // This useEffect must be called before any conditional returns (Rules of Hooks)
   useEffect(() => {
     // Early return inside useEffect is fine - it's not a component return
-    if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab') {
+    // Allow all provinces to show the dashboard
+    const isProvince = selectedRegion === 'Gilgit Baltistan' || 
+                      selectedRegion === 'Punjab' || 
+                      selectedRegion === 'Sindh' || 
+                      selectedRegion === 'Balochistan' || 
+                      selectedRegion === 'Khyber Pakhtunkhwa' || 
+                      selectedRegion === 'Azad Kashmir'
+    
+    if (!isProvince) {
       return
     }
     

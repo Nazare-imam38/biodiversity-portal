@@ -38,6 +38,10 @@ const regions = {
   'Khyber Pakhtunkhwa': {
     boundaryFile: 'kp-provincial.geojson',
     suffix: 'kp'
+  },
+  'Azad Kashmir': {
+    boundaryFile: 'ajk-provincial.geojson',
+    suffix: 'ajk'
   }
 };
 
@@ -354,11 +358,29 @@ async function clipLayersForRegion(regionName) {
 // Main function - clip for all regions or specific region
 async function clipAllLayers() {
   const args = process.argv.slice(2);
-  const regionArg = args.find(arg => arg.startsWith('--region='));
+  const regionArgIndex = args.findIndex(arg => arg.startsWith('--region='));
   
-  if (regionArg) {
+  if (regionArgIndex !== -1) {
     // Clip for specific region
-    const regionName = regionArg.split('=')[1];
+    let regionName = args[regionArgIndex].split('=')[1];
+    
+    // If the region name has spaces, it might be split across multiple arguments
+    // Join all subsequent arguments until we hit another flag or run out
+    if (regionArgIndex + 1 < args.length && !args[regionArgIndex + 1].startsWith('--')) {
+      // Collect all non-flag arguments after --region=
+      const regionParts = [regionName];
+      for (let i = regionArgIndex + 1; i < args.length; i++) {
+        if (args[i].startsWith('--')) {
+          break;
+        }
+        regionParts.push(args[i]);
+      }
+      regionName = regionParts.join(' ');
+    }
+    
+    // Remove quotes if present
+    regionName = regionName.replace(/^["']|["']$/g, '');
+    
     await clipLayersForRegion(regionName);
   } else {
     // Clip for all regions
