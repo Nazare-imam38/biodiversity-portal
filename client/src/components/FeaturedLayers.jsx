@@ -20,11 +20,13 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
   // For Sindh, use Sindh-specific layers instead of national ones
   let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
   if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Azad Kashmir') {
-    featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB and Azad Kashmir
+    featuredLayerIds = ['kbas'] // Remove protected-areas, protected-forest and ramsar-sites for GB and Azad Kashmir
+  } else if (selectedRegion === 'Punjab') {
+    featuredLayerIds = ['protected-forest', 'ramsar-sites', 'kbas'] // Remove protected-areas for Punjab
   } else if (selectedRegion === 'Balochistan') {
     featuredLayerIds = ['protected-areas', 'ramsar-sites', 'kbas'] // Remove protected-forest for Balochistan
   } else if (selectedRegion === 'Sindh') {
-    featuredLayerIds = ['protected-areas-sindh', 'ramsar-sites-sindh', 'kbas'] // Use Sindh-specific layers
+    featuredLayerIds = ['ramsar-sites-sindh', 'kbas'] // Remove protected-areas-sindh from Quick Access
   }
   const featuredLayers = layers.filter(layer => featuredLayerIds.includes(layer.id))
   

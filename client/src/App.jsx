@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
@@ -5,8 +6,28 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import CodeEntry from './components/CodeEntry'
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+  // Check authentication on mount
+  useEffect(() => {
+    const authenticated = localStorage.getItem('biodiversity_portal_authenticated')
+    if (authenticated === 'true') {
+      setIsAuthenticated(true)
+    }
+  }, [])
+
+  const handleCodeCorrect = () => {
+    setIsAuthenticated(true)
+  }
+
+  // Show code entry screen if not authenticated
+  if (!isAuthenticated) {
+    return <CodeEntry onCodeCorrect={handleCodeCorrect} />
+  }
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
