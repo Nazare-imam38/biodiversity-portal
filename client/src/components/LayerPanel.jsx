@@ -153,21 +153,67 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
               layers
                 .filter(layer => {
                   // Hide protected-forest and ramsar-sites for GB region (they have 0 features)
-                  // Hide Punjab-specific layers for GB region
+                  // Hide Punjab-specific layers and other region-specific layers for GB region
                   if (selectedRegion === 'Gilgit Baltistan') {
-                    return layer.id !== 'protected-forest' && layer.id !== 'ramsar-sites' && layer.id !== 'punjab-provincial' && layer.id !== 'sindh-provincial' && layer.id !== 'kp-provincial' && layer.id !== 'balochistan-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc' && layer.id !== 'pakistan-lulc'
+                    return layer.id !== 'protected-forest' && 
+                           layer.id !== 'ramsar-sites' && 
+                           layer.id !== 'punjab-provincial' && 
+                           layer.id !== 'sindh-provincial' && 
+                           layer.id !== 'kp-provincial' && 
+                           layer.id !== 'balochistan-provincial' &&
+                           layer.id !== 'ajk-provincial' &&
+                           layer.id !== 'protected-areas-sindh' &&
+                           layer.id !== 'ramsar-sites-sindh' &&
+                           layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'wildlife-occurrence' && 
+                           layer.id !== 'punjab-lulc' && 
+                           layer.id !== 'pakistan-lulc'
                   }
                   // Hide GB boundary layers and Pakistan LULC for Punjab region (show Punjab LULC)
+                  // Hide other region-specific layers (Sindh, Azad Kashmir, etc.)
                   if (selectedRegion === 'Punjab') {
-                    return layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'sindh-provincial' && layer.id !== 'kp-provincial' && layer.id !== 'balochistan-provincial' && layer.id !== 'pakistan-lulc'
+                    return layer.id !== 'gb-provincial' && 
+                           layer.id !== 'gb-district' && 
+                           layer.id !== 'sindh-provincial' && 
+                           layer.id !== 'kp-provincial' && 
+                           layer.id !== 'balochistan-provincial' &&
+                           layer.id !== 'ajk-provincial' &&
+                           layer.id !== 'protected-areas-sindh' &&
+                           layer.id !== 'ramsar-sites-sindh' &&
+                           layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'pakistan-lulc'
                   }
                   // Hide protected-forest for Balochistan region (it has 0 features)
+                  // Hide region-specific layers from other provinces (Sindh, Azad Kashmir, etc.)
                   if (selectedRegion === 'Balochistan') {
-                    return layer.id !== 'protected-forest' && layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'sindh-provincial' && layer.id !== 'kp-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc'
+                    return layer.id !== 'protected-forest' && 
+                           layer.id !== 'gb-provincial' && 
+                           layer.id !== 'gb-district' && 
+                           layer.id !== 'punjab-provincial' && 
+                           layer.id !== 'sindh-provincial' && 
+                           layer.id !== 'kp-provincial' && 
+                           layer.id !== 'ajk-provincial' &&
+                           layer.id !== 'protected-areas-sindh' &&
+                           layer.id !== 'ramsar-sites-sindh' &&
+                           layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'wildlife-occurrence' && 
+                           layer.id !== 'punjab-lulc'
                   }
                   // Hide protected-forest for Khyber Pakhtunkhwa region (it has 0 features)
+                  // Hide region-specific layers from other provinces (Sindh, etc.)
                   if (selectedRegion === 'Khyber Pakhtunkhwa') {
-                    return layer.id !== 'protected-forest' && layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'sindh-provincial' && layer.id !== 'balochistan-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc'
+                    return layer.id !== 'protected-forest' && 
+                           layer.id !== 'gb-provincial' && 
+                           layer.id !== 'gb-district' && 
+                           layer.id !== 'punjab-provincial' && 
+                           layer.id !== 'sindh-provincial' && 
+                           layer.id !== 'balochistan-provincial' &&
+                           layer.id !== 'ajk-provincial' &&
+                           layer.id !== 'protected-areas-sindh' &&
+                           layer.id !== 'ramsar-sites-sindh' &&
+                           layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'wildlife-occurrence' && 
+                           layer.id !== 'punjab-lulc'
                   }
                   // Hide protected-forest for Sindh region (it has 0 features)
                   // Hide region-specific layers for Sindh region
@@ -181,14 +227,27 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'gb-district' && 
                            layer.id !== 'punjab-provincial' && 
                            layer.id !== 'kp-provincial' && 
-                           layer.id !== 'balochistan-provincial' && 
-                           layer.id !== 'wildlife-occurrence' && 
+                           layer.id !== 'balochistan-provincial' &&
+                           layer.id !== 'ajk-provincial' &&
+                           layer.id !== 'wildlife-occurrence' &&
                            layer.id !== 'punjab-lulc'
                   }
                   // Hide protected-forest and ramsar-sites for Azad Kashmir region (they have 0 features)
                   // Hide region-specific layers for Azad Kashmir region
                   if (selectedRegion === 'Azad Kashmir') {
-                    return layer.id !== 'protected-forest' && layer.id !== 'ramsar-sites' && layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'sindh-provincial' && layer.id !== 'kp-provincial' && layer.id !== 'balochistan-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc'
+                    return layer.id !== 'protected-forest' && 
+                           layer.id !== 'ramsar-sites' && 
+                           layer.id !== 'gb-provincial' && 
+                           layer.id !== 'gb-district' && 
+                           layer.id !== 'punjab-provincial' && 
+                           layer.id !== 'sindh-provincial' && 
+                           layer.id !== 'kp-provincial' && 
+                           layer.id !== 'balochistan-provincial' &&
+                           layer.id !== 'protected-areas-sindh' &&
+                           layer.id !== 'ramsar-sites-sindh' &&
+                           layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'wildlife-occurrence' && 
+                           layer.id !== 'punjab-lulc'
                   }
                   // For other regions (National), hide all region-specific layers and Punjab LULC (show Pakistan LULC)
                   if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab' && selectedRegion !== 'Balochistan' && selectedRegion !== 'Khyber Pakhtunkhwa' && selectedRegion !== 'Sindh' && selectedRegion !== 'Azad Kashmir') {
