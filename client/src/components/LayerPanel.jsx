@@ -160,7 +160,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'sindh-lulc'
                   }
                   // Hide GB boundary layers and Pakistan LULC for Punjab region (show Punjab LULC)
-                  // Hide protected-areas (WDPA) for Punjab region
+                  // Hide protected-areas (WDPA) and protected-areas-pol for Punjab region
                   // Hide other region-specific layers (Sindh, Azad Kashmir, etc.)
                   if (selectedRegion === 'Punjab') {
                     return layer.id !== 'gb-provincial' && 
@@ -170,6 +170,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'balochistan-provincial' &&
                            layer.id !== 'ajk-provincial' &&
                            layer.id !== 'protected-areas' &&
+                           layer.id !== 'protected-areas-pol' &&
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
