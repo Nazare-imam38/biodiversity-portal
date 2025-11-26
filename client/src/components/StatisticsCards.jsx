@@ -186,8 +186,8 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
       },
       { 
         label: '', 
-        value: '2.6%',
-        subtitle: 'Current protected coverage',
+        value: '1%',
+        subtitle: 'Current protected forest coverage',
         color: 'bg-yellow-500',
         icon: FaShieldAlt,
         iconColor: 'text-yellow-600'
@@ -219,7 +219,7 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
       },
       { 
         label: '', 
-        value: '113,036.1',
+        value: '113,036,1',
         subtitle: 'Hectare Forest Area 9.8%',
         color: 'bg-green-500',
         icon: FaTree,
