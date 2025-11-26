@@ -36,7 +36,7 @@ function Dashboard() {
   const [selectedRegion, setSelectedRegion] = useState('Gilgit Baltistan') // Default to Gilgit Baltistan to show stats
   
   // Define all regions
-  const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'Azad Kashmir', 'Balochistan', 'Sindh', 'Khyber Pakhtunkhwa']
+  const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Azad Kashmir', 'Balochistan', 'Khyber Pakhtunkhwa']
 
   useEffect(() => {
     const checkMobile = () => {
