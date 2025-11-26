@@ -80,6 +80,8 @@ function Dashboard() {
         defaultLayers.add('sindh-provincial')
       } else if (selectedRegion === 'Khyber Pakhtunkhwa') {
         defaultLayers.add('kp-provincial')
+      } else if (selectedRegion === 'Azad Kashmir') {
+        defaultLayers.add('ajk-provincial')
       }
       
       // Merge saved layers with defaults, but prioritize defaults for boundary layers
@@ -91,7 +93,7 @@ function Dashboard() {
         if (layerId !== 'gb-district' && layerId !== 'gb-provincial' && 
             layerId !== 'punjab-provincial' && layerId !== 'balochistan-provincial' && 
             layerId !== 'sindh-provincial' && layerId !== 'kp-provincial' && 
-            layerId !== 'pakistan-provinces') {
+            layerId !== 'ajk-provincial' && layerId !== 'pakistan-provinces') {
           newSet.add(layerId)
         }
       })
@@ -181,10 +183,13 @@ function Dashboard() {
 
   const clearFeaturedLayers = () => {
     // Only clear the featured layers based on region
-    // Exclude protected-forest and ramsar-sites for GB region (they have 0 features)
+    // Exclude protected-forest for GB, Azad Kashmir, Balochistan, and Sindh regions (they have 0 features)
+    // Exclude ramsar-sites for GB and Azad Kashmir regions (they have 0 features)
     let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
-    if (selectedRegion === 'Gilgit Baltistan') {
-      featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB
+    if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Azad Kashmir') {
+      featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB and Azad Kashmir
+    } else if (selectedRegion === 'Balochistan' || selectedRegion === 'Sindh') {
+      featuredLayerIds = ['protected-areas', 'ramsar-sites', 'kbas'] // Remove protected-forest for Balochistan and Sindh
     }
     setActiveLayers(prev => {
       const newSet = new Set(prev)

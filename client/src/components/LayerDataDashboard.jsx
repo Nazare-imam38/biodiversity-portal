@@ -475,6 +475,7 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
       'balochistan-provincial',
       'sindh-provincial',
       'kp-provincial',
+      'ajk-provincial',
       'punjab-lulc', // Raster layer
       'pakistan-lulc' // Raster layer
     ]

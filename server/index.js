@@ -129,6 +129,13 @@ const layerConfig = {
     type: 'polygon',
     description: 'Khyber Pakhtunkhwa Provincial Boundaries'
   },
+  'ajk-provincial': {
+    name: 'Azad Kashmir Provincial',
+    geojson: 'geojson/ajk-provincial.geojson',
+    color: '#8b5cf6',
+    type: 'polygon',
+    description: 'Azad Kashmir Provincial Boundaries'
+  },
   'wildlife-occurrence': {
     name: 'Wildlife Occurrence',
     geojson: 'geojson/wildlife-occurrence.geojson',
@@ -1326,6 +1333,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     const isSindhLayer = layerId === 'sindh-provincial'; // Sindh-specific layers
     const isBalochistanLayer = layerId === 'balochistan-provincial'; // Balochistan-specific layers
     const isKPLayer = layerId === 'kp-provincial'; // KP-specific layers
+    const isAJKLayer = layerId === 'ajk-provincial'; // AJK-specific layers
     const isPakistanLULCLayer = layerId === 'pakistan-lulc'; // Pakistan LULC layer (national level)
     const isBoundaryLayer = layerId === 'pakistan-provinces'; // Boundary layers should not be clipped
     
@@ -1335,7 +1343,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Use GeoJSON file if available, otherwise convert from shapefile
     if (layer.geojson) {
       // For region-specific clipping, use pre-clipped files if available
-      if ((region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa' || region === 'Azad Kashmir') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isBoundaryLayer) {
+      if ((region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa' || region === 'Azad Kashmir') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isAJKLayer && !isBoundaryLayer) {
         // Determine the suffix based on region
         let regionSuffix = '';
         if (region === 'Gilgit Baltistan') {
@@ -1413,7 +1421,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Only clip on-the-fly if pre-clipped file doesn't exist and boundary is available
     // This is a fallback for layers that haven't been pre-clipped yet
     // Only applies to GeoJSON files (geojsonPath is defined)
-    if (layer.geojson && (region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa' || region === 'Azad Kashmir') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isBoundaryLayer) {
+    if (layer.geojson && (region === 'Gilgit Baltistan' || region === 'Punjab' || region === 'Sindh' || region === 'Balochistan' || region === 'Khyber Pakhtunkhwa' || region === 'Azad Kashmir') && !isGBLayer && !isPunjabLayer && !isSindhLayer && !isBalochistanLayer && !isKPLayer && !isAJKLayer && !isBoundaryLayer) {
       let regionSuffix = '';
       let regionBoundary = null;
       
