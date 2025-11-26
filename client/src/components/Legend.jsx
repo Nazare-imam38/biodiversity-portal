@@ -159,7 +159,7 @@ export default function Legend({ layers, activeLayers }) {
                 { color: '#FF00FF', label: 'Agricultural Land' }, // Magenta
                 { color: '#9370DB', label: 'Dense Vegetation' }, // Purple/Lavender
                 { color: '#06b6d4', label: 'Water Bodies' }, // Cyan
-                { color: '#32CD32', label: 'Built Up Area' }, // Lime Green
+                { color: '#f9f913', label: 'Built Up Area' }, // Yellow
                 { color: '#ff4500', label: 'Barren Land' } // Orange/Red-Orange
               ]
               
