@@ -330,10 +330,10 @@ function LayerTable({ layerId, layer, data, columnMapping, selectedFeature, tabl
           <div className="flex-1">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-semibold text-gray-800" style={{ color: layer?.color || '#22c55e' }}>
+                <h3 className="font-bold text-lg text-gray-900" style={{ color: layer?.color || '#22c55e' }}>
                   {layer?.name || layerId}
                 </h3>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm text-gray-600 mt-1 font-medium">
                   {showPagination 
                     ? `Showing ${startIndex + 1}-${Math.min(endIndex, totalFeatures)} of ${totalFeatures} feature(s)`
                     : `${totalFeatures} feature(s)`

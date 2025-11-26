@@ -208,14 +208,71 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
       icon: FaCloud,
       iconColor: '#ffffff'
     }
-  ]
+  ],
+    'Sindh': [
+      { 
+        label: 'Sq Km Total Provincial Area', 
+        value: '140,914', 
+        color: 'bg-blue-500',
+        icon: FaGlobe,
+        iconColor: 'text-blue-600'
+      },
+      { 
+        label: '', 
+        value: '113,036.1',
+        subtitle: 'Hectare Forest Area 9.8%',
+        color: 'bg-green-500',
+        icon: FaTree,
+        iconColor: 'text-green-600'
+      },
+      { 
+        label: '', 
+        value: '27,202',
+        valueText: 'Hectare Deforestation',
+        subtitle: 'Degraded Ecosystems',
+        color: 'bg-red-600',
+        icon: FaCut,
+        iconColor: 'text-red-800'
+      },
+      { 
+        label: '', 
+        value: '77,553',
+        valueText: 'Hectare Enhancement',
+        subtitle: 'Degraded Ecosystems',
+        color: 'bg-green-600',
+        icon: FaSeedling,
+        iconColor: 'text-green-800'
+      },
+      { 
+        label: '', 
+        value: '7.5%',
+        subtitle: 'Current protected forest coverage',
+        color: 'bg-yellow-500',
+        icon: FaShieldAlt,
+        iconColor: 'text-yellow-600'
+      },
+      { 
+        label: '', 
+        value: '82%',
+        subtitle: 'Protected Areas Coverage of (KBAs)',
+        color: 'bg-red-500',
+        icon: FaExclamationTriangle,
+        iconColor: 'text-red-600'
+      }
+    ]
   }
 
   // Get cards for the selected region, default to Gilgit Baltistan
   const cards = regionStats[selectedRegion] || regionStats['Gilgit Baltistan']
 
+  // Determine grid columns based on number of cards
+  const numCards = cards.length
+  const gridCols = numCards === 6 
+    ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6' 
+    : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-7'
+  
   return (
-    <div key={selectedRegion} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4 py-3 sm:py-4 bg-white border-b border-gray-200 overflow-x-auto">
+    <div key={selectedRegion} className={`grid ${gridCols} gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4 py-3 sm:py-4 bg-white border-b border-gray-200 overflow-x-auto`}>
       {cards.map((card, index) => {
         const IconComponent = card.icon
         return (
