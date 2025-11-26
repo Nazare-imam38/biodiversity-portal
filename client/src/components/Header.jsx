@@ -183,6 +183,7 @@ export default function Header() {
           <span>{currentTime}</span>
         </div>
         <div className="flex items-center space-x-2 sm:space-x-3">
+          {activePage !== 'Home' && (
           <div className="relative hidden sm:block">
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
             <input
@@ -191,6 +192,7 @@ export default function Header() {
               className="pl-10 pr-4 py-1.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm w-48"
             />
           </div>
+          )}
           <button className="p-1.5 sm:p-2 text-gray-600 hover:text-green-600 transition-colors relative">
             <FaBell className="text-base sm:text-lg" />
             <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full"></span>

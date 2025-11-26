@@ -7,11 +7,14 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
   // Featured layers - most important ones
   // Exclude protected-forest for GB, Azad Kashmir, Balochistan, and Sindh regions (they have 0 features)
   // Exclude ramsar-sites for GB and Azad Kashmir regions (they have 0 features)
+  // For Sindh, use Sindh-specific layers instead of national ones
   let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
   if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Azad Kashmir') {
     featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB and Azad Kashmir
-  } else if (selectedRegion === 'Balochistan' || selectedRegion === 'Sindh') {
-    featuredLayerIds = ['protected-areas', 'ramsar-sites', 'kbas'] // Remove protected-forest for Balochistan and Sindh
+  } else if (selectedRegion === 'Balochistan') {
+    featuredLayerIds = ['protected-areas', 'ramsar-sites', 'kbas'] // Remove protected-forest for Balochistan
+  } else if (selectedRegion === 'Sindh') {
+    featuredLayerIds = ['protected-areas-sindh', 'ramsar-sites-sindh', 'kbas'] // Use Sindh-specific layers
   }
   const featuredLayers = layers.filter(layer => featuredLayerIds.includes(layer.id))
   
@@ -22,8 +25,10 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
     const icons = {
       'protected-areas': FaShieldAlt,
       'protected-areas-pol': FaShieldAlt,
+      'protected-areas-sindh': FaShieldAlt,
       'protected-forest': FaTree,
       'ramsar-sites': FaWater,
+      'ramsar-sites-sindh': FaWater,
       'kbas': FaMapMarkedAlt,
     }
     return icons[layerId] || FaMapMarkedAlt

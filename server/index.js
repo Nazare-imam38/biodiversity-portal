@@ -136,6 +136,27 @@ const layerConfig = {
     type: 'polygon',
     description: 'Azad Kashmir Provincial Boundaries'
   },
+  'protected-areas-sindh': {
+    name: 'Sindh Protected Areas (WDPA)',
+    geojson: 'geojson/protected-areas-sindh.geojson',
+    color: '#f59e0b',
+    type: 'polygon',
+    description: 'Sindh Protected Areas from WDPA (31 features)'
+  },
+  'ramsar-sites-sindh': {
+    name: 'Sindh Ramsar Sites',
+    geojson: 'geojson/ramsar-sites-sindh.geojson',
+    color: '#06b6d4',
+    type: 'polygon',
+    description: 'Sindh Ramsar Wetland Sites (Polygons)'
+  },
+  'forest-landscape-sindh': {
+    name: 'Sindh Forest Landscape',
+    geojson: 'geojson/forest-landscape-sindh.geojson',
+    color: '#22c55e',
+    type: 'polygon',
+    description: 'Sindh Forest Landscape'
+  },
   'wildlife-occurrence': {
     name: 'Wildlife Occurrence',
     geojson: 'geojson/wildlife-occurrence.geojson',
@@ -1330,7 +1351,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     // Skip clipping for region-specific layers and boundary layers
     const isGBLayer = layerId === 'gb-provincial' || layerId === 'gb-district';
     const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
-    const isSindhLayer = layerId === 'sindh-provincial'; // Sindh-specific layers
+    const isSindhLayer = layerId === 'sindh-provincial' || layerId === 'protected-areas-sindh' || layerId === 'ramsar-sites-sindh' || layerId === 'forest-landscape-sindh'; // Sindh-specific layers
     const isBalochistanLayer = layerId === 'balochistan-provincial'; // Balochistan-specific layers
     const isKPLayer = layerId === 'kp-provincial'; // KP-specific layers
     const isAJKLayer = layerId === 'ajk-provincial'; // AJK-specific layers

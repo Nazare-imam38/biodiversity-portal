@@ -185,11 +185,14 @@ function Dashboard() {
     // Only clear the featured layers based on region
     // Exclude protected-forest for GB, Azad Kashmir, Balochistan, and Sindh regions (they have 0 features)
     // Exclude ramsar-sites for GB and Azad Kashmir regions (they have 0 features)
+    // For Sindh, use Sindh-specific layers instead of national ones
     let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
     if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Azad Kashmir') {
       featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB and Azad Kashmir
-    } else if (selectedRegion === 'Balochistan' || selectedRegion === 'Sindh') {
-      featuredLayerIds = ['protected-areas', 'ramsar-sites', 'kbas'] // Remove protected-forest for Balochistan and Sindh
+    } else if (selectedRegion === 'Balochistan') {
+      featuredLayerIds = ['protected-areas', 'ramsar-sites', 'kbas'] // Remove protected-forest for Balochistan
+    } else if (selectedRegion === 'Sindh') {
+      featuredLayerIds = ['protected-areas-sindh', 'ramsar-sites-sindh', 'kbas'] // Use Sindh-specific layers
     }
     setActiveLayers(prev => {
       const newSet = new Set(prev)

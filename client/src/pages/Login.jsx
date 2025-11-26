@@ -55,6 +55,11 @@ export default function Login() {
       <div className="relative z-10 w-full mx-auto mt-20 sm:mt-24 mb-8" style={{ maxWidth: '400px', width: '90%' }}>
         <div className="bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl p-5 sm:p-6 md:p-8 border border-white/30">
           <form className="flex flex-col gap-3 sm:gap-3.5" onSubmit={handleSubmit}>
+            {/* Login Heading */}
+            <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-4 sm:mb-6 drop-shadow-lg">
+              LOGIN TO YOUR ACCOUNT
+            </h2>
+            
             {/* Email Field */}
             <div className="flex flex-col">
               <label className="text-[#159f48] font-semibold mb-1 text-sm sm:text-base drop-shadow-md">Email</label>

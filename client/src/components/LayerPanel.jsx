@@ -171,8 +171,19 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   }
                   // Hide protected-forest for Sindh region (it has 0 features)
                   // Hide region-specific layers for Sindh region
+                  // Hide national protected-areas, protected-areas-pol, and ramsar-sites (use Sindh-specific versions instead)
                   if (selectedRegion === 'Sindh') {
-                    return layer.id !== 'protected-forest' && layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'kp-provincial' && layer.id !== 'balochistan-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc'
+                    return layer.id !== 'protected-forest' && 
+                           layer.id !== 'protected-areas' && 
+                           layer.id !== 'protected-areas-pol' &&
+                           layer.id !== 'ramsar-sites' &&
+                           layer.id !== 'gb-provincial' && 
+                           layer.id !== 'gb-district' && 
+                           layer.id !== 'punjab-provincial' && 
+                           layer.id !== 'kp-provincial' && 
+                           layer.id !== 'balochistan-provincial' && 
+                           layer.id !== 'wildlife-occurrence' && 
+                           layer.id !== 'punjab-lulc'
                   }
                   // Hide protected-forest and ramsar-sites for Azad Kashmir region (they have 0 features)
                   // Hide region-specific layers for Azad Kashmir region
