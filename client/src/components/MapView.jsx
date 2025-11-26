@@ -441,8 +441,56 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       }
     }
     
-    // Special styling for Punjab Provincial (Lahore) - hollow with purple outline
+    // Special styling for Punjab Provincial - hollow with purple outline
     if (layer.id === 'punjab-provincial') {
+      return {
+        color: '#8b5cf6', // Purple outline
+        weight: 2.5,
+        opacity: 1,
+        fillColor: 'transparent', // Hollow/transparent fill
+        fillOpacity: 0,
+        dashArray: undefined
+      }
+    }
+    
+    // Special styling for Balochistan Provincial - hollow with purple outline
+    if (layer.id === 'balochistan-provincial') {
+      return {
+        color: '#8b5cf6', // Purple outline
+        weight: 2.5,
+        opacity: 1,
+        fillColor: 'transparent', // Hollow/transparent fill
+        fillOpacity: 0,
+        dashArray: undefined
+      }
+    }
+    
+    // Special styling for Sindh Provincial - hollow with purple outline
+    if (layer.id === 'sindh-provincial') {
+      return {
+        color: '#8b5cf6', // Purple outline
+        weight: 2.5,
+        opacity: 1,
+        fillColor: 'transparent', // Hollow/transparent fill
+        fillOpacity: 0,
+        dashArray: undefined
+      }
+    }
+    
+    // Special styling for Khyber Pakhtunkhwa Provincial - hollow with purple outline
+    if (layer.id === 'kp-provincial') {
+      return {
+        color: '#8b5cf6', // Purple outline
+        weight: 2.5,
+        opacity: 1,
+        fillColor: 'transparent', // Hollow/transparent fill
+        fillOpacity: 0,
+        dashArray: undefined
+      }
+    }
+    
+    // Special styling for Azad Kashmir Provincial - hollow with purple outline
+    if (layer.id === 'ajk-provincial') {
       return {
         color: '#8b5cf6', // Purple outline
         weight: 2.5,
