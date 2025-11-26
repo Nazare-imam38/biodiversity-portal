@@ -101,8 +101,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
           <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
         </div>
 
-        <div className="p-1.5 sm:p-2 flex-1 overflow-y-auto lg:overflow-y-visible lg:overflow-x-hidden">
-          <div className="flex items-center justify-between mb-1.5">
+        <div className="p-2 sm:p-3 flex-1 overflow-y-auto lg:overflow-y-visible lg:overflow-x-hidden">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
             <h2 className="text-sm sm:text-base font-semibold text-gray-800">Data Layers</h2>
             <div className="flex items-center space-x-2">
               {activeLayers.size > 0 && (
@@ -135,7 +135,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
             </div>
           </div>
 
-          <div className="space-y-0.5 lg:space-y-1">
+          <div className="space-y-2 sm:space-y-2.5">
             {layers && layers.length > 0 ? (
               layers
                 .filter(layer => {
@@ -307,7 +307,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
 function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
   return (
     <div
-      className={`p-1.5 sm:p-2 rounded-lg border transition-all cursor-pointer ${
+      className={`p-2.5 sm:p-3 rounded-lg border transition-all cursor-pointer ${
         isActive
           ? 'border-green-500 bg-green-50 shadow-sm'
           : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
@@ -317,15 +317,15 @@ function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
         onToggle(e)
       }}
     >
-      <div className="flex items-center justify-between gap-2.5 w-full">
-        <div className="flex items-center space-x-2 flex-1 min-w-0 pr-2">
-          <div className={`p-1 sm:p-1.5 rounded-lg flex-shrink-0 ${isActive ? 'bg-green-100' : 'bg-gray-100'}`}>
-            <Icon className={`text-xs sm:text-sm ${isActive ? 'text-green-600' : 'text-gray-600'}`} />
+      <div className="flex items-center justify-between gap-3 sm:gap-4 w-full">
+        <div className="flex items-center space-x-3 sm:space-x-3.5 flex-1 min-w-0 pr-2">
+          <div className={`p-1.5 sm:p-2 rounded-lg flex-shrink-0 ${isActive ? 'bg-green-100' : 'bg-gray-100'}`}>
+            <Icon className={`text-sm sm:text-base ${isActive ? 'text-green-600' : 'text-gray-600'}`} />
           </div>
           <div className="flex-1 min-w-0 pr-2">
-            <h3 className="font-medium text-xs sm:text-sm text-gray-800 leading-tight whitespace-normal">{layer.name}</h3>
+            <h3 className="font-medium text-sm sm:text-base text-gray-800 leading-snug whitespace-normal">{layer.name}</h3>
             {layer.description && (
-              <p className="text-xs text-gray-500 leading-tight mt-0 whitespace-normal line-clamp-1">{layer.description}</p>
+              <p className="text-xs sm:text-sm text-gray-500 leading-snug mt-1 whitespace-normal line-clamp-2">{layer.description}</p>
             )}
           </div>
         </div>
