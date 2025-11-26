@@ -893,7 +893,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
               : (import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}${layer.tiles}` : layer.tiles)
             
             // Use MBTilesOverlay for LULC layers (external MBTiles), regular TileLayer for local tiles
-            if (isExternalUrl && (layerId === 'punjab-lulc' || layerId === 'pakistan-lulc')) {
+            if (isExternalUrl && (layerId === 'punjab-lulc' || layerId === 'pakistan-lulc' || layerId === 'sindh-lulc')) {
               console.log(`Rendering MBTiles overlay for ${layerId}:`, tileUrl)
               return (
                 <MBTilesOverlay

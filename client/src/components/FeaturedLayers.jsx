@@ -1,8 +1,18 @@
-import { useState } from 'react'
-import { FaShieldAlt, FaTree, FaWater, FaMapMarkedAlt, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { useState, useEffect } from 'react'
+import { FaShieldAlt, FaTree, FaWater, FaMapMarkedAlt, FaTimes, FaChevronDown, FaChevronUp, FaChevronRight } from 'react-icons/fa'
 
-export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, onClearAll, selectedRegion = 'National' }) {
+export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, onClearAll, selectedRegion = 'National', isLayerPanelOpen, setIsLayerPanelOpen }) {
   const [isExpanded, setIsExpanded] = useState(true)
+  const [isDesktop, setIsDesktop] = useState(false)
+  
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024)
+    }
+    checkDesktop()
+    window.addEventListener('resize', checkDesktop)
+    return () => window.removeEventListener('resize', checkDesktop)
+  }, [])
   
   // Featured layers - most important ones
   // Exclude protected-forest for GB, Azad Kashmir, Balochistan, and Sindh regions (they have 0 features)
@@ -37,8 +47,23 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
   if (featuredLayers.length === 0) return null
 
   return (
-    <div className="bg-gradient-to-r from-green-50 via-blue-50 to-green-50 border-b border-gray-200 px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-sm">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gradient-to-r from-green-50 via-blue-50 to-green-50 border-b border-gray-200 px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-sm relative">
+      {/* Data Layers Panel Expand Button - Fixed on left side when panel is collapsed (desktop only) */}
+      {isDesktop && !isLayerPanelOpen && setIsLayerPanelOpen && (
+        <button
+          onClick={() => setIsLayerPanelOpen(true)}
+          className="hidden lg:flex absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-green-600 text-white p-3 rounded-r-lg shadow-lg hover:bg-green-700 transition-all duration-300 items-center justify-center"
+          style={{ 
+            height: '60px',
+            borderTopRightRadius: '8px',
+            borderBottomRightRadius: '8px'
+          }}
+          title="Expand Data Layers Panel"
+        >
+          <FaChevronRight className="text-lg" />
+        </button>
+      )}
+      <div className={`max-w-7xl mx-auto ${isDesktop && !isLayerPanelOpen && setIsLayerPanelOpen ? 'lg:pl-16' : ''}`}>
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 sm:mb-3 gap-2">
           <div className="flex items-center space-x-2 flex-1 justify-center">
             <button

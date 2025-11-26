@@ -250,6 +250,8 @@ function Dashboard() {
         onToggleLayer={toggleLayer}
         onClearAll={clearFeaturedLayers}
         selectedRegion={selectedRegion}
+        isLayerPanelOpen={isLayerPanelOpen}
+        setIsLayerPanelOpen={setIsLayerPanelOpen}
       />
       <div className="flex flex-col lg:flex-row flex-1" style={{ minHeight: isMobile ? 'auto' : 'calc(100vh - 280px)' }}>
         <LayerPanel 

@@ -29,6 +29,7 @@ const layerIcons = {
   'wildlife-occurrence': FaMapMarkerAlt,
   'punjab-lulc': FaMapMarkedAlt,
   'pakistan-lulc': FaMapMarkedAlt,
+  'sindh-lulc': FaMapMarkedAlt,
 }
 
 export default function Legend({ layers, activeLayers }) {
@@ -138,6 +139,48 @@ export default function Legend({ layers, activeLayers }) {
                   </div>
                   <div className="pl-7 sm:pl-9 space-y-1.5">
                     {punjabLULCLegend.map((item, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 sm:space-x-3 text-xs">
+                        <div 
+                          className="w-4 h-4 sm:w-5 sm:h-5 rounded flex-shrink-0 border border-gray-300"
+                          style={{ backgroundColor: item.color }}
+                        />
+                        <span className="text-gray-700 text-xs leading-tight">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
+            
+            // Special handling for Sindh LULC layer - show custom legend
+            if (layer.id === 'sindh-lulc') {
+              const sindhLULCLegend = [
+                { color: '#22c55e', label: 'Alluvial Soil' }, // Green
+                { color: '#FF00FF', label: 'Agricultural Land' }, // Magenta
+                { color: '#9370DB', label: 'Dense Vegetation' }, // Purple/Lavender
+                { color: '#06b6d4', label: 'Water Bodies' }, // Cyan
+                { color: '#32CD32', label: 'Built Up Area' }, // Lime Green
+                { color: '#ff4500', label: 'Barren Land' } // Orange/Red-Orange
+              ]
+              
+              return (
+                <div key={layer.id} className="space-y-2">
+                  <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm mb-2">
+                    <div className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0">
+                      <div 
+                        className="p-1 sm:p-1.5 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: `${layer.color}20` }}
+                      >
+                        <IconComponent 
+                          className="text-xs sm:text-sm" 
+                          style={{ color: layer.color }}
+                        />
+                      </div>
+                    </div>
+                    <span className="text-gray-700 text-xs leading-tight font-medium">{layer.name}</span>
+                  </div>
+                  <div className="pl-7 sm:pl-9 space-y-1.5">
+                    {sindhLULCLegend.map((item, idx) => (
                       <div key={idx} className="flex items-center space-x-2 sm:space-x-3 text-xs">
                         <div 
                           className="w-4 h-4 sm:w-5 sm:h-5 rounded flex-shrink-0 border border-gray-300"

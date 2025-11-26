@@ -35,6 +35,7 @@ const layerIcons = {
   'wildlife-occurrence': FaMapMarkerAlt,
   'punjab-lulc': FaMap,
   'pakistan-lulc': FaMap,
+  'sindh-lulc': FaMap,
 }
 
 export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClearAll, showMobileButton = true, isOpen: externalIsOpen, setIsOpen: externalSetIsOpen, selectedRegion = 'National' }) {
@@ -70,21 +71,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
     <>
       {/* Mobile toggle button is now rendered in Dashboard inside map container */}
 
-      {/* Desktop Collapse/Expand Button - When Panel is Collapsed */}
-      {!isMobile && !isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="hidden lg:flex fixed left-0 top-1/2 transform -translate-y-1/2 z-[101] bg-green-600 text-white p-3 rounded-r-lg shadow-lg hover:bg-green-700 transition-all duration-300 items-center justify-center"
-          style={{ 
-            height: '60px',
-            borderTopRightRadius: '8px',
-            borderBottomRightRadius: '8px'
-          }}
-          title="Expand Data Layers Panel"
-        >
-          <FaChevronRight className="text-lg" />
-        </button>
-      )}
+      {/* Desktop Collapse/Expand Button is now rendered in FeaturedLayers component */}
 
       {/* Desktop Sidebar / Mobile Bottom Sheet */}
       <div
@@ -167,7 +154,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'forest-landscape-sindh' &&
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' && 
-                           layer.id !== 'pakistan-lulc'
+                           layer.id !== 'pakistan-lulc' &&
+                           layer.id !== 'sindh-lulc'
                   }
                   // Hide GB boundary layers and Pakistan LULC for Punjab region (show Punjab LULC)
                   // Hide other region-specific layers (Sindh, Azad Kashmir, etc.)
@@ -181,7 +169,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
-                           layer.id !== 'pakistan-lulc'
+                           layer.id !== 'pakistan-lulc' &&
+                           layer.id !== 'sindh-lulc'
                   }
                   // Hide protected-forest for Balochistan region (it has 0 features)
                   // Hide region-specific layers from other provinces (Sindh, Azad Kashmir, etc.)
@@ -213,7 +202,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
                            layer.id !== 'wildlife-occurrence' && 
-                           layer.id !== 'punjab-lulc'
+                           layer.id !== 'punjab-lulc' &&
+                           layer.id !== 'sindh-lulc'
                   }
                   // Hide protected-forest for Sindh region (it has 0 features)
                   // Hide region-specific layers for Sindh region
@@ -230,7 +220,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'balochistan-provincial' &&
                            layer.id !== 'ajk-provincial' &&
                            layer.id !== 'wildlife-occurrence' &&
-                           layer.id !== 'punjab-lulc'
+                           layer.id !== 'punjab-lulc' &&
+                           layer.id !== 'pakistan-lulc'
                   }
                   // Hide protected-forest and ramsar-sites for Azad Kashmir region (they have 0 features)
                   // Hide region-specific layers for Azad Kashmir region
@@ -247,11 +238,12 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
                            layer.id !== 'wildlife-occurrence' && 
-                           layer.id !== 'punjab-lulc'
+                           layer.id !== 'punjab-lulc' &&
+                           layer.id !== 'sindh-lulc'
                   }
                   // For other regions (National), hide all region-specific layers and Punjab LULC (show Pakistan LULC)
                   if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab' && selectedRegion !== 'Balochistan' && selectedRegion !== 'Khyber Pakhtunkhwa' && selectedRegion !== 'Sindh' && selectedRegion !== 'Azad Kashmir') {
-                    return layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'sindh-provincial' && layer.id !== 'kp-provincial' && layer.id !== 'balochistan-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc'
+                    return layer.id !== 'gb-provincial' && layer.id !== 'gb-district' && layer.id !== 'punjab-provincial' && layer.id !== 'sindh-provincial' && layer.id !== 'kp-provincial' && layer.id !== 'balochistan-provincial' && layer.id !== 'wildlife-occurrence' && layer.id !== 'punjab-lulc' && layer.id !== 'sindh-lulc'
                   }
                   return true
                 })
