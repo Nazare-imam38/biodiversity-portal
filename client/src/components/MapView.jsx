@@ -63,6 +63,61 @@ function MapBoundsController() {
   return null
 }
 
+// Component to restrict zoom level when forest-types layer is active
+function ForestTypesZoomController({ activeLayers }) {
+  const map = useMap()
+  const isForestTypesActive = activeLayers.has('forest-types')
+  const previousMaxZoomRef = useRef(18)
+  const zoomHandlerRef = useRef(null)
+  
+  useEffect(() => {
+    if (isForestTypesActive) {
+      // Store the current maxZoom before restricting (should be 18 by default)
+      const currentMaxZoom = map.getMaxZoom()
+      if (currentMaxZoom > 6) {
+        previousMaxZoomRef.current = currentMaxZoom
+      }
+      
+      // Restrict maxZoom to 6
+      map.setMaxZoom(6)
+      
+      // If current zoom is greater than 6, set it to 6
+      const currentZoom = map.getZoom()
+      if (currentZoom > 6) {
+        map.setZoom(6, { animate: true })
+      }
+      
+      // Prevent zooming beyond 6
+      const handleZoom = () => {
+        if (map.getZoom() > 6) {
+          map.setZoom(6, { animate: false })
+        }
+      }
+      
+      zoomHandlerRef.current = handleZoom
+      map.on('zoom', handleZoom)
+      
+      return () => {
+        if (zoomHandlerRef.current) {
+          map.off('zoom', zoomHandlerRef.current)
+          zoomHandlerRef.current = null
+        }
+        // Restore previous maxZoom when layer is deactivated
+        map.setMaxZoom(previousMaxZoomRef.current)
+      }
+    } else {
+      // Restore previous maxZoom when layer is deactivated
+      if (zoomHandlerRef.current) {
+        map.off('zoom', zoomHandlerRef.current)
+        zoomHandlerRef.current = null
+      }
+      map.setMaxZoom(previousMaxZoomRef.current)
+    }
+  }, [map, isForestTypesActive])
+  
+  return null
+}
+
 // Component to handle map resize on mobile and panel state changes
 function MapResizer({ panelOpen }) {
   const map = useMap()
@@ -875,6 +930,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
         <MapBoundsController />
         <MapResizer panelOpen={panelOpen} />
         <RegionZoomController selectedRegion={selectedRegion} layerData={layerData} activeLayers={activeLayers} />
+        <ForestTypesZoomController activeLayers={activeLayers} />
         
         {Array.from(activeLayers).map((layerId) => {
           const layer = layers.find(l => l.id === layerId)
@@ -892,8 +948,8 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
               ? layer.tiles 
               : (import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}${layer.tiles}` : layer.tiles)
             
-            // Use MBTilesOverlay for LULC layers (external MBTiles), regular TileLayer for local tiles
-            if (isExternalUrl && (layerId === 'punjab-lulc' || layerId === 'pakistan-lulc' || layerId === 'sindh-lulc')) {
+            // Use MBTilesOverlay for LULC layers and forest types (external MBTiles), regular TileLayer for local tiles
+            if (isExternalUrl && (layerId === 'punjab-lulc' || layerId === 'pakistan-lulc' || layerId === 'sindh-lulc' || layerId === 'forest-types')) {
               console.log(`Rendering MBTiles overlay for ${layerId}:`, tileUrl)
               return (
                 <MBTilesOverlay

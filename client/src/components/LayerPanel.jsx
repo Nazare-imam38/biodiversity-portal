@@ -36,6 +36,7 @@ const layerIcons = {
   'punjab-lulc': FaMap,
   'pakistan-lulc': FaMap,
   'sindh-lulc': FaMap,
+  'forest-types': FaTree,
 }
 
 export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClearAll, showMobileButton = true, isOpen: externalIsOpen, setIsOpen: externalSetIsOpen, selectedRegion = 'National' }) {
@@ -179,6 +180,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   }
                   // Hide protected-forest for Balochistan region (it has 0 features)
                   // Hide region-specific layers from other provinces (Sindh, Azad Kashmir, etc.)
+                  // Hide protected-areas (WDPA) and protected-areas-pol for Balochistan region
+                  // Hide sindh-lulc for Balochistan region
                   if (selectedRegion === 'Balochistan') {
                     return layer.id !== 'protected-forest' && 
                            layer.id !== 'gb-provincial' && 
@@ -191,7 +194,10 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
                            layer.id !== 'wildlife-occurrence' && 
-                           layer.id !== 'punjab-lulc'
+                           layer.id !== 'punjab-lulc' &&
+                           layer.id !== 'protected-areas' &&
+                           layer.id !== 'protected-areas-pol' &&
+                           layer.id !== 'sindh-lulc'
                   }
                   // Hide protected-forest for Khyber Pakhtunkhwa region (it has 0 features)
                   // Hide region-specific layers from other provinces (Sindh, etc.)
@@ -330,13 +336,13 @@ function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
           </div>
         </div>
         <div 
-          className="flex-shrink-0 w-10 sm:w-12" 
+          className="flex-shrink-0" 
           onClick={(e) => {
             e.stopPropagation()
             onToggle(e)
           }}
         >
-          <label className="relative inline-flex items-center cursor-pointer w-full">
+          <label className="relative inline-flex items-center cursor-pointer w-11 h-6">
             <input
               type="checkbox"
               checked={isActive}
@@ -346,7 +352,7 @@ function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
               }}
               className="sr-only peer"
             />
-            <div className={`w-10 sm:w-12 h-6 sm:h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 sm:after:h-6 sm:after:w-6 after:transition-all peer-checked:bg-green-500`}></div>
+            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-[22px] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
           </label>
         </div>
       </div>

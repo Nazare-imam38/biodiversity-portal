@@ -187,6 +187,14 @@ const layerConfig = {
     type: 'raster',
     description: 'Pakistan Land Use Land Cover Map',
     opacity: 0.9
+  },
+  'forest-types': {
+    name: 'National Forest Certification',
+    tiles: 'https://tiles.dhamarketplace.com/data/Forest%20Types/{z}/{x}/{y}.png',
+    color: '#16a34a',
+    type: 'raster',
+    description: 'National Forest Types Classification',
+    opacity: 0.9
   }
 };
 

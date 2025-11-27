@@ -30,6 +30,7 @@ const layerIcons = {
   'punjab-lulc': FaMapMarkedAlt,
   'pakistan-lulc': FaMapMarkedAlt,
   'sindh-lulc': FaMapMarkedAlt,
+  'forest-types': FaTree,
 }
 
 export default function Legend({ layers, activeLayers }) {
@@ -181,6 +182,52 @@ export default function Legend({ layers, activeLayers }) {
                   </div>
                   <div className="pl-7 sm:pl-9 space-y-1.5">
                     {sindhLULCLegend.map((item, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 sm:space-x-3 text-xs">
+                        <div 
+                          className="w-4 h-4 sm:w-5 sm:h-5 rounded flex-shrink-0 border border-gray-300"
+                          style={{ backgroundColor: item.color }}
+                        />
+                        <span className="text-gray-700 text-xs leading-tight">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
+            
+            // Special handling for Forest Types layer - show custom legend
+            if (layer.id === 'forest-types') {
+              const forestTypesLegend = [
+                { color: '#87CEEB', label: 'Riverine' }, // Light blue
+                { color: '#F5DEB3', label: 'Thorn' }, // Light beige
+                { color: '#9CAF88', label: 'Scrub' }, // Light olive green
+                { color: '#20B2AA', label: 'Moist-Temperate' }, // Teal-green
+                { color: '#6B8E23', label: 'Dry-Temperate' }, // Darker olive green
+                { color: '#5F9EA0', label: 'Sub-Alpine' }, // Muted blue-green
+                { color: '#32CD32', label: 'ChirPine' }, // Bright lime green
+                { color: '#92b3a2', label: 'Mangrove' }, // Updated color
+                { color: '#8FBC8F', label: 'Irrigated Plantation' }, // Muted green-grey
+                { color: '#FFA500', label: 'Chilghoza' } // Orange
+              ]
+              
+              return (
+                <div key={layer.id} className="space-y-2">
+                  <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm mb-2">
+                    <div className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0">
+                      <div 
+                        className="p-1 sm:p-1.5 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: `${layer.color}20` }}
+                      >
+                        <IconComponent 
+                          className="text-xs sm:text-sm" 
+                          style={{ color: layer.color }}
+                        />
+                      </div>
+                    </div>
+                    <span className="text-gray-700 text-xs leading-tight font-medium">{layer.name}</span>
+                  </div>
+                  <div className="pl-7 sm:pl-9 space-y-1.5">
+                    {forestTypesLegend.map((item, idx) => (
                       <div key={idx} className="flex items-center space-x-2 sm:space-x-3 text-xs">
                         <div 
                           className="w-4 h-4 sm:w-5 sm:h-5 rounded flex-shrink-0 border border-gray-300"
