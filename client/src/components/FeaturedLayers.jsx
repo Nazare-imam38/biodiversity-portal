@@ -49,47 +49,47 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
   if (featuredLayers.length === 0) return null
 
   return (
-    <div className="bg-gradient-to-r from-green-50 via-blue-50 to-green-50 border-b border-gray-200 px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-sm relative">
+    <div className="bg-gradient-to-r from-green-50 via-blue-50 to-green-50 border-b border-gray-200 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 shadow-sm relative">
       {/* Data Layers Panel Expand Button - Fixed on left side when panel is collapsed (desktop only) */}
       {isDesktop && !isLayerPanelOpen && setIsLayerPanelOpen && (
         <button
           onClick={() => setIsLayerPanelOpen(true)}
-          className="hidden lg:flex absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-green-600 text-white p-3 rounded-r-lg shadow-lg hover:bg-green-700 transition-all duration-300 items-center justify-center"
+          className="hidden lg:flex absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-green-600 text-white p-2 rounded-r-lg shadow-lg hover:bg-green-700 transition-all duration-300 items-center justify-center"
           style={{ 
-            height: '60px',
-            borderTopRightRadius: '8px',
-            borderBottomRightRadius: '8px'
+            height: '48px',
+            borderTopRightRadius: '6px',
+            borderBottomRightRadius: '6px'
           }}
           title="Expand Data Layers Panel"
         >
-          <FaChevronRight className="text-lg" />
+          <FaChevronRight className="text-base" />
         </button>
       )}
-      <div className={`max-w-7xl mx-auto ${isDesktop && !isLayerPanelOpen && setIsLayerPanelOpen ? 'lg:pl-16' : ''}`}>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 sm:mb-3 gap-2">
-          <div className="flex items-center space-x-2 flex-1 justify-center">
+      <div className={`max-w-7xl mx-auto ${isDesktop && !isLayerPanelOpen && setIsLayerPanelOpen ? 'lg:pl-14' : ''}`}>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-1.5 sm:mb-2 gap-1.5">
+          <div className="flex items-center space-x-1.5 flex-1 justify-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="p-1.5 text-gray-600 hover:text-green-600 hover:bg-green-100 rounded-lg transition-all"
+              className="p-1 text-gray-600 hover:text-green-600 hover:bg-green-100 rounded-lg transition-all"
               aria-label={isExpanded ? 'Collapse' : 'Expand'}
               title={isExpanded ? 'Collapse' : 'Expand'}
             >
               {isExpanded ? (
-                <FaChevronUp className="text-sm sm:text-base" />
+                <FaChevronUp className="text-xs sm:text-sm" />
               ) : (
-                <FaChevronDown className="text-sm sm:text-base" />
+                <FaChevronDown className="text-xs sm:text-sm" />
               )}
             </button>
-            <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wider text-center">Quick Access - Featured Layers</h3>
+            <h3 className="text-[10px] sm:text-xs font-semibold text-gray-700 uppercase tracking-wider text-center">Quick Access - Featured Layers</h3>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1.5">
             {hasActiveFeaturedLayers && (
               <button
                 onClick={onClearAll}
-                className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-medium text-red-600 bg-red-50 border border-red-300 rounded-lg hover:bg-red-100 hover:border-red-400 transition-all"
+                className="flex items-center space-x-1 px-2 sm:px-2.5 py-1 text-[10px] sm:text-xs font-medium text-red-600 bg-red-50 border border-red-300 rounded-lg hover:bg-red-100 hover:border-red-400 transition-all"
                 title="Clear all featured layers"
               >
-                <FaTimes className="text-xs" />
+                <FaTimes className="text-[10px] sm:text-xs" />
                 <span>Clear All</span>
               </button>
             )}
@@ -100,7 +100,7 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
             isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="flex flex-wrap gap-2 sm:gap-2.5 justify-center items-center">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center items-center">
             {featuredLayers.map((layer) => {
               const IconComponent = getFeaturedIcon(layer.id)
               const isActive = activeLayers.has(layer.id)
@@ -108,17 +108,17 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
                 <button
                   key={layer.id}
                   onClick={() => onToggleLayer(layer.id)}
-                  className={`flex items-center space-x-1.5 sm:space-x-2.5 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all transform hover:scale-105 ${
+                  className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-lg text-[10px] sm:text-xs font-semibold transition-all transform hover:scale-105 ${
                     isActive
                       ? 'bg-green-600 text-white shadow-lg hover:bg-green-700 hover:shadow-xl'
                       : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-green-500 hover:bg-green-50 hover:text-green-700'
                   }`}
                 >
-                  <IconComponent className={isActive ? 'text-white text-sm sm:text-base' : 'text-green-600 text-sm sm:text-base'} />
+                  <IconComponent className={isActive ? 'text-white text-xs sm:text-sm' : 'text-green-600 text-xs sm:text-sm'} />
                   <span className="hidden sm:inline">{layer.name}</span>
                   <span className="sm:hidden">{layer.name.split(' ')[0]}</span>
                   {isActive && (
-                    <span className="ml-0.5 sm:ml-1 text-xs font-bold">✓</span>
+                    <span className="ml-0.5 text-[10px] sm:text-xs font-bold">✓</span>
                   )}
                 </button>
               )

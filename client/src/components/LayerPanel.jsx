@@ -102,17 +102,17 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
           <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
         </div>
 
-        <div className="p-2 sm:p-3 flex-1 overflow-y-auto lg:overflow-y-visible lg:overflow-x-hidden">
-          <div className="flex items-center justify-between mb-3 sm:mb-4">
-            <h2 className="text-sm sm:text-base font-semibold text-gray-800">Data Layers</h2>
-            <div className="flex items-center space-x-2">
+        <div className="p-1.5 sm:p-2 flex-1 overflow-y-auto lg:overflow-y-visible lg:overflow-x-hidden">
+          <div className="flex items-center justify-between mb-2 sm:mb-2.5">
+            <h2 className="text-xs sm:text-sm font-semibold text-gray-800">Data Layers</h2>
+            <div className="flex items-center space-x-1.5">
               {activeLayers.size > 0 && (
                 <button
                   onClick={onClearAll}
-                  className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 text-xs sm:text-sm font-medium text-red-600 bg-red-50 border border-red-300 rounded-lg hover:bg-red-100 hover:border-red-400 transition-all"
+                  className="flex items-center space-x-1 px-2 sm:px-2.5 py-1 text-[10px] sm:text-xs font-medium text-red-600 bg-red-50 border border-red-300 rounded-lg hover:bg-red-100 hover:border-red-400 transition-all"
                   title="Clear all layers"
                 >
-                  <FaTrash className="text-xs sm:text-sm" />
+                  <FaTrash className="text-[10px] sm:text-xs" />
                   <span className="hidden sm:inline">Clear All</span>
                 </button>
               )}
@@ -120,10 +120,10 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
               {!isMobile && (
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="hidden lg:flex text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-all"
+                  className="hidden lg:flex text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-1.5 rounded-lg transition-all"
                   title="Collapse panel"
                 >
-                  <FaChevronLeft className="text-base" />
+                  <FaChevronLeft className="text-sm" />
                 </button>
               )}
               {/* Mobile: Close button */}
@@ -131,12 +131,12 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                 onClick={() => setIsOpen(false)}
                 className="lg:hidden text-gray-500 hover:text-gray-700 p-1"
               >
-                <FaTimes className="text-xl" />
+                <FaTimes className="text-lg" />
               </button>
             </div>
           </div>
 
-          <div className="space-y-2 sm:space-y-2.5">
+          <div className="space-y-1.5 sm:space-y-2">
             {layers && layers.length > 0 ? (
               layers
                 .filter(layer => {
@@ -313,7 +313,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
 function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
   return (
     <div
-      className={`p-2.5 sm:p-3 rounded-lg border transition-all cursor-pointer ${
+      className={`p-2 sm:p-2.5 rounded-lg border transition-all cursor-pointer ${
         isActive
           ? 'border-green-500 bg-green-50 shadow-sm'
           : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
@@ -323,15 +323,15 @@ function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
         onToggle(e)
       }}
     >
-      <div className="flex items-center justify-between gap-3 sm:gap-4 w-full">
-        <div className="flex items-center space-x-3 sm:space-x-3.5 flex-1 min-w-0 pr-2">
-          <div className={`p-1.5 sm:p-2 rounded-lg flex-shrink-0 ${isActive ? 'bg-green-100' : 'bg-gray-100'}`}>
-            <Icon className={`text-sm sm:text-base ${isActive ? 'text-green-600' : 'text-gray-600'}`} />
+      <div className="flex items-center justify-between gap-2 sm:gap-3 w-full">
+        <div className="flex items-center space-x-2 sm:space-x-2.5 flex-1 min-w-0 pr-1.5">
+          <div className={`p-1 sm:p-1.5 rounded-lg flex-shrink-0 ${isActive ? 'bg-green-100' : 'bg-gray-100'}`}>
+            <Icon className={`text-xs sm:text-sm ${isActive ? 'text-green-600' : 'text-gray-600'}`} />
           </div>
-          <div className="flex-1 min-w-0 pr-2">
-            <h3 className="font-medium text-sm sm:text-base text-gray-800 leading-snug whitespace-normal">{layer.name}</h3>
+          <div className="flex-1 min-w-0 pr-1.5">
+            <h3 className="font-medium text-xs sm:text-sm text-gray-800 leading-snug whitespace-normal">{layer.name}</h3>
             {layer.description && (
-              <p className="text-xs sm:text-sm text-gray-500 leading-snug mt-1 whitespace-normal line-clamp-2">{layer.description}</p>
+              <p className="text-[10px] sm:text-xs text-gray-500 leading-snug mt-0.5 whitespace-normal line-clamp-2">{layer.description}</p>
             )}
           </div>
         </div>
@@ -342,7 +342,7 @@ function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
             onToggle(e)
           }}
         >
-          <label className="relative inline-flex items-center cursor-pointer w-11 h-6">
+          <label className="relative inline-flex items-center cursor-pointer w-9 h-5">
             <input
               type="checkbox"
               checked={isActive}
@@ -352,7 +352,7 @@ function LayerItem({ layer, icon: Icon, isActive, onToggle }) {
               }}
               className="sr-only peer"
             />
-            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-[22px] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
+            <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-[18px] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-green-500"></div>
           </label>
         </div>
       </div>

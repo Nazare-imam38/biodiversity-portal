@@ -280,34 +280,34 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
     : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-7'
   
   return (
-    <div key={selectedRegion} className={`grid ${gridCols} gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4 py-3 sm:py-4 bg-white border-b border-gray-200 overflow-x-auto`}>
+    <div key={selectedRegion} className={`grid ${gridCols} gap-1.5 sm:gap-2 md:gap-2.5 px-2 sm:px-3 py-2 sm:py-2.5 bg-white border-b border-gray-200 overflow-x-auto`}>
       {cards.map((card, index) => {
         const IconComponent = card.icon
         return (
           <div
             key={`${selectedRegion}-${index}`}
-            className="stat-card bg-white rounded-lg border border-gray-200 p-2 sm:p-3 md:p-4 shadow-sm hover:shadow-lg hover:border-green-400 hover:ring-2 hover:ring-green-300 hover:ring-opacity-50 transition-all duration-300 cursor-pointer transform hover:scale-105 min-w-0"
+            className="stat-card bg-white rounded-lg border border-gray-200 p-1.5 sm:p-2 md:p-2.5 shadow-sm hover:shadow-lg hover:border-green-400 hover:ring-2 hover:ring-green-300 hover:ring-opacity-50 transition-all duration-300 cursor-pointer transform hover:scale-105 min-w-0"
           >
             <div 
-              className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${card.color.startsWith('#') ? '' : card.color} rounded-lg mb-2 sm:mb-3 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg`}
+              className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${card.color.startsWith('#') ? '' : card.color} rounded-lg mb-1 sm:mb-1.5 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg`}
               style={card.color.startsWith('#') ? { backgroundColor: card.color } : {}}
             >
               <IconComponent 
-                className={`text-base sm:text-lg md:text-xl opacity-90 transition-all duration-300 ${card.iconColor.startsWith('#') ? '' : card.iconColor}`}
+                className={`text-xs sm:text-sm md:text-base opacity-90 transition-all duration-300 ${card.iconColor.startsWith('#') ? '' : card.iconColor}`}
                 style={card.iconColor.startsWith('#') ? { color: card.iconColor } : {}}
               />
             </div>
-            <div className="text-sm sm:text-base md:text-lg text-gray-800 mb-0.5 sm:mb-1 transition-colors duration-300 break-words leading-tight whitespace-pre-line">
+            <div className="text-xs sm:text-sm md:text-base text-gray-800 mb-0.5 transition-colors duration-300 break-words leading-tight whitespace-pre-line">
               <TypewriterNumber value={card.value} delay={30} index={index} key={`${selectedRegion}-${index}-${card.value}`} />
             </div>
             {card.valueText && (
-              <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.valueText}</div>
+              <div className="text-[10px] sm:text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.valueText}</div>
             )}
             {card.subtitle && (
-              <div className="text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.subtitle}</div>
+              <div className="text-[10px] sm:text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.subtitle}</div>
             )}
             {card.label && (
-            <div className="text-xs text-gray-600 transition-colors duration-300 line-clamp-2">{card.label}</div>
+            <div className="text-[10px] sm:text-xs text-gray-600 transition-colors duration-300 line-clamp-2">{card.label}</div>
             )}
           </div>
         )

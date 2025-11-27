@@ -222,13 +222,13 @@ function Dashboard() {
   return (
     <div className="min-h-screen w-full max-w-full flex flex-col bg-gray-50 overflow-x-hidden">
       {/* Region Toggle Buttons */}
-      <div className="bg-white border-b border-gray-200 px-2 sm:px-4 py-3 flex items-center justify-center">
-        <div className="flex items-center space-x-1 sm:space-x-2 bg-gray-100 rounded-lg p-1 overflow-x-auto max-w-full scrollbar-hide">
+      <div className="bg-white border-b border-gray-200 px-2 sm:px-3 py-2 flex items-center justify-center">
+        <div className="flex items-center space-x-1 bg-gray-100 rounded-lg p-0.5 overflow-x-auto max-w-full scrollbar-hide">
           {regions.map((region) => (
             <button
               key={region}
               onClick={() => setSelectedRegion(region)}
-              className={`px-3 sm:px-4 py-2 rounded-md font-medium text-xs sm:text-sm transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
+              className={`px-2 sm:px-3 py-1.5 rounded-md font-medium text-[10px] sm:text-xs transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                 selectedRegion === region
                   ? 'bg-white text-green-600 shadow-sm'
                   : 'text-gray-600 hover:text-gray-800'
@@ -276,14 +276,14 @@ function Dashboard() {
           {isMobile && (
             <button
               onClick={() => setIsLayerPanelOpen(!isLayerPanelOpen)}
-              className="lg:hidden absolute bottom-6 right-6 z-[1200] bg-green-600 text-white p-4 rounded-full shadow-2xl hover:bg-green-700 transition-all transform hover:scale-110 active:scale-95"
+              className="lg:hidden absolute bottom-5 right-5 z-[1200] bg-green-600 text-white p-3 rounded-full shadow-2xl hover:bg-green-700 transition-all transform hover:scale-110 active:scale-95"
               aria-label="Toggle layers panel"
               style={{ 
-                boxShadow: '0 10px 25px rgba(34, 197, 94, 0.4)',
+                boxShadow: '0 8px 20px rgba(34, 197, 94, 0.4)',
                 pointerEvents: 'auto'
               }}
             >
-              {isLayerPanelOpen ? <FaTimes className="text-white text-xl" /> : <FaBars className="text-white text-xl" />}
+              {isLayerPanelOpen ? <FaTimes className="text-white text-lg" /> : <FaBars className="text-white text-lg" />}
             </button>
           )}
           <MapView 
