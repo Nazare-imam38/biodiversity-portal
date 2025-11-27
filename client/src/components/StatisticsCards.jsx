@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud, FaSitemap, FaMoneyBill } from 'react-icons/fa'
+import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud, FaSitemap, FaMoneyBill, FaWater } from 'react-icons/fa'
 
 // Typewriter animation component for numbers
 function TypewriterNumber({ value, delay = 30, index = 0, key = '' }) {
