@@ -189,7 +189,7 @@ const layerConfig = {
     opacity: 0.9
   },
   'forest-types': {
-    name: 'National Forest Certification',
+    name: 'Forest Stratification',
     tiles: 'https://tiles.dhamarketplace.com/data/Forest%20Types/{z}/{x}/{y}.png',
     color: '#16a34a',
     type: 'raster',
