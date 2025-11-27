@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud } from 'react-icons/fa'
+import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud, FaSitemap, FaMoneyBill } from 'react-icons/fa'
 
 // Typewriter animation component for numbers
 function TypewriterNumber({ value, delay = 30, index = 0, key = '' }) {
@@ -211,53 +211,61 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
   ],
     'Sindh': [
       { 
-        label: 'Sq Km Total Provincial Area', 
-        value: '140,914', 
+        label: 'million ha Total Provincial Area', 
+        value: '14.09', 
         color: 'bg-blue-500',
         icon: FaGlobe,
         iconColor: 'text-blue-600'
       },
       { 
         label: '', 
-        value: '113,036,1',
-        subtitle: 'Hectare Forest Area 9.8%',
+        value: '296,400',
+        subtitle: 'Hectare Forest Area ~2.1% of land',
         color: 'bg-green-500',
         icon: FaTree,
         iconColor: 'text-green-600'
       },
       { 
         label: '', 
-        value: '27,202',
-        valueText: 'Hectare Deforestation',
-        subtitle: 'Degraded Ecosystems',
+        value: '0.26',
+        valueText: 'million acres Restoration Area',
+        subtitle: '36% of total forest area Sindh',
         color: 'bg-red-600',
-        icon: FaCut,
+        icon: FaSeedling,
         iconColor: 'text-red-800'
       },
       { 
         label: '', 
-        value: '77,553',
-        valueText: 'Hectare Enhancement',
-        subtitle: 'Degraded Ecosystems',
-        color: 'bg-green-600',
-        icon: FaSeedling,
-        iconColor: 'text-green-800'
-      },
-      { 
-        label: '', 
-        value: '7.5%',
-        subtitle: 'Current protected forest coverage',
+        value: '≈1.75',
+        subtitle: '≈million ha Protected Areas',
         color: 'bg-yellow-500',
         icon: FaShieldAlt,
         iconColor: 'text-yellow-600'
       },
       { 
         label: '', 
-        value: '82%',
-        subtitle: 'Protected Areas Coverage of (KBAs)',
-        color: 'bg-red-500',
-        icon: FaExclamationTriangle,
-        iconColor: 'text-red-600'
+        value: '10',
+        valueText: 'Ramsar Sites',
+        color: 'bg-green-600',
+        icon: FaWater,
+        iconColor: 'text-green-800'
+      },
+      
+      { 
+        label: '', 
+        value: '7,701.71',
+        subtitle: 'PKR million Historial Expenditure  ',
+        color: 'bg-green-500',
+        icon: FaTree,
+        iconColor: 'text-green-600'
+      },
+      { 
+        label: '', 
+        value: '8,483.09',
+        subtitle: 'PKR million Planned Investment  ',
+        color: 'bg-teal-500',
+        icon: FaMoneyBill,
+        iconColor: 'text-teal-600'
       }
     ]
   }
