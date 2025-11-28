@@ -240,8 +240,8 @@ function Dashboard() {
         </div>
       </div>
       
-      {/* Statistics Cards - Show for Gilgit Baltistan, Punjab, and Sindh */}
-      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh') && (
+      {/* Statistics Cards - Show for Gilgit Baltistan, Punjab, Sindh, and Balochistan */}
+      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan') && (
       <StatisticsCards layerData={layerData} activeLayers={activeLayers} selectedRegion={selectedRegion} />
       )}
       <FeaturedLayers 

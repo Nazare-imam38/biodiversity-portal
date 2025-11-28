@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud, FaSitemap, FaMoneyBill, FaWater } from 'react-icons/fa'
+import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud, FaSitemap, FaMoneyBill, FaWater, FaStarOfLife } from 'react-icons/fa'
 
 // Typewriter animation component for numbers
 function TypewriterNumber({ value, delay = 30, index = 0, key = '' }) {
@@ -265,6 +265,63 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
         subtitle: 'PKR million Planned Investment  ',
         color: 'bg-teal-500',
         icon: FaMoneyBill,
+        iconColor: 'text-teal-600'
+      }
+    ],
+    'Balochistan': [
+      { 
+        label: 'million ha Total Provincial Area', 
+        value: '34.7', 
+        color: 'bg-blue-500',
+        icon: FaGlobe,
+        iconColor: 'text-blue-600'
+      },
+      { 
+        label: '', 
+        value: '32.3',
+        subtitle: 'million ha Rangelands + forest areas',
+        color: 'bg-green-500',
+        icon: FaTree,
+        iconColor: 'text-green-600'
+      },
+      { 
+        label: '', 
+        value: '~650,000',
+        subtitle: 'ha of woodlands',
+        color: 'bg-green-600',
+        icon: FaLeaf,
+        iconColor: 'text-green-800'
+      },
+      { 
+        label: '', 
+        value: '≈110–112,000',
+        subtitle: 'ha of Ziarat Juniper Biosphere Reserve',
+        color: 'bg-yellow-500',
+        icon: FaSeedling,
+        iconColor: 'text-yellow-600'
+      },
+      { 
+        label: '', 
+        value: '1.8–2.0',
+        subtitle: 'million ha Protected Areas',
+        color: 'bg-blue-500',
+        icon: FaShieldAlt,
+        iconColor: 'text-blue-600'
+      },
+      { 
+        label: '', 
+        value: '30,000',
+        subtitle: 'ha Community/private game reserves',
+        color: 'bg-purple-500',
+        icon: FaStarOfLife,
+        iconColor: 'text-purple-600'
+      },
+      { 
+        label: '', 
+        value: '6',
+        valueText: 'Ramsar Sites',
+        color: 'bg-teal-500',
+        icon: FaWater,
         iconColor: 'text-teal-600'
       }
     ]

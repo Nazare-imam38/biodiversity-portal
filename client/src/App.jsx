@@ -11,13 +11,8 @@ import CodeEntry from './components/CodeEntry'
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
-  // Check authentication on mount
-  useEffect(() => {
-    const authenticated = localStorage.getItem('biodiversity_portal_authenticated')
-    if (authenticated === 'true') {
-      setIsAuthenticated(true)
-    }
-  }, [])
+  // Don't check localStorage - require code entry on every page reload
+  // Authentication is session-only (lost on page reload)
 
   const handleCodeCorrect = () => {
     setIsAuthenticated(true)

@@ -8,13 +8,7 @@ export default function CodeEntry({ onCodeCorrect }) {
   const [error, setError] = useState('')
   const [shake, setShake] = useState(false)
 
-  // Check if user is already authenticated
-  useEffect(() => {
-    const isAuthenticated = localStorage.getItem('biodiversity_portal_authenticated')
-    if (isAuthenticated === 'true') {
-      onCodeCorrect()
-    }
-  }, [onCodeCorrect])
+  // Don't check localStorage - require code entry on every reload
 
   const handleNumberClick = (num) => {
     if (enteredCode.length < 6) {
@@ -36,8 +30,7 @@ export default function CodeEntry({ onCodeCorrect }) {
   useEffect(() => {
     if (enteredCode.length === 6) {
       if (enteredCode === CORRECT_CODE) {
-        // Correct code - authenticate and allow access
-        localStorage.setItem('biodiversity_portal_authenticated', 'true')
+        // Correct code - authenticate and allow access (session only, no localStorage)
         onCodeCorrect()
       } else {
         // Wrong code - show error and shake

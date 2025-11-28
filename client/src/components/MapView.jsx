@@ -698,16 +698,19 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       }
     },
     'ramsar-sites': {
-      columns: ['Site_name', 'Region', 'Country', 'Designatio', 'Area__ha_', 'Latitude', 'Longitude', 'Wetland_Ty'],
+      columns: ['Site_name', 'Name', 'Region', 'Country', 'Designatio', 'Area__ha_', 'Shape_Area', 'Latitude', 'Longitude', 'Wetland_Ty', 'Shape_Leng'],
       displayNames: {
         'Site_name': 'Site Name',
+        'Name': 'Site Name',
         'Region': 'Region',
         'Country': 'Country',
         'Designatio': 'Designation Date',
         'Area__ha_': 'Area (ha)',
+        'Shape_Area': 'Area (sq units)',
         'Latitude': 'Latitude',
         'Longitude': 'Longitude',
-        'Wetland_Ty': 'Wetland Type'
+        'Wetland_Ty': 'Wetland Type',
+        'Shape_Leng': 'Perimeter/Length'
       }
     },
     'wildlife-occurrence': {
@@ -739,7 +742,11 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       if (columnMapping) {
         const { columns, displayNames } = columnMapping
         // Filter to only show columns that exist in the feature
-        const visibleColumns = columns.filter(col => props[col] != null)
+        // For ramsar-sites, prefer 'Name' over 'Site_name' if both exist
+        let visibleColumns = columns.filter(col => props[col] != null)
+        if (layerId === 'ramsar-sites' && props['Name'] && props['Site_name']) {
+          visibleColumns = visibleColumns.filter(col => col !== 'Site_name')
+        }
         
         if (visibleColumns.length > 0) {
           const icon = getLayerIconSVG(layerId)
@@ -760,6 +767,14 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
                   // Format dates specially
                   if (col === 'Designatio' && value) {
                     displayValue = formatDate(value)
+                  }
+                  // Format Shape_Area to be more readable
+                  if (col === 'Shape_Area' && typeof value === 'number') {
+                    displayValue = value.toFixed(8) + ' sq units'
+                  }
+                  // Format Shape_Leng to be more readable
+                  if (col === 'Shape_Leng' && typeof value === 'number') {
+                    displayValue = value.toFixed(6) + ' units'
                   }
                   // Truncate long values
                   if (typeof displayValue === 'string' && displayValue.length > 40) {

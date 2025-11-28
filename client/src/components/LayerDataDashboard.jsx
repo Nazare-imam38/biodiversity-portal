@@ -73,16 +73,19 @@ const layerColumnMappings = {
     }
   },
   'ramsar-sites': {
-    columns: ['Site_name', 'Region', 'Country', 'Designatio', 'Area__ha_', 'Latitude', 'Longitude', 'Wetland_Ty'],
+    columns: ['Site_name', 'Name', 'Region', 'Country', 'Designatio', 'Area__ha_', 'Shape_Area', 'Latitude', 'Longitude', 'Wetland_Ty', 'Shape_Leng'],
     displayNames: {
       'Site_name': 'Site Name',
+      'Name': 'Site Name',
       'Region': 'Region',
       'Country': 'Country',
       'Designatio': 'Designation Date',
       'Area__ha_': 'Area (ha)',
+      'Shape_Area': 'Area (sq units)',
       'Latitude': 'Latitude',
       'Longitude': 'Longitude',
-      'Wetland_Ty': 'Wetland Type'
+      'Wetland_Ty': 'Wetland Type',
+      'Shape_Leng': 'Perimeter/Length'
     }
   },
   'wildlife-occurrence': {
@@ -314,10 +317,14 @@ function LayerTable({ layerId, layer, data, columnMapping, selectedFeature, tabl
   }, [selectedFeatureIndex, layerId, showPagination, itemsPerPage, tableRefs])
   
   const { columns, displayNames } = columnMapping
-  const visibleColumns = columns.filter(col => {
+  let visibleColumns = columns.filter(col => {
     // Check if at least one feature has this property
     return data.features.some(f => f.properties && f.properties[col] != null)
   })
+  // For ramsar-sites, prefer 'Name' over 'Site_name' if both exist
+  if (layerId === 'ramsar-sites' && visibleColumns.includes('Name') && visibleColumns.includes('Site_name')) {
+    visibleColumns = visibleColumns.filter(col => col !== 'Site_name')
+  }
 
   if (visibleColumns.length === 0) {
     return null
@@ -435,6 +442,14 @@ function LayerTable({ layerId, layer, data, columnMapping, selectedFeature, tabl
                       let displayValue = formatValue(value)
                       if (col === 'Designatio' && value) {
                         displayValue = formatDate(value)
+                      }
+                      // Format Shape_Area to be more readable
+                      if (col === 'Shape_Area' && typeof value === 'number') {
+                        displayValue = value.toFixed(8) + ' sq units'
+                      }
+                      // Format Shape_Leng to be more readable
+                      if (col === 'Shape_Leng' && typeof value === 'number') {
+                        displayValue = value.toFixed(6) + ' units'
                       }
                       return (
                         <td 
@@ -625,10 +640,14 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
           }
 
           const { columns, displayNames } = columnMapping
-          const visibleColumns = columns.filter(col => {
+          let visibleColumns = columns.filter(col => {
             // Check if at least one feature has this property
             return data.features.some(f => f.properties && f.properties[col] != null)
           })
+          // For ramsar-sites, prefer 'Name' over 'Site_name' if both exist
+          if (layerId === 'ramsar-sites' && visibleColumns.includes('Name') && visibleColumns.includes('Site_name')) {
+            visibleColumns = visibleColumns.filter(col => col !== 'Site_name')
+          }
 
           if (visibleColumns.length === 0) {
             return null
