@@ -30,23 +30,28 @@ const layerIcons = {
   'punjab-lulc': FaMapMarkedAlt,
   'pakistan-lulc': FaMapMarkedAlt,
   'sindh-lulc': FaMapMarkedAlt,
+  'balochistan-lulc': FaMapMarkedAlt,
   'forest-types': FaTree,
 }
 
 export default function Legend({ layers, activeLayers }) {
   const [isExpanded, setIsExpanded] = useState(true)
+  const [isForestLegendExpanded, setIsForestLegendExpanded] = useState(true)
   
-  // Filter out base reference layers (like provinces) from legend
+  // Filter out base reference layers (like provinces) and forest-types from main legend
   const activeLayersList = layers.filter(layer => 
-    activeLayers.has(layer.id) && layer.id !== 'pakistan-provinces'
+    activeLayers.has(layer.id) && layer.id !== 'pakistan-provinces' && layer.id !== 'forest-types'
   )
+  
+  // Separate check for forest-types layer
+  const forestTypesLayer = layers.find(layer => layer.id === 'forest-types' && activeLayers.has(layer.id))
 
-  if (activeLayersList.length === 0) {
-    return null
-  }
-
+  // Render both legends if needed
   return (
-    <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
+    <>
+      {/* Main Legend (Left Side) - Excludes Forest Stratification */}
+      {activeLayersList.length > 0 && (
+        <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
       <div className="flex items-center justify-between p-2 sm:p-3 border-b border-gray-200">
         <h3 className="font-semibold text-gray-800 text-xs sm:text-sm">Legend</h3>
         <button
@@ -196,19 +201,15 @@ export default function Legend({ layers, activeLayers }) {
               )
             }
             
-            // Special handling for Forest Types layer - show custom legend
-            if (layer.id === 'forest-types') {
-              const forestTypesLegend = [
-                { color: '#87CEEB', label: 'Riverine' }, // Light blue
-                { color: '#F5DEB3', label: 'Thorn' }, // Light beige
-                { color: '#9CAF88', label: 'Scrub' }, // Light olive green
-                { color: '#20B2AA', label: 'Moist-Temperate' }, // Teal-green
-                { color: '#6B8E23', label: 'Dry-Temperate' }, // Darker olive green
-                { color: '#5F9EA0', label: 'Sub-Alpine' }, // Muted blue-green
-                { color: '#32CD32', label: 'ChirPine' }, // Bright lime green
-                { color: '#92b3a2', label: 'Mangrove' }, // Updated color
-                { color: '#8FBC8F', label: 'Irrigated Plantation' }, // Muted green-grey
-                { color: '#FFA500', label: 'Chilghoza' } // Orange
+            // Special handling for Balochistan LULC layer - show custom legend
+            if (layer.id === 'balochistan-lulc') {
+              const balochistanLULCLegend = [
+                { color: '#8855cb', label: 'Bare Land' }, // Purple
+                { color: '#75d29d', label: 'Vegetation' }, // Light green
+                { color: '#d08f5b', label: 'Barren Land' }, // Light brown/tan
+                { color: '#298ad5', label: 'Water Bodies' }, // Blue
+                { color: '#86c92e', label: 'Built Up Area' }, // Lime green
+                { color: '#dd7c9b', label: 'Rangeland' } // Pink
               ]
               
               return (
@@ -228,7 +229,7 @@ export default function Legend({ layers, activeLayers }) {
                     <span className="text-gray-700 text-xs leading-tight font-medium">{layer.name}</span>
                   </div>
                   <div className="pl-7 sm:pl-9 space-y-1.5">
-                    {forestTypesLegend.map((item, idx) => (
+                    {balochistanLULCLegend.map((item, idx) => (
                       <div key={idx} className="flex items-center space-x-2 sm:space-x-3 text-xs">
                         <div 
                           className="w-4 h-4 sm:w-5 sm:h-5 rounded flex-shrink-0 border border-gray-300"
@@ -263,6 +264,75 @@ export default function Legend({ layers, activeLayers }) {
         </div>
       </div>
     </div>
+      )}
+      
+      {/* Forest Stratification Legend (Right Side) - Separate Legend */}
+      {forestTypesLayer && (
+        <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
+          <div className="flex items-center justify-between p-2 sm:p-3 border-b border-gray-200">
+            <h3 className="font-semibold text-gray-800 text-xs sm:text-sm">Forest Stratification</h3>
+            <button
+              onClick={() => setIsForestLegendExpanded(!isForestLegendExpanded)}
+              className="p-1 text-gray-600 hover:text-green-600 hover:bg-green-100 rounded-lg transition-all"
+              aria-label={isForestLegendExpanded ? 'Collapse' : 'Expand'}
+              title={isForestLegendExpanded ? 'Collapse' : 'Expand'}
+            >
+              {isForestLegendExpanded ? (
+                <FaChevronDown className="text-xs sm:text-sm" />
+              ) : (
+                <FaChevronUp className="text-xs sm:text-sm" />
+              )}
+            </button>
+          </div>
+          <div 
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              isForestLegendExpanded ? 'opacity-100' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <div className="p-2 sm:p-3 space-y-2 sm:space-y-2.5">
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm mb-2">
+                  <div className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0">
+                    <div 
+                      className="p-1 sm:p-1.5 rounded-lg flex items-center justify-center"
+                      style={{ backgroundColor: `${forestTypesLayer.color}20` }}
+                    >
+                      <FaTree 
+                        className="text-xs sm:text-sm" 
+                        style={{ color: forestTypesLayer.color }}
+                      />
+                    </div>
+                  </div>
+                  <span className="text-gray-700 text-xs leading-tight font-medium">{forestTypesLayer.name}</span>
+                </div>
+                <div className="pl-7 sm:pl-9 space-y-1.5">
+                  {[
+                    { color: '#87CEEB', label: 'Riverine' }, // Light blue
+                    { color: '#F5DEB3', label: 'Thorn' }, // Light beige
+                    { color: '#9CAF88', label: 'Scrub' }, // Light olive green
+                    { color: '#20B2AA', label: 'Moist-Temperate' }, // Teal-green
+                    { color: '#6B8E23', label: 'Dry-Temperate' }, // Darker olive green
+                    { color: '#5F9EA0', label: 'Sub-Alpine' }, // Muted blue-green
+                    { color: '#32CD32', label: 'ChirPine' }, // Bright lime green
+                    { color: '#92b3a2', label: 'Mangrove' }, // Updated color
+                    { color: '#8FBC8F', label: 'Irrigated Plantation' }, // Muted green-grey
+                    { color: '#FFA500', label: 'Chilghoza' } // Orange
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center space-x-2 sm:space-x-3 text-xs">
+                      <div 
+                        className="w-4 h-4 sm:w-5 sm:h-5 rounded flex-shrink-0 border border-gray-300"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <span className="text-gray-700 text-xs leading-tight">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 

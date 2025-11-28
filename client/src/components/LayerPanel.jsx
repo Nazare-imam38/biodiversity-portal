@@ -36,6 +36,7 @@ const layerIcons = {
   'punjab-lulc': FaMap,
   'pakistan-lulc': FaMap,
   'sindh-lulc': FaMap,
+  'balochistan-lulc': FaMap,
   'forest-types': FaTree,
 }
 
@@ -197,7 +198,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'protected-areas' &&
                            layer.id !== 'protected-areas-pol' &&
-                           layer.id !== 'sindh-lulc'
+                           layer.id !== 'sindh-lulc' &&
+                           layer.id !== 'pakistan-lulc'
                   }
                   // Hide protected-forest for Khyber Pakhtunkhwa region (it has 0 features)
                   // Hide region-specific layers from other provinces (Sindh, etc.)

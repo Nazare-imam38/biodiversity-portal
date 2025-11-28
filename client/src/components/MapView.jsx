@@ -964,7 +964,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
               : (import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}${layer.tiles}` : layer.tiles)
             
             // Use MBTilesOverlay for LULC layers and forest types (external MBTiles), regular TileLayer for local tiles
-            if (isExternalUrl && (layerId === 'punjab-lulc' || layerId === 'pakistan-lulc' || layerId === 'sindh-lulc' || layerId === 'forest-types')) {
+            if (isExternalUrl && (layerId === 'punjab-lulc' || layerId === 'pakistan-lulc' || layerId === 'sindh-lulc' || layerId === 'balochistan-lulc' || layerId === 'forest-types')) {
               console.log(`Rendering MBTiles overlay for ${layerId}:`, tileUrl)
               return (
                 <MBTilesOverlay

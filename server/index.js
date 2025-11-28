@@ -188,6 +188,14 @@ const layerConfig = {
     description: 'Pakistan Land Use Land Cover Map',
     opacity: 0.9
   },
+  'balochistan-lulc': {
+    name: 'Balochistan Land Use Land Cover',
+    tiles: 'https://tiles.dhamarketplace.com/data/Balochistan-LULC/{z}/{x}/{y}.png',
+    color: '#10b981',
+    type: 'raster',
+    description: 'Balochistan Land Use Land Cover Map',
+    opacity: 0.9
+  },
   'forest-types': {
     name: 'Forest Stratification',
     tiles: 'https://tiles.dhamarketplace.com/data/Forest%20Types/{z}/{x}/{y}.png',
@@ -1368,7 +1376,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     const isGBLayer = layerId === 'gb-provincial' || layerId === 'gb-district';
     const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
     const isSindhLayer = layerId === 'sindh-provincial' || layerId === 'protected-areas-sindh' || layerId === 'ramsar-sites-sindh' || layerId === 'forest-landscape-sindh' || layerId === 'sindh-lulc'; // Sindh-specific layers
-    const isBalochistanLayer = layerId === 'balochistan-provincial'; // Balochistan-specific layers
+    const isBalochistanLayer = layerId === 'balochistan-provincial' || layerId === 'balochistan-lulc'; // Balochistan-specific layers
     const isKPLayer = layerId === 'kp-provincial'; // KP-specific layers
     const isAJKLayer = layerId === 'ajk-provincial'; // AJK-specific layers
     const isPakistanLULCLayer = layerId === 'pakistan-lulc'; // Pakistan LULC layer (national level)
