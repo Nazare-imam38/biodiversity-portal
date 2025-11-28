@@ -77,7 +77,8 @@ export default function Legend({ layers, activeLayers }) {
                 { color: '#FFA500', label: 'Cropland' }, // Orange
                 { color: '#22c55e', label: 'Vegetation' }, // Green
                 { color: '#06b6d4', label: 'Built Up Area' }, // Cyan (based on image)
-                { color: '#3b82f6', label: 'Waterbodies' } // Blue
+                { color: '#3b82f6', label: 'Waterbodies' }, // Blue
+                { color: '#fbfbc9', label: 'Barren Land' } // Light yellow/beige
               ]
               
               return (

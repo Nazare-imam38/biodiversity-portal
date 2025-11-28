@@ -33,7 +33,7 @@ function Dashboard() {
     }
     return true
   })
-  const [selectedRegion, setSelectedRegion] = useState('Sindh') // Default to Sindh to show stats
+  const [selectedRegion, setSelectedRegion] = useState('Balochistan') // Default to Balochistan to show stats
   
   // Define all regions
   const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'Azad Kashmir', 'Khyber Pakhtunkhwa']
