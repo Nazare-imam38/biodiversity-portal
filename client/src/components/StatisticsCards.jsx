@@ -270,8 +270,8 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
     ],
     'Balochistan': [
       { 
-        label: 'million ha Total Provincial Area', 
-        value: '34.7', 
+        label: 'Sq Km Total Provincial Area', 
+        value: '347,190', 
         color: 'bg-blue-500',
         icon: FaGlobe,
         iconColor: 'text-blue-600'
@@ -294,10 +294,10 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
       },
       { 
         label: '', 
-        value: '≈110–112,000',
-        subtitle: 'ha of Ziarat Juniper Biosphere Reserve',
+        value: '94%',
+        subtitle: 'Protected Areas Coverage of (KBAs)',
         color: 'bg-yellow-500',
-        icon: FaSeedling,
+        icon: FaShieldAlt,
         iconColor: 'text-yellow-600'
       },
       { 
