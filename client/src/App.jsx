@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
+import DataVisualization from './pages/DataVisualization'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Header from './components/Header'
@@ -46,6 +47,15 @@ function App() {
               <Header />
               <main className="flex-1">
                 <Dashboard />
+              </main>
+              <Footer />
+            </>
+          } />
+          <Route path="/data-visualization" element={
+            <>
+              <Header />
+              <main className="flex-1">
+                <DataVisualization />
               </main>
               <Footer />
             </>

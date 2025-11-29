@@ -13,6 +13,7 @@ export default function Header() {
   
   const activePage = location.pathname === '/' || location.pathname === '/home' ? 'Home' : 
                      location.pathname === '/dashboard' ? 'Dashboard' : 
+                     location.pathname === '/data-visualization' ? 'Data Visualization' :
                      location.pathname
 
   useEffect(() => {
@@ -85,11 +86,8 @@ export default function Header() {
             >
               Dashboard
             </Link>
-            <a 
-              href="#" 
-              onClick={(e) => {
-                e.preventDefault()
-              }}
+            <Link 
+              to="/data-visualization"
               className={`px-2 lg:px-4 py-2 rounded-lg transition-all duration-300 text-sm lg:text-base ${
                 activePage === 'Data Visualization'
                   ? 'text-green-600 font-semibold bg-green-50 border-2 border-green-600'
@@ -98,7 +96,7 @@ export default function Header() {
             >
               <span className="hidden lg:inline">Data Visualization</span>
               <span className="lg:hidden">Visualization</span>
-            </a>
+            </Link>
             <a 
               href="#" 
               onClick={(e) => {
@@ -254,12 +252,9 @@ export default function Header() {
           >
             Dashboard
           </Link>
-          <a 
-            href="#" 
-            onClick={(e) => {
-              e.preventDefault()
-              setMobileMenuOpen(false)
-            }}
+          <Link 
+            to="/data-visualization"
+            onClick={() => setMobileMenuOpen(false)}
             className={`px-4 py-3 rounded-lg transition-all ${
               activePage === 'Data Visualization'
                 ? 'text-green-600 font-semibold bg-green-50 border-2 border-green-600'
@@ -267,7 +262,7 @@ export default function Header() {
             }`}
           >
             Data Visualization
-          </a>
+          </Link>
           <a 
             href="#" 
             onClick={(e) => {
