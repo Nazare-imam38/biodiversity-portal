@@ -15,12 +15,12 @@ export default function FeaturedLayers({ layers, activeLayers, onToggleLayer, on
   }, [])
   
   // Featured layers - most important ones
-  // Exclude protected-forest for GB, Azad Kashmir, Balochistan, and Sindh regions (they have 0 features)
-  // Exclude ramsar-sites for GB and Azad Kashmir regions (they have 0 features)
+  // Exclude protected-forest for GB, AJK, Balochistan, and Sindh regions (they have 0 features)
+  // Exclude ramsar-sites for GB and AJK regions (they have 0 features)
   // For Sindh, use Sindh-specific layers instead of national ones
   let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
-  if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Azad Kashmir') {
-    featuredLayerIds = ['kbas'] // Remove protected-areas, protected-forest and ramsar-sites for GB and Azad Kashmir
+  if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Azad Kashmir' || selectedRegion === 'AJK') {
+    featuredLayerIds = ['kbas'] // Remove protected-areas, protected-forest and ramsar-sites for GB and AJK
   } else if (selectedRegion === 'Punjab') {
     featuredLayerIds = ['protected-forest', 'ramsar-sites', 'kbas'] // Remove protected-areas for Punjab
   } else if (selectedRegion === 'Balochistan') {

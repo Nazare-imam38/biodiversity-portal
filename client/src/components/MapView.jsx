@@ -544,7 +544,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       }
     }
     
-    // Special styling for Azad Kashmir Provincial - hollow with purple outline
+    // Special styling for AJK Provincial - hollow with purple outline
     if (layer.id === 'ajk-provincial') {
       return {
         color: '#8b5cf6', // Purple outline

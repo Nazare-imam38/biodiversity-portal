@@ -517,6 +517,7 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
                       selectedRegion === 'Sindh' || 
                       selectedRegion === 'Balochistan' || 
                       selectedRegion === 'Khyber Pakhtunkhwa' || 
+                      selectedRegion === 'AJK' ||
                       selectedRegion === 'Azad Kashmir'
     
     if (!isProvince) {

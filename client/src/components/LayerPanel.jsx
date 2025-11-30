@@ -163,7 +163,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   }
                   // Hide GB boundary layers and Pakistan LULC for Punjab region (show Punjab LULC)
                   // Hide protected-areas (WDPA) and protected-areas-pol for Punjab region
-                  // Hide other region-specific layers (Sindh, Azad Kashmir, etc.)
+                  // Hide other region-specific layers (Sindh, AJK, etc.)
                   if (selectedRegion === 'Punjab') {
                     return layer.id !== 'gb-provincial' && 
                            layer.id !== 'gb-district' && 
@@ -180,7 +180,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'sindh-lulc'
                   }
                   // Hide protected-forest for Balochistan region (it has 0 features)
-                  // Hide region-specific layers from other provinces (Sindh, Azad Kashmir, etc.)
+                  // Hide region-specific layers from other provinces (Sindh, AJK, etc.)
                   // Hide protected-areas (WDPA) and protected-areas-pol for Balochistan region
                   // Hide sindh-lulc for Balochistan region
                   if (selectedRegion === 'Balochistan') {
@@ -238,11 +238,13 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'pakistan-lulc'
                   }
-                  // Hide protected-forest and ramsar-sites for Azad Kashmir region (they have 0 features)
-                  // Hide region-specific layers for Azad Kashmir region
-                  if (selectedRegion === 'Azad Kashmir') {
+                  // Hide protected-forest and ramsar-sites for AJK region (they have 0 features)
+                  // Hide region-specific layers for AJK region
+                  // Hide agroecological-zones for AJK region
+                  if (selectedRegion === 'Azad Kashmir' || selectedRegion === 'AJK') {
                     return layer.id !== 'protected-forest' && 
                            layer.id !== 'ramsar-sites' && 
+                           layer.id !== 'agroecological-zones' &&
                            layer.id !== 'gb-provincial' && 
                            layer.id !== 'gb-district' && 
                            layer.id !== 'punjab-provincial' && 
@@ -258,8 +260,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'balochistan-lulc'
                   }
                   // For other regions (National), hide all region-specific layers and Punjab LULC (show Pakistan LULC)
-                  // Hide Sindh-specific layers and Azad Kashmir Provincial from National view
-                  if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab' && selectedRegion !== 'Balochistan' && selectedRegion !== 'Khyber Pakhtunkhwa' && selectedRegion !== 'Sindh' && selectedRegion !== 'Azad Kashmir') {
+                  // Hide Sindh-specific layers and AJK Provincial from National view
+                  if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab' && selectedRegion !== 'Balochistan' && selectedRegion !== 'Khyber Pakhtunkhwa' && selectedRegion !== 'Sindh' && selectedRegion !== 'Azad Kashmir' && selectedRegion !== 'AJK') {
                     return layer.id !== 'gb-provincial' && 
                            layer.id !== 'gb-district' && 
                            layer.id !== 'punjab-provincial' && 

@@ -35,8 +35,13 @@ function Dashboard() {
   })
   const [selectedRegion, setSelectedRegion] = useState('Balochistan') // Default to Balochistan to show stats
   
-  // Define all regions
-  const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'Azad Kashmir', 'Khyber Pakhtunkhwa']
+  // Helper function to convert UI region name to backend region name
+  const getBackendRegionName = (region) => {
+    return region === 'AJK' ? 'Azad Kashmir' : region
+  }
+
+  // Define all regions (UI display names)
+  const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'AJK', 'Khyber Pakhtunkhwa']
 
   useEffect(() => {
     const checkMobile = () => {
@@ -80,7 +85,7 @@ function Dashboard() {
         defaultLayers.add('sindh-provincial')
       } else if (selectedRegion === 'Khyber Pakhtunkhwa') {
         defaultLayers.add('kp-provincial')
-      } else if (selectedRegion === 'Azad Kashmir') {
+      } else if (selectedRegion === 'AJK') {
         defaultLayers.add('ajk-provincial')
       }
       
@@ -183,12 +188,12 @@ function Dashboard() {
 
   const clearFeaturedLayers = () => {
     // Only clear the featured layers based on region
-    // Exclude protected-forest for GB, Azad Kashmir, Balochistan, and Sindh regions (they have 0 features)
-    // Exclude ramsar-sites for GB and Azad Kashmir regions (they have 0 features)
+    // Exclude protected-forest for GB, AJK, Balochistan, and Sindh regions (they have 0 features)
+    // Exclude ramsar-sites for GB and AJK regions (they have 0 features)
     // For Sindh, use Sindh-specific layers instead of national ones
     let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
-    if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Azad Kashmir') {
-      featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB and Azad Kashmir
+    if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'AJK') {
+      featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB and AJK
     } else if (selectedRegion === 'Balochistan') {
       featuredLayerIds = ['protected-areas', 'ramsar-sites', 'kbas'] // Remove protected-forest for Balochistan
     } else if (selectedRegion === 'Sindh') {
@@ -240,16 +245,16 @@ function Dashboard() {
         </div>
       </div>
       
-      {/* Statistics Cards - Show for Gilgit Baltistan, Punjab, Sindh, Balochistan, and Azad Kashmir */}
-      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan' || selectedRegion === 'Azad Kashmir') && (
-      <StatisticsCards layerData={layerData} activeLayers={activeLayers} selectedRegion={selectedRegion} />
+      {/* Statistics Cards - Show for Gilgit Baltistan, Punjab, Sindh, Balochistan, and AJK */}
+      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan' || selectedRegion === 'AJK') && (
+      <StatisticsCards layerData={layerData} activeLayers={activeLayers} selectedRegion={getBackendRegionName(selectedRegion)} />
       )}
       <FeaturedLayers 
         layers={layers}
         activeLayers={activeLayers}
         onToggleLayer={toggleLayer}
         onClearAll={clearFeaturedLayers}
-        selectedRegion={selectedRegion}
+        selectedRegion={getBackendRegionName(selectedRegion)}
         isLayerPanelOpen={isLayerPanelOpen}
         setIsLayerPanelOpen={setIsLayerPanelOpen}
       />
@@ -262,7 +267,7 @@ function Dashboard() {
           showMobileButton={false}
           isOpen={isLayerPanelOpen}
           setIsOpen={setIsLayerPanelOpen}
-          selectedRegion={selectedRegion}
+          selectedRegion={getBackendRegionName(selectedRegion)}
         />
         <div 
           className="flex-1 relative min-w-0 transition-all duration-300" 
@@ -289,7 +294,7 @@ function Dashboard() {
           <MapView 
             layers={layers}
             activeLayers={activeLayers}
-            selectedRegion={selectedRegion}
+            selectedRegion={getBackendRegionName(selectedRegion)}
             panelOpen={isLayerPanelOpen}
             onLayerDataChange={handleLayerDataChange}
             onFeatureSelect={handleFeatureSelect}
@@ -298,13 +303,13 @@ function Dashboard() {
       </div>
       
       {/* Layer Data Dashboard - Show below map for all provinces */}
-      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan' || selectedRegion === 'Khyber Pakhtunkhwa' || selectedRegion === 'Azad Kashmir') && (
+      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan' || selectedRegion === 'Khyber Pakhtunkhwa' || selectedRegion === 'AJK') && (
         <div className="mt-4 sm:mt-6">
           <LayerDataDashboard 
             layerData={layerData}
             activeLayers={activeLayers}
             layers={layers}
-            selectedRegion={selectedRegion}
+            selectedRegion={getBackendRegionName(selectedRegion)}
             selectedFeature={selectedFeature}
           />
         </div>

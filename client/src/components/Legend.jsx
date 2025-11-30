@@ -39,11 +39,11 @@ export default function Legend({ layers, activeLayers, selectedRegion }) {
   const [isForestLegendExpanded, setIsForestLegendExpanded] = useState(true)
   
   // Filter out base reference layers (like provinces) and forest-types from main legend
-  // Also filter out balochistan-lulc when Azad Kashmir is selected
+  // Also filter out balochistan-lulc and agroecological-zones when AJK is selected
   const activeLayersList = layers.filter(layer => {
     if (!activeLayers.has(layer.id)) return false
     if (layer.id === 'pakistan-provinces' || layer.id === 'forest-types') return false
-    if (selectedRegion === 'Azad Kashmir' && layer.id === 'balochistan-lulc') return false
+    if ((selectedRegion === 'Azad Kashmir' || selectedRegion === 'AJK') && (layer.id === 'balochistan-lulc' || layer.id === 'agroecological-zones')) return false
     return true
   })
   

@@ -325,7 +325,7 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
         iconColor: 'text-teal-600'
       }
     ],
-    'Azad Kashmir': [
+    'AJK': [
       { 
         label: 'Sq Km Total Provincial Area', 
         value: '5,134', 
@@ -379,7 +379,9 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
   }
 
   // Get cards for the selected region, default to Gilgit Baltistan
-  const cards = regionStats[selectedRegion] || regionStats['Gilgit Baltistan']
+  // Handle both 'AJK' (UI) and 'Azad Kashmir' (backend) region names
+  const regionKey = selectedRegion === 'Azad Kashmir' ? 'AJK' : selectedRegion
+  const cards = regionStats[regionKey] || regionStats['Gilgit Baltistan']
 
   // Determine grid columns based on number of cards
   const numCards = cards.length

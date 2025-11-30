@@ -12,7 +12,12 @@ import {
   CartesianGrid,
   Tooltip,
   Legend as RechartsLegend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  RadarChart,
+  Radar,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis
 } from 'recharts'
 import { FaFilter, FaTimes } from 'react-icons/fa'
 import LoadingSpinner from '../components/LoadingSpinner'
@@ -33,8 +38,13 @@ const CHART_COLORS = [
   '#06b6d4', '#8b5cf6', '#ef4444', '#14b8a6', '#ec4899', '#84cc16',
 ]
 
-// Regions available for filtering
-const REGIONS = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa', 'Azad Kashmir']
+// Helper function to convert UI region name to backend region name
+const getBackendRegionName = (region) => {
+  return region === 'AJK' ? 'Azad Kashmir' : region
+}
+
+// Regions available for filtering (UI display names)
+const REGIONS = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa', 'AJK']
 
 // Layer availability by region
 const LAYER_AVAILABILITY = {
@@ -42,6 +52,7 @@ const LAYER_AVAILABILITY = {
   'protected-areas-sindh': ['Sindh'],
   'ramsar-sites-sindh': ['Sindh'],
   'forest-landscape-sindh': ['Sindh'],
+  'agroecological-zones': ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa'], // Exclude AJK
 }
 
 // Layer colors and styles
@@ -66,7 +77,8 @@ function getBoundaryLayerId(region) {
     'Sindh': 'sindh-provincial',
     'Balochistan': 'balochistan-provincial',
     'Khyber Pakhtunkhwa': 'kp-provincial',
-    'Azad Kashmir': 'ajk-provincial',
+    'AJK': 'ajk-provincial',
+    'Azad Kashmir': 'ajk-provincial', // Backend compatibility
     'National': 'pakistan-provinces'
   }
   return boundaryMap[region] || 'pakistan-provinces'
@@ -255,11 +267,12 @@ function DataVisualization() {
   useEffect(() => {
     const fetchBoundary = async () => {
       const boundaryLayerId = getBoundaryLayerId(selectedRegion)
+      const backendRegion = getBackendRegionName(selectedRegion)
       try {
         const apiUrl = import.meta.env.VITE_API_URL || ''
         const endpoint = apiUrl 
-          ? `${apiUrl}/api/layers/${boundaryLayerId}?region=${encodeURIComponent(selectedRegion)}` 
-          : `/api/layers/${boundaryLayerId}?region=${encodeURIComponent(selectedRegion)}`
+          ? `${apiUrl}/api/layers/${boundaryLayerId}?region=${encodeURIComponent(backendRegion)}` 
+          : `/api/layers/${boundaryLayerId}?region=${encodeURIComponent(backendRegion)}`
         const response = await fetch(endpoint)
         if (response.ok) {
           const data = await response.json()
@@ -278,7 +291,8 @@ function DataVisualization() {
   // Fetch data layers for map and charts when region changes
   useEffect(() => {
     if (layers.length > 0) {
-      fetchAllLayerData(layers, selectedRegion)
+      const backendRegion = getBackendRegionName(selectedRegion)
+      fetchAllLayerData(layers, backendRegion)
     }
   }, [selectedRegion, layers])
 
@@ -490,6 +504,34 @@ function DataVisualization() {
       .slice(0, 20)
   }, [layerData, selectedRegion])
 
+  // Process data for Biodiversity Conservation Metrics Radar Chart
+  const biodiversityMetricsData = useMemo(() => {
+    // Calculate raw values
+    const protectedAreasCount = protectedAreasData?.byIUCN?.reduce((sum, item) => sum + item.value, 0) || 0
+    const kbasCount = kbasData?.byArea?.length || 0
+    const protectedForestArea = protectedForestData?.byZone?.reduce((sum, item) => sum + item.area, 0) || 0
+    const ramsarCount = ramsarData?.byRegion?.length || 0
+    const ecoregionsCount = ecoregionsData?.byBiome?.reduce((sum, item) => sum + item.count, 0) || 0
+    const speciesCount = wildlifeData?.length || 0
+
+    // Normalize values to 0-100 scale
+    // Using reasonable maximums based on typical values across Pakistan
+    const normalize = (value, max) => Math.min(100, Math.round((value / max) * 100))
+    
+    const metrics = [
+      { metric: 'P.Areas', value: normalize(protectedAreasCount, 1000), fullMark: 100 },
+      { metric: 'KBAs', value: normalize(kbasCount, 50), fullMark: 100 },
+      { metric: 'P.Forest', value: normalize(protectedForestArea, 1000000), fullMark: 100 }, // 1M hectares
+      { metric: 'Ramsar', value: normalize(ramsarCount, 25), fullMark: 100 },
+      { metric: 'Eco_Reg', value: normalize(ecoregionsCount, 20), fullMark: 100 },
+      { metric: 'Species', value: normalize(speciesCount, 100), fullMark: 100 }
+    ]
+
+    // Only return if we have at least some data
+    const hasData = metrics.some(m => m.value > 0)
+    return hasData ? metrics : null
+  }, [protectedAreasData, kbasData, protectedForestData, ramsarData, ecoregionsData, wildlifeData])
+
   // Get boundary layer style
   const getBoundaryStyle = () => {
     if (selectedRegion === 'National') {
@@ -560,7 +602,7 @@ function DataVisualization() {
       // Clear selection if clicking the same item
       setHighlightedLayer(null)
       setHighlightedFeature(null)
-    } else {
+    } else { 
       setHighlightedLayer(layerId)
       setHighlightedFeature(featureName)
     }
@@ -607,6 +649,7 @@ function DataVisualization() {
   ]
 
   const rightCharts = [
+    { title: 'Biodiversity Conservation Metrics', data: biodiversityMetricsData, type: 'radar' },
     { title: 'Protected Areas - Count by IUCN Category', data: protectedAreasData, type: 'bar' },
     { title: 'Protected Forest - Area by Zone (hectares)', data: protectedForestData, type: 'bar' },
     { title: 'Ramsar Sites - Area by Region (hectares)', data: ramsarData, type: 'bar' },
@@ -825,6 +868,7 @@ function DataVisualization() {
                             ))}
                           </Pie>
                           <Tooltip 
+                            animationDuration={0}
                             formatter={(value, name, props) => {
                               const payload = props.payload || {}
                               return [
@@ -870,12 +914,16 @@ function DataVisualization() {
                           <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} stroke="#6b7280" />
                           <YAxis fontSize={11} stroke="#6b7280" />
                           <Tooltip 
+                            animationDuration={0}
+                            formatter={(value) => [`${value.toLocaleString()}`, 'Count']}
+                            labelFormatter={(label) => `Biome: ${label}`}
                             contentStyle={{ 
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
                               border: '1px solid #22c55e',
                               borderRadius: '6px',
-                              padding: '8px',
-                              fontSize: '12px'
+                              padding: '10px',
+                              fontSize: '12px',
+                              fontWeight: '500'
                             }}
                           />
                           <Bar 
@@ -958,6 +1006,7 @@ function DataVisualization() {
                             }}
                           />
                           <Tooltip 
+                            animationDuration={0}
                             formatter={(value) => `${value.toLocaleString()} km²`}
                             labelFormatter={(label) => label}
                             contentStyle={{ 
@@ -1118,6 +1167,79 @@ function DataVisualization() {
               {rightCharts.map((chart, idx) => {
                 if (!chart.data) return null
                 
+                if (chart.type === 'radar' && chart.data && chart.data.length > 0) {
+                  return (
+                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
+                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 shadow-sm"></div>
+                        {chart.title}
+                      </h3>
+                      <div className="text-xs text-gray-500 mb-2">Environmental performance indicators</div>
+                      <ResponsiveContainer width="100%" height={350}>
+                        <RadarChart data={chart.data} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
+                          <PolarGrid stroke="#e5e7eb" />
+                          <PolarAngleAxis 
+                            dataKey="metric" 
+                            tick={{ fontSize: 10, fill: '#6b7280', fontWeight: '500' }}
+                            tickFormatter={(value) => {
+                              // Use even shorter labels
+                              const shortLabels = {
+                                'P.Areas': 'P.Areas',
+                                'KBAs': 'KBAs',
+                                'P.Forest': 'P.Forest',
+                                'Ramsar': 'Ramsar',
+                                'Eco_Reg': 'Eco_Reg',
+                                'Species': 'Species'
+                              }
+                              return shortLabels[value] || value
+                            }}
+                          />
+                          <PolarRadiusAxis 
+                            angle={90} 
+                            domain={[0, 100]} 
+                            tick={{ fontSize: 9, fill: '#9ca3af' }}
+                            tickCount={5}
+                          />
+                          <Radar
+                            name="Conservation Metrics"
+                            dataKey="value"
+                            stroke="#22c55e"
+                            fill="#22c55e"
+                            fillOpacity={0.6}
+                            strokeWidth={2}
+                          />
+                          <Tooltip
+                            cursor={{ stroke: '#22c55e', strokeWidth: 1 }}
+                            animationDuration={0}
+                            formatter={(value) => [`${value}%`, 'Score']}
+                            labelFormatter={(label) => {
+                              // Map abbreviations to full names for tooltip
+                              const fullNames = {
+                                'P.Areas': 'Protected Areas',
+                                'KBAs': 'Key Biodiversity Areas',
+                                'P.Forest': 'Protected Forest',
+                                'Ramsar': 'Ramsar Sites',
+                                'Eco_Reg': 'Ecoregions',
+                                'Species': 'Species Richness'
+                              }
+                              return `Metric: ${fullNames[label] || label}`
+                            }}
+                            contentStyle={{
+                              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              border: '1px solid #22c55e',
+                              borderRadius: '6px',
+                              padding: '10px',
+                              fontSize: '12px',
+                              fontWeight: '500',
+                              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                            }}
+                          />
+                        </RadarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                }
+                
                 if (chart.type === 'bar' && chart.data.byIUCN && chart.data.byIUCN.length > 0) {
                     return (
                     <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
@@ -1131,12 +1253,16 @@ function DataVisualization() {
                           <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} stroke="#6b7280" />
                           <YAxis fontSize={11} stroke="#6b7280" />
                           <Tooltip 
+                            animationDuration={0}
+                            formatter={(value) => [`${value.toLocaleString()}`, 'Count']}
+                            labelFormatter={(label) => `IUCN Category: ${label}`}
                             contentStyle={{ 
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
                               border: '1px solid #22c55e',
                               borderRadius: '6px',
-                              padding: '8px',
-                              fontSize: '12px'
+                              padding: '10px',
+                              fontSize: '12px',
+                              fontWeight: '500'
                             }}
                           />
                           <Bar 
@@ -1185,13 +1311,16 @@ function DataVisualization() {
                           <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} stroke="#6b7280" />
                           <YAxis fontSize={11} stroke="#6b7280" />
                           <Tooltip 
-                            formatter={(value) => `${value.toLocaleString()}`}
+                            animationDuration={0}
+                            formatter={(value) => [`${value.toLocaleString()} hectares`, 'Area']}
+                            labelFormatter={(label) => `Zone: ${label}`}
                             contentStyle={{ 
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
                               border: '1px solid #22c55e',
                               borderRadius: '6px',
-                              padding: '8px',
-                              fontSize: '12px'
+                              padding: '10px',
+                              fontSize: '12px',
+                              fontWeight: '500'
                             }}
                           />
                           <Bar 
@@ -1240,13 +1369,16 @@ function DataVisualization() {
                           <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} stroke="#6b7280" />
                           <YAxis fontSize={11} stroke="#6b7280" />
                           <Tooltip 
-                            formatter={(value) => `${value.toLocaleString()} ha`}
+                            animationDuration={0}
+                            formatter={(value) => [`${value.toLocaleString()} hectares`, 'Area']}
+                            labelFormatter={(label) => `Region: ${label}`}
                             contentStyle={{ 
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
                               border: '1px solid #22c55e',
                               borderRadius: '6px',
-                              padding: '8px',
-                              fontSize: '12px'
+                              padding: '10px',
+                              fontSize: '12px',
+                              fontWeight: '500'
                             }}
                           />
                           <Bar 
@@ -1295,12 +1427,16 @@ function DataVisualization() {
                           <XAxis type="number" fontSize={11} stroke="#6b7280" />
                           <YAxis dataKey="name" type="category" width={110} fontSize={10} stroke="#6b7280" />
                           <Tooltip 
+                            animationDuration={0}
+                            formatter={(value) => [`${value.toLocaleString()}`, 'Occurrences']}
+                            labelFormatter={(label) => `Species: ${label}`}
                             contentStyle={{ 
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
                               border: '1px solid #22c55e',
                               borderRadius: '6px',
-                              padding: '8px',
-                              fontSize: '12px'
+                              padding: '10px',
+                              fontSize: '12px',
+                              fontWeight: '500'
                             }}
                           />
                           <Bar 
