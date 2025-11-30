@@ -601,16 +601,16 @@ function DataVisualization() {
 
   // Split charts into left and right panels
   const leftCharts = [
-    { title: 'Agroecological Zones', data: agroecologicalData, type: 'pie' },
-    { title: 'Ecoregions', data: ecoregionsData, type: 'bar' },
-    { title: 'Key Biodiversity Areas', data: kbasData, type: 'bar-horizontal' },
+    { title: 'Agroecological Zones - Area Distribution by Zone', data: agroecologicalData, type: 'pie' },
+    { title: 'Ecoregions - Count by Biome Type', data: ecoregionsData, type: 'bar' },
+    { title: 'Key Biodiversity Areas - Area by Site (km²)', data: kbasData, type: 'bar-horizontal' },
   ]
 
   const rightCharts = [
-    { title: 'Protected Areas', data: protectedAreasData, type: 'bar' },
-    { title: 'Protected Forest', data: protectedForestData, type: 'bar' },
-    { title: 'Ramsar Sites', data: ramsarData, type: 'bar' },
-    { title: 'Wildlife Occurrence', data: wildlifeData, type: 'bar-horizontal' },
+    { title: 'Protected Areas - Count by IUCN Category', data: protectedAreasData, type: 'bar' },
+    { title: 'Protected Forest - Area by Zone (hectares)', data: protectedForestData, type: 'bar' },
+    { title: 'Ramsar Sites - Area by Region (hectares)', data: ramsarData, type: 'bar' },
+    { title: 'Wildlife Occurrence - Count by Species', data: wildlifeData, type: 'bar-horizontal' },
   ]
 
   return (
