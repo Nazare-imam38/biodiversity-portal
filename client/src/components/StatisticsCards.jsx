@@ -324,6 +324,57 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
         icon: FaWater,
         iconColor: 'text-teal-600'
       }
+    ],
+    'Azad Kashmir': [
+      { 
+        label: 'Sq Km Total Provincial Area', 
+        value: '5,134', 
+        color: 'bg-blue-500',
+        icon: FaGlobe,
+        iconColor: 'text-blue-600'
+      },
+      { 
+        label: '', 
+        value: '591,000',
+        subtitle: 'Hectare Forest Area 1.7%',
+        color: 'bg-green-500',
+        icon: FaTree,
+        iconColor: 'text-green-600'
+      },
+      { 
+        label: '', 
+        value: '1,046',
+        valueText: 'Hectare Deforestation',
+        subtitle: 'Degraded Ecosystems',
+        color: 'bg-red-600',
+        icon: FaCut,
+        iconColor: 'text-red-800'
+      },
+      { 
+        label: '', 
+        value: '1,228',
+        valueText: 'Hectare Enhancement',
+        subtitle: 'Degraded Ecosystems',
+        color: 'bg-green-600',
+        icon: FaSeedling,
+        iconColor: 'text-green-800'
+      },
+      { 
+        label: '', 
+        value: '4%',
+        subtitle: 'Current wildlife PAs coverage',
+        color: 'bg-yellow-500',
+        icon: FaShieldAlt,
+        iconColor: 'text-yellow-600'
+      },
+      { 
+        label: '', 
+        value: '94%',
+        subtitle: 'Protected Areas Coverage of (KBAs)',
+        color: 'bg-red-500',
+        icon: FaExclamationTriangle,
+        iconColor: 'text-red-600'
+      }
     ]
   }
 

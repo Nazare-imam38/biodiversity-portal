@@ -11,11 +11,12 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
+  Legend as RechartsLegend,
   ResponsiveContainer
 } from 'recharts'
-import { FaChartBar, FaFilter, FaTimes } from 'react-icons/fa'
+import { FaFilter, FaTimes } from 'react-icons/fa'
 import LoadingSpinner from '../components/LoadingSpinner'
+import MapLegend from '../components/Legend'
 import 'leaflet/dist/leaflet.css'
 
 // Fix for default marker icons
@@ -100,32 +101,62 @@ function RegionZoomController({ selectedRegion, boundaryData, mapLayerData, high
     // If a specific feature is highlighted, zoom to it
     if (highlightedFeature && highlightedLayer && mapLayerData[highlightedLayer]) {
       const data = mapLayerData[highlightedLayer]
-      const feature = data.features.find(f => {
+      const bounds = L.latLngBounds([])
+      
+      // Find matching features based on layer type
+      const matchingFeatures = data.features.filter(f => {
         const props = f.properties || {}
-        const name = props.pk_name || props.BIOME_NAME || props.NatName || props.NAME || props.Site_name || props.Species
+        let name = null
+        
+        // Different property names for different layers
+        if (highlightedLayer === 'agroecological-zones') {
+          name = props.pk_name
+        } else if (highlightedLayer === 'ecoregions') {
+          name = props.BIOME_NAME
+        } else if (highlightedLayer === 'kbas') {
+          name = props.NatName || props.IntName
+        } else if (highlightedLayer === 'protected-areas-pol' || highlightedLayer === 'protected-areas' || highlightedLayer === 'protected-areas-sindh') {
+          // For Protected Areas, match by IUCN category
+          name = props.IUCN_CAT || 'Not Assigned'
+        } else if (highlightedLayer === 'protected-forest') {
+          // For Protected Forest, match by zone
+          name = props.F_Zone
+        } else if (highlightedLayer === 'ramsar-sites' || highlightedLayer === 'ramsar-sites-sindh') {
+          // For Ramsar Sites, match by region
+          name = props.Region
+        } else if (highlightedLayer === 'wildlife-occurrence') {
+          // For Wildlife Occurrence, match by species
+          name = props.Species || props.Common_nam
+        } else {
+          // Fallback to common property names
+          name = props.NAME || props.Site_name || props.NatName
+        }
+        
         return name === highlightedFeature
       })
       
-      if (feature && feature.geometry) {
-        const bounds = L.latLngBounds([])
-        const extractCoords = (coords) => {
-          if (Array.isArray(coords[0])) {
-            coords.forEach(c => extractCoords(c))
-          } else if (coords.length === 2 && typeof coords[0] === 'number') {
-            bounds.extend([coords[1], coords[0]])
+      // Extract coordinates from all matching features
+      matchingFeatures.forEach(feature => {
+        if (feature && feature.geometry) {
+          const extractCoords = (coords) => {
+            if (Array.isArray(coords[0])) {
+              coords.forEach(c => extractCoords(c))
+            } else if (coords.length === 2 && typeof coords[0] === 'number') {
+              bounds.extend([coords[1], coords[0]])
+            }
           }
+          extractCoords(feature.geometry.coordinates)
         }
-        extractCoords(feature.geometry.coordinates)
-        
-        if (bounds.isValid()) {
-          map.fitBounds(bounds, { 
-            padding: [100, 100],
-            maxZoom: 10,
-            animate: true,
-            duration: 0.8
-          })
-          return
-        }
+      })
+      
+      if (bounds.isValid()) {
+        map.fitBounds(bounds, { 
+          padding: [100, 100],
+          maxZoom: 10,
+          animate: true,
+          duration: 0.8
+        })
+        return
       }
     }
 
@@ -256,18 +287,30 @@ function DataVisualization() {
     setLoading(true)
     
     // Layers to show on map
-    const mapLayers = [
-      'agroecological-zones',
-      'ecoregions',
-      'kbas',
-      'protected-areas',
-      'protected-areas-pol',
-      'protected-forest',
-      'ramsar-sites',
-      'wildlife-occurrence',
-      'protected-areas-sindh',
-      'ramsar-sites-sindh',
-    ]
+    // Exclude point layers (protected-areas, wildlife-occurrence) for National level
+    const mapLayers = region === 'National'
+      ? [
+          'agroecological-zones',
+          'ecoregions',
+          'kbas',
+          'protected-areas-pol',
+          'protected-forest',
+          'ramsar-sites',
+          'protected-areas-sindh',
+          'ramsar-sites-sindh',
+        ]
+      : [
+          'agroecological-zones',
+          'ecoregions',
+          'kbas',
+          'protected-areas',
+          'protected-areas-pol',
+          'protected-forest',
+          'ramsar-sites',
+          'wildlife-occurrence',
+          'protected-areas-sindh',
+          'ramsar-sites-sindh',
+        ]
 
     const geoJsonLayers = layersList.filter(layer => {
       if (layer.type === 'raster') return false
@@ -462,7 +505,32 @@ function DataVisualization() {
     // Highlight if this feature is selected
     if (feature && highlightedFeature && highlightedLayer === layerId) {
       const props = feature.properties || {}
-      const name = props.pk_name || props.BIOME_NAME || props.NatName || props.NAME || props.Site_name || props.Species
+      let name = null
+      
+      // Different property names for different layers (same logic as RegionZoomController)
+      if (highlightedLayer === 'agroecological-zones') {
+        name = props.pk_name
+      } else if (highlightedLayer === 'ecoregions') {
+        name = props.BIOME_NAME
+      } else if (highlightedLayer === 'kbas') {
+        name = props.NatName || props.IntName
+      } else if (highlightedLayer === 'protected-areas-pol' || highlightedLayer === 'protected-areas' || highlightedLayer === 'protected-areas-sindh') {
+        // For Protected Areas, match by IUCN category
+        name = props.IUCN_CAT || 'Not Assigned'
+      } else if (highlightedLayer === 'protected-forest') {
+        // For Protected Forest, match by zone
+        name = props.F_Zone
+      } else if (highlightedLayer === 'ramsar-sites' || highlightedLayer === 'ramsar-sites-sindh') {
+        // For Ramsar Sites, match by region
+        name = props.Region
+      } else if (highlightedLayer === 'wildlife-occurrence') {
+        // For Wildlife Occurrence, match by species
+        name = props.Species || props.Common_nam
+      } else {
+        // Fallback to common property names
+        name = props.NAME || props.Site_name || props.NatName
+      }
+      
       if (name === highlightedFeature) {
         return {
           ...baseStyle,
@@ -498,6 +566,23 @@ function DataVisualization() {
     }
   }
 
+  // Enhanced click handler for better sensitivity
+  const handleBarClick = (layerId, event) => {
+    // Try multiple ways to get the data
+    let data = null
+    if (event?.activePayload?.[0]?.payload) {
+      data = event.activePayload[0].payload
+    } else if (event?.payload) {
+      data = event.payload
+    } else if (event?.activeLabel) {
+      // Fallback: try to find data by label
+      return
+    }
+    
+    if (data && data.name) {
+      handleChartClick(layerId, data.name)
+    }
+  }
 
   if (loading) {
     return <LoadingSpinner />
@@ -532,15 +617,15 @@ function DataVisualization() {
     <>
       <style>{`
         .chart-panel::-webkit-scrollbar {
-          width: 8px;
+          width: 6px;
         }
         .chart-panel::-webkit-scrollbar-track {
           background: #f1f5f9;
-          border-radius: 4px;
+          border-radius: 3px;
         }
         .chart-panel::-webkit-scrollbar-thumb {
           background: #cbd5e1;
-          border-radius: 4px;
+          border-radius: 3px;
         }
         .chart-panel::-webkit-scrollbar-thumb:hover {
           background: #94a3b8;
@@ -549,442 +634,714 @@ function DataVisualization() {
           scrollbar-width: thin;
           scrollbar-color: #cbd5e1 #f1f5f9;
         }
+        .chart-card {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+          box-shadow: 
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+        }
+        .chart-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #22c55e 0%, #16a34a 50%, #22c55e 100%);
+          border-radius: 12px 12px 0 0;
+          opacity: 0.6;
+        }
+        .chart-card:hover {
+          transform: translateY(-4px) perspective(1000px) rotateX(2deg);
+          box-shadow: 
+            0 20px 25px -5px rgba(34, 197, 94, 0.2),
+            0 10px 10px -5px rgba(34, 197, 94, 0.1),
+            0 0 0 1px rgba(34, 197, 94, 0.1),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+        }
+        .chart-card-3d {
+          transform-style: preserve-3d;
+        }
+        .bar-3d {
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+          transition: all 0.3s ease;
+        }
+        .bar-3d:hover {
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+          transform: translateZ(5px);
+        }
+        .pie-3d {
+          filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+        /* Increase clickable area for bars */
+        .recharts-bar-rectangle {
+          cursor: pointer !important;
+          min-height: 8px !important;
+          transition: all 0.2s ease;
+        }
+        .recharts-bar-rectangle:hover {
+          opacity: 0.9 !important;
+          filter: brightness(1.1);
+        }
+        /* Increase clickable area for pie chart segments */
+        .recharts-sector {
+          cursor: pointer !important;
+          transition: all 0.2s ease;
+        }
+        .recharts-sector:hover {
+          opacity: 0.9 !important;
+          filter: brightness(1.1);
+        }
+        /* Make entire chart area more clickable */
+        .recharts-wrapper {
+          cursor: default;
+        }
+        .recharts-cartesian-grid-horizontal line,
+        .recharts-cartesian-grid-vertical line {
+          pointer-events: none;
+        }
+        /* Increase hit area for small bars */
+        .recharts-bar {
+          min-width: 4px;
+        }
+        /* Better click handling for small bars - ensure minimum clickable size */
+        .recharts-bar-rectangle {
+          min-height: 12px !important;
+          min-width: 12px !important;
+        }
+        /* For very small bars, make them more visible and clickable */
+        .recharts-bar-rectangle[height="0"],
+        .recharts-bar-rectangle[width="0"] {
+          min-height: 20px !important;
+          min-width: 20px !important;
+          opacity: 0.4 !important;
+        }
+        .recharts-bar-rectangle[height="0"]:hover,
+        .recharts-bar-rectangle[width="0"]:hover {
+          opacity: 0.8 !important;
+          filter: brightness(1.2);
+        }
+        /* Increase padding around bars for easier clicking */
+        .recharts-bar-rectangle {
+          padding: 2px;
+          margin: 1px;
+        }
+        /* Make entire bar area clickable, not just the visible part */
+        .recharts-bar {
+          pointer-events: all;
+        }
       `}</style>
       <div className="min-h-screen bg-gray-50">
-        {/* Page Header */}
-      <div className="bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-green-600 p-3 rounded-lg">
-              <FaChartBar className="text-white text-2xl" />
-            </div>
-            <div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">Data Visualization</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Filter Bar */}
-      <div className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-10">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2 text-gray-700">
-                <FaFilter className="text-lg" />
-                <span className="font-semibold">Filter by Region:</span>
+        {/* Filter Bar */}
+        <div className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-10">
+          <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div className="flex items-center justify-center flex-wrap gap-3">
+              <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2 text-gray-700">
+                  <div className="bg-green-100 p-2 rounded-lg">
+                    <FaFilter className="text-green-600 text-base" />
+                  </div>
+                  <span className="font-semibold text-sm">Filter by Region:</span>
+                </div>
+                <div className="flex items-center space-x-1 bg-gray-100 rounded-lg p-1 overflow-x-auto">
+                  {REGIONS.map((region) => (
+                    <button
+                      key={region}
+                      onClick={() => {
+                        setSelectedRegion(region)
+                        setHighlightedLayer(null)
+                        setHighlightedFeature(null)
+                      }}
+                      className={`px-3 py-1.5 rounded-md font-medium text-xs sm:text-sm transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
+                        selectedRegion === region
+                          ? 'bg-white text-green-600 shadow-sm border border-green-200'
+                          : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                      }`}
+                    >
+                      {region}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center space-x-2 bg-gray-100 rounded-lg p-1 overflow-x-auto">
-                {REGIONS.map((region) => (
-                  <button
-                    key={region}
-                    onClick={() => {
-                      setSelectedRegion(region)
-                      setHighlightedLayer(null)
-                      setHighlightedFeature(null)
-                    }}
-                    className={`px-4 py-2 rounded-md font-medium text-sm transition-all duration-200 whitespace-nowrap ${
-                      selectedRegion === region
-                        ? 'bg-white text-green-600 shadow-sm'
-                        : 'text-gray-600 hover:text-gray-800'
-                    }`}
-                  >
-                    {region}
-                  </button>
-                ))}
-              </div>
-            </div>
-            {highlightedLayer && highlightedFeature && (
-              <button
-                onClick={() => {
-                  setHighlightedLayer(null)
-                  setHighlightedFeature(null)
-                }}
-                className="flex items-center space-x-2 px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors text-sm font-medium"
-              >
-                <FaTimes />
-                <span>Clear Selection</span>
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Three Column Layout: Left Charts | Map | Right Charts */}
-      <div className="flex" style={{ height: 'calc(100vh - 180px)', minHeight: 'calc(100vh - 180px)' }}>
-        {/* Left Panel - Charts with scrollbar */}
-        <div className="w-1/3 bg-white border-r border-gray-200 overflow-y-auto chart-panel" style={{ height: '100%', maxHeight: '100%' }}>
-          <div className="p-6 space-y-8">
-            {leftCharts.map((chart, idx) => {
-              if (!chart.data) return null
-              
-              if (chart.type === 'pie' && chart.data.length > 0) {
-                return (
-                  <div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-gray-800 mb-4">{chart.title}</h3>
-                    <ResponsiveContainer width="100%" height={400}>
-                      <PieChart>
-                        <Pie
-                          data={chart.data}
-                          cx="50%"
-                          cy="50%"
-                          labelLine={true}
-                          label={({ name, areaPercent, area }) => {
-                            // Show percentage prominently with area
-                            return `${areaPercent.toFixed(1)}%\n${area.toLocaleString()} km²`
-                          }}
-                          outerRadius={110}
-                          innerRadius={30}
-                          fill="#8884d8"
-                          dataKey="area"
-                          onClick={(data) => handleChartClick('agroecological-zones', data.name)}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          {chart.data.map((entry, index) => (
-                            <Cell 
-                              key={`cell-${index}`} 
-                              fill={CHART_COLORS[index % CHART_COLORS.length]}
-                              style={{ 
-                                opacity: highlightedFeature === entry.name && highlightedLayer === 'agroecological-zones' ? 1 : 0.8,
-                                stroke: highlightedFeature === entry.name && highlightedLayer === 'agroecological-zones' ? '#ff0000' : 'white',
-                                strokeWidth: highlightedFeature === entry.name && highlightedLayer === 'agroecological-zones' ? 3 : 2
-                              }}
-                            />
-                          ))}
-                        </Pie>
-                        <Tooltip 
-                          formatter={(value, name, props) => {
-                            const payload = props.payload || {}
-                            return [
-                              `Area: ${value.toLocaleString()} km²`,
-                              `Percentage: ${payload.areaPercent?.toFixed(1) || 0}%`
-                            ]
-                          }}
-                          labelFormatter={(label) => `Zone: ${label}`}
-                          contentStyle={{ 
-                            backgroundColor: 'rgba(255, 255, 255, 0.98)',
-                            border: '2px solid #22c55e',
-                            borderRadius: '6px',
-                            padding: '10px',
-                            fontSize: '13px',
-                            fontWeight: '500'
-                          }}
-                        />
-                        <Legend 
-                          wrapperStyle={{ paddingTop: '20px', fontSize: '12px' }}
-                          formatter={(value, entry) => {
-                            const data = chart.data.find(d => d.name === value)
-                            if (data) {
-                              return `${value}\n${data.areaPercent.toFixed(1)}% (${data.area.toLocaleString()} km²)`
-                            }
-                            return value
-                          }}
-                          iconType="square"
-                        />
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
-                )
-              }
-              
-              if (chart.type === 'bar' && chart.data.byBiome && chart.data.byBiome.length > 0) {
-                return (
-                  <div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-gray-800 mb-4">{chart.title}</h3>
-                    <ResponsiveContainer width="100%" height={400}>
-                      <BarChart data={chart.data.byBiome}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={12} />
-                        <YAxis fontSize={12} />
-                        <Tooltip />
-                        <Bar 
-                          dataKey="count" 
-                          fill={CHART_COLORS[2]}
-                          onClick={(data) => {
-                            if (data && data.name) handleChartClick('ecoregions', data.name)
-                          }}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          {chart.data.byBiome.map((entry, index) => (
-                            <Cell 
-                              key={`cell-${index}`}
-                              fill={highlightedFeature === entry.name && highlightedLayer === 'ecoregions' ? '#ff0000' : CHART_COLORS[2]}
-                              fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'ecoregions' ? 1 : 0.8}
-                            />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                )
-              }
-              
-              if (chart.type === 'bar-horizontal' && chart.data.byArea && chart.data.byArea.length > 0) {
-                return (
-                  <div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-gray-800 mb-4">{chart.title}</h3>
-                    <ResponsiveContainer width="100%" height={500}>
-                      <BarChart data={chart.data.byArea} layout="vertical">
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis type="number" fontSize={12} />
-                        <YAxis dataKey="name" type="category" width={120} fontSize={11} />
-                        <Tooltip formatter={(value) => `${value.toLocaleString()} km²`} />
-                        <Bar 
-                          dataKey="area" 
-                          fill={CHART_COLORS[3]}
-                          onClick={(data) => {
-                            if (data && data.name) handleChartClick('kbas', data.name)
-                          }}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          {chart.data.byArea.map((entry, index) => (
-                            <Cell 
-                              key={`cell-${index}`}
-                              fill={highlightedFeature === entry.name && highlightedLayer === 'kbas' ? '#ff0000' : CHART_COLORS[3]}
-                              fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'kbas' ? 1 : 0.8}
-                            />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                )
-              }
-              
-              return null
-            })}
-          </div>
-        </div>
-
-        {/* Center Panel - Map */}
-        <div className="w-1/3 border-r border-gray-200 relative" style={{ height: '100%', maxHeight: '100%' }}>
-          <MapContainer
-            center={[30.3753, 69.3451]}
-            zoom={6}
-            style={{ height: '100%', width: '100%' }}
-            zoomControl={true}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            
-            {/* Province Boundary */}
-            {boundaryData && boundaryData.features && (
-              <GeoJSON
-                key={`boundary-${selectedRegion}`}
-                data={boundaryData}
-                style={getBoundaryStyle()}
-              />
-            )}
-            
-            {/* Data Layers on Map */}
-            {Object.entries(mapLayerData).map(([layerId, data]) => {
-              if (!data || !data.features) return null
-              
-              const style = getLayerStyle(layerId)
-              
-              // Handle point layers
-              if (data.features[0]?.geometry?.type === 'Point') {
-                return (
-                  <div key={layerId}>
-                    {data.features.map((feature, idx) => {
-                      if (feature.geometry && feature.geometry.type === 'Point') {
-                        const coords = feature.geometry.coordinates
-                        const props = feature.properties || {}
-                        const name = props.NAME || props.Site_name || props.Species || layerId
-                        
-                        return (
-                          <Marker
-                            key={`${layerId}-${idx}`}
-                            position={[coords[1], coords[0]]}
-                            icon={createCustomIcon(style.color)}
-                          >
-                            <Popup>
-                              <div className="text-sm">
-                                <strong>{name}</strong>
-                                {props.DESIG && <div>Designation: {props.DESIG}</div>}
-                                {props.Species && <div>Species: {props.Species}</div>}
-                              </div>
-                            </Popup>
-                          </Marker>
-                        )
-                      }
-                      return null
-                    })}
-                  </div>
-                )
-              }
-              
-              // Handle polygon/line layers
-              return (
-                <GeoJSON
-                  key={layerId}
-                  data={data}
-                  style={(feature) => {
-                    const featureStyle = getLayerStyle(layerId, feature)
-                    return {
-                      color: featureStyle.color,
-                      weight: featureStyle.weight,
-                      fillColor: featureStyle.color,
-                      fillOpacity: featureStyle.fillOpacity,
-                      opacity: featureStyle.opacity || 0.8
-                    }
+              {highlightedLayer && highlightedFeature && (
+                <button
+                  onClick={() => {
+                    setHighlightedLayer(null)
+                    setHighlightedFeature(null)
                   }}
+                  className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-700 rounded-lg hover:bg-red-100 border border-red-200 transition-all duration-200 text-sm font-medium shadow-sm"
+                >
+                  <FaTimes className="text-sm" />
+                  <span>Clear Selection</span>
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Three Column Layout: Left Charts | Map | Right Charts */}
+        <div className="flex" style={{ height: 'calc(100vh - 120px)', minHeight: 'calc(100vh - 120px)' }}>
+          {/* Left Panel - Charts with scrollbar */}
+          <div className="bg-white border-r border-gray-200 overflow-y-auto chart-panel" style={{ width: '27.5%', height: '100%', maxHeight: '100%' }}>
+            <div className="p-3 space-y-3">
+              {leftCharts.map((chart, idx) => {
+                if (!chart.data) return null
+                
+                if (chart.type === 'pie' && chart.data.length > 0) {
+                    return (
+                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
+                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 shadow-sm"></div>
+                        {chart.title}
+                      </h3>
+                      <ResponsiveContainer width="100%" height={320}>
+                        <PieChart className="pie-3d">
+                          <Pie
+                            data={chart.data}
+                            cx="50%"
+                            cy="50%"
+                            labelLine={false}
+                            label={false}
+                            outerRadius={95}
+                            innerRadius={30}
+                            fill="#8884d8"
+                            dataKey="area"
+                            onClick={(data) => handleChartClick('agroecological-zones', data.name)}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {chart.data.map((entry, index) => (
+                              <Cell 
+                                key={`cell-${index}`} 
+                                fill={CHART_COLORS[index % CHART_COLORS.length]}
+                                style={{ 
+                                  opacity: highlightedFeature === entry.name && highlightedLayer === 'agroecological-zones' ? 1 : 0.85,
+                                  stroke: highlightedFeature === entry.name && highlightedLayer === 'agroecological-zones' ? '#ff0000' : 'white',
+                                  strokeWidth: highlightedFeature === entry.name && highlightedLayer === 'agroecological-zones' ? 3 : 2
+                                }}
+                              />
+                            ))}
+                          </Pie>
+                          <Tooltip 
+                            formatter={(value, name, props) => {
+                              const payload = props.payload || {}
+                              return [
+                                `Area: ${value.toLocaleString()} km²`,
+                                `Percentage: ${payload.areaPercent?.toFixed(1) || 0}%`
+                              ]
+                            }}
+                            labelFormatter={(label) => `Zone: ${label}`}
+                            contentStyle={{ 
+                              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              border: '2px solid #22c55e',
+                              borderRadius: '8px',
+                              padding: '12px',
+                              fontSize: '13px',
+                              fontWeight: '500',
+                              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                            }}
+                          />
+                          <RechartsLegend 
+                            wrapperStyle={{ paddingTop: '8px', fontSize: '9px' }}
+                            formatter={(value) => {
+                              // Show only zone name, truncate if too long
+                              return value.length > 20 ? `${value.substring(0, 17)}...` : value
+                            }}
+                            iconType="square"
+                          />
+                        </PieChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                }
+                
+                if (chart.type === 'bar' && chart.data.byBiome && chart.data.byBiome.length > 0) {
+                    return (
+                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
+                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 shadow-sm"></div>
+                        {chart.title}
+                      </h3>
+                      <ResponsiveContainer width="100%" height={320}>
+                        <BarChart data={chart.data.byBiome}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                          <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} stroke="#6b7280" />
+                          <YAxis fontSize={11} stroke="#6b7280" />
+                          <Tooltip 
+                            contentStyle={{ 
+                              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              border: '1px solid #22c55e',
+                              borderRadius: '6px',
+                              padding: '8px',
+                              fontSize: '12px'
+                            }}
+                          />
+                          <Bar 
+                            dataKey="count" 
+                            fill={CHART_COLORS[2]}
+                            radius={[6, 6, 0, 0]}
+                            className="bar-3d"
+                            onClick={(event) => handleBarClick('ecoregions', event)}
+                            onMouseEnter={(event) => {
+                              if (event.target) {
+                                event.target.style.cursor = 'pointer'
+                                event.target.style.opacity = '0.9'
+                              }
+                            }}
+                            onMouseLeave={(event) => {
+                              if (event.target) {
+                                event.target.style.opacity = '0.85'
+                              }
+                            }}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {chart.data.byBiome.map((entry, index) => (
+                              <Cell 
+                                key={`cell-${index}`}
+                                fill={highlightedFeature === entry.name && highlightedLayer === 'ecoregions' ? '#ff0000' : CHART_COLORS[2]}
+                                fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'ecoregions' ? 1 : 0.85}
+                              />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                }
+                
+                if (chart.type === 'bar-horizontal' && chart.data.byArea && chart.data.byArea.length > 0) {
+                    return (
+                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
+                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 shadow-sm"></div>
+                        {chart.title}
+                      </h3>
+                      <ResponsiveContainer width="100%" height={400}>
+                        <BarChart data={chart.data.byArea} layout="vertical">
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                          <XAxis 
+                            type="number" 
+                            fontSize={11} 
+                            stroke="#6b7280"
+                            domain={[0, 'dataMax']}
+                            ticks={(() => {
+                              // Calculate max value and create ticks at 500 intervals
+                              const maxValue = Math.max(...chart.data.byArea.map(d => d.area || 0))
+                              const maxTick = Math.ceil(maxValue / 500) * 500
+                              const ticks = []
+                              for (let i = 0; i <= maxTick; i += 500) {
+                                ticks.push(i)
+                              }
+                              return ticks
+                            })()}
+                          />
+                          <YAxis 
+                            dataKey="name" 
+                            type="category" 
+                            width={140} 
+                            fontSize={9} 
+                            stroke="#6b7280"
+                            tickFormatter={(value) => {
+                              // Truncate long names and show only key parts
+                              if (value.length > 25) {
+                                // Try to keep important parts (National Park, Wildlife Sanctuary, etc.)
+                                const important = value.match(/(National Park|Wildlife Sanctuary|Wetlands|Valley|Delta|Desert)/i)
+                                if (important) {
+                                  const index = value.indexOf(important[0])
+                                  return value.substring(0, 22) + '...'
+                                }
+                                return value.substring(0, 22) + '...'
+                              }
+                              return value
+                            }}
+                          />
+                          <Tooltip 
+                            formatter={(value) => `${value.toLocaleString()} km²`}
+                            labelFormatter={(label) => label}
+                            contentStyle={{ 
+                              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              border: '1px solid #22c55e',
+                              borderRadius: '6px',
+                              padding: '8px',
+                              fontSize: '12px',
+                              maxWidth: '300px'
+                            }}
+                          />
+                          <Bar 
+                            dataKey="area" 
+                            fill={CHART_COLORS[3]}
+                            radius={[0, 6, 6, 0]}
+                            className="bar-3d"
+                            onClick={(event) => handleBarClick('kbas', event)}
+                            onMouseEnter={(event) => {
+                              if (event.target) {
+                                event.target.style.cursor = 'pointer'
+                                event.target.style.opacity = '0.9'
+                              }
+                            }}
+                            onMouseLeave={(event) => {
+                              if (event.target) {
+                                event.target.style.opacity = '0.85'
+                              }
+                            }}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {chart.data.byArea.map((entry, index) => (
+                              <Cell 
+                                key={`cell-${index}`}
+                                fill={highlightedFeature === entry.name && highlightedLayer === 'kbas' ? '#ff0000' : CHART_COLORS[3]}
+                                fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'kbas' ? 1 : 0.85}
+                              />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                }
+                
+                return null
+              })}
+            </div>
+          </div>
+
+          {/* Center Panel - Map */}
+          <div className="border-r border-gray-200 relative bg-white" style={{ width: '45%', height: '100%', maxHeight: '100%' }}>
+            <MapContainer
+              center={[30.3753, 69.3451]}
+              zoom={6}
+              style={{ height: '100%', width: '100%' }}
+              zoomControl={true}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              
+              {/* Province Boundary */}
+              {boundaryData && boundaryData.features && (
+                <GeoJSON
+                  key={`boundary-${selectedRegion}`}
+                  data={boundaryData}
+                  style={getBoundaryStyle()}
+                />
+              )}
+              
+              {/* Data Layers on Map */}
+              {Object.entries(mapLayerData).map(([layerId, data]) => {
+                if (!data || !data.features) return null
+                
+                const style = getLayerStyle(layerId)
+                
+                // Handle point layers
+                if (data.features[0]?.geometry?.type === 'Point') {
+                  return (
+                    <div key={layerId}>
+                      {data.features.map((feature, idx) => {
+                        if (feature.geometry && feature.geometry.type === 'Point') {
+                          const coords = feature.geometry.coordinates
+                          const props = feature.properties || {}
+                          const name = props.NAME || props.Site_name || props.Species || layerId
+                          
+                          return (
+                            <Marker
+                              key={`${layerId}-${idx}`}
+                              position={[coords[1], coords[0]]}
+                              icon={createCustomIcon(style.color)}
+                            >
+                              <Popup>
+                                <div className="text-sm">
+                                  <strong>{name}</strong>
+                                  {props.DESIG && <div>Designation: {props.DESIG}</div>}
+                                  {props.Species && <div>Species: {props.Species}</div>}
+                                </div>
+                              </Popup>
+                            </Marker>
+                          )
+                        }
+                        return null
+                      })}
+                    </div>
+                  )
+                }
+                
+                // Handle polygon/line layers
+                return (
+                  <GeoJSON
+                    key={layerId}
+                    data={data}
+                    style={(feature) => {
+                      const featureStyle = getLayerStyle(layerId, feature)
+                      return {
+                        color: featureStyle.color,
+                        weight: featureStyle.weight,
+                        fillColor: featureStyle.color,
+                        fillOpacity: featureStyle.fillOpacity,
+                        opacity: featureStyle.opacity || 0.8
+                      }
+                    }}
+                  />
+                )
+              })}
+              
+              <RegionZoomController 
+                selectedRegion={selectedRegion} 
+                boundaryData={boundaryData} 
+                mapLayerData={mapLayerData}
+                highlightedLayer={highlightedLayer}
+                highlightedFeature={highlightedFeature}
+              />
+            </MapContainer>
+            
+            {/* Map Legend */}
+            {layers.length > 0 && (() => {
+              const activeLayersSet = new Set(Object.keys(mapLayerData))
+              // Add boundary layer to active layers for legend
+              if (boundaryData && boundaryData.features && boundaryData.features.length > 0) {
+                const boundaryLayerId = getBoundaryLayerId(selectedRegion)
+                activeLayersSet.add(boundaryLayerId)
+              }
+              return (
+                <MapLegend 
+                  layers={layers} 
+                  activeLayers={activeLayersSet} 
                 />
               )
-            })}
-            
-            <RegionZoomController 
-              selectedRegion={selectedRegion} 
-              boundaryData={boundaryData} 
-              mapLayerData={mapLayerData}
-              highlightedLayer={highlightedLayer}
-              highlightedFeature={highlightedFeature}
-            />
-          </MapContainer>
-        </div>
+            })()}
+          </div>
 
-        {/* Right Panel - Charts with scrollbar */}
-        <div className="w-1/3 bg-white overflow-y-auto chart-panel" style={{ height: '100%', maxHeight: '100%' }}>
-          <div className="p-6 space-y-8">
-            {rightCharts.map((chart, idx) => {
-              if (!chart.data) return null
-              
-              if (chart.type === 'bar' && chart.data.byIUCN && chart.data.byIUCN.length > 0) {
-                return (
-                  <div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-gray-800 mb-4">{chart.title}</h3>
-                    <ResponsiveContainer width="100%" height={400}>
-                      <BarChart data={chart.data.byIUCN}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={12} />
-                        <YAxis fontSize={12} />
-                        <Tooltip />
-                        <Bar 
-                          dataKey="value" 
-                          fill={CHART_COLORS[4]}
-                          onClick={(data) => {
-                            if (data && data.name) handleChartClick('protected-areas-pol', data.name)
-                          }}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          {chart.data.byIUCN.map((entry, index) => (
-                            <Cell 
-                              key={`cell-${index}`}
-                              fill={highlightedFeature === entry.name && highlightedLayer === 'protected-areas-pol' ? '#ff0000' : CHART_COLORS[4]}
-                              fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'protected-areas-pol' ? 1 : 0.8}
-                            />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                )
-              }
-              
-              if (chart.type === 'bar' && chart.data.byZone && chart.data.byZone.length > 0) {
-                return (
-                  <div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-gray-800 mb-4">{chart.title}</h3>
-                    <ResponsiveContainer width="100%" height={400}>
-                      <BarChart data={chart.data.byZone}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={12} />
-                        <YAxis fontSize={12} />
-                        <Tooltip formatter={(value) => `${value.toLocaleString()}`} />
-                        <Bar 
-                          dataKey="area" 
-                          fill={CHART_COLORS[0]}
-                          onClick={(data) => {
-                            if (data && data.name) handleChartClick('protected-forest', data.name)
-                          }}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          {chart.data.byZone.map((entry, index) => (
-                            <Cell 
-                              key={`cell-${index}`}
-                              fill={highlightedFeature === entry.name && highlightedLayer === 'protected-forest' ? '#ff0000' : CHART_COLORS[0]}
-                              fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'protected-forest' ? 1 : 0.8}
-                            />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                )
-              }
-              
-              if (chart.type === 'bar' && chart.data.byRegion && chart.data.byRegion.length > 0) {
-                return (
-                  <div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-gray-800 mb-4">{chart.title}</h3>
-                    <ResponsiveContainer width="100%" height={400}>
-                      <BarChart data={chart.data.byRegion}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={12} />
-                        <YAxis fontSize={12} />
-                        <Tooltip formatter={(value) => `${value.toLocaleString()} ha`} />
-                        <Bar 
-                          dataKey="area" 
-                          fill={CHART_COLORS[6]}
-                          onClick={(data) => {
-                            if (data && data.name) handleChartClick('ramsar-sites', data.name)
-                          }}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          {chart.data.byRegion.map((entry, index) => (
-                            <Cell 
-                              key={`cell-${index}`}
-                              fill={highlightedFeature === entry.name && highlightedLayer === 'ramsar-sites' ? '#ff0000' : CHART_COLORS[6]}
-                              fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'ramsar-sites' ? 1 : 0.8}
-                            />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                )
-              }
-              
-              if (chart.type === 'bar-horizontal' && chart.data && chart.data.length > 0) {
-                return (
-                  <div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-gray-800 mb-4">{chart.title}</h3>
-                    <ResponsiveContainer width="100%" height={500}>
-                      <BarChart data={chart.data} layout="vertical">
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis type="number" fontSize={12} />
-                        <YAxis dataKey="name" type="category" width={120} fontSize={11} />
-                        <Tooltip />
-                        <Bar 
-                          dataKey="count" 
-                          fill={CHART_COLORS[8]}
-                          onClick={(data) => {
-                            if (data && data.name) handleChartClick('wildlife-occurrence', data.name)
-                          }}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          {chart.data.map((entry, index) => (
-                            <Cell 
-                              key={`cell-${index}`}
-                              fill={highlightedFeature === entry.name && highlightedLayer === 'wildlife-occurrence' ? '#ff0000' : CHART_COLORS[8]}
-                              fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'wildlife-occurrence' ? 1 : 0.8}
-                            />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                )
-              }
-              
-              return null
-            })}
+          {/* Right Panel - Charts with scrollbar */}
+          <div className="bg-white overflow-y-auto chart-panel" style={{ width: '27.5%', height: '100%', maxHeight: '100%' }}>
+            <div className="p-3 space-y-3">
+              {rightCharts.map((chart, idx) => {
+                if (!chart.data) return null
+                
+                if (chart.type === 'bar' && chart.data.byIUCN && chart.data.byIUCN.length > 0) {
+                    return (
+                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
+                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 shadow-sm"></div>
+                        {chart.title}
+                      </h3>
+                      <ResponsiveContainer width="100%" height={320}>
+                        <BarChart data={chart.data.byIUCN}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                          <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} stroke="#6b7280" />
+                          <YAxis fontSize={11} stroke="#6b7280" />
+                          <Tooltip 
+                            contentStyle={{ 
+                              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              border: '1px solid #22c55e',
+                              borderRadius: '6px',
+                              padding: '8px',
+                              fontSize: '12px'
+                            }}
+                          />
+                          <Bar 
+                            dataKey="value" 
+                            fill={CHART_COLORS[4]}
+                            radius={[6, 6, 0, 0]}
+                            className="bar-3d"
+                            onClick={(event) => handleBarClick('protected-areas-pol', event)}
+                            onMouseEnter={(event) => {
+                              if (event.target) {
+                                event.target.style.cursor = 'pointer'
+                                event.target.style.opacity = '0.9'
+                              }
+                            }}
+                            onMouseLeave={(event) => {
+                              if (event.target) {
+                                event.target.style.opacity = '0.85'
+                              }
+                            }}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {chart.data.byIUCN.map((entry, index) => (
+                              <Cell 
+                                key={`cell-${index}`}
+                                fill={highlightedFeature === entry.name && highlightedLayer === 'protected-areas-pol' ? '#ff0000' : CHART_COLORS[4]}
+                                fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'protected-areas-pol' ? 1 : 0.85}
+                              />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                }
+                
+                if (chart.type === 'bar' && chart.data.byZone && chart.data.byZone.length > 0) {
+                    return (
+                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
+                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 shadow-sm"></div>
+                        {chart.title}
+                      </h3>
+                      <ResponsiveContainer width="100%" height={320}>
+                        <BarChart data={chart.data.byZone}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                          <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} stroke="#6b7280" />
+                          <YAxis fontSize={11} stroke="#6b7280" />
+                          <Tooltip 
+                            formatter={(value) => `${value.toLocaleString()}`}
+                            contentStyle={{ 
+                              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              border: '1px solid #22c55e',
+                              borderRadius: '6px',
+                              padding: '8px',
+                              fontSize: '12px'
+                            }}
+                          />
+                          <Bar 
+                            dataKey="area" 
+                            fill={CHART_COLORS[0]}
+                            radius={[6, 6, 0, 0]}
+                            className="bar-3d"
+                            onClick={(event) => handleBarClick('protected-forest', event)}
+                            onMouseEnter={(event) => {
+                              if (event.target) {
+                                event.target.style.cursor = 'pointer'
+                                event.target.style.opacity = '0.9'
+                              }
+                            }}
+                            onMouseLeave={(event) => {
+                              if (event.target) {
+                                event.target.style.opacity = '0.85'
+                              }
+                            }}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {chart.data.byZone.map((entry, index) => (
+                              <Cell 
+                                key={`cell-${index}`}
+                                fill={highlightedFeature === entry.name && highlightedLayer === 'protected-forest' ? '#ff0000' : CHART_COLORS[0]}
+                                fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'protected-forest' ? 1 : 0.85}
+                              />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                }
+                
+                if (chart.type === 'bar' && chart.data.byRegion && chart.data.byRegion.length > 0) {
+                    return (
+                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
+                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2 shadow-sm"></div>
+                        {chart.title}
+                      </h3>
+                      <ResponsiveContainer width="100%" height={320}>
+                        <BarChart data={chart.data.byRegion}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                          <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={11} stroke="#6b7280" />
+                          <YAxis fontSize={11} stroke="#6b7280" />
+                          <Tooltip 
+                            formatter={(value) => `${value.toLocaleString()} ha`}
+                            contentStyle={{ 
+                              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              border: '1px solid #22c55e',
+                              borderRadius: '6px',
+                              padding: '8px',
+                              fontSize: '12px'
+                            }}
+                          />
+                          <Bar 
+                            dataKey="area" 
+                            fill={CHART_COLORS[6]}
+                            radius={[6, 6, 0, 0]}
+                            className="bar-3d"
+                            onClick={(event) => handleBarClick('ramsar-sites', event)}
+                            onMouseEnter={(event) => {
+                              if (event.target) {
+                                event.target.style.cursor = 'pointer'
+                                event.target.style.opacity = '0.9'
+                              }
+                            }}
+                            onMouseLeave={(event) => {
+                              if (event.target) {
+                                event.target.style.opacity = '0.85'
+                              }
+                            }}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {chart.data.byRegion.map((entry, index) => (
+                              <Cell 
+                                key={`cell-${index}`}
+                                fill={highlightedFeature === entry.name && highlightedLayer === 'ramsar-sites' ? '#ff0000' : CHART_COLORS[6]}
+                                fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'ramsar-sites' ? 1 : 0.85}
+                              />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                }
+                
+                if (chart.type === 'bar-horizontal' && chart.data && chart.data.length > 0) {
+                    return (
+                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
+                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+                        <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 shadow-sm"></div>
+                        {chart.title}
+                      </h3>
+                      <ResponsiveContainer width="100%" height={400}>
+                        <BarChart data={chart.data} layout="vertical">
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                          <XAxis type="number" fontSize={11} stroke="#6b7280" />
+                          <YAxis dataKey="name" type="category" width={110} fontSize={10} stroke="#6b7280" />
+                          <Tooltip 
+                            contentStyle={{ 
+                              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              border: '1px solid #22c55e',
+                              borderRadius: '6px',
+                              padding: '8px',
+                              fontSize: '12px'
+                            }}
+                          />
+                          <Bar 
+                            dataKey="count" 
+                            fill={CHART_COLORS[8]}
+                            radius={[0, 6, 6, 0]}
+                            className="bar-3d"
+                            onClick={(event) => handleBarClick('wildlife-occurrence', event)}
+                            onMouseEnter={(event) => {
+                              if (event.target) {
+                                event.target.style.cursor = 'pointer'
+                                event.target.style.opacity = '0.9'
+                              }
+                            }}
+                            onMouseLeave={(event) => {
+                              if (event.target) {
+                                event.target.style.opacity = '0.85'
+                              }
+                            }}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {chart.data.map((entry, index) => (
+                              <Cell 
+                                key={`cell-${index}`}
+                                fill={highlightedFeature === entry.name && highlightedLayer === 'wildlife-occurrence' ? '#ff0000' : CHART_COLORS[8]}
+                                fillOpacity={highlightedFeature === entry.name && highlightedLayer === 'wildlife-occurrence' ? 1 : 0.85}
+                              />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                }
+                
+                return null
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   )
 }

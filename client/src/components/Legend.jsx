@@ -34,14 +34,18 @@ const layerIcons = {
   'forest-types': FaTree,
 }
 
-export default function Legend({ layers, activeLayers }) {
+export default function Legend({ layers, activeLayers, selectedRegion }) {
   const [isExpanded, setIsExpanded] = useState(true)
   const [isForestLegendExpanded, setIsForestLegendExpanded] = useState(true)
   
   // Filter out base reference layers (like provinces) and forest-types from main legend
-  const activeLayersList = layers.filter(layer => 
-    activeLayers.has(layer.id) && layer.id !== 'pakistan-provinces' && layer.id !== 'forest-types'
-  )
+  // Also filter out balochistan-lulc when Azad Kashmir is selected
+  const activeLayersList = layers.filter(layer => {
+    if (!activeLayers.has(layer.id)) return false
+    if (layer.id === 'pakistan-provinces' || layer.id === 'forest-types') return false
+    if (selectedRegion === 'Azad Kashmir' && layer.id === 'balochistan-lulc') return false
+    return true
+  })
   
   // Separate check for forest-types layer
   const forestTypesLayer = layers.find(layer => layer.id === 'forest-types' && activeLayers.has(layer.id))

@@ -254,7 +254,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'forest-landscape-sindh' &&
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' &&
-                           layer.id !== 'sindh-lulc'
+                           layer.id !== 'sindh-lulc' &&
+                           layer.id !== 'balochistan-lulc'
                   }
                   // For other regions (National), hide all region-specific layers and Punjab LULC (show Pakistan LULC)
                   // Hide Sindh-specific layers and Azad Kashmir Provincial from National view

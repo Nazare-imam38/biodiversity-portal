@@ -1081,7 +1081,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       </div>
 
       {/* Dynamic Legend */}
-      <Legend layers={activeLayersList} activeLayers={activeLayers} />
+      <Legend layers={activeLayersList} activeLayers={activeLayers} selectedRegion={selectedRegion} />
     </div>
   )
 }
