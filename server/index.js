@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url';
 import { readFileSync, existsSync } from 'fs';
 import shapefile from 'shapefile';
 import * as turf from '@turf/turf';
+import https from 'https';
+import http from 'http';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

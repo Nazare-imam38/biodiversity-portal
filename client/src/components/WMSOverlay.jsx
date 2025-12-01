@@ -19,10 +19,12 @@ export default function WMSOverlay({ layerId, wmsUrl, wmsLayers, wmsFormat = 'im
       wmsLayerRef.current = null
     }
 
-    // Create WMS tile layer
-    console.log(`Creating WMS overlay for ${layerId} with URL: ${wmsUrl}, Layers: ${wmsLayers}`)
+    // Use proxy URL to avoid SSL certificate issues
+    const apiUrl = import.meta.env.VITE_API_URL || ''
+    const proxyBaseUrl = apiUrl ? `${apiUrl}/api/wms-proxy` : '/api/wms-proxy'
     
-    wmsLayerRef.current = L.tileLayer.wms(wmsUrl, {
+    // Create WMS tile layer with proxy support
+    const wmsLayer = L.tileLayer.wms(wmsUrl, {
       layers: wmsLayers,
       format: wmsFormat,
       version: wmsVersion,
@@ -33,6 +35,23 @@ export default function WMSOverlay({ layerId, wmsUrl, wmsLayers, wmsFormat = 'im
       crs: L.CRS.EPSG3857, // Web Mercator (standard web map projection)
     })
 
+    // Override getTileUrl to use proxy for HTTPS URLs
+    const originalGetTileUrl = wmsLayer.getTileUrl.bind(wmsLayer)
+    wmsLayer.getTileUrl = function(coords) {
+      const originalUrl = originalGetTileUrl(coords)
+      
+      // Use proxy for HTTPS URLs to handle SSL certificate issues
+      if (originalUrl && originalUrl.startsWith('https://')) {
+        return `${proxyBaseUrl}?url=${encodeURIComponent(originalUrl)}`
+      }
+      
+      return originalUrl
+    }
+
+    // Create WMS tile layer
+    console.log(`Creating WMS overlay for ${layerId} with URL: ${wmsUrl}, Layers: ${wmsLayers}`)
+    
+    wmsLayerRef.current = wmsLayer
     wmsLayerRef.current.addTo(map)
     console.log(`WMS overlay ${layerId} added to map`)
 
