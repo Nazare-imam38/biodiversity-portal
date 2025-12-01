@@ -33,7 +33,7 @@ function Dashboard() {
     }
     return true
   })
-  const [selectedRegion, setSelectedRegion] = useState('Balochistan') // Default to Balochistan to show stats
+  const [selectedRegion, setSelectedRegion] = useState('AJK') // Default to AJK to show stats
   
   // Helper function to convert UI region name to backend region name
   const getBackendRegionName = (region) => {

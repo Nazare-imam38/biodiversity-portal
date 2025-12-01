@@ -12,7 +12,8 @@ import {
   FaMapMarkerAlt,
   FaGlobe,
   FaChevronDown,
-  FaChevronUp
+  FaChevronUp,
+  FaExclamationTriangle
 } from 'react-icons/fa'
 
 const layerIcons = {
@@ -31,6 +32,9 @@ const layerIcons = {
   'pakistan-lulc': FaMapMarkedAlt,
   'sindh-lulc': FaMapMarkedAlt,
   'balochistan-lulc': FaMapMarkedAlt,
+  'ajk-lulc': FaMapMarkedAlt,
+  'ajk-forest-mask': FaTree,
+  'ajk-deforestation': FaExclamationTriangle,
   'forest-types': FaTree,
 }
 
@@ -40,10 +44,13 @@ export default function Legend({ layers, activeLayers, selectedRegion }) {
   
   // Filter out base reference layers (like provinces) and forest-types from main legend
   // Also filter out balochistan-lulc and agroecological-zones when AJK is selected
+  // Show AJK LULC, AJK Forest Mask, and AJK Deforestation only for AJK region
   const activeLayersList = layers.filter(layer => {
     if (!activeLayers.has(layer.id)) return false
     if (layer.id === 'pakistan-provinces' || layer.id === 'forest-types') return false
     if ((selectedRegion === 'Azad Kashmir' || selectedRegion === 'AJK') && (layer.id === 'balochistan-lulc' || layer.id === 'agroecological-zones')) return false
+    // Hide AJK LULC, AJK Forest Mask, and AJK Deforestation for non-AJK regions
+    if (selectedRegion !== 'Azad Kashmir' && selectedRegion !== 'AJK' && (layer.id === 'ajk-lulc' || layer.id === 'ajk-forest-mask' || layer.id === 'ajk-deforestation')) return false
     return true
   })
   

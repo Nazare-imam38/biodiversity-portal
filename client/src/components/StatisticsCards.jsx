@@ -327,7 +327,7 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
     ],
     'AJK': [
       { 
-        label: 'Sq Km Total Provincial Area', 
+        label: 'Sq Miles Total Provincial Area', 
         value: '5,134', 
         color: 'bg-blue-500',
         icon: FaGlobe,
@@ -366,14 +366,6 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
         color: 'bg-yellow-500',
         icon: FaShieldAlt,
         iconColor: 'text-yellow-600'
-      },
-      { 
-        label: '', 
-        value: '94%',
-        subtitle: 'Protected Areas Coverage of (KBAs)',
-        color: 'bg-red-500',
-        icon: FaExclamationTriangle,
-        iconColor: 'text-red-600'
       }
     ]
   }
@@ -387,6 +379,8 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
   const numCards = cards.length
   const gridCols = numCards === 6 
     ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6' 
+    : numCards === 5
+    ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5'
     : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-7'
   
   return (

@@ -4,6 +4,7 @@ import L from 'leaflet'
 import Legend from './Legend'
 import { FaMap, FaSatellite } from 'react-icons/fa'
 import MBTilesOverlay from './MBTilesOverlay'
+import WMSOverlay from './WMSOverlay'
 
 // Fix for default marker icons in React-Leaflet
 delete L.Icon.Default.prototype._getIconUrl
@@ -953,6 +954,22 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
           if (!layer) {
             console.warn(`Layer ${layerId}: Missing layer config`)
             return null
+          }
+          
+          // Handle WMS layers
+          if (layer.type === 'wms' && layer.wmsUrl) {
+            return (
+              <WMSOverlay
+                key={layerId}
+                layerId={layerId}
+                wmsUrl={layer.wmsUrl}
+                wmsLayers={layer.wmsLayers}
+                wmsFormat={layer.wmsFormat || 'image/png'}
+                wmsVersion={layer.wmsVersion || '1.1.0'}
+                opacity={layer.opacity || 0.9}
+                attribution={layer.name}
+              />
+            )
           }
           
           // Handle raster tile layers

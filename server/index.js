@@ -130,11 +130,11 @@ const layerConfig = {
     description: 'Khyber Pakhtunkhwa Provincial Boundaries'
   },
   'ajk-provincial': {
-    name: 'Azad Kashmir Provincial',
+    name: 'AJK Provincial',
     geojson: 'geojson/ajk-provincial.geojson',
     color: '#8b5cf6',
     type: 'polygon',
-    description: 'Azad Kashmir Provincial Boundaries'
+    description: 'AJK Provincial Boundaries'
   },
   'protected-areas-sindh': {
     name: 'Sindh Protected Areas (WDPA)',
@@ -202,6 +202,42 @@ const layerConfig = {
     color: '#16a34a',
     type: 'raster',
     description: 'National Forest Types Classification',
+    opacity: 0.9
+  },
+  'ajk-lulc': {
+    name: 'AJK Land Use Land Cover',
+    wmsUrl: 'https://www.ajkfmspak.org/geoserver/ajk/wms',
+    wmsLayers: 'ajk:LULC_AJK_2016_Final_Report',
+    wmsFormat: 'image/png',
+    wmsVersion: '1.1.0',
+    wmsSrs: 'EPSG:32643',
+    color: '#10b981',
+    type: 'wms',
+    description: 'AJK Land Use Land Cover Map (2016)',
+    opacity: 0.9
+  },
+  'ajk-forest-mask': {
+    name: 'AJK Forest Mask',
+    wmsUrl: 'https://www.ajkfmspak.org/geoserver/ajk/wms',
+    wmsLayers: 'ajk:FM_AJK_2012',
+    wmsFormat: 'image/png',
+    wmsVersion: '1.1.0',
+    wmsSrs: 'EPSG:32642',
+    color: '#16a34a',
+    type: 'wms',
+    description: 'AJK Forest Mask (2012)',
+    opacity: 0.9
+  },
+  'ajk-deforestation': {
+    name: 'AJK Deforestation',
+    wmsUrl: 'https://www.ajkfmspak.org/geoserver/ajk/wms',
+    wmsLayers: 'ajk:AJK_Deforestation_FinalReport',
+    wmsFormat: 'image/png',
+    wmsVersion: '1.1.0',
+    wmsSrs: 'EPSG:32643',
+    color: '#fbbf24',
+    type: 'wms',
+    description: 'AJK Deforestation Final Report',
     opacity: 0.9
   }
 };
