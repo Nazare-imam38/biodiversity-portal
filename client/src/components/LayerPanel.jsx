@@ -162,13 +162,12 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'forest-landscape-sindh' &&
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' && 
-                           layer.id !== 'pakistan-lulc' &&
                            layer.id !== 'sindh-lulc' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
                   }
-                  // Hide GB boundary layers and Pakistan LULC for Punjab region (show Punjab LULC)
+                  // Hide GB boundary layers for Punjab region (show Punjab LULC and Pakistan LULC)
                   // Hide protected-areas (WDPA) and protected-areas-pol for Punjab region
                   // Hide other region-specific layers (Sindh, AJK, etc.)
                   if (selectedRegion === 'Punjab') {
@@ -183,7 +182,6 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
-                           layer.id !== 'pakistan-lulc' &&
                            layer.id !== 'sindh-lulc' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
@@ -209,7 +207,6 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas' &&
                            layer.id !== 'protected-areas-pol' &&
                            layer.id !== 'sindh-lulc' &&
-                           layer.id !== 'pakistan-lulc' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
@@ -252,7 +249,6 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'ajk-provincial' &&
                            layer.id !== 'wildlife-occurrence' &&
                            layer.id !== 'punjab-lulc' &&
-                           layer.id !== 'pakistan-lulc' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
@@ -261,7 +257,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   // Hide region-specific layers for AJK region
                   // Hide agroecological-zones for AJK region
                   // Hide protected-areas-pol for AJK region
-                  // Show only AJK LULC, AJK Forest Mask, and AJK Deforestation for AJK region
+                  // Show AJK LULC, AJK Forest Mask, AJK Deforestation, and Pakistan LULC for AJK region
                   if (selectedRegion === 'Azad Kashmir' || selectedRegion === 'AJK') {
                     return layer.id !== 'protected-forest' && 
                            layer.id !== 'ramsar-sites' && 
@@ -279,8 +275,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'sindh-lulc' &&
-                           layer.id !== 'balochistan-lulc' &&
-                           layer.id !== 'pakistan-lulc'
+                           layer.id !== 'balochistan-lulc'
                   }
                   // For other regions (National), hide all region-specific layers and Punjab LULC (show Pakistan LULC)
                   // Hide Sindh-specific layers and AJK Provincial from National view

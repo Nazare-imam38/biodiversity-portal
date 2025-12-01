@@ -365,8 +365,8 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
         // Find layer config to check type
         const layer = layers.find(l => l.id === layerId)
         
-        // Skip loading for raster tile layers (they don't need GeoJSON data)
-        if (layer && layer.type === 'raster') {
+        // Skip loading for raster tile layers and WMS layers (they don't need GeoJSON data)
+        if (layer && (layer.type === 'raster' || layer.type === 'wms')) {
           return
         }
         
@@ -957,7 +957,8 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
           }
           
           // Handle WMS layers
-          if (layer.type === 'wms' && layer.wmsUrl) {
+          // Using Leaflet's standard WMS implementation: L.tileLayer.wms(wmsUrl, { layers: wmsLayers, format: 'image/png', transparent: true, opacity: 0.7 })
+          if (layer.type === 'wms' && layer.wmsUrl && layer.wmsLayers) {
             return (
               <WMSOverlay
                 key={layerId}
@@ -966,7 +967,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
                 wmsLayers={layer.wmsLayers}
                 wmsFormat={layer.wmsFormat || 'image/png'}
                 wmsVersion={layer.wmsVersion || '1.1.0'}
-                opacity={layer.opacity || 0.9}
+                opacity={layer.opacity || 0.7}
                 attribution={layer.name}
               />
             )

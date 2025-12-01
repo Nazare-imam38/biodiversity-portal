@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { useMap } from "react-leaflet"
 import L from "leaflet"
 
-export default function WMSOverlay({ layerId, wmsUrl, wmsLayers, wmsFormat = 'image/png', wmsVersion = '1.1.0', opacity = 0.9, attribution }) {
+export default function WMSOverlay({ layerId, wmsUrl, wmsLayers, wmsFormat = 'image/png', wmsVersion = '1.1.0', opacity = 0.7, attribution }) {
   const map = useMap()
   const wmsLayerRef = useRef(null)
 
@@ -19,11 +19,8 @@ export default function WMSOverlay({ layerId, wmsUrl, wmsLayers, wmsFormat = 'im
       wmsLayerRef.current = null
     }
 
-    // Use proxy URL to avoid SSL certificate issues
-    const apiUrl = import.meta.env.VITE_API_URL || ''
-    const proxyBaseUrl = apiUrl ? `${apiUrl}/api/wms-proxy` : '/api/wms-proxy'
-    
-    // Create WMS tile layer with proxy support
+    // Create WMS tile layer using Leaflet's standard WMS implementation
+    // Similar to: L.tileLayer.wms(layer.wmsUrl, { layers: layer.wmsLayer, format: 'image/png', transparent: true, opacity: 0.7 })
     const wmsLayer = L.tileLayer.wms(wmsUrl, {
       layers: wmsLayers,
       format: wmsFormat,
@@ -32,23 +29,24 @@ export default function WMSOverlay({ layerId, wmsUrl, wmsLayers, wmsFormat = 'im
       opacity: opacity,
       zIndex: 100,
       attribution: attribution || layerId,
-      crs: L.CRS.EPSG3857, // Web Mercator (standard web map projection)
     })
 
-    // Override getTileUrl to use proxy for HTTPS URLs
-    const originalGetTileUrl = wmsLayer.getTileUrl.bind(wmsLayer)
-    wmsLayer.getTileUrl = function(coords) {
-      const originalUrl = originalGetTileUrl(coords)
+    // Handle SSL certificate issues by routing HTTPS requests through proxy
+    if (wmsUrl.startsWith('https://')) {
+      const apiUrl = import.meta.env.VITE_API_URL || ''
+      const proxyBaseUrl = apiUrl ? `${apiUrl}/api/wms-proxy` : '/api/wms-proxy'
       
-      // Use proxy for HTTPS URLs to handle SSL certificate issues
-      if (originalUrl && originalUrl.startsWith('https://')) {
-        return `${proxyBaseUrl}?url=${encodeURIComponent(originalUrl)}`
+      // Override getTileUrl to use proxy for HTTPS URLs
+      const originalGetTileUrl = wmsLayer.getTileUrl.bind(wmsLayer)
+      wmsLayer.getTileUrl = function(coords) {
+        const originalUrl = originalGetTileUrl(coords)
+        if (originalUrl && originalUrl.startsWith('https://')) {
+          return `${proxyBaseUrl}?url=${encodeURIComponent(originalUrl)}`
+        }
+        return originalUrl
       }
-      
-      return originalUrl
     }
 
-    // Create WMS tile layer
     console.log(`Creating WMS overlay for ${layerId} with URL: ${wmsUrl}, Layers: ${wmsLayers}`)
     
     wmsLayerRef.current = wmsLayer

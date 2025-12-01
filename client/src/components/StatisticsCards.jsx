@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { FaGlobe, FaTree, FaSeedling, FaShieldAlt, FaExclamationTriangle, FaLeaf, FaCut, FaCloud, FaSitemap, FaMoneyBill, FaWater, FaStarOfLife } from 'react-icons/fa'
 
 // Typewriter animation component for numbers
-function TypewriterNumber({ value, delay = 30, index = 0, key = '' }) {
+function TypewriterNumber({ value, delay = 30, index = 0 }) {
   const [displayValue, setDisplayValue] = useState('')
   const [isAnimating, setIsAnimating] = useState(false)
   const hasAnimated = useRef(false)
@@ -66,7 +66,7 @@ function TypewriterNumber({ value, delay = 30, index = 0, key = '' }) {
     return () => {
       clearTimeout(startAnimation)
     }
-  }, [value, delay, index, key])
+  }, [value, delay, index])
 
   return (
     <span className="font-bold inline-block" style={{ fontVariantNumeric: 'tabular-nums' }}>
@@ -402,7 +402,7 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
               />
             </div>
             <div className="text-xs sm:text-sm md:text-base text-gray-800 mb-0.5 transition-colors duration-300 break-words leading-tight whitespace-pre-line">
-              <TypewriterNumber value={card.value} delay={30} index={index} key={`${selectedRegion}-${index}-${card.value}`} />
+              <TypewriterNumber value={card.value} delay={30} index={index} />
             </div>
             {card.valueText && (
               <div className="text-[10px] sm:text-xs text-gray-500 transition-colors duration-300 mb-0.5 leading-tight whitespace-pre-line">{card.valueText}</div>

@@ -1584,6 +1584,65 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Biodiversity Portal API is running' });
 });
 
+// WMS Proxy endpoint to handle SSL certificate issues
+app.get('/api/wms-proxy', async (req, res) => {
+  const { url } = req.query;
+  
+  if (!url) {
+    return res.status(400).json({ error: 'Missing url parameter' });
+  }
+
+  try {
+    // Parse the URL
+    const wmsUrl = new URL(url);
+    const isHttps = wmsUrl.protocol === 'https:';
+    const client = isHttps ? https : http;
+    
+    // Options for HTTPS requests - ignore SSL certificate errors
+    const options = {
+      hostname: wmsUrl.hostname,
+      port: wmsUrl.port || (isHttps ? 443 : 80),
+      path: wmsUrl.pathname + wmsUrl.search,
+      method: 'GET',
+      headers: {
+        'User-Agent': 'Biodiversity-Portal/1.0',
+        'Accept': 'image/png,image/*,*/*'
+      },
+      // For HTTPS, ignore certificate errors
+      ...(isHttps && {
+        rejectUnauthorized: false
+      })
+    };
+
+    const proxyReq = client.request(options, (proxyRes) => {
+      // Set appropriate headers
+      res.setHeader('Content-Type', proxyRes.headers['content-type'] || 'image/png');
+      res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache for 1 hour
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      
+      // Set status code
+      res.status(proxyRes.statusCode || 200);
+      
+      // Pipe the response
+      proxyRes.pipe(res);
+    });
+
+    proxyReq.on('error', (error) => {
+      console.error('WMS Proxy error:', error);
+      if (!res.headersSent) {
+        res.status(500).json({ error: 'Failed to fetch WMS tile', details: error.message });
+      }
+    });
+
+    proxyReq.end();
+  } catch (error) {
+    console.error('WMS Proxy error:', error);
+    if (!res.headersSent) {
+      res.status(500).json({ error: 'Invalid URL or request failed', details: error.message });
+    }
+  }
+});
+
 // Serve frontend static files (in production)
 // IMPORTANT: This must be after API routes but before catch-all
 const clientDistPath = join(__dirname, '../client/dist');
