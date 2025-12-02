@@ -131,6 +131,13 @@ const layerConfig = {
     type: 'polygon',
     description: 'Khyber Pakhtunkhwa Provincial Boundaries'
   },
+  'protected-areas-kp': {
+    name: 'Khyber Pakhtunkhwa Protected Areas',
+    geojson: 'geojson/protected-areas-kp.geojson',
+    color: '#f59e0b',
+    type: 'polygon',
+    description: 'Khyber Pakhtunkhwa Protected Areas (104 features)'
+  },
   'ajk-provincial': {
     name: 'AJK Provincial',
     geojson: 'geojson/ajk-provincial.geojson',
@@ -1415,7 +1422,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
     const isSindhLayer = layerId === 'sindh-provincial' || layerId === 'protected-areas-sindh' || layerId === 'ramsar-sites-sindh' || layerId === 'forest-landscape-sindh' || layerId === 'sindh-lulc'; // Sindh-specific layers
     const isBalochistanLayer = layerId === 'balochistan-provincial' || layerId === 'balochistan-lulc'; // Balochistan-specific layers
-    const isKPLayer = layerId === 'kp-provincial'; // KP-specific layers
+    const isKPLayer = layerId === 'kp-provincial' || layerId === 'protected-areas-kp'; // KP-specific layers
     const isAJKLayer = layerId === 'ajk-provincial'; // AJK-specific layers
     const isPakistanLULCLayer = layerId === 'pakistan-lulc'; // Pakistan LULC layer (national level)
     const isBoundaryLayer = layerId === 'pakistan-provinces'; // Boundary layers should not be clipped

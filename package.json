@@ -32,7 +32,8 @@
     "glob": "^10.3.10",
     "proj4": "^2.20.1",
     "reproject": "^1.2.7",
-    "shapefile": "^0.6.6"
+    "shapefile": "^0.6.6",
+    "tileserver-gl-light": "^5.4.0"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

@@ -28,6 +28,7 @@ const layerIcons = {
   'kbas': FaMapMarkedAlt,
   'protected-areas': FaShieldAlt,
   'protected-areas-pol': FaShieldAlt,
+  'protected-areas-kp': FaShieldAlt,
   'protected-forest': FaTree,
   'ramsar-sites': FaWater,
   'gb-provincial': FaGlobe,
@@ -160,6 +161,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'protected-areas-kp' &&
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' && 
                            layer.id !== 'sindh-lulc' &&
@@ -182,6 +184,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'protected-areas-kp' &&
                            layer.id !== 'sindh-lulc' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
@@ -202,6 +205,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'protected-areas-kp' &&
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'protected-areas' &&
@@ -213,6 +217,10 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   }
                   // Hide protected-forest for Khyber Pakhtunkhwa region (it has 0 features)
                   // Hide region-specific layers from other provinces (Sindh, etc.)
+                  // Hide protected-areas (WDPA) and protected-areas-pol for Khyber Pakhtunkhwa region
+                  // Hide agroecological-zones for Khyber Pakhtunkhwa region
+                  // Hide balochistan-lulc for Khyber Pakhtunkhwa region
+                  // Hide ramsar-sites for Khyber Pakhtunkhwa region
                   if (selectedRegion === 'Khyber Pakhtunkhwa') {
                     return layer.id !== 'protected-forest' && 
                            layer.id !== 'gb-provincial' && 
@@ -224,12 +232,17 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'agroecological-zones' &&
+                           layer.id !== 'ramsar-sites' &&
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'sindh-lulc' &&
+                           layer.id !== 'balochistan-lulc' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
-                           layer.id !== 'ajk-deforestation'
+                           layer.id !== 'ajk-deforestation' &&
+                           layer.id !== 'protected-areas' &&
+                           layer.id !== 'protected-areas-pol'
                   }
                   // Hide protected-forest for Sindh region (it has 0 features)
                   // Hide region-specific layers for Sindh region
@@ -247,6 +260,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'kp-provincial' && 
                            layer.id !== 'balochistan-provincial' &&
                            layer.id !== 'ajk-provincial' &&
+                           layer.id !== 'protected-areas-kp' &&
                            layer.id !== 'wildlife-occurrence' &&
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'ajk-lulc' &&
@@ -272,6 +286,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'protected-areas-kp' &&
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'sindh-lulc' &&
@@ -291,6 +306,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-sindh' &&
                            layer.id !== 'ramsar-sites-sindh' &&
                            layer.id !== 'forest-landscape-sindh' &&
+                           layer.id !== 'protected-areas-kp' &&
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' && 
                            layer.id !== 'sindh-lulc' &&
