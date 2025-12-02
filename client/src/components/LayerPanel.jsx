@@ -272,6 +272,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'wildlife-occurrence' &&
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'kp-lulc' &&
+                           layer.id !== 'balochistan-lulc' &&
                            layer.id !== 'kp-forest' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
