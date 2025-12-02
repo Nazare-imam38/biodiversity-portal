@@ -205,6 +205,22 @@ const layerConfig = {
     description: 'Balochistan Land Use Land Cover Map',
     opacity: 0.9
   },
+  'kp-lulc': {
+    name: 'Khyber Pakhtunkhwa Land Use Land Cover',
+    tiles: 'https://tiles.dhamarketplace.com/data/KP-LULC/{z}/{x}/{y}.png',
+    color: '#22c55e',
+    type: 'raster',
+    description: 'Khyber Pakhtunkhwa Land Use Land Cover Map',
+    opacity: 0.9
+  },
+  'kp-forest': {
+    name: 'Khyber Pakhtunkhwa Forest Cover',
+    tiles: 'https://tiles.dhamarketplace.com/data/KP-Forest/{z}/{x}/{y}.png',
+    color: '#16a34a',
+    type: 'raster',
+    description: 'Khyber Pakhtunkhwa Forest Cover Map',
+    opacity: 0.9
+  },
   'forest-types': {
     name: 'Forest Stratification',
     tiles: 'https://tiles.dhamarketplace.com/data/Forest%20Types/{z}/{x}/{y}.png',
@@ -1357,7 +1373,7 @@ app.get('/api/layers', (req, res) => {
     };
     
     // Log LULC layers for debugging
-    if (key === 'punjab-lulc' || key === 'pakistan-lulc' || key === 'sindh-lulc') {
+    if (key === 'punjab-lulc' || key === 'pakistan-lulc' || key === 'sindh-lulc' || key === 'balochistan-lulc' || key === 'kp-lulc' || key === 'kp-forest') {
       console.log(`Serving ${key} with tiles URL:`, layerData.tiles);
     }
     
@@ -1422,7 +1438,7 @@ app.get('/api/layers/:layerId', async (req, res) => {
     const isPunjabLayer = layerId === 'punjab-provincial' || layerId === 'wildlife-occurrence' || layerId === 'punjab-lulc'; // Punjab-specific layers
     const isSindhLayer = layerId === 'sindh-provincial' || layerId === 'protected-areas-sindh' || layerId === 'ramsar-sites-sindh' || layerId === 'forest-landscape-sindh' || layerId === 'sindh-lulc'; // Sindh-specific layers
     const isBalochistanLayer = layerId === 'balochistan-provincial' || layerId === 'balochistan-lulc'; // Balochistan-specific layers
-    const isKPLayer = layerId === 'kp-provincial' || layerId === 'protected-areas-kp'; // KP-specific layers
+    const isKPLayer = layerId === 'kp-provincial' || layerId === 'protected-areas-kp' || layerId === 'kp-lulc' || layerId === 'kp-forest'; // KP-specific layers
     const isAJKLayer = layerId === 'ajk-provincial'; // AJK-specific layers
     const isPakistanLULCLayer = layerId === 'pakistan-lulc'; // Pakistan LULC layer (national level)
     const isBoundaryLayer = layerId === 'pakistan-provinces'; // Boundary layers should not be clipped

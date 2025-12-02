@@ -254,6 +254,89 @@ export default function Legend({ layers, activeLayers, selectedRegion }) {
               )
             }
             
+            // Special handling for Khyber Pakhtunkhwa LULC layer - show custom legend
+            if (layer.id === 'kp-lulc') {
+              const kpLULCLegend = [
+                { color: '#00FF00', label: 'Rangeland' }, // Bright green
+                { color: '#FF00FF', label: 'Agricultural Land' }, // Magenta
+                { color: '#00FFFF', label: 'Barren Land' }, // Cyan
+                { color: '#800080', label: 'Water Bodies' }, // Purple
+                { color: '#32CD32', label: 'Built Up Area' }, // Lime green
+                { color: '#A0522D', label: 'Bare Land' } // Brownish-red
+              ]
+              
+              return (
+                <div key={layer.id} className="space-y-2">
+                  <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm mb-2">
+                    <div className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0">
+                      <div 
+                        className="p-1 sm:p-1.5 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: `${layer.color}20` }}
+                      >
+                        <IconComponent 
+                          className="text-xs sm:text-sm" 
+                          style={{ color: layer.color }}
+                        />
+                      </div>
+                    </div>
+                    <span className="text-gray-700 text-xs leading-tight font-medium">{layer.name}</span>
+                  </div>
+                  <div className="pl-7 sm:pl-9 space-y-1.5">
+                    {kpLULCLegend.map((item, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 sm:space-x-3 text-xs">
+                        <div 
+                          className="w-4 h-4 sm:w-5 sm:h-5 rounded flex-shrink-0 border border-gray-300"
+                          style={{ backgroundColor: item.color }}
+                        />
+                        <span className="text-gray-700 text-xs leading-tight">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
+            
+            // Special handling for Khyber Pakhtunkhwa Forest Cover layer - show custom legend
+            if (layer.id === 'kp-forest') {
+              const kpForestLegend = [
+                { color: '#006400', label: 'Dense Forest' }, // Dark green
+                { color: '#228B22', label: 'Moderate Forest' }, // Forest green
+                { color: '#32CD32', label: 'Sparse Forest' }, // Lime green
+                { color: '#9ACD32', label: 'Scrub Forest' }, // Yellow green
+                { color: '#8B4513', label: 'Non-Forest' } // Brown
+              ]
+              
+              return (
+                <div key={layer.id} className="space-y-2">
+                  <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm mb-2">
+                    <div className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0">
+                      <div 
+                        className="p-1 sm:p-1.5 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: `${layer.color}20` }}
+                      >
+                        <IconComponent 
+                          className="text-xs sm:text-sm" 
+                          style={{ color: layer.color }}
+                        />
+                      </div>
+                    </div>
+                    <span className="text-gray-700 text-xs leading-tight font-medium">{layer.name}</span>
+                  </div>
+                  <div className="pl-7 sm:pl-9 space-y-1.5">
+                    {kpForestLegend.map((item, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 sm:space-x-3 text-xs">
+                        <div 
+                          className="w-4 h-4 sm:w-5 sm:h-5 rounded flex-shrink-0 border border-gray-300"
+                          style={{ backgroundColor: item.color }}
+                        />
+                        <span className="text-gray-700 text-xs leading-tight">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
+            
             // Default legend display for other layers
             return (
               <div key={layer.id} className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm">

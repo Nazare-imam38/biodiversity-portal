@@ -39,7 +39,9 @@ const layerIcons = {
   'pakistan-lulc': FaMap,
   'sindh-lulc': FaMap,
   'balochistan-lulc': FaMap,
+  'kp-lulc': FaMap,
   'ajk-lulc': FaMap,
+  'kp-forest': FaTree,
   'ajk-forest-mask': FaTree,
   'ajk-deforestation': FaExclamationTriangle,
   'forest-types': FaTree,
@@ -165,6 +167,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' && 
                            layer.id !== 'sindh-lulc' &&
+                           layer.id !== 'kp-lulc' &&
+                           layer.id !== 'kp-forest' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
@@ -186,6 +190,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'forest-landscape-sindh' &&
                            layer.id !== 'protected-areas-kp' &&
                            layer.id !== 'sindh-lulc' &&
+                           layer.id !== 'kp-lulc' &&
+                           layer.id !== 'kp-forest' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
@@ -211,6 +217,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas' &&
                            layer.id !== 'protected-areas-pol' &&
                            layer.id !== 'sindh-lulc' &&
+                           layer.id !== 'kp-lulc' &&
+                           layer.id !== 'kp-forest' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
@@ -263,6 +271,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'protected-areas-kp' &&
                            layer.id !== 'wildlife-occurrence' &&
                            layer.id !== 'punjab-lulc' &&
+                           layer.id !== 'kp-lulc' &&
+                           layer.id !== 'kp-forest' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
@@ -290,6 +300,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' &&
                            layer.id !== 'sindh-lulc' &&
+                           layer.id !== 'kp-lulc' &&
+                           layer.id !== 'kp-forest' &&
                            layer.id !== 'balochistan-lulc'
                   }
                   // For other regions (National), hide all region-specific layers and Punjab LULC (show Pakistan LULC)
@@ -310,6 +322,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'wildlife-occurrence' && 
                            layer.id !== 'punjab-lulc' && 
                            layer.id !== 'sindh-lulc' &&
+                           layer.id !== 'kp-lulc' &&
+                           layer.id !== 'kp-forest' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
