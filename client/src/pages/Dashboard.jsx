@@ -37,11 +37,13 @@ function Dashboard() {
   
   // Helper function to convert UI region name to backend region name
   const getBackendRegionName = (region) => {
-    return region === 'AJK' ? 'Azad Kashmir' : region
+    if (region === 'AJK') return 'Azad Kashmir'
+    if (region === 'KP') return 'Khyber Pakhtunkhwa'
+    return region
   }
 
   // Define all regions (UI display names)
-  const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'AJK', 'Khyber Pakhtunkhwa']
+  const regions = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'AJK', 'KP']
 
   useEffect(() => {
     const checkMobile = () => {
@@ -83,7 +85,7 @@ function Dashboard() {
         defaultLayers.add('balochistan-provincial')
       } else if (selectedRegion === 'Sindh') {
         defaultLayers.add('sindh-provincial')
-      } else if (selectedRegion === 'Khyber Pakhtunkhwa') {
+      } else if (selectedRegion === 'KP') {
         defaultLayers.add('kp-provincial')
       } else if (selectedRegion === 'AJK') {
         defaultLayers.add('ajk-provincial')
@@ -191,7 +193,7 @@ function Dashboard() {
     // Exclude protected-forest for GB, AJK, Balochistan, and Sindh regions (they have 0 features)
     // Exclude ramsar-sites for GB and AJK regions (they have 0 features)
     // For Sindh, use Sindh-specific layers instead of national ones
-    // For Khyber Pakhtunkhwa, exclude protected-areas and ramsar-sites
+    // For KP, exclude protected-areas and ramsar-sites
     let featuredLayerIds = ['protected-areas', 'protected-forest', 'ramsar-sites', 'kbas']
     if (selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'AJK') {
       featuredLayerIds = ['protected-areas', 'kbas'] // Remove protected-forest and ramsar-sites for GB and AJK
@@ -199,8 +201,8 @@ function Dashboard() {
       featuredLayerIds = ['protected-areas', 'ramsar-sites', 'kbas'] // Remove protected-forest for Balochistan
     } else if (selectedRegion === 'Sindh') {
       featuredLayerIds = ['protected-areas-sindh', 'ramsar-sites-sindh', 'kbas'] // Use Sindh-specific layers
-    } else if (selectedRegion === 'Khyber Pakhtunkhwa') {
-      featuredLayerIds = ['protected-forest', 'kbas'] // Remove protected-areas and ramsar-sites for Khyber Pakhtunkhwa
+    } else if (selectedRegion === 'KP') {
+      featuredLayerIds = ['protected-forest', 'kbas'] // Remove protected-areas and ramsar-sites for KP
     }
     setActiveLayers(prev => {
       const newSet = new Set(prev)
@@ -306,7 +308,7 @@ function Dashboard() {
       </div>
       
       {/* Layer Data Dashboard - Show below map for all provinces */}
-      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan' || selectedRegion === 'Khyber Pakhtunkhwa' || selectedRegion === 'AJK') && (
+      {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan' || selectedRegion === 'KP' || selectedRegion === 'AJK') && (
         <div className="mt-4 sm:mt-6">
           <LayerDataDashboard 
             layerData={layerData}

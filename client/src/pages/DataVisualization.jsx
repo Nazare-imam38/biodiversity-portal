@@ -40,11 +40,13 @@ const CHART_COLORS = [
 
 // Helper function to convert UI region name to backend region name
 const getBackendRegionName = (region) => {
-  return region === 'AJK' ? 'Azad Kashmir' : region
+  if (region === 'AJK') return 'Azad Kashmir'
+  if (region === 'KP') return 'Khyber Pakhtunkhwa'
+  return region
 }
 
 // Regions available for filtering (UI display names)
-const REGIONS = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa', 'AJK']
+const REGIONS = ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'KP', 'AJK']
 
 // Layer availability by region
 const LAYER_AVAILABILITY = {
@@ -52,7 +54,7 @@ const LAYER_AVAILABILITY = {
   'protected-areas-sindh': ['Sindh'],
   'ramsar-sites-sindh': ['Sindh'],
   'forest-landscape-sindh': ['Sindh'],
-  'agroecological-zones': ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa'], // Exclude AJK
+  'agroecological-zones': ['National', 'Gilgit Baltistan', 'Punjab', 'Sindh', 'Balochistan', 'KP'], // Exclude AJK
 }
 
 // Layer colors and styles
@@ -76,9 +78,10 @@ function getBoundaryLayerId(region) {
     'Punjab': 'punjab-provincial',
     'Sindh': 'sindh-provincial',
     'Balochistan': 'balochistan-provincial',
-    'Khyber Pakhtunkhwa': 'kp-provincial',
+    'KP': 'kp-provincial',
     'AJK': 'ajk-provincial',
     'Azad Kashmir': 'ajk-provincial', // Backend compatibility
+    'Khyber Pakhtunkhwa': 'kp-provincial', // Backend compatibility
     'National': 'pakistan-provinces'
   }
   return boundaryMap[region] || 'pakistan-provinces'

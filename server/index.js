@@ -125,18 +125,18 @@ const layerConfig = {
     description: 'Sindh Provincial Boundaries'
   },
   'kp-provincial': {
-    name: 'Khyber Pakhtunkhwa Provincial',
+    name: 'KP Provincial',
     geojson: 'geojson/kp-provincial.geojson',
     color: '#8b5cf6',
     type: 'polygon',
-    description: 'Khyber Pakhtunkhwa Provincial Boundaries'
+    description: 'KP Provincial Boundaries'
   },
   'protected-areas-kp': {
-    name: 'Khyber Pakhtunkhwa Protected Areas',
+    name: 'KP Protected Areas',
     geojson: 'geojson/protected-areas-kp.geojson',
     color: '#f59e0b',
     type: 'polygon',
-    description: 'Khyber Pakhtunkhwa Protected Areas (104 features)'
+    description: 'KP Protected Areas (104 features)'
   },
   'ajk-provincial': {
     name: 'AJK Provincial',
@@ -206,19 +206,19 @@ const layerConfig = {
     opacity: 0.9
   },
   'kp-lulc': {
-    name: 'Khyber Pakhtunkhwa Land Use Land Cover',
+    name: 'KP Land Use Land Cover',
     tiles: 'https://tiles.dhamarketplace.com/data/KP-LULC/{z}/{x}/{y}.png',
     color: '#22c55e',
     type: 'raster',
-    description: 'Khyber Pakhtunkhwa Land Use Land Cover Map',
+    description: 'KP Land Use Land Cover Map',
     opacity: 0.9
   },
   'kp-forest': {
-    name: 'Khyber Pakhtunkhwa Forest Cover',
-    tiles: 'https://tiles.dhamarketplace.com/data/KP-Forest/{z}/{x}/{y}.png',
+    name: 'KP Forest Mask',
+    tiles: 'https://tiles.dhamarketplace.com/data/KP-Forest-2/{z}/{x}/{y}.png',
     color: '#16a34a',
     type: 'raster',
-    description: 'Khyber Pakhtunkhwa Forest Cover Map',
+    description: 'KP Forest Mask Map',
     opacity: 0.9
   },
   'forest-types': {

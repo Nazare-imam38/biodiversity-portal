@@ -533,7 +533,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       }
     }
     
-    // Special styling for Khyber Pakhtunkhwa Provincial - hollow with purple outline
+    // Special styling for KP Provincial - hollow with purple outline
     if (layer.id === 'kp-provincial') {
       return {
         color: '#8b5cf6', // Purple outline

@@ -223,13 +223,13 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'ajk-forest-mask' &&
                            layer.id !== 'ajk-deforestation'
                   }
-                  // Hide protected-forest for Khyber Pakhtunkhwa region (it has 0 features)
+                  // Hide protected-forest for KP region (it has 0 features)
                   // Hide region-specific layers from other provinces (Sindh, etc.)
-                  // Hide protected-areas (WDPA) and protected-areas-pol for Khyber Pakhtunkhwa region
-                  // Hide agroecological-zones for Khyber Pakhtunkhwa region
-                  // Hide balochistan-lulc for Khyber Pakhtunkhwa region
-                  // Hide ramsar-sites for Khyber Pakhtunkhwa region
-                  if (selectedRegion === 'Khyber Pakhtunkhwa') {
+                  // Hide protected-areas (WDPA) and protected-areas-pol for KP region
+                  // Hide agroecological-zones for KP region
+                  // Hide balochistan-lulc for KP region
+                  // Hide ramsar-sites for KP region
+                  if (selectedRegion === 'Khyber Pakhtunkhwa' || selectedRegion === 'KP') {
                     return layer.id !== 'protected-forest' && 
                            layer.id !== 'gb-provincial' && 
                            layer.id !== 'gb-district' && 
@@ -308,7 +308,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                   // For other regions (National), hide all region-specific layers and Punjab LULC (show Pakistan LULC)
                   // Hide Sindh-specific layers and AJK Provincial from National view
                   // Hide AJK LULC, AJK Forest Mask, and AJK Deforestation for non-AJK regions
-                  if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab' && selectedRegion !== 'Balochistan' && selectedRegion !== 'Khyber Pakhtunkhwa' && selectedRegion !== 'Sindh' && selectedRegion !== 'Azad Kashmir' && selectedRegion !== 'AJK') {
+                  if (selectedRegion !== 'Gilgit Baltistan' && selectedRegion !== 'Punjab' && selectedRegion !== 'Balochistan' && selectedRegion !== 'Khyber Pakhtunkhwa' && selectedRegion !== 'KP' && selectedRegion !== 'Sindh' && selectedRegion !== 'Azad Kashmir' && selectedRegion !== 'AJK') {
                     return layer.id !== 'gb-provincial' && 
                            layer.id !== 'gb-district' && 
                            layer.id !== 'punjab-provincial' && 
