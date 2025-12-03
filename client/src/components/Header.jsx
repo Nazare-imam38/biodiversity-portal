@@ -197,7 +197,7 @@ export default function Header() {
           <span>{currentTime}</span>
         </div>
         <div className="flex items-center space-x-2 sm:space-x-3">
-          {activePage !== 'Home' && (
+          {activePage !== 'Home' && activePage !== 'Data Visualization' && (
           <div className="relative hidden sm:block">
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm" />
             <input
