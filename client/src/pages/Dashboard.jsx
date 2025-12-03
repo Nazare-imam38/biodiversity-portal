@@ -33,7 +33,7 @@ function Dashboard() {
     }
     return true
   })
-  const [selectedRegion, setSelectedRegion] = useState('AJK') // Default to AJK to show stats
+  const [selectedRegion, setSelectedRegion] = useState('KP') // Default to KP to show KP provincial layer
   
   // Helper function to convert UI region name to backend region name
   const getBackendRegionName = (region) => {
