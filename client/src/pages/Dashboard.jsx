@@ -232,19 +232,22 @@ function Dashboard() {
   return (
     <div className="min-h-screen w-full max-w-full flex flex-col bg-gray-50 overflow-x-hidden">
       {/* Region Toggle Buttons */}
-      <div className="bg-white border-b border-gray-200 px-2 sm:px-3 py-2 flex items-center justify-center">
-        <div className="flex items-center space-x-1 bg-gray-100 rounded-lg p-0.5 overflow-x-auto max-w-full scrollbar-hide">
+      <div className="bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-lg px-2 sm:px-3 py-3 flex items-center justify-center">
+        <div className="flex items-center space-x-2 bg-gradient-to-r from-gray-50 to-gray-100/80 rounded-xl p-1.5 shadow-inner border border-gray-200/50 overflow-x-auto max-w-full scrollbar-hide">
           {regions.map((region) => (
             <button
               key={region}
               onClick={() => setSelectedRegion(region)}
-              className={`px-2 sm:px-3 py-1.5 rounded-md font-medium text-[10px] sm:text-xs transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
+              className={`px-3 sm:px-4 py-2 rounded-lg font-semibold text-[10px] sm:text-xs transition-all duration-300 whitespace-nowrap flex-shrink-0 relative overflow-hidden ${
                 selectedRegion === region
-                  ? 'bg-white text-green-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-800'
+                  ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg transform scale-105 border-2 border-green-400'
+                  : 'text-gray-700 hover:text-gray-900 hover:bg-white/80 hover:shadow-md border-2 border-transparent'
               }`}
             >
-              {region}
+              {selectedRegion === region && (
+                <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></span>
+              )}
+              <span className="relative z-10">{region}</span>
             </button>
           ))}
         </div>

@@ -110,7 +110,7 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
           <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
         </div>
 
-        <div className="p-1.5 sm:p-2 flex-1 overflow-y-auto lg:overflow-y-visible lg:overflow-x-hidden">
+        <div className="p-1.5 sm:p-2 flex-1 overflow-y-auto lg:overflow-y-visible lg:overflow-x-hidden scrollbar-hide">
           <div className="flex items-center justify-between mb-2 sm:mb-2.5">
             <h2 className="text-xs sm:text-sm font-semibold text-gray-800">Data Layers</h2>
             <div className="flex items-center space-x-1.5">

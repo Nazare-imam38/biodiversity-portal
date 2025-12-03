@@ -662,32 +662,18 @@ function DataVisualization() {
   return (
     <>
       <style>{`
-        .chart-panel::-webkit-scrollbar {
-          width: 6px;
-        }
-        .chart-panel::-webkit-scrollbar-track {
-          background: #f1f5f9;
-          border-radius: 3px;
-        }
-        .chart-panel::-webkit-scrollbar-thumb {
-          background: #cbd5e1;
-          border-radius: 3px;
-        }
-        .chart-panel::-webkit-scrollbar-thumb:hover {
-          background: #94a3b8;
-        }
-        .chart-panel {
-          scrollbar-width: thin;
-          scrollbar-color: #cbd5e1 #f1f5f9;
-        }
+        /* Modern Professional UI Styles */
         .chart-card {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
-          background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+          background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.8);
           box-shadow: 
-            0 4px 6px -1px rgba(0, 0, 0, 0.1),
-            0 2px 4px -1px rgba(0, 0, 0, 0.06),
-            inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+            0 8px 16px -4px rgba(0, 0, 0, 0.08),
+            0 4px 8px -2px rgba(0, 0, 0, 0.04),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+            0 0 0 1px rgba(34, 197, 94, 0.05);
         }
         .chart-card::before {
           content: '';
@@ -695,18 +681,36 @@ function DataVisualization() {
           top: 0;
           left: 0;
           right: 0;
-          height: 3px;
-          background: linear-gradient(90deg, #22c55e 0%, #16a34a 50%, #22c55e 100%);
+          height: 4px;
+          background: linear-gradient(90deg, #22c55e 0%, #16a34a 30%, #10b981 60%, #16a34a 100%);
           border-radius: 12px 12px 0 0;
-          opacity: 0.6;
+          opacity: 0.8;
+          box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+        }
+        .chart-card::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(34, 197, 94, 0.02) 0%, transparent 50%);
+          border-radius: 12px;
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.4s ease;
         }
         .chart-card:hover {
-          transform: translateY(-4px) perspective(1000px) rotateX(2deg);
+          transform: translateY(-6px) scale(1.01);
           box-shadow: 
-            0 20px 25px -5px rgba(34, 197, 94, 0.2),
-            0 10px 10px -5px rgba(34, 197, 94, 0.1),
-            0 0 0 1px rgba(34, 197, 94, 0.1),
-            inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+            0 24px 48px -12px rgba(34, 197, 94, 0.25),
+            0 12px 24px -6px rgba(34, 197, 94, 0.15),
+            0 0 0 1px rgba(34, 197, 94, 0.2),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+          border-color: rgba(34, 197, 94, 0.3);
+        }
+        .chart-card:hover::after {
+          opacity: 1;
         }
         .chart-card-3d {
           transform-style: preserve-3d;
@@ -780,19 +784,22 @@ function DataVisualization() {
           pointer-events: all;
         }
       `}</style>
-      <div className="min-h-screen bg-gray-50">
-        {/* Filter Bar */}
-        <div className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-10">
-          <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div className="flex items-center justify-center flex-wrap gap-3">
-              <div className="flex items-center space-x-3">
-                <div className="flex items-center space-x-2 text-gray-700">
-                  <div className="bg-green-100 p-2 rounded-lg">
-                    <FaFilter className="text-green-600 text-base" />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-green-50/30 to-blue-50/20">
+        {/* Enhanced Filter Bar */}
+        <div className="bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-lg sticky top-0 z-10">
+          <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center justify-center flex-wrap gap-4">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-3 text-gray-700">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-xl blur opacity-30"></div>
+                    <div className="relative bg-gradient-to-r from-green-500 to-emerald-600 p-2.5 rounded-xl shadow-lg">
+                      <FaFilter className="text-white text-base" />
+                    </div>
                   </div>
-                  <span className="font-semibold text-sm">Filter by Region:</span>
+                  <span className="font-bold text-sm sm:text-base text-gray-800 tracking-wide">Filter by Region:</span>
                 </div>
-                <div className="flex items-center space-x-1 bg-gray-100 rounded-lg p-1 overflow-x-auto">
+                <div className="flex items-center space-x-2 bg-gradient-to-r from-gray-50 to-gray-100/80 rounded-xl p-1.5 shadow-inner border border-gray-200/50 overflow-x-auto scrollbar-hide">
                   {REGIONS.map((region) => (
                     <button
                       key={region}
@@ -801,13 +808,16 @@ function DataVisualization() {
                         setHighlightedLayer(null)
                         setHighlightedFeature(null)
                       }}
-                      className={`px-3 py-1.5 rounded-md font-medium text-xs sm:text-sm transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
+                      className={`px-4 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-300 whitespace-nowrap flex-shrink-0 relative overflow-hidden ${
                         selectedRegion === region
-                          ? 'bg-white text-green-600 shadow-sm border border-green-200'
-                          : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                          ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg transform scale-105 border-2 border-green-400'
+                          : 'text-gray-700 hover:text-gray-900 hover:bg-white/80 hover:shadow-md border-2 border-transparent'
                       }`}
                     >
-                      {region}
+                      {selectedRegion === region && (
+                        <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></span>
+                      )}
+                      <span className="relative z-10">{region}</span>
                     </button>
                   ))}
                 </div>
@@ -818,9 +828,9 @@ function DataVisualization() {
                     setHighlightedLayer(null)
                     setHighlightedFeature(null)
                   }}
-                  className="flex items-center space-x-2 px-4 py-2 bg-red-50 text-red-700 rounded-lg hover:bg-red-100 border border-red-200 transition-all duration-200 text-sm font-medium shadow-sm"
+                  className="group flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-red-50 to-rose-50 text-red-700 rounded-xl hover:from-red-100 hover:to-rose-100 border-2 border-red-200 hover:border-red-300 transition-all duration-300 text-sm font-semibold shadow-md hover:shadow-lg transform hover:scale-105"
                 >
-                  <FaTimes className="text-sm" />
+                  <FaTimes className="text-sm group-hover:rotate-90 transition-transform duration-300" />
                   <span>Clear Selection</span>
                 </button>
               )}
@@ -831,17 +841,20 @@ function DataVisualization() {
         {/* Three Column Layout: Left Charts | Map | Right Charts */}
         <div className="flex" style={{ height: 'calc(100vh - 120px)', minHeight: 'calc(100vh - 120px)' }}>
           {/* Left Panel - Charts with scrollbar */}
-          <div className="bg-white border-r border-gray-200 overflow-y-auto chart-panel" style={{ width: '27.5%', height: '100%', maxHeight: '100%' }}>
-            <div className="p-3 space-y-3">
+          <div className="bg-gradient-to-b from-white via-gray-50/50 to-white border-r border-gray-200/80 overflow-y-auto chart-panel scrollbar-hide shadow-inner" style={{ width: '27.5%', height: '100%', maxHeight: '100%' }}>
+            <div className="p-4 space-y-4">
               {leftCharts.map((chart, idx) => {
                 if (!chart.data) return null
                 
                 if (chart.type === 'pie' && chart.data.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
-                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 shadow-sm"></div>
-                        {chart.title}
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                        <div className="relative mr-3">
+                          <div className="absolute inset-0 bg-green-400 rounded-full blur opacity-50"></div>
+                          <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full shadow-lg"></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
                       <ResponsiveContainer width="100%" height={320}>
                         <PieChart className="pie-3d">
@@ -882,12 +895,13 @@ function DataVisualization() {
                             labelFormatter={(label) => `Zone: ${label}`}
                             contentStyle={{ 
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                              backdropFilter: 'blur(10px)',
                               border: '2px solid #22c55e',
-                              borderRadius: '8px',
-                              padding: '12px',
+                              borderRadius: '12px',
+                              padding: '14px',
                               fontSize: '13px',
-                              fontWeight: '500',
-                              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                              fontWeight: '600',
+                              boxShadow: '0 8px 16px rgba(34, 197, 94, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1)'
                             }}
                           />
                           <RechartsLegend 
@@ -906,10 +920,13 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar' && chart.data.byBiome && chart.data.byBiome.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
-                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 shadow-sm"></div>
-                        {chart.title}
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                        <div className="relative mr-3">
+                          <div className="absolute inset-0 bg-indigo-400 rounded-full blur opacity-50"></div>
+                          <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full shadow-lg"></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
                       <ResponsiveContainer width="100%" height={320}>
                         <BarChart data={chart.data.byBiome}>
@@ -922,11 +939,13 @@ function DataVisualization() {
                             labelFormatter={(label) => `Biome: ${label}`}
                             contentStyle={{ 
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
-                              border: '1px solid #22c55e',
-                              borderRadius: '6px',
-                              padding: '10px',
-                              fontSize: '12px',
-                              fontWeight: '500'
+                              backdropFilter: 'blur(10px)',
+                              border: '2px solid #6366f1',
+                              borderRadius: '12px',
+                              padding: '12px',
+                              fontSize: '13px',
+                              fontWeight: '600',
+                              boxShadow: '0 8px 16px rgba(99, 102, 241, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1)'
                             }}
                           />
                           <Bar 
@@ -964,10 +983,13 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar-horizontal' && chart.data.byArea && chart.data.byArea.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
-                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 shadow-sm"></div>
-                        {chart.title}
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                        <div className="relative mr-3">
+                          <div className="absolute inset-0 bg-blue-400 rounded-full blur opacity-50"></div>
+                          <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full shadow-lg"></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
                       <ResponsiveContainer width="100%" height={400}>
                         <BarChart data={chart.data.byArea} layout="vertical">
@@ -1014,11 +1036,14 @@ function DataVisualization() {
                             labelFormatter={(label) => label}
                             contentStyle={{ 
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
-                              border: '1px solid #22c55e',
-                              borderRadius: '6px',
-                              padding: '8px',
-                              fontSize: '12px',
-                              maxWidth: '300px'
+                              backdropFilter: 'blur(10px)',
+                              border: '2px solid #3b82f6',
+                              borderRadius: '12px',
+                              padding: '12px',
+                              fontSize: '13px',
+                              fontWeight: '600',
+                              maxWidth: '300px',
+                              boxShadow: '0 8px 16px rgba(59, 130, 246, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1)'
                             }}
                           />
                           <Bar 
@@ -1060,11 +1085,11 @@ function DataVisualization() {
           </div>
 
           {/* Center Panel - Map */}
-          <div className="border-r border-gray-200 relative bg-white" style={{ width: '45%', height: '100%', maxHeight: '100%' }}>
+          <div className="border-r border-gray-200/80 relative bg-gradient-to-br from-white via-gray-50/30 to-green-50/20 shadow-inner overflow-hidden" style={{ width: '45%', height: '100%', maxHeight: '100%', position: 'relative' }}>
             <MapContainer
               center={[30.3753, 69.3451]}
               zoom={6}
-              style={{ height: '100%', width: '100%' }}
+              style={{ height: '100%', width: '100%', position: 'relative' }}
               zoomControl={true}
             >
               <TileLayer
@@ -1147,7 +1172,7 @@ function DataVisualization() {
               />
             </MapContainer>
             
-            {/* Map Legend */}
+            {/* Map Legend - Fixed position within map container */}
             {layers.length > 0 && (() => {
               const activeLayersSet = new Set(Object.keys(mapLayerData))
               // Add boundary layer to active layers for legend
@@ -1165,19 +1190,22 @@ function DataVisualization() {
           </div>
 
           {/* Right Panel - Charts with scrollbar */}
-          <div className="bg-white overflow-y-auto chart-panel" style={{ width: '27.5%', height: '100%', maxHeight: '100%' }}>
-            <div className="p-3 space-y-3">
+          <div className="bg-gradient-to-b from-white via-gray-50/50 to-white overflow-y-auto chart-panel scrollbar-hide shadow-inner" style={{ width: '27.5%', height: '100%', maxHeight: '100%' }}>
+            <div className="p-4 space-y-4">
               {rightCharts.map((chart, idx) => {
                 if (!chart.data) return null
                 
                 if (chart.type === 'radar' && chart.data && chart.data.length > 0) {
                   return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
-                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 shadow-sm"></div>
-                        {chart.title}
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center tracking-tight">
+                        <div className="relative mr-3">
+                          <div className="absolute inset-0 bg-purple-400 rounded-full blur opacity-50"></div>
+                          <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full shadow-lg"></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
-                      <div className="text-xs text-gray-500 mb-2">Environmental performance indicators</div>
+                      <div className="text-xs font-medium text-gray-600 mb-3 bg-gradient-to-r from-purple-50 to-pink-50 px-3 py-1.5 rounded-lg border border-purple-100">Environmental performance indicators</div>
                       <ResponsiveContainer width="100%" height={350}>
                         <RadarChart data={chart.data} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
                           <PolarGrid stroke="#e5e7eb" />
@@ -1229,12 +1257,13 @@ function DataVisualization() {
                             }}
                             contentStyle={{
                               backgroundColor: 'rgba(255, 255, 255, 0.98)',
-                              border: '1px solid #22c55e',
-                              borderRadius: '6px',
-                              padding: '10px',
-                              fontSize: '12px',
-                              fontWeight: '500',
-                              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                              backdropFilter: 'blur(10px)',
+                              border: '2px solid #8b5cf6',
+                              borderRadius: '12px',
+                              padding: '14px',
+                              fontSize: '13px',
+                              fontWeight: '600',
+                              boxShadow: '0 8px 16px rgba(139, 92, 246, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1)'
                             }}
                           />
                         </RadarChart>
@@ -1245,10 +1274,13 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar' && chart.data.byIUCN && chart.data.byIUCN.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
-                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 shadow-sm"></div>
-                        {chart.title}
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                        <div className="relative mr-3">
+                          <div className="absolute inset-0 bg-amber-400 rounded-full blur opacity-50"></div>
+                          <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full shadow-lg"></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
                       <ResponsiveContainer width="100%" height={320}>
                         <BarChart data={chart.data.byIUCN}>
@@ -1303,10 +1335,13 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar' && chart.data.byZone && chart.data.byZone.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
-                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 shadow-sm"></div>
-                        {chart.title}
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                        <div className="relative mr-3">
+                          <div className="absolute inset-0 bg-green-400 rounded-full blur opacity-50"></div>
+                          <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full shadow-lg"></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
                       <ResponsiveContainer width="100%" height={320}>
                         <BarChart data={chart.data.byZone}>
@@ -1361,10 +1396,13 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar' && chart.data.byRegion && chart.data.byRegion.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
-                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2 shadow-sm"></div>
-                        {chart.title}
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                        <div className="relative mr-3">
+                          <div className="absolute inset-0 bg-cyan-400 rounded-full blur opacity-50"></div>
+                          <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full shadow-lg"></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
                       <ResponsiveContainer width="100%" height={320}>
                         <BarChart data={chart.data.byRegion}>
@@ -1419,10 +1457,13 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar-horizontal' && chart.data && chart.data.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-xl border border-gray-200 p-3 hover:border-green-300">
-                      <h3 className="text-sm font-bold text-gray-800 mb-2 flex items-center">
-                        <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 shadow-sm"></div>
-                        {chart.title}
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                        <div className="relative mr-3">
+                          <div className="absolute inset-0 bg-red-400 rounded-full blur opacity-50"></div>
+                          <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-red-500 to-rose-600 rounded-full shadow-lg"></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
                       <ResponsiveContainer width="100%" height={400}>
                         <BarChart data={chart.data} layout="vertical">

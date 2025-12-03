@@ -30,25 +30,49 @@ export default function Login() {
     >
       {/* MOCC Logo - Top Left */}
       <div className="absolute top-4 sm:top-6 left-4 sm:left-6 z-20">
-        <img 
-          src="/mocc.png" 
-          alt="Ministry of Climate Change & Environmental Coordination" 
-          className="h-12 sm:h-16 w-auto object-contain drop-shadow-lg"
-        />
+        <a 
+          href="https://mocc.gov.pk/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity"
+          title="Ministry of Climate Change & Environmental Coordination"
+        >
+          <img 
+            src="/mocc.png" 
+            alt="Ministry of Climate Change & Environmental Coordination" 
+            className="h-12 sm:h-16 w-auto object-contain drop-shadow-lg cursor-pointer"
+          />
+        </a>
       </div>
 
       {/* UNDP and GEF Logos - Top Right */}
       <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-20 flex items-center gap-3 sm:gap-4">
-        <img 
-          src="/Assets/gef.png" 
-          alt="Global Environment Facility" 
-          className="h-10 sm:h-14 w-auto object-contain drop-shadow-lg"
-        />
-        <img 
-          src="/Assets/UNDP A.png" 
-          alt="UNDP Pakistan" 
-          className="h-10 sm:h-14 w-auto object-contain drop-shadow-lg"
-        />
+        <a 
+          href="https://www.thegef.org/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity"
+          title="Global Environment Facility"
+        >
+          <img 
+            src="/Assets/gef.png" 
+            alt="Global Environment Facility" 
+            className="h-10 sm:h-14 w-auto object-contain drop-shadow-lg cursor-pointer"
+          />
+        </a>
+        <a 
+          href="https://www.undp.org/pakistan" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity"
+          title="UNDP Pakistan"
+        >
+          <img 
+            src="/Assets/UNDP A.png" 
+            alt="UNDP Pakistan" 
+            className="h-10 sm:h-14 w-auto object-contain drop-shadow-lg cursor-pointer"
+          />
+        </a>
       </div>
 
       {/* Login Form */}

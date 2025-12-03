@@ -140,23 +140,39 @@ export default function Header() {
             {/* Collaboration Logos */}
             <div className="flex items-center space-x-2 ml-2 lg:ml-4 pl-2 lg:pl-4 border-l border-gray-300">
               {!ministryLogoError ? (
+                <a 
+                  href="https://mocc.gov.pk/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  title="Ministry of Climate Change & Environmental Coordination"
+                >
                 <img 
                   src="/Assets/mocc.png" 
                   alt="Ministry of Climate Change & Environmental Coordination" 
-                  className="h-8 w-8 lg:h-10 lg:w-10 object-contain"
+                    className="h-8 w-8 lg:h-10 lg:w-10 object-contain cursor-pointer"
                   onError={() => setMinistryLogoError(true)}
                 />
+                </a>
               ) : (
                 <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gray-200 rounded-full"></div>
               )}
               {!undpLogoError ? (
+                <a 
+                  href="https://www.undp.org/pakistan" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  title="UNDP Pakistan"
+                >
                 <img 
                   src="/Assets/UNDP%20A.png" 
                   alt="UNDP Pakistan" 
-                  className="h-8 lg:h-10 w-auto object-contain"
+                    className="h-8 lg:h-10 w-auto object-contain cursor-pointer"
                   style={{ maxWidth: '100px' }}
                   onError={() => setUndpLogoError(true)}
                 />
+                </a>
               ) : (
                 <span className="text-xs lg:text-sm font-semibold text-gray-600">UNDP</span>
               )}
@@ -167,7 +183,7 @@ export default function Header() {
       </div>
 
       {/* Collaboration Banner */}
-      <div className="bg-green-600 text-white px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm">
+      <div className="text-white px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm" style={{ backgroundColor: '#16a34a' }}>
         <div className="text-center text-xs sm:text-sm px-2">
           In collaboration with UNDP Pakistan and Ministry of Climate Change & Environmental Coordination
         </div>
@@ -308,7 +324,7 @@ export default function Header() {
         </nav>
 
         {/* Collaboration Section in Drawer */}
-        <div className="bg-green-600 text-white p-4 border-t border-green-700 flex-shrink-0">
+        <div className="text-white p-4 border-t flex-shrink-0" style={{ backgroundColor: '#16a34a', borderColor: '#16a34a' }}>
           <div className="text-center text-xs px-2">
             In collaboration with UNDP Pakistan and Ministry of Climate Change & Environmental Coordination
           </div>
