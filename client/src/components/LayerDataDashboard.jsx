@@ -196,13 +196,13 @@ function FallbackLayerTable({ layerId, layer, data, selectedFeature, tableRefs }
   
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
-      <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
+      <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-4 py-3 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="font-bold text-lg text-gray-900" style={{ color: layer?.color || '#22c55e' }}>
+            <h3 className="font-bold text-base text-gray-900" style={{ color: layer?.color || '#22c55e' }}>
               {layer?.name || layerId}
             </h3>
-            <p className="text-sm text-gray-600 mt-1 font-medium">{data.features.length} feature(s)</p>
+            <p className="text-xs text-gray-600 mt-0.5 font-medium">{data.features.length} feature(s)</p>
           </div>
           <button
             onClick={() => setIsExpanded(!isExpanded)}
@@ -223,11 +223,11 @@ function FallbackLayerTable({ layerId, layer, data, selectedFeature, tableRefs }
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gradient-to-r from-gray-100 to-gray-50">
               <tr>
-                {allKeys.map(key => (
-                  <th key={key} className="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-b-2 border-gray-300">
-                    {key}
-                  </th>
-                ))}
+                  {allKeys.map(key => (
+                    <th key={key} className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-b-2 border-gray-300">
+                      {key}
+                    </th>
+                  ))}
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-100">
@@ -250,7 +250,7 @@ function FallbackLayerTable({ layerId, layer, data, selectedFeature, tableRefs }
                   {allKeys.map(key => (
                     <td 
                       key={key} 
-                      className={`px-6 py-4 text-sm font-medium ${
+                      className={`px-4 py-3 text-xs font-medium ${
                         isSelected ? 'text-green-900' : 'text-gray-800'
                       }`}
                     >
@@ -332,15 +332,15 @@ function LayerTable({ layerId, layer, data, columnMapping, selectedFeature, tabl
 
   return (
     <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-      <div className="bg-gray-50 px-4 py-2 border-b border-gray-200">
+      <div className="bg-gray-50 px-3 py-2 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <div className="flex-1">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-bold text-lg text-gray-900" style={{ color: layer?.color || '#22c55e' }}>
+                <h3 className="font-bold text-base text-gray-900" style={{ color: layer?.color || '#22c55e' }}>
                   {layer?.name || layerId}
                 </h3>
-                <p className="text-sm text-gray-600 mt-1 font-medium">
+                <p className="text-xs text-gray-600 mt-0.5 font-medium">
                   {showPagination 
                     ? `Showing ${startIndex + 1}-${Math.min(endIndex, totalFeatures)} of ${totalFeatures} feature(s)`
                     : `${totalFeatures} feature(s)`
@@ -412,7 +412,7 @@ function LayerTable({ layerId, layer, data, columnMapping, selectedFeature, tabl
             <thead className="bg-gradient-to-r from-gray-100 to-gray-50 sticky top-0 z-20">
               <tr>
                 {visibleColumns.map(col => (
-                  <th key={col} className="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-b-2 border-gray-300">
+                  <th key={col} className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-b-2 border-gray-300">
                     {displayNames[col] || col}
                   </th>
                 ))}
@@ -454,7 +454,7 @@ function LayerTable({ layerId, layer, data, columnMapping, selectedFeature, tabl
                       return (
                         <td 
                           key={col} 
-                          className={`px-6 py-4 text-sm font-medium whitespace-nowrap ${
+                          className={`px-4 py-3 text-xs font-medium whitespace-nowrap ${
                             isSelected ? 'text-green-900' : 'text-gray-800'
                           }`}
                         >
@@ -591,7 +591,7 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
 
   return (
     <div className="w-full bg-white border-t-4 border-green-500 shadow-2xl relative">
-      <div className="px-3 py-2 border-b-2 border-green-600" style={{ backgroundColor: '#159f48', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' }}>
+      <div className="px-4 py-2.5 border-b-2 border-green-600" style={{ backgroundColor: '#159f48', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif' }}>
         <div className="flex items-center justify-center space-x-2 relative">
           <div className="p-1.5 bg-white/20 rounded-lg backdrop-blur-sm absolute left-0">
             <FaTable className="text-white text-lg" />
@@ -621,7 +621,7 @@ export default function LayerDataDashboard({ layerData, activeLayers, layers, se
 
       <div 
         ref={scrollContainerRef}
-        className="p-4 space-y-6 max-h-[600px] overflow-y-auto relative dashboard-scroll-container"
+        className="p-3 space-y-4 max-h-[600px] overflow-y-auto relative dashboard-scroll-container"
         style={{ 
           scrollbarWidth: '12px',
           scrollbarColor: '#94a3b8 #f1f5f9'

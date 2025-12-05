@@ -384,16 +384,16 @@ export default function StatisticsCards({ layerData, activeLayers, selectedRegio
     : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-7'
   
   return (
-    <div key={selectedRegion} className={`grid ${gridCols} gap-1.5 sm:gap-2 md:gap-2.5 px-2 sm:px-3 py-2 sm:py-2.5 bg-white border-b border-gray-200 overflow-x-auto`}>
+    <div key={selectedRegion} className={`grid ${gridCols} gap-2 px-3 py-2 bg-white border-b border-gray-200 overflow-x-auto`}>
       {cards.map((card, index) => {
         const IconComponent = card.icon
         return (
           <div
             key={`${selectedRegion}-${index}`}
-            className="stat-card bg-white rounded-lg border border-gray-200 p-1.5 sm:p-2 md:p-2.5 shadow-sm hover:shadow-lg hover:border-green-400 hover:ring-2 hover:ring-green-300 hover:ring-opacity-50 transition-all duration-300 cursor-pointer transform hover:scale-105 min-w-0"
+            className="stat-card bg-white rounded-lg border border-gray-200 p-2 shadow-sm hover:shadow-lg hover:border-green-400 hover:ring-2 hover:ring-green-300 hover:ring-opacity-50 transition-all duration-300 cursor-pointer transform hover:scale-105 min-w-0"
           >
             <div 
-              className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${card.color.startsWith('#') ? '' : card.color} rounded-lg mb-1 sm:mb-1.5 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg`}
+              className={`w-7 h-7 sm:w-8 sm:h-8 ${card.color.startsWith('#') ? '' : card.color} rounded-lg mb-1 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg`}
               style={card.color.startsWith('#') ? { backgroundColor: card.color } : {}}
             >
               <IconComponent 

@@ -232,7 +232,7 @@ function Dashboard() {
   return (
     <div className="min-h-screen w-full max-w-full flex flex-col bg-gray-50 overflow-x-hidden">
       {/* Region Toggle Buttons */}
-      <div className="bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-lg px-2 sm:px-3 py-3 flex items-center justify-center">
+      <div className="bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-lg px-4 py-3 flex items-center justify-center">
         <div className="flex items-center space-x-2 bg-gradient-to-r from-gray-50 to-gray-100/80 rounded-xl p-1.5 shadow-inner border border-gray-200/50 overflow-x-auto max-w-full scrollbar-hide">
           {regions.map((region) => (
             <button
@@ -312,7 +312,7 @@ function Dashboard() {
       
       {/* Layer Data Dashboard - Show below map for all provinces */}
       {(selectedRegion === 'Gilgit Baltistan' || selectedRegion === 'Punjab' || selectedRegion === 'Sindh' || selectedRegion === 'Balochistan' || selectedRegion === 'KP' || selectedRegion === 'AJK') && (
-        <div className="mt-4 sm:mt-6">
+        <div className="mt-4">
           <LayerDataDashboard 
             layerData={layerData}
             activeLayers={activeLayers}
@@ -324,7 +324,7 @@ function Dashboard() {
       )}
       
       {/* Partners Section with spacing */}
-      <div className={isMobile ? "mt-2" : "mt-4 sm:mt-6"}>
+      <div className="mt-4">
         <PartnersSection />
       </div>
       

@@ -1,13 +1,13 @@
 export default function PartnersSection() {
   return (
-    <section className="bg-white py-2 sm:py-4 lg:py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-base sm:text-lg lg:text-xl font-semibold text-gray-800 mb-2 sm:mb-4 lg:mb-6">
+    <section className="bg-white py-4">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-center text-base sm:text-lg font-semibold text-gray-800 mb-3">
           Our Valued Partners
         </h2>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           {/* UNDP Logo */}
-          <div className="flex items-center justify-center" style={{ width: '100px', height: '60px' }}>
+          <div className="flex items-center justify-center" style={{ width: '180px', height: '100px' }}>
             <a 
               href="https://www.undp.org/pakistan" 
               target="_blank" 
@@ -19,7 +19,7 @@ export default function PartnersSection() {
                 src="/Assets/UNDP%20A.png" 
                 alt="United Nations Development Programme" 
                 className="object-contain cursor-pointer"
-                style={{ maxWidth: '80px', maxHeight: '50px', width: 'auto', height: 'auto' }}
+                style={{ maxWidth: '160px', maxHeight: '90px', width: 'auto', height: 'auto' }}
                 onError={(e) => {
                   e.target.style.display = 'none'
                 }}
@@ -28,7 +28,7 @@ export default function PartnersSection() {
           </div>
           
           {/* GEF Logo - Center */}
-          <div className="flex items-center justify-center" style={{ width: '100px', height: '60px' }}>
+          <div className="flex items-center justify-center" style={{ width: '180px', height: '100px' }}>
             <a 
               href="https://www.thegef.org/" 
               target="_blank" 
@@ -40,7 +40,7 @@ export default function PartnersSection() {
                 src="/Assets/gef.png" 
                 alt="Global Environment Facility" 
                 className="object-contain cursor-pointer"
-                style={{ maxWidth: '80px', maxHeight: '50px', width: 'auto', height: 'auto' }}
+                style={{ maxWidth: '160px', maxHeight: '90px', width: 'auto', height: 'auto' }}
                 onError={(e) => {
                   e.target.style.display = 'none'
                 }}
@@ -49,7 +49,7 @@ export default function PartnersSection() {
           </div>
           
           {/* Ministry Logo */}
-          <div className="flex items-center justify-center" style={{ width: '100px', height: '60px' }}>
+          <div className="flex items-center justify-center" style={{ width: '180px', height: '100px' }}>
             <a 
               href="https://mocc.gov.pk/" 
               target="_blank" 
@@ -61,7 +61,7 @@ export default function PartnersSection() {
                 src="/Assets/mocc.png" 
                 alt="Ministry of Climate Change & Environmental Coordination" 
                 className="object-contain cursor-pointer"
-                style={{ maxWidth: '80px', maxHeight: '50px', width: 'auto', height: 'auto' }}
+                style={{ maxWidth: '160px', maxHeight: '90px', width: 'auto', height: 'auto' }}
                 onError={(e) => {
                   e.target.style.display = 'none'
                 }}

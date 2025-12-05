@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { 
   FaLeaf, 
   FaTree, 
@@ -44,6 +44,98 @@ const layerIcons = {
 export default function Legend({ layers, activeLayers, selectedRegion }) {
   const [isExpanded, setIsExpanded] = useState(true)
   const [isForestLegendExpanded, setIsForestLegendExpanded] = useState(true)
+  const legendRef = useRef(null)
+  const forestLegendRef = useRef(null)
+  
+  // Auto-close legend on scroll to prevent overlap with header
+  useEffect(() => {
+    let scrollTimeout = null
+    
+    const handleScroll = () => {
+      // Debounce to avoid too many state updates
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout)
+      }
+      
+      scrollTimeout = setTimeout(() => {
+        // Close both legends when scrolling
+        if (isExpanded) {
+          setIsExpanded(false)
+        }
+        if (isForestLegendExpanded) {
+          setIsForestLegendExpanded(false)
+        }
+      }, 50) // Small delay for smooth UX
+    }
+
+    // Listen to scroll events on chart panels (left and right panels)
+    const chartPanels = document.querySelectorAll('.chart-panel')
+    chartPanels.forEach(panel => {
+      panel.addEventListener('scroll', handleScroll, { passive: true })
+    })
+    
+    // Also listen to wheel events for better responsiveness
+    chartPanels.forEach(panel => {
+      panel.addEventListener('wheel', handleScroll, { passive: true })
+    })
+
+    return () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout)
+      }
+      chartPanels.forEach(panel => {
+        panel.removeEventListener('scroll', handleScroll)
+        panel.removeEventListener('wheel', handleScroll)
+      })
+    }
+  }, [isExpanded, isForestLegendExpanded])
+
+  // Check if legend would overlap with header and close if needed
+  useEffect(() => {
+    const checkOverlap = () => {
+      if (!legendRef.current && !forestLegendRef.current) return
+
+      // Find the sticky header - look for element with sticky and top-0 classes
+      const header = Array.from(document.querySelectorAll('div')).find(
+        el => el.classList.contains('sticky') && el.classList.contains('top-0')
+      )
+      if (!header) return
+
+      const headerRect = header.getBoundingClientRect()
+      const headerBottom = headerRect.bottom
+
+      // Check main legend
+      if (legendRef.current && isExpanded) {
+        const legendRect = legendRef.current.getBoundingClientRect()
+        const legendTop = legendRect.top
+        
+        // If legend top is above or near header bottom, close it
+        if (legendTop < headerBottom + 20) {
+          setIsExpanded(false)
+        }
+      }
+
+      // Check forest legend
+      if (forestLegendRef.current && isForestLegendExpanded) {
+        const forestLegendRect = forestLegendRef.current.getBoundingClientRect()
+        const forestLegendTop = forestLegendRect.top
+        
+        // If legend top is above or near header bottom, close it
+        if (forestLegendTop < headerBottom + 20) {
+          setIsForestLegendExpanded(false)
+        }
+      }
+    }
+
+    // Check periodically and on resize
+    const intervalId = setInterval(checkOverlap, 100)
+    window.addEventListener('resize', checkOverlap)
+
+    return () => {
+      clearInterval(intervalId)
+      window.removeEventListener('resize', checkOverlap)
+    }
+  }, [isExpanded, isForestLegendExpanded])
   
   // Filter out base reference layers (like provinces) and forest-types from main legend
   // Also filter out balochistan-lulc and agroecological-zones when AJK is selected
@@ -65,7 +157,7 @@ export default function Legend({ layers, activeLayers, selectedRegion }) {
     <>
       {/* Main Legend (Left Side) - Excludes Forest Stratification */}
       {activeLayersList.length > 0 && (
-        <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
+        <div ref={legendRef} className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
       <div className="flex items-center justify-between p-2 sm:p-3 border-b border-gray-200">
         <h3 className="font-semibold text-gray-800 text-xs sm:text-sm">Legend</h3>
         <button
@@ -324,7 +416,7 @@ export default function Legend({ layers, activeLayers, selectedRegion }) {
       
       {/* Forest Stratification Legend (Right Side) - Separate Legend */}
       {forestTypesLayer && (
-        <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
+        <div ref={forestLegendRef} className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
           <div className="flex items-center justify-between p-2 sm:p-3 border-b border-gray-200">
             <h3 className="font-semibold text-gray-800 text-xs sm:text-sm">Forest Stratification</h3>
             <button

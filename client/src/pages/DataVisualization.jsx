@@ -787,8 +787,8 @@ function DataVisualization() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-green-50/30 to-blue-50/20">
         {/* Enhanced Filter Bar */}
         <div className="bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-lg sticky top-0 z-10">
-          <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center justify-center flex-wrap gap-4">
+          <div className="max-w-full mx-auto px-4 py-3">
+            <div className="flex items-center justify-center flex-wrap gap-3">
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-3 text-gray-700">
                   <div className="relative">
@@ -842,14 +842,14 @@ function DataVisualization() {
         <div className="flex" style={{ height: 'calc(100vh - 120px)', minHeight: 'calc(100vh - 120px)' }}>
           {/* Left Panel - Charts with scrollbar */}
           <div className="bg-gradient-to-b from-white via-gray-50/50 to-white border-r border-gray-200/80 overflow-y-auto chart-panel scrollbar-hide shadow-inner" style={{ width: '27.5%', height: '100%', maxHeight: '100%' }}>
-            <div className="p-4 space-y-4">
+            <div className="p-3 space-y-3">
               {leftCharts.map((chart, idx) => {
                 if (!chart.data) return null
                 
                 if (chart.type === 'pie' && chart.data.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
-                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-3 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center tracking-tight">
                         <div className="relative mr-3">
                           <div className="absolute inset-0 bg-green-400 rounded-full blur opacity-50"></div>
                           <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full shadow-lg"></div>
@@ -920,8 +920,8 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar' && chart.data.byBiome && chart.data.byBiome.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
-                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-3 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center tracking-tight">
                         <div className="relative mr-3">
                           <div className="absolute inset-0 bg-indigo-400 rounded-full blur opacity-50"></div>
                           <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full shadow-lg"></div>
@@ -983,8 +983,8 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar-horizontal' && chart.data.byArea && chart.data.byArea.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
-                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-3 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center tracking-tight">
                         <div className="relative mr-3">
                           <div className="absolute inset-0 bg-blue-400 rounded-full blur opacity-50"></div>
                           <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full shadow-lg"></div>
@@ -1191,7 +1191,7 @@ function DataVisualization() {
 
           {/* Right Panel - Charts with scrollbar */}
           <div className="bg-gradient-to-b from-white via-gray-50/50 to-white overflow-y-auto chart-panel scrollbar-hide shadow-inner" style={{ width: '27.5%', height: '100%', maxHeight: '100%' }}>
-            <div className="p-4 space-y-4">
+            <div className="p-3 space-y-3">
               {rightCharts.map((chart, idx) => {
                 if (!chart.data) return null
                 
@@ -1205,7 +1205,7 @@ function DataVisualization() {
                         </div>
                         <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{chart.title}</span>
                       </h3>
-                      <div className="text-xs font-medium text-gray-600 mb-3 bg-gradient-to-r from-purple-50 to-pink-50 px-3 py-1.5 rounded-lg border border-purple-100">Environmental performance indicators</div>
+                      <div className="text-xs font-medium text-gray-600 mb-2 bg-gradient-to-r from-purple-50 to-pink-50 px-2 py-1 rounded-lg border border-purple-100">Environmental performance indicators</div>
                       <ResponsiveContainer width="100%" height={350}>
                         <RadarChart data={chart.data} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
                           <PolarGrid stroke="#e5e7eb" />
@@ -1274,8 +1274,8 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar' && chart.data.byIUCN && chart.data.byIUCN.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
-                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-3 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center tracking-tight">
                         <div className="relative mr-3">
                           <div className="absolute inset-0 bg-amber-400 rounded-full blur opacity-50"></div>
                           <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full shadow-lg"></div>
@@ -1335,8 +1335,8 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar' && chart.data.byZone && chart.data.byZone.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
-                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-3 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center tracking-tight">
                         <div className="relative mr-3">
                           <div className="absolute inset-0 bg-green-400 rounded-full blur opacity-50"></div>
                           <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full shadow-lg"></div>
@@ -1396,8 +1396,8 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar' && chart.data.byRegion && chart.data.byRegion.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
-                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-3 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center tracking-tight">
                         <div className="relative mr-3">
                           <div className="absolute inset-0 bg-cyan-400 rounded-full blur opacity-50"></div>
                           <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full shadow-lg"></div>
@@ -1457,8 +1457,8 @@ function DataVisualization() {
                 
                 if (chart.type === 'bar-horizontal' && chart.data && chart.data.length > 0) {
                     return (
-                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-4 hover:border-green-300">
-                      <h3 className="text-base font-bold text-gray-900 mb-3 flex items-center tracking-tight">
+                    <div key={idx} className="chart-card chart-card-3d rounded-2xl p-3 hover:border-green-300">
+                      <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center tracking-tight">
                         <div className="relative mr-3">
                           <div className="absolute inset-0 bg-red-400 rounded-full blur opacity-50"></div>
                           <div className="relative w-2.5 h-2.5 bg-gradient-to-br from-red-500 to-rose-600 rounded-full shadow-lg"></div>
