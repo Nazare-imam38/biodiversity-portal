@@ -41,7 +41,7 @@ const layerIcons = {
   'forest-types': FaTree,
 }
 
-export default function Legend({ layers, activeLayers, selectedRegion }) {
+export default function Legend({ layers, activeLayers, selectedRegion, panelOpen = true }) {
   const [isExpanded, setIsExpanded] = useState(true)
   const [isForestLegendExpanded, setIsForestLegendExpanded] = useState(true)
   const legendRef = useRef(null)
@@ -157,7 +157,7 @@ export default function Legend({ layers, activeLayers, selectedRegion }) {
     <>
       {/* Main Legend (Left Side) - Excludes Forest Stratification */}
       {activeLayersList.length > 0 && (
-        <div ref={legendRef} className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
+        <div ref={legendRef} className={`absolute bottom-4 left-4 bg-white rounded-lg shadow-lg border border-gray-200 min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px] ${panelOpen ? 'lg:z-[1100] z-[100]' : 'z-[1100]'}`} style={{ pointerEvents: 'auto' }}>
       <div className="flex items-center justify-between p-2 sm:p-3 border-b border-gray-200">
         <h3 className="font-semibold text-gray-800 text-xs sm:text-sm">Legend</h3>
         <button
@@ -416,7 +416,7 @@ export default function Legend({ layers, activeLayers, selectedRegion }) {
       
       {/* Forest Stratification Legend (Right Side) - Separate Legend */}
       {forestTypesLayer && (
-        <div ref={forestLegendRef} className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg border border-gray-200 z-[1100] min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px]" style={{ pointerEvents: 'auto' }}>
+        <div ref={forestLegendRef} className={`absolute bottom-4 right-4 bg-white rounded-lg shadow-lg border border-gray-200 min-w-[180px] sm:min-w-[220px] max-w-[240px] sm:max-w-[280px] ${panelOpen ? 'lg:z-[1100] z-[100]' : 'z-[1100]'}`} style={{ pointerEvents: 'auto' }}>
           <div className="flex items-center justify-between p-2 sm:p-3 border-b border-gray-200">
             <h3 className="font-semibold text-gray-800 text-xs sm:text-sm">Forest Stratification</h3>
             <button

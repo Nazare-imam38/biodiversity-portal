@@ -1070,7 +1070,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       </MapContainer>
 
       {/* Base Map Switcher Button - Fixed on map, above bottom sheet */}
-      <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-[1100] bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden" style={{ pointerEvents: 'auto' }}>
+      <div className={`absolute top-2 sm:top-4 right-2 sm:right-4 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden ${panelOpen ? 'lg:z-[1100] z-[100]' : 'z-[1100]'}`} style={{ pointerEvents: 'auto' }}>
         <div className="flex">
           <button
             onClick={() => setBaseMap('osm')}
@@ -1099,7 +1099,7 @@ export default function MapView({ layers, activeLayers, selectedRegion = 'Nation
       </div>
 
       {/* Dynamic Legend */}
-      <Legend layers={activeLayersList} activeLayers={activeLayers} selectedRegion={selectedRegion} />
+      <Legend layers={activeLayersList} activeLayers={activeLayers} selectedRegion={selectedRegion} panelOpen={panelOpen} />
     </div>
   )
 }
