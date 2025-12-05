@@ -33,7 +33,7 @@ function Dashboard() {
     }
     return true
   })
-  const [selectedRegion, setSelectedRegion] = useState('KP') // Default to KP to show KP provincial layer
+  const [selectedRegion, setSelectedRegion] = useState('Gilgit Baltistan') // Default to Gilgit Baltistan
   
   // Helper function to convert UI region name to backend region name
   const getBackendRegionName = (region) => {
