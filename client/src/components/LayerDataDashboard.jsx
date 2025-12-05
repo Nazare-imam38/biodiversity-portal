@@ -223,11 +223,11 @@ function FallbackLayerTable({ layerId, layer, data, selectedFeature, tableRefs }
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gradient-to-r from-gray-100 to-gray-50">
               <tr>
-                  {allKeys.map(key => (
+                {allKeys.map(key => (
                     <th key={key} className="px-4 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-b-2 border-gray-300">
-                      {key}
-                    </th>
-                  ))}
+                    {key}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-100">

@@ -171,7 +171,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'kp-forest' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
-                           layer.id !== 'ajk-deforestation'
+                           layer.id !== 'ajk-deforestation' &&
+                           layer.id !== 'balochistan-lulc'
                   }
                   // Hide GB boundary layers for Punjab region (show Punjab LULC and Pakistan LULC)
                   // Hide protected-areas (WDPA) and protected-areas-pol for Punjab region
@@ -194,7 +195,8 @@ export default function LayerPanel({ layers, activeLayers, onToggleLayer, onClea
                            layer.id !== 'kp-forest' &&
                            layer.id !== 'ajk-lulc' &&
                            layer.id !== 'ajk-forest-mask' &&
-                           layer.id !== 'ajk-deforestation'
+                           layer.id !== 'ajk-deforestation' &&
+                           layer.id !== 'balochistan-lulc'
                   }
                   // Hide protected-forest for Balochistan region (it has 0 features)
                   // Hide region-specific layers from other provinces (Sindh, AJK, etc.)
